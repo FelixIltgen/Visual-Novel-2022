@@ -3,6 +3,21 @@ namespace Template {
   export import ƒS = FudgeStory;
   console.log("FudgeStory template starting");
 
+  export let transition = {
+    puzzle: {
+      duration: 1,
+      alpha: "",
+      edge: 1
+    }
+  };
+
+  export let sound = {
+    // themes
+
+    // SFX
+    
+  };
+
   export let dataForSave = {
     nameProtagonist: ""
   };
