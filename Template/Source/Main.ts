@@ -22,6 +22,12 @@ namespace Template {
     
   };
 
+  export let characters = {
+    narrator: {
+      name: ""
+    }
+  };
+
   export let dataForSave = {
     nameProtagonist: ""
   };
