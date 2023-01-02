@@ -18,6 +18,10 @@ namespace Template {
     
   };
 
+  export let locations = {
+    
+  };
+
   export let dataForSave = {
     nameProtagonist: ""
   };
