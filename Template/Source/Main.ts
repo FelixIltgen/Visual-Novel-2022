@@ -19,12 +19,38 @@ namespace Template {
   };
 
   export let locations = {
-    
   };
 
   export let characters = {
     narrator: {
       name: ""
+    },
+    ben: {
+      name: "Ben",
+      origin: "",
+      pose: {
+        angry: "",
+        happy: "",
+        upset: ""
+      }
+    },
+    maria: {
+      name: "Maria",
+      origin: "",
+      pose: {
+        angry: "",
+        happy: "",
+        upset: ""
+      }
+    },
+    valentin: {
+      name: "Valentin",
+      origin: "",
+      pose: {
+        angry: "",
+        happy: "",
+        upset: ""
+      }
     }
   };
 
