@@ -8,18 +8,22 @@
   <script src="Fudge/FudgeCore.js"></script>
   <script src="FudgeStory/FudgeStory.js"></script>
   <script src="./Build/Template.js"></script>
-  <title>Fudge Story Template</title>
-  <splash src="Images/Background/living_room.png" />
+  <title>The deep dark</title>
+  <splash src="Images/Splash.png" />
 </head>
 
 <body>
   <scene>
 
     <dialog type="splash" open>
-      <img id="FudgeStoryLogo" theme="light" /> <!-- use "light" or "dark" -->
-      <p>
-        Design your splash screen here. Reposition and rescale the logo above, but do not remove.
+      <img id="FudgeStoryLogo" theme="dark" /> <!-- use "light" or "dark" -->
+      <p class="startInfo">
+        Zum starten linke Maustaste drücken.
       </p>
+      <p class="info">
+        Für ein besseres Erlebnis spiele bitte im Vollbildmodus (F11)
+      </p>
+      
     </dialog>
 
     <canvas></canvas>
