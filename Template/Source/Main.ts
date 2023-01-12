@@ -27,29 +27,38 @@ namespace Template {
     },
     ben: {
       name: "Ben",
-      origin: "",
+      origin: ƒS.ORIGIN.BOTTOMLEFT,
       pose: {
-        angry: "",
-        happy: "",
-        upset: ""
+        confident: "Images/Background/Ben/Ben_confident",
+        moreConfident: "Images/Background/Ben/Ben_more_confident",
+        normal: "Images/Background/Ben/Ben_normal",
+        ohman: "Images/Background/Ben/Ben_ohman",
+        sad: "Images/Background/Ben/Ben_sad",
+        thinking: "Images/Background/Ben/Ben_thinking"
       }
     },
     maria: {
       name: "Maria",
-      origin: "",
+      origin: ƒS.ORIGIN.BOTTOMRIGHT,
       pose: {
-        angry: "",
-        happy: "",
-        upset: ""
+        angry: "Images/Background/Maria/Maria_angry",
+        neutral: "Images/Background/Maria/Maria_neutral",
+        neutralEyesClosed: "Images/Background/Maria/Maria_neutralEyesClosed",
+        pleased: "Images/Background/Maria/Maria_pleased",
+        sad: "Images/Background/Maria/Maria_sad",
+        shock: "Images/Background/Maria/Maria_shock"
       }
     },
     valentin: {
       name: "Valentin",
-      origin: "",
+      origin: ƒS.ORIGIN.BOTTOMLEFT,
       pose: {
-        angry: "",
-        happy: "",
-        upset: ""
+        solution: "Images/Background/Valentin/Valentin_solution",
+        giveUp: "Images/Background/Valentin/Valentin_giveUp",
+        mysterious: "Images/Background/Valentin/Valentin_mysterious",
+        normal: "Images/Background/Valentin/Valentin_normal",
+        sad: "Images/Background/Valentin/Valentin_sad",
+        smile: "Images/Background/Valentin/Valentin_smile"
       }
     }
   };
