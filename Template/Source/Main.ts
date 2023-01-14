@@ -19,6 +19,64 @@ namespace Template {
   };
 
   export let locations = {
+    kidRoom: {
+      name: "Kid room",
+      background: "Images/Background/kid_room"
+    },
+    livingRoom: {
+      name: "Living room",
+      background: "Images/Background/living_room"
+    },
+    street: {
+      name: "Street",
+      background: "Images/Background/Street"
+    },
+    cave: {
+      name: "Cave",
+      background: "Images/Background/cave"
+    },
+    caveTwo: {
+      name: "Cave Two",
+      background: "Images/Background/CaveTwo"
+    },
+    garage: {
+      name: "Garage",
+      background: "Images/Background/garage"
+    },
+    graveyard: {
+      name: "Graveyard",
+      background: "Images/Background/graveyard"
+    },
+    mineEntrance: {
+      name: "Mine entrance",
+      background: "Images/Background/mineEntrance"
+    },
+    mineShaft: {
+      name: "Mine shaft",
+      background: "Images/Background/mineShaft"
+    },
+    mineShaftTwo: {
+      name: "Mine shaft two",
+      background: "Images/Background/mineShaftTwo"
+    },
+    newShaft: {
+      name: "New Shaft",
+      background: "Images/Background/newShaft"
+    },
+    sinkhole: {
+      name: "Sinkhole",
+      background: "Images/Background/newShaft"
+    },
+    sinkholeInside: {
+      name: "Sinkhole inside",
+      background: "Images/Background/newShaft"
+    }
+    /*
+    Sinkloch
+    Im Loch
+    Labyrinth
+    Schiff
+    */
   };
 
   export let characters = {
