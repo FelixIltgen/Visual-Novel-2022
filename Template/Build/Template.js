@@ -158,8 +158,9 @@ var myNovel;
                 T0003: "Tschüss, ihr beiden, habt einen schönen Tag."
             }
         };
-        myNovel.ƒS.Speech.hide();
         await myNovel.ƒS.Location.show(myNovel.locations.livingRoom);
+        await myNovel.ƒS.update();
+        await myNovel.ƒS.Speech.tell(myNovel.characters.narrator, text.narrator.T0001);
         await myNovel.ƒS.update();
     }
     myNovel.firstScene = firstScene;

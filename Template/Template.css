@@ -12,6 +12,7 @@ html, body {
   user-select: none;
 }
 
+
 scene {
   width: 1920px;
   height: 1080px;
@@ -61,5 +62,26 @@ dialog[type="splash"] p{
   80%{
     opacity: 1;
   }
+}
+speech {
+  background: rgba(0, 0, 0, 0.6);
+  position: absolute;
+  display: block;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  background-size: cover;
+  height: 15%;
+  padding: 15px;
+  margin: 130px;
+  margin-bottom: 50px;
+  border-radius: 20px;
+}
+
+speech content {
+  color: rgb(254, 254, 254);
+  font-size: 1.7vmin;
+  position: absolute;
+  left: 160px;
 }
 
