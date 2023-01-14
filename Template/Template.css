@@ -84,4 +84,10 @@ speech content {
   position: absolute;
   left: 160px;
 }
+name {
+  font-size: 2vmin;
+  display: block;
+  color: rgb(218, 69, 171);
+  margin-bottom: 10px;
+}
 
