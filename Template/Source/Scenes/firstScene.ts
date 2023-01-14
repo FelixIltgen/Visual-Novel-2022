@@ -1,7 +1,7 @@
 
-namespace Template {
+namespace myNovel {
     export async function firstScene(): ƒS.SceneReturn {
-        console.log("FudgeStory Template Scene starting");
+        console.log("Start scene One & Chapter one");
         
         let text = {
             narrator: {
@@ -19,7 +19,9 @@ namespace Template {
                 T0003: "Tschüss, ihr beiden, habt einen schönen Tag."
             }
         };
-    
-    
+
+        ƒS.Speech.hide();
+        await ƒS.Location.show(locations.livingRoom);
+        await ƒS.update();
       }
 }

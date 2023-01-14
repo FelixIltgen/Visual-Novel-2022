@@ -1,4 +1,4 @@
-declare namespace Template {
+declare namespace myNovel {
     export import ƒ = FudgeCore;
     export import ƒS = FudgeStory;
     let transition: {
@@ -9,7 +9,60 @@ declare namespace Template {
         };
     };
     let sound: {};
-    let locations: {};
+    let locations: {
+        kidRoom: {
+            name: string;
+            background: string;
+        };
+        livingRoom: {
+            name: string;
+            background: string;
+        };
+        street: {
+            name: string;
+            background: string;
+        };
+        cave: {
+            name: string;
+            background: string;
+        };
+        caveTwo: {
+            name: string;
+            background: string;
+        };
+        garage: {
+            name: string;
+            background: string;
+        };
+        graveyard: {
+            name: string;
+            background: string;
+        };
+        mineEntrance: {
+            name: string;
+            background: string;
+        };
+        mineShaft: {
+            name: string;
+            background: string;
+        };
+        mineShaftTwo: {
+            name: string;
+            background: string;
+        };
+        newShaft: {
+            name: string;
+            background: string;
+        };
+        sinkhole: {
+            name: string;
+            background: string;
+        };
+        sinkholeInside: {
+            name: string;
+            background: string;
+        };
+    };
     let characters: {
         narrator: {
             name: string;
@@ -28,20 +81,26 @@ declare namespace Template {
         };
         maria: {
             name: string;
-            origin: string;
+            origin: ƒ.ORIGIN2D;
             pose: {
                 angry: string;
-                happy: string;
-                upset: string;
+                neutral: string;
+                neutralEyesClosed: string;
+                pleased: string;
+                sad: string;
+                shock: string;
             };
         };
         valentin: {
             name: string;
-            origin: string;
+            origin: ƒ.ORIGIN2D;
             pose: {
-                angry: string;
-                happy: string;
-                upset: string;
+                solution: string;
+                giveUp: string;
+                mysterious: string;
+                normal: string;
+                sad: string;
+                smile: string;
             };
         };
     };
@@ -49,9 +108,9 @@ declare namespace Template {
         nameProtagonist: string;
     };
 }
-declare namespace Template {
+declare namespace myNovel {
     function Scene(): ƒS.SceneReturn;
 }
-declare namespace Template {
+declare namespace myNovel {
     function firstScene(): ƒS.SceneReturn;
 }

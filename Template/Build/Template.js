@@ -1,81 +1,147 @@
 "use strict";
-var Template;
-(function (Template) {
-    Template.ƒ = FudgeCore;
-    Template.ƒS = FudgeStory;
-    console.log("FudgeStory template starting");
-    Template.transition = {
+var myNovel;
+(function (myNovel) {
+    myNovel.ƒ = FudgeCore;
+    myNovel.ƒS = FudgeStory;
+    myNovel.transition = {
         puzzle: {
             duration: 1,
             alpha: "",
             edge: 1
         }
     };
-    Template.sound = {
+    myNovel.sound = {
     // themes
     // SFX
     };
-    Template.locations = {};
-    Template.characters = {
+    myNovel.locations = {
+        kidRoom: {
+            name: "Kid room",
+            background: "Images/Background/kid_room"
+        },
+        livingRoom: {
+            name: "Living room",
+            background: "./Images/Background/living_room.png"
+        },
+        street: {
+            name: "Street",
+            background: "Images/Background/Street"
+        },
+        cave: {
+            name: "Cave",
+            background: "Images/Background/cave"
+        },
+        caveTwo: {
+            name: "Cave Two",
+            background: "Images/Background/CaveTwo"
+        },
+        garage: {
+            name: "Garage",
+            background: "Images/Background/garage"
+        },
+        graveyard: {
+            name: "Graveyard",
+            background: "Images/Background/graveyard"
+        },
+        mineEntrance: {
+            name: "Mine entrance",
+            background: "Images/Background/mineEntrance"
+        },
+        mineShaft: {
+            name: "Mine shaft",
+            background: "Images/Background/mineShaft"
+        },
+        mineShaftTwo: {
+            name: "Mine shaft two",
+            background: "Images/Background/mineShaftTwo"
+        },
+        newShaft: {
+            name: "New Shaft",
+            background: "Images/Background/newShaft"
+        },
+        sinkhole: {
+            name: "Sinkhole",
+            background: "Images/Background/newShaft"
+        },
+        sinkholeInside: {
+            name: "Sinkhole inside",
+            background: "Images/Background/newShaft"
+        }
+        /*
+        Sinkloch
+        Im Loch
+        Labyrinth
+        Schiff
+        */
+    };
+    myNovel.characters = {
         narrator: {
             name: ""
         },
         ben: {
             name: "Ben",
-            origin: Template.ƒS.ORIGIN.BOTTOMLEFT,
+            origin: myNovel.ƒS.ORIGIN.BOTTOMLEFT,
             pose: {
-                confident: "",
-                moreConfident: "",
-                normal: "",
-                ohman: "",
-                sad: "",
-                thinking: ""
+                confident: "Images/Background/Ben/Ben_confident",
+                moreConfident: "Images/Background/Ben/Ben_more_confident",
+                normal: "Images/Background/Ben/Ben_normal",
+                ohman: "Images/Background/Ben/Ben_ohman",
+                sad: "Images/Background/Ben/Ben_sad",
+                thinking: "Images/Background/Ben/Ben_thinking"
             }
         },
         maria: {
             name: "Maria",
-            origin: "",
+            origin: myNovel.ƒS.ORIGIN.BOTTOMRIGHT,
             pose: {
-                angry: "",
-                happy: "",
-                upset: ""
+                angry: "Images/Background/Maria/Maria_angry",
+                neutral: "Images/Background/Maria/Maria_neutral",
+                neutralEyesClosed: "Images/Background/Maria/Maria_neutralEyesClosed",
+                pleased: "Images/Background/Maria/Maria_pleased",
+                sad: "Images/Background/Maria/Maria_sad",
+                shock: "Images/Background/Maria/Maria_shock"
             }
         },
         valentin: {
             name: "Valentin",
-            origin: "",
+            origin: myNovel.ƒS.ORIGIN.BOTTOMLEFT,
             pose: {
-                angry: "",
-                happy: "",
-                upset: ""
+                solution: "Images/Background/Valentin/Valentin_solution",
+                giveUp: "Images/Background/Valentin/Valentin_giveUp",
+                mysterious: "Images/Background/Valentin/Valentin_mysterious",
+                normal: "Images/Background/Valentin/Valentin_normal",
+                sad: "Images/Background/Valentin/Valentin_sad",
+                smile: "Images/Background/Valentin/Valentin_smile"
             }
         }
     };
-    Template.dataForSave = {
+    myNovel.dataForSave = {
         nameProtagonist: ""
     };
     window.addEventListener("load", start);
     function start(_event) {
         let scenes = [
-            { scene: Template.Scene, name: "Scene" }
+            { scene: myNovel.firstScene, name: "First scene", id: "test" }
         ];
         let uiElement = document.querySelector("[type=interface]");
-        Template.dataForSave = Template.ƒS.Progress.setData(Template.dataForSave, uiElement);
+        myNovel.dataForSave = myNovel.ƒS.Progress.setData(myNovel.dataForSave, uiElement);
         // start the sequence
-        Template.ƒS.Progress.go(scenes);
+        myNovel.ƒS.Progress.go(scenes);
     }
-})(Template || (Template = {}));
-var Template;
-(function (Template) {
+})(myNovel || (myNovel = {}));
+var myNovel;
+(function (myNovel) {
     async function Scene() {
-        console.log("FudgeStory Template Scene starting");
+        console.log("Test");
+        await myNovel.ƒS.Location.show(myNovel.locations.livingRoom);
+        await myNovel.ƒS.update();
     }
-    Template.Scene = Scene;
-})(Template || (Template = {}));
-var Template;
-(function (Template) {
+    myNovel.Scene = Scene;
+})(myNovel || (myNovel = {}));
+var myNovel;
+(function (myNovel) {
     async function firstScene() {
-        console.log("FudgeStory Template Scene starting");
+        console.log("Start scene One & Chapter one");
         let text = {
             narrator: {
                 T0001: "Valentin macht sich auf den Weg zum Bergwerk."
@@ -92,7 +158,10 @@ var Template;
                 T0003: "Tschüss, ihr beiden, habt einen schönen Tag."
             }
         };
+        myNovel.ƒS.Speech.hide();
+        await myNovel.ƒS.Location.show(myNovel.locations.livingRoom);
+        await myNovel.ƒS.update();
     }
-    Template.firstScene = firstScene;
-})(Template || (Template = {}));
+    myNovel.firstScene = firstScene;
+})(myNovel || (myNovel = {}));
 //# sourceMappingURL=Template.js.map

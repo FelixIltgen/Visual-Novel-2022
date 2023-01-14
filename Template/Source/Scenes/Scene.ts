@@ -1,8 +1,9 @@
-namespace Template {
+namespace myNovel {
   export async function Scene(): ƒS.SceneReturn {
-    console.log("FudgeStory Template Scene starting");
+    console.log("Test");
 
-    
+    await ƒS.Location.show(locations.livingRoom);
+    await ƒS.update();
 
 
   }

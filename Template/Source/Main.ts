@@ -1,8 +1,7 @@
-namespace Template {
+namespace myNovel {
   export import ƒ = FudgeCore;
   export import ƒS = FudgeStory;
-  console.log("FudgeStory template starting");
-
+   
   export let transition = {
     puzzle: {
       duration: 1,
@@ -25,7 +24,7 @@ namespace Template {
     },
     livingRoom: {
       name: "Living room",
-      background: "Images/Background/living_room"
+      background: "./Images/Background/living_room.png"
     },
     street: {
       name: "Street",
@@ -128,7 +127,7 @@ namespace Template {
   window.addEventListener("load", start);
   function start(_event: Event): void {
     let scenes: ƒS.Scenes = [
-      { scene: Scene, name: "Scene" }
+      { scene: firstScene, name: "First scene", id: "test"}
     ];
 
 
