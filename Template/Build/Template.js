@@ -127,6 +127,7 @@ var myNovel;
         myNovel.dataForSave = myNovel.ƒS.Progress.setData(myNovel.dataForSave, uiElement);
         // start the sequence
         myNovel.ƒS.Progress.go(scenes);
+        myNovel.ƒS.Speech.hide();
     }
 })(myNovel || (myNovel = {}));
 var myNovel;
@@ -161,7 +162,6 @@ var myNovel;
         await myNovel.ƒS.Location.show(myNovel.locations.livingRoom);
         await myNovel.ƒS.update();
         await myNovel.ƒS.Speech.tell(myNovel.characters.narrator, text.narrator.T0001);
-        await myNovel.ƒS.update();
     }
     myNovel.firstScene = firstScene;
 })(myNovel || (myNovel = {}));

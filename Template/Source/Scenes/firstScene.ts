@@ -20,8 +20,8 @@ namespace myNovel {
             }
         };
 
-        ƒS.Speech.hide();
         await ƒS.Location.show(locations.livingRoom);
         await ƒS.update();
+        await ƒS.Speech.tell(characters.narrator, text.narrator.T0001);
       }
 }

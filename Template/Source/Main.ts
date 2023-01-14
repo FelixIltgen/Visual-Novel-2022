@@ -136,5 +136,6 @@ namespace myNovel {
 
     // start the sequence
     ƒS.Progress.go(scenes);
+    ƒS.Speech.hide();
   }
 }
