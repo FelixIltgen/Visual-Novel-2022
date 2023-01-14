@@ -12,16 +12,19 @@ html, body {
   user-select: none;
 }
 
-
 scene {
-  width: 1280px;
-  height: 720px;
+  width: 1920px;
+  height: 1080px;
   position: absolute;
+}
+canvas {
+  height: 100%;
+  width: 100%;
 }
 
 /* Splashscreen */
 dialog[type="splash"] {
-  background-image: url("Images/Background/test.png");
+  background-image: url("Images/Background/kid_room.png");
   width: 100%;
   height: 100%;
   margin: 0px;
