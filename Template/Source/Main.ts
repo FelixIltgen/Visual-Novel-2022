@@ -20,7 +20,7 @@ namespace myNovel {
   export let locations = {
     kidRoom: {
       name: "Kid room",
-      background: "Images/Background/kid_room"
+      background: "Images/Background/kid_room.png"
     },
     livingRoom: {
       name: "Living room",
@@ -28,54 +28,87 @@ namespace myNovel {
     },
     street: {
       name: "Street",
-      background: "Images/Background/Street"
+      background: "Images/Background/Street.png"
     },
     cave: {
       name: "Cave",
-      background: "Images/Background/cave"
+      background: "Images/Background/cave.png"
     },
     caveTwo: {
       name: "Cave Two",
-      background: "Images/Background/CaveTwo"
+      background: "Images/Background/CaveTwo.png"
     },
     garage: {
       name: "Garage",
-      background: "Images/Background/garage"
+      background: "Images/Background/garage.png"
     },
     graveyard: {
       name: "Graveyard",
-      background: "Images/Background/graveyard"
+      background: "Images/Background/graveyard.png"
     },
     mineEntrance: {
       name: "Mine entrance",
-      background: "Images/Background/mineEntrance"
+      background: "Images/Background/mineEntrance.png"
     },
     mineShaft: {
       name: "Mine shaft",
-      background: "Images/Background/mineShaft"
+      background: "Images/Background/mineShaft.png"
     },
     mineShaftTwo: {
       name: "Mine shaft two",
-      background: "Images/Background/mineShaftTwo"
+      background: "Images/Background/mineShaftTwo.png"
     },
     newShaft: {
       name: "New Shaft",
-      background: "Images/Background/newShaft"
+      background: "Images/Background/newShaft.png"
     },
     sinkhole: {
       name: "Sinkhole",
-      background: "Images/Background/newShaft"
+      background: "Images/Background/newShaft.png"
     },
     sinkholeInside: {
       name: "Sinkhole inside",
-      background: "Images/Background/newShaft"
-    }
-    /*
+      background: "Images/Background/newShaft.png"
+    },
+     /*
     Sinkloch
     Im Loch
     Labyrinth
     Schiff
     */
+    // Chapter Backgrounds
+    begin: {
+      name: "Begin",
+      background: "Images/Background/Chapter/wieAllesBegann.png"
+    },
+    chapterOne: {
+      name: "Chapter One",
+      background: "Images/Background/Chapter/chapterOne.png"
+    },
+    chapterTwo: {
+      name: "Chapter Two",
+      background: "Images/Background/Chapter/chapterTwo.png"
+    },
+    chapterThree: {
+      name: "Chapter Three",
+      background: "Images/Background/Chapter/chapterThree.png"
+    },
+    chapterFour: {
+      name: "Chapter Four",
+      background: "Images/Background/Chapter/chapterFour.png"
+    },
+    chapterfive: {
+      name: "Chapter five",
+      background: "Images/Background/Chapter/chapterfive.png"
+    },
+    chapterSix: {
+      name: "Chapter Six",
+      background: "Images/Background/Chapter/chapterSix.png"
+    },
+    chapterSeven: {
+      name: "Chapter Seven",
+      background: "Images/Background/Chapter/chapterSeven.png"
+    }
   };
 
   export let characters = {
@@ -86,36 +119,36 @@ namespace myNovel {
       name: "Ben",
       origin: ƒS.ORIGIN.BOTTOMLEFT,
       pose: {
-        confident: "Images/Background/Ben/Ben_confident",
-        moreConfident: "Images/Background/Ben/Ben_more_confident",
-        normal: "Images/Background/Ben/Ben_normal",
-        ohman: "Images/Background/Ben/Ben_ohman",
-        sad: "Images/Background/Ben/Ben_sad",
-        thinking: "Images/Background/Ben/Ben_thinking"
+        confident: "Images/Characters/Ben/Ben_confident",
+        moreConfident: "Images/Characters/Ben/Ben_more_confident",
+        normal: "Images/Characters/Ben/Ben_normal",
+        ohman: "Images/Characters/Ben/Ben_ohman",
+        sad: "Images/Characters/Ben/Ben_sad",
+        thinking: "Images/Characters/Ben/Ben_thinking"
       }
     },
     maria: {
       name: "Maria",
       origin: ƒS.ORIGIN.BOTTOMRIGHT,
       pose: {
-        angry: "Images/Background/Maria/Maria_angry",
-        neutral: "Images/Background/Maria/Maria_neutral",
-        neutralEyesClosed: "Images/Background/Maria/Maria_neutralEyesClosed",
-        pleased: "Images/Background/Maria/Maria_pleased",
-        sad: "Images/Background/Maria/Maria_sad",
-        shock: "Images/Background/Maria/Maria_shock"
+        angry: "Images/Characters/Maria/Maria_angry",
+        neutral: "Images/Characters/Maria/Maria_neutral",
+        neutralEyesClosed: "Images/Characters/Maria/Maria_neutralEyesClosed",
+        pleased: "Images/Characters/Maria/Maria_pleased",
+        sad: "Images/Characters/Maria/Maria_sad",
+        shock: "Images/Characters/Maria/Maria_shock"
       }
     },
     valentin: {
       name: "Valentin",
       origin: ƒS.ORIGIN.BOTTOMLEFT,
       pose: {
-        solution: "Images/Background/Valentin/Valentin_solution",
-        giveUp: "Images/Background/Valentin/Valentin_giveUp",
-        mysterious: "Images/Background/Valentin/Valentin_mysterious",
-        normal: "Images/Background/Valentin/Valentin_normal",
-        sad: "Images/Background/Valentin/Valentin_sad",
-        smile: "Images/Background/Valentin/Valentin_smile"
+        solution: "Images/Characters/Valentin/Valentin_solution",
+        giveUp: "Images/Characters/Valentin/Valentin_giveUp",
+        mysterious: "Images/Characters/Valentin/Valentin_mysterious",
+        normal: "Images/Characters/Valentin/Valentin_normal",
+        sad: "Images/Characters/Valentin/Valentin_sad",
+        smile: "Images/Characters/Valentin/Valentin_smile"
       }
     }
   };
