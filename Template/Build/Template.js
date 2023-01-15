@@ -11,13 +11,17 @@ var myNovel;
         }
     };
     myNovel.sound = {
-    // themes
-    // SFX
+        // themes
+        cave: "./Assets/Music/cave.mp3",
+        emptyCave: "./Assets/Music/emptyCave.mp3",
+        run: "./Assets/Music/run.mp3",
+        sunday: "./Assets/Music/sunday.mp3"
+        // SFX
     };
     myNovel.locations = {
         kidRoom: {
             name: "Kid room",
-            background: "Images/Background/kid_room.png"
+            background: "./Images/Background/kid_room.png"
         },
         livingRoom: {
             name: "Living room",
@@ -25,47 +29,47 @@ var myNovel;
         },
         street: {
             name: "Street",
-            background: "Images/Background/Street.png"
+            background: "./Images/Background/Street.png"
         },
         cave: {
             name: "Cave",
-            background: "Images/Background/cave.png"
+            background: "./Images/Background/cave.png"
         },
         caveTwo: {
             name: "Cave Two",
-            background: "Images/Background/CaveTwo.png"
+            background: "./Images/Background/CaveTwo.png"
         },
         garage: {
             name: "Garage",
-            background: "Images/Background/garage.png"
+            background: "./Images/Background/garage.png"
         },
         graveyard: {
             name: "Graveyard",
-            background: "Images/Background/graveyard.png"
+            background: "./Images/Background/graveyard.png"
         },
         mineEntrance: {
             name: "Mine entrance",
-            background: "Images/Background/mineEntrance.png"
+            background: "./Images/Background/mineEntrance.png"
         },
         mineShaft: {
             name: "Mine shaft",
-            background: "Images/Background/mineShaft.png"
+            background: "./Images/Background/mineShaft.png"
         },
         mineShaftTwo: {
             name: "Mine shaft two",
-            background: "Images/Background/mineShaftTwo.png"
+            background: "./Images/Background/mineShaftTwo.png"
         },
         newShaft: {
             name: "New Shaft",
-            background: "Images/Background/newShaft.png"
+            background: "./Images/Background/newShaft.png"
         },
         sinkhole: {
             name: "Sinkhole",
-            background: "Images/Background/newShaft.png"
+            background: "./Images/Background/newShaft.png"
         },
         sinkholeInside: {
             name: "Sinkhole inside",
-            background: "Images/Background/newShaft.png"
+            background: "./Images/Background/newShaft.png"
         },
         /*
        Sinkloch
@@ -206,7 +210,8 @@ var myNovel;
         //FX Sound (Tür)
         await myNovel.ƒS.Location.show(myNovel.locations.begin);
         await myNovel.ƒS.update(2);
-        //Musik (Vögel)
+        await myNovel.ƒS.update(3);
+        await myNovel.ƒS.Sound.play(myNovel.sound.sunday, 0.5, true);
         await myNovel.ƒS.Location.show(myNovel.locations.intro);
         await myNovel.ƒS.update(1);
         await myNovel.ƒS.Location.show(myNovel.locations.livingRoom);

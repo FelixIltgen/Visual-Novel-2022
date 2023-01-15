@@ -22,7 +22,8 @@ namespace myNovel {
         //FX Sound (Tür)
         await ƒS.Location.show(locations.begin);
         await ƒS.update(2);
-        //Musik (Vögel)
+        await ƒS.update(3);
+        await ƒS.Sound.play(sound.sunday, 0.5, true);
         await ƒS.Location.show(locations.intro);
         await ƒS.update(1);
         await ƒS.Location.show(locations.livingRoom);

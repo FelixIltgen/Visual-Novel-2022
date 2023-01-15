@@ -8,7 +8,12 @@ declare namespace myNovel {
             edge: number;
         };
     };
-    let sound: {};
+    let sound: {
+        cave: string;
+        emptyCave: string;
+        run: string;
+        sunday: string;
+    };
     let locations: {
         kidRoom: {
             name: string;

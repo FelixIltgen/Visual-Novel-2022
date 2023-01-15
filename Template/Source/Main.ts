@@ -12,7 +12,10 @@ namespace myNovel {
 
   export let sound = {
     // themes
-
+    cave: "./Assets/Music/cave.mp3",
+    emptyCave: "./Assets/Music/emptyCave.mp3",
+    run: "./Assets/Music/run.mp3",
+    sunday: "./Assets/Music/sunday.mp3"
     // SFX
     
   };
@@ -20,7 +23,7 @@ namespace myNovel {
   export let locations = {
     kidRoom: {
       name: "Kid room",
-      background: "Images/Background/kid_room.png"
+      background: "./Images/Background/kid_room.png"
     },
     livingRoom: {
       name: "Living room",
@@ -28,47 +31,47 @@ namespace myNovel {
     },
     street: {
       name: "Street",
-      background: "Images/Background/Street.png"
+      background: "./Images/Background/Street.png"
     },
     cave: {
       name: "Cave",
-      background: "Images/Background/cave.png"
+      background: "./Images/Background/cave.png"
     },
     caveTwo: {
       name: "Cave Two",
-      background: "Images/Background/CaveTwo.png"
+      background: "./Images/Background/CaveTwo.png"
     },
     garage: {
       name: "Garage",
-      background: "Images/Background/garage.png"
+      background: "./Images/Background/garage.png"
     },
     graveyard: {
       name: "Graveyard",
-      background: "Images/Background/graveyard.png"
+      background: "./Images/Background/graveyard.png"
     },
     mineEntrance: {
       name: "Mine entrance",
-      background: "Images/Background/mineEntrance.png"
+      background: "./Images/Background/mineEntrance.png"
     },
     mineShaft: {
       name: "Mine shaft",
-      background: "Images/Background/mineShaft.png"
+      background: "./Images/Background/mineShaft.png"
     },
     mineShaftTwo: {
       name: "Mine shaft two",
-      background: "Images/Background/mineShaftTwo.png"
+      background: "./Images/Background/mineShaftTwo.png"
     },
     newShaft: {
       name: "New Shaft",
-      background: "Images/Background/newShaft.png"
+      background: "./Images/Background/newShaft.png"
     },
     sinkhole: {
       name: "Sinkhole",
-      background: "Images/Background/newShaft.png"
+      background: "./Images/Background/newShaft.png"
     },
     sinkholeInside: {
       name: "Sinkhole inside",
-      background: "Images/Background/newShaft.png"
+      background: "./Images/Background/newShaft.png"
     },
      /*
     Sinkloch
