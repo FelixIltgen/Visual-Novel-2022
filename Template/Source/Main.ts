@@ -138,7 +138,7 @@ namespace myNovel {
         angry: "Images/Characters/Maria/Maria_angry.png",
         neutral: "Images/Characters/Maria/Maria_neutral.png",
         neutralEyesClosed: "Images/Characters/Maria/Maria_neutralEyesClosed.png",
-        pleased: "Images/Characters/Maria/Maria_pleased.png",
+        pleased: "Images/Characters/Maria/Test.png",
         sad: "Images/Characters/Maria/Maria_sad.png",
         shock: "Images/Characters/Maria/Maria_shock.png"
       }

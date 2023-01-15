@@ -134,7 +134,7 @@ var myNovel;
                 angry: "Images/Characters/Maria/Maria_angry.png",
                 neutral: "Images/Characters/Maria/Maria_neutral.png",
                 neutralEyesClosed: "Images/Characters/Maria/Maria_neutralEyesClosed.png",
-                pleased: "Images/Characters/Maria/Maria_pleased.png",
+                pleased: "Images/Characters/Maria/Test.png",
                 sad: "Images/Characters/Maria/Maria_sad.png",
                 shock: "Images/Characters/Maria/Maria_shock.png"
             }
@@ -222,5 +222,28 @@ var myNovel;
         await myNovel.ƒS.Speech.tell(myNovel.characters.ben, text.ben.T0001);
     }
     myNovel.firstScene = firstScene;
+})(myNovel || (myNovel = {}));
+var myNovel;
+(function (myNovel) {
+    async function secondScene() {
+        console.log("Start scene One & Chapter one");
+        let text = {
+            narrator: {
+                T0001: ""
+            },
+            ben: {
+                T0001: ""
+            },
+            maria: {
+                T0001: ""
+            },
+            valentin: {
+                T0001: "",
+                T0002: "",
+                T0003: ""
+            }
+        };
+    }
+    myNovel.secondScene = secondScene;
 })(myNovel || (myNovel = {}));
 //# sourceMappingURL=Template.js.map

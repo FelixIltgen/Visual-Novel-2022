@@ -19,7 +19,6 @@ namespace myNovel {
                 T0003: "Tschüss, ihr beiden, habt einen schönen Tag."
             }
         };
-        
         //FX Sound (Tür)
         await ƒS.Location.show(locations.begin);
         await ƒS.update(2);
