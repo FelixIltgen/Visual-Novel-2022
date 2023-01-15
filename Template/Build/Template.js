@@ -17,7 +17,7 @@ var myNovel;
     myNovel.locations = {
         kidRoom: {
             name: "Kid room",
-            background: "Images/Background/kid_room"
+            background: "Images/Background/kid_room.png"
         },
         livingRoom: {
             name: "Living room",
@@ -25,54 +25,91 @@ var myNovel;
         },
         street: {
             name: "Street",
-            background: "Images/Background/Street"
+            background: "Images/Background/Street.png"
         },
         cave: {
             name: "Cave",
-            background: "Images/Background/cave"
+            background: "Images/Background/cave.png"
         },
         caveTwo: {
             name: "Cave Two",
-            background: "Images/Background/CaveTwo"
+            background: "Images/Background/CaveTwo.png"
         },
         garage: {
             name: "Garage",
-            background: "Images/Background/garage"
+            background: "Images/Background/garage.png"
         },
         graveyard: {
             name: "Graveyard",
-            background: "Images/Background/graveyard"
+            background: "Images/Background/graveyard.png"
         },
         mineEntrance: {
             name: "Mine entrance",
-            background: "Images/Background/mineEntrance"
+            background: "Images/Background/mineEntrance.png"
         },
         mineShaft: {
             name: "Mine shaft",
-            background: "Images/Background/mineShaft"
+            background: "Images/Background/mineShaft.png"
         },
         mineShaftTwo: {
             name: "Mine shaft two",
-            background: "Images/Background/mineShaftTwo"
+            background: "Images/Background/mineShaftTwo.png"
         },
         newShaft: {
             name: "New Shaft",
-            background: "Images/Background/newShaft"
+            background: "Images/Background/newShaft.png"
         },
         sinkhole: {
             name: "Sinkhole",
-            background: "Images/Background/newShaft"
+            background: "Images/Background/newShaft.png"
         },
         sinkholeInside: {
             name: "Sinkhole inside",
-            background: "Images/Background/newShaft"
-        }
+            background: "Images/Background/newShaft.png"
+        },
         /*
-        Sinkloch
-        Im Loch
-        Labyrinth
-        Schiff
-        */
+       Sinkloch
+       Im Loch
+       Labyrinth
+       Schiff
+       */
+        // Chapter Backgrounds
+        begin: {
+            name: "Begin",
+            background: "./Images/Background/Chapter/begin.png"
+        },
+        chapterOne: {
+            name: "Chapter One",
+            background: "Images/Background/Chapter/chapterOne.png"
+        },
+        chapterTwo: {
+            name: "Chapter Two",
+            background: "Images/Background/Chapter/chapterTwo.png"
+        },
+        chapterThree: {
+            name: "Chapter Three",
+            background: "Images/Background/Chapter/chapterThree.png"
+        },
+        chapterFour: {
+            name: "Chapter Four",
+            background: "Images/Background/Chapter/chapterFour.png"
+        },
+        chapterfive: {
+            name: "Chapter five",
+            background: "Images/Background/Chapter/chapterfive.png"
+        },
+        chapterSix: {
+            name: "Chapter Six",
+            background: "Images/Background/Chapter/chapterSix.png"
+        },
+        chapterSeven: {
+            name: "Chapter Seven",
+            background: "Images/Background/Chapter/chapterSeven.png"
+        },
+        intro: {
+            name: "Intro",
+            background: "Images/Background/Chapter/intro.png"
+        }
     };
     myNovel.characters = {
         narrator: {
@@ -82,38 +119,45 @@ var myNovel;
             name: "Ben",
             origin: myNovel.ƒS.ORIGIN.BOTTOMLEFT,
             pose: {
-                confident: "Images/Background/Ben/Ben_confident",
-                moreConfident: "Images/Background/Ben/Ben_more_confident",
-                normal: "Images/Background/Ben/Ben_normal",
-                ohman: "Images/Background/Ben/Ben_ohman",
-                sad: "Images/Background/Ben/Ben_sad",
-                thinking: "Images/Background/Ben/Ben_thinking"
+                confident: "Images/Characters/Ben/Ben_confident",
+                moreConfident: "Images/Characters/Ben/Ben_more_confident",
+                normal: "Images/Characters/Ben/Ben_normal",
+                ohman: "Images/Characters/Ben/Ben_ohman",
+                sad: "Images/Characters/Ben/Ben_sad",
+                thinking: "Images/Characters/Ben/Ben_thinking"
             }
         },
         maria: {
             name: "Maria",
             origin: myNovel.ƒS.ORIGIN.BOTTOMRIGHT,
             pose: {
-                angry: "Images/Background/Maria/Maria_angry",
-                neutral: "Images/Background/Maria/Maria_neutral",
-                neutralEyesClosed: "Images/Background/Maria/Maria_neutralEyesClosed",
-                pleased: "Images/Background/Maria/Maria_pleased",
-                sad: "Images/Background/Maria/Maria_sad",
-                shock: "Images/Background/Maria/Maria_shock"
+                angry: "Images/Characters/Maria/Maria_angry.png",
+                neutral: "Images/Characters/Maria/Maria_neutral.png",
+                neutralEyesClosed: "Images/Characters/Maria/Maria_neutralEyesClosed.png",
+                pleased: "Images/Characters/Maria/Maria_pleased.png",
+                sad: "Images/Characters/Maria/Maria_sad.png",
+                shock: "Images/Characters/Maria/Maria_shock.png"
             }
         },
         valentin: {
             name: "Valentin",
             origin: myNovel.ƒS.ORIGIN.BOTTOMLEFT,
             pose: {
-                solution: "Images/Background/Valentin/Valentin_solution",
-                giveUp: "Images/Background/Valentin/Valentin_giveUp",
-                mysterious: "Images/Background/Valentin/Valentin_mysterious",
-                normal: "Images/Background/Valentin/Valentin_normal",
-                sad: "Images/Background/Valentin/Valentin_sad",
-                smile: "Images/Background/Valentin/Valentin_smile"
+                solution: "Images/Characters/Valentin/Valentin_solution.png",
+                giveUp: "Images/Characters/Valentin/Valentin_giveUp.png",
+                mysterious: "Images/Characters/Valentin/Valentin_mysterious.png",
+                normal: "Images/Characters/Valentin/Valentin_normal.png",
+                sad: "Images/Characters/Valentin/Valentin_sad.png",
+                smile: "Images/Characters/Valentin/Valentin_smile.png"
             }
         }
+    };
+    myNovel.newPositions = {
+        bottomleft: new FudgeStory.Position(950, -540),
+        bottomright: new FudgeStory.Position(-900, -550),
+        bottomcenter: new FudgeStory.Position(0, -540),
+        rightout: new FudgeStory.Position(2470, -540),
+        leftout: new FudgeStory.Position(-2470, -540)
     };
     myNovel.dataForSave = {
         nameProtagonist: ""
@@ -148,7 +192,7 @@ var myNovel;
                 T0001: "Valentin macht sich auf den Weg zum Bergwerk."
             },
             ben: {
-                T001: "Tschüss Papa."
+                T0001: "Tschüss Papa."
             },
             maria: {
                 T0001: "Alles klar, bis später pass auf dich auf, heute ist doch ein wichtiger Tag."
@@ -159,9 +203,23 @@ var myNovel;
                 T0003: "Tschüss, ihr beiden, habt einen schönen Tag."
             }
         };
+        //FX Sound (Tür)
+        await myNovel.ƒS.Location.show(myNovel.locations.begin);
+        await myNovel.ƒS.update(2);
+        //Musik (Vögel)
+        await myNovel.ƒS.Location.show(myNovel.locations.intro);
+        await myNovel.ƒS.update(1);
         await myNovel.ƒS.Location.show(myNovel.locations.livingRoom);
-        await myNovel.ƒS.update();
-        await myNovel.ƒS.Speech.tell(myNovel.characters.narrator, text.narrator.T0001);
+        await myNovel.ƒS.update(20);
+        await myNovel.ƒS.Character.show(myNovel.characters.valentin, myNovel.characters.valentin.pose.smile, myNovel.newPositions.bottomright);
+        await myNovel.ƒS.update(1);
+        await myNovel.ƒS.Speech.tell(myNovel.characters.valentin, text.valentin.T0001);
+        await myNovel.ƒS.Character.show(myNovel.characters.maria, myNovel.characters.maria.pose.pleased, myNovel.newPositions.bottomleft);
+        await myNovel.ƒS.update(1);
+        await myNovel.ƒS.Speech.tell(myNovel.characters.maria, text.maria.T0001);
+        await myNovel.ƒS.Speech.tell(myNovel.characters.valentin, text.valentin.T0002);
+        await myNovel.ƒS.Speech.tell(myNovel.characters.valentin, text.valentin.T0003);
+        await myNovel.ƒS.Speech.tell(myNovel.characters.ben, text.ben.T0001);
     }
     myNovel.firstScene = firstScene;
 })(myNovel || (myNovel = {}));

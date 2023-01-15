@@ -62,6 +62,42 @@ declare namespace myNovel {
             name: string;
             background: string;
         };
+        begin: {
+            name: string;
+            background: string;
+        };
+        chapterOne: {
+            name: string;
+            background: string;
+        };
+        chapterTwo: {
+            name: string;
+            background: string;
+        };
+        chapterThree: {
+            name: string;
+            background: string;
+        };
+        chapterFour: {
+            name: string;
+            background: string;
+        };
+        chapterfive: {
+            name: string;
+            background: string;
+        };
+        chapterSix: {
+            name: string;
+            background: string;
+        };
+        chapterSeven: {
+            name: string;
+            background: string;
+        };
+        intro: {
+            name: string;
+            background: string;
+        };
     };
     let characters: {
         narrator: {
@@ -103,6 +139,13 @@ declare namespace myNovel {
                 smile: string;
             };
         };
+    };
+    let newPositions: {
+        bottomleft: ƒ.Vector2;
+        bottomright: ƒ.Vector2;
+        bottomcenter: ƒ.Vector2;
+        rightout: ƒ.Vector2;
+        leftout: ƒ.Vector2;
     };
     let dataForSave: {
         nameProtagonist: string;

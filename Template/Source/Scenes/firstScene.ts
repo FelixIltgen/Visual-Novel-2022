@@ -8,7 +8,7 @@ namespace myNovel {
                 T0001: "Valentin macht sich auf den Weg zum Bergwerk."
             },
             ben: {
-                T001: "Tschüss Papa."
+                T0001: "Tschüss Papa."
             },
             maria: {
                 T0001: "Alles klar, bis später pass auf dich auf, heute ist doch ein wichtiger Tag."
@@ -19,9 +19,24 @@ namespace myNovel {
                 T0003: "Tschüss, ihr beiden, habt einen schönen Tag."
             }
         };
-
+        
+        //FX Sound (Tür)
+        await ƒS.Location.show(locations.begin);
+        await ƒS.update(2);
+        //Musik (Vögel)
+        await ƒS.Location.show(locations.intro);
+        await ƒS.update(1);
         await ƒS.Location.show(locations.livingRoom);
-        await ƒS.update();
-        await ƒS.Speech.tell(characters.narrator, text.narrator.T0001);
+        await ƒS.update(20);
+        await ƒS.Character.show(characters.valentin, characters.valentin.pose.smile, newPositions.bottomright);
+        await ƒS.update(1);
+        await ƒS.Speech.tell(characters.valentin, text.valentin.T0001);
+        await ƒS.Character.show(characters.maria, characters.maria.pose.pleased, newPositions.bottomleft);
+        await ƒS.update(1);
+        await ƒS.Speech.tell(characters.maria, text.maria.T0001);
+        await ƒS.Speech.tell(characters.valentin, text.valentin.T0002);
+        await ƒS.Speech.tell(characters.valentin, text.valentin.T0003);
+        await ƒS.Speech.tell(characters.ben, text.ben.T0001);
+
       }
 }
