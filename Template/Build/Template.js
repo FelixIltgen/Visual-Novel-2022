@@ -15,8 +15,9 @@ var myNovel;
         cave: "./Assets/Music/cave.mp3",
         emptyCave: "./Assets/Music/emptyCave.mp3",
         run: "./Assets/Music/run.mp3",
-        sunday: "./Assets/Music/sunday.mp3"
+        sunday: "./Assets/Music/sunday.mp3",
         // SFX
+        closingGate: "./Assets/Sounds/doorClosing.mp3"
     };
     myNovel.locations = {
         kidRoom: {
@@ -154,6 +155,11 @@ var myNovel;
                 sad: "Images/Characters/Valentin/Valentin_sad.png",
                 smile: "Images/Characters/Valentin/Valentin_smile.png"
             }
+        },
+        andrea: {
+            name: "Andrea",
+            origin: myNovel.ƒS.ORIGIN.BOTTOMLEFT,
+            pose: {}
         }
     };
     myNovel.newPositions = {
@@ -169,7 +175,8 @@ var myNovel;
     window.addEventListener("load", start);
     function start(_event) {
         let scenes = [
-            { scene: myNovel.firstScene, name: "First scene", id: "test" }
+            { scene: myNovel.firstScene, name: "First scene" },
+            { scene: myNovel.secondScene, name: "First scene" }
         ];
         let uiElement = document.querySelector("[type=interface]");
         myNovel.dataForSave = myNovel.ƒS.Progress.setData(myNovel.dataForSave, uiElement);
@@ -208,6 +215,7 @@ var myNovel;
             }
         };
         //FX Sound (Tür)
+        await myNovel.ƒS.Sound.play(myNovel.sound.closingGate, 0.5, false);
         await myNovel.ƒS.Location.show(myNovel.locations.begin);
         await myNovel.ƒS.update(2);
         await myNovel.ƒS.update(3);
@@ -225,6 +233,7 @@ var myNovel;
         await myNovel.ƒS.Speech.tell(myNovel.characters.valentin, text.valentin.T0002);
         await myNovel.ƒS.Speech.tell(myNovel.characters.valentin, text.valentin.T0003);
         await myNovel.ƒS.Speech.tell(myNovel.characters.ben, text.ben.T0001);
+        await myNovel.ƒS.Speech.tell(myNovel.characters.narrator, text.narrator.T0001);
     }
     myNovel.firstScene = firstScene;
 })(myNovel || (myNovel = {}));
@@ -233,21 +242,25 @@ var myNovel;
     async function secondScene() {
         console.log("Start scene One & Chapter one");
         let text = {
-            narrator: {
-                T0001: ""
-            },
-            ben: {
-                T0001: ""
-            },
-            maria: {
-                T0001: ""
-            },
             valentin: {
-                T0001: "",
-                T0002: "",
-                T0003: ""
+                T0001: "Guten Morgen Andrea, alles klar?",
+                T0002: "Wie immer eigentlich. Wollen wir loslegen?"
+            },
+            Andrea: {
+                T0001: "Klar, wie jeden Morgen eigentlich. Und bei dir, wie siehts bei dir aus?",
+                T0002: "Perfekt, lass uns loslegen!"
             }
         };
+        await myNovel.ƒS.Location.show(myNovel.locations.mineEntrance);
+        await myNovel.ƒS.update();
+        await myNovel.ƒS.Character.show(myNovel.characters.valentin, myNovel.characters.valentin.pose.normal, myNovel.newPositions.bottomright);
+        await myNovel.ƒS.update(1);
+        await myNovel.ƒS.Speech.tell(myNovel.characters.valentin, text.valentin.T0001);
+        await myNovel.ƒS.Character.show(myNovel.characters.valentin, myNovel.characters.valentin.pose.normal, myNovel.newPositions.bottomright);
+        await myNovel.ƒS.update(1);
+        await myNovel.ƒS.Speech.tell(myNovel.characters.andrea, text.Andrea.T0001);
+        await myNovel.ƒS.Speech.tell(myNovel.characters.valentin, text.valentin.T0002);
+        await myNovel.ƒS.Speech.tell(myNovel.characters.andrea, text.Andrea.T0002);
     }
     myNovel.secondScene = secondScene;
 })(myNovel || (myNovel = {}));

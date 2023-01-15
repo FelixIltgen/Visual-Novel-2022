@@ -20,6 +20,7 @@ namespace myNovel {
             }
         };
         //FX Sound (Tür)
+        await ƒS.Sound.play(sound.closingGate, 0.5, false);
         await ƒS.Location.show(locations.begin);
         await ƒS.update(2);
         await ƒS.update(3);
@@ -37,6 +38,7 @@ namespace myNovel {
         await ƒS.Speech.tell(characters.valentin, text.valentin.T0002);
         await ƒS.Speech.tell(characters.valentin, text.valentin.T0003);
         await ƒS.Speech.tell(characters.ben, text.ben.T0001);
+        await ƒS.Speech.tell(characters.narrator, text.narrator.T0001);
 
       }
 }

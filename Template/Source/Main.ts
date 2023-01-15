@@ -15,9 +15,9 @@ namespace myNovel {
     cave: "./Assets/Music/cave.mp3",
     emptyCave: "./Assets/Music/emptyCave.mp3",
     run: "./Assets/Music/run.mp3",
-    sunday: "./Assets/Music/sunday.mp3"
+    sunday: "./Assets/Music/sunday.mp3",
     // SFX
-    
+    closingGate: "./Assets/Sounds/doorClosing.mp3"
   };
 
   export let locations = {
@@ -157,6 +157,13 @@ namespace myNovel {
         sad: "Images/Characters/Valentin/Valentin_sad.png",
         smile: "Images/Characters/Valentin/Valentin_smile.png"
       }
+    },
+    andrea: {
+      name: "Andrea",
+      origin: ƒS.ORIGIN.BOTTOMLEFT,
+      pose: {
+        
+      }
     }
   };
   export let newPositions = {
@@ -175,7 +182,8 @@ namespace myNovel {
   window.addEventListener("load", start);
   function start(_event: Event): void {
     let scenes: ƒS.Scenes = [
-      { scene: firstScene, name: "First scene", id: "test"}
+      { scene: firstScene, name: "First scene"},
+      { scene: secondScene, name: "First scene"}
     ];
 
 

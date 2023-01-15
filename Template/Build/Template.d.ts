@@ -13,6 +13,7 @@ declare namespace myNovel {
         emptyCave: string;
         run: string;
         sunday: string;
+        closingGate: string;
     };
     let locations: {
         kidRoom: {
@@ -143,6 +144,11 @@ declare namespace myNovel {
                 sad: string;
                 smile: string;
             };
+        };
+        andrea: {
+            name: string;
+            origin: ƒ.ORIGIN2D;
+            pose: {};
         };
     };
     let newPositions: {
