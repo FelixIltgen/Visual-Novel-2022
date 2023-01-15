@@ -148,10 +148,16 @@ declare namespace myNovel {
         andrea: {
             name: string;
             origin: ƒ.ORIGIN2D;
-            pose: {};
+            pose: {
+                argue: string;
+                mad: string;
+                normal: string;
+                ugh: string;
+            };
         };
     };
     let newPositions: {
+        bottomleftMaria: ƒ.Vector2;
         bottomleft: ƒ.Vector2;
         bottomright: ƒ.Vector2;
         bottomcenter: ƒ.Vector2;

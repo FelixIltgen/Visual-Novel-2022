@@ -162,12 +162,16 @@ namespace myNovel {
       name: "Andrea",
       origin: ƒS.ORIGIN.BOTTOMLEFT,
       pose: {
-        
+        argue: "Images/Characters/Weitere/Andrea_argue.png",
+        mad: "Images/Characters/Weitere/Andrea_mad.png",
+        normal: "Images/Characters/Weitere/Andrea_normal.png",
+        ugh: "Images/Characters/Weitere/Andrea_ugh.png"
       }
     }
   };
   export let newPositions = {
-    bottomleft: new FudgeStory.Position(950, -540),
+    bottomleftMaria: new FudgeStory.Position(950, -540),
+    bottomleft: new FudgeStory.Position(350, -540),
     bottomright: new FudgeStory.Position(-900, -550),
     bottomcenter: new FudgeStory.Position(0, -540),
     rightout: new FudgeStory.Position(2470, -540),
@@ -182,7 +186,7 @@ namespace myNovel {
   window.addEventListener("load", start);
   function start(_event: Event): void {
     let scenes: ƒS.Scenes = [
-      { scene: firstScene, name: "First scene"},
+      //{ scene: firstScene, name: "First scene"},
       { scene: secondScene, name: "First scene"}
     ];
 

@@ -32,7 +32,7 @@ namespace myNovel {
         await ƒS.Character.show(characters.valentin, characters.valentin.pose.smile, newPositions.bottomright);
         await ƒS.update(1);
         await ƒS.Speech.tell(characters.valentin, text.valentin.T0001);
-        await ƒS.Character.show(characters.maria, characters.maria.pose.pleased, newPositions.bottomleft);
+        await ƒS.Character.show(characters.maria, characters.maria.pose.pleased, newPositions.bottomleftMaria);
         await ƒS.update(1);
         await ƒS.Speech.tell(characters.maria, text.maria.T0001);
         await ƒS.Speech.tell(characters.valentin, text.valentin.T0002);

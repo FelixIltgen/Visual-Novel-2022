@@ -159,11 +159,17 @@ var myNovel;
         andrea: {
             name: "Andrea",
             origin: myNovel.ƒS.ORIGIN.BOTTOMLEFT,
-            pose: {}
+            pose: {
+                argue: "Images/Characters/Weitere/Andrea_argue.png",
+                mad: "Images/Characters/Weitere/Andrea_mad.png",
+                normal: "Images/Characters/Weitere/Andrea_normal.png",
+                ugh: "Images/Characters/Weitere/Andrea_ugh.png"
+            }
         }
     };
     myNovel.newPositions = {
-        bottomleft: new FudgeStory.Position(950, -540),
+        bottomleftMaria: new FudgeStory.Position(950, -540),
+        bottomleft: new FudgeStory.Position(350, -540),
         bottomright: new FudgeStory.Position(-900, -550),
         bottomcenter: new FudgeStory.Position(0, -540),
         rightout: new FudgeStory.Position(2470, -540),
@@ -175,7 +181,7 @@ var myNovel;
     window.addEventListener("load", start);
     function start(_event) {
         let scenes = [
-            { scene: myNovel.firstScene, name: "First scene" },
+            //{ scene: firstScene, name: "First scene"},
             { scene: myNovel.secondScene, name: "First scene" }
         ];
         let uiElement = document.querySelector("[type=interface]");
@@ -227,7 +233,7 @@ var myNovel;
         await myNovel.ƒS.Character.show(myNovel.characters.valentin, myNovel.characters.valentin.pose.smile, myNovel.newPositions.bottomright);
         await myNovel.ƒS.update(1);
         await myNovel.ƒS.Speech.tell(myNovel.characters.valentin, text.valentin.T0001);
-        await myNovel.ƒS.Character.show(myNovel.characters.maria, myNovel.characters.maria.pose.pleased, myNovel.newPositions.bottomleft);
+        await myNovel.ƒS.Character.show(myNovel.characters.maria, myNovel.characters.maria.pose.pleased, myNovel.newPositions.bottomleftMaria);
         await myNovel.ƒS.update(1);
         await myNovel.ƒS.Speech.tell(myNovel.characters.maria, text.maria.T0001);
         await myNovel.ƒS.Speech.tell(myNovel.characters.valentin, text.valentin.T0002);
@@ -256,7 +262,7 @@ var myNovel;
         await myNovel.ƒS.Character.show(myNovel.characters.valentin, myNovel.characters.valentin.pose.normal, myNovel.newPositions.bottomright);
         await myNovel.ƒS.update(1);
         await myNovel.ƒS.Speech.tell(myNovel.characters.valentin, text.valentin.T0001);
-        await myNovel.ƒS.Character.show(myNovel.characters.valentin, myNovel.characters.valentin.pose.normal, myNovel.newPositions.bottomright);
+        await myNovel.ƒS.Character.show(myNovel.characters.andrea, myNovel.characters.andrea.pose.normal, myNovel.newPositions.bottomleft);
         await myNovel.ƒS.update(1);
         await myNovel.ƒS.Speech.tell(myNovel.characters.andrea, text.Andrea.T0001);
         await myNovel.ƒS.Speech.tell(myNovel.characters.valentin, text.valentin.T0002);
