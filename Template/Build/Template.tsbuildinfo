@@ -3,9 +3,9 @@
     "commonSourceDirectory": "..",
     "sourceFiles": [
       "../Source/Main.ts",
-      "../Source/Scenes/Scene.ts",
       "../Source/Scenes/firstScene.ts",
-      "../Source/Scenes/secondScene.ts"
+      "../Source/Scenes/secondScene.ts",
+      "../Source/Scenes/thirdScene.ts"
     ],
     "js": {
       "sections": [
@@ -17,7 +17,7 @@
         },
         {
           "pos": 15,
-          "end": 11032,
+          "end": 13613,
           "kind": "text"
         }
       ],
@@ -45,7 +45,7 @@
       "sections": [
         {
           "pos": 0,
-          "end": 4475,
+          "end": 4480,
           "kind": "text"
         }
       ]

@@ -11,7 +11,7 @@ var myNovel;
         },
         leftFade: {
             duration: 1,
-            alpha: "./Assets/Transition/leftFade.png",
+            alpha: "./Assets/Transition/leftFade.jpg",
             edge: 1
         }
     };
@@ -186,8 +186,9 @@ var myNovel;
     window.addEventListener("load", start);
     function start(_event) {
         let scenes = [
-            { scene: myNovel.firstScene, name: "First scene" },
-            { scene: myNovel.secondScene, name: "First scene" }
+            //{ scene: firstScene, name: "First scene"},
+            //{ scene: secondScene, name: "Second scene"},
+            { scene: myNovel.thirdScene, name: "Thrid scene" }
         ];
         let uiElement = document.querySelector("[type=interface]");
         myNovel.dataForSave = myNovel.ƒS.Progress.setData(myNovel.dataForSave, uiElement);
@@ -195,15 +196,6 @@ var myNovel;
         myNovel.ƒS.Progress.go(scenes);
         myNovel.ƒS.Speech.hide();
     }
-})(myNovel || (myNovel = {}));
-var myNovel;
-(function (myNovel) {
-    async function Scene() {
-        console.log("Test");
-        await myNovel.ƒS.Location.show(myNovel.locations.livingRoom);
-        await myNovel.ƒS.update();
-    }
-    myNovel.Scene = Scene;
 })(myNovel || (myNovel = {}));
 var myNovel;
 (function (myNovel) {
@@ -273,7 +265,47 @@ var myNovel;
         await myNovel.ƒS.Speech.tell(myNovel.characters.andrea, text.Andrea.T0001);
         await myNovel.ƒS.Speech.tell(myNovel.characters.valentin, text.valentin.T0002);
         await myNovel.ƒS.Speech.tell(myNovel.characters.andrea, text.Andrea.T0002);
+        await myNovel.ƒS.Character.hideAll();
     }
     myNovel.secondScene = secondScene;
+})(myNovel || (myNovel = {}));
+var myNovel;
+(function (myNovel) {
+    async function thirdScene() {
+        console.log("Start scene One & Chapter one");
+        let text = {
+            valentin: {
+                T0001: "Ahhhh, ich bin schon etwas aufgeregt, wenn wir heute den neuen Stollen freisprengen sollen.",
+                T0002: "Hast du nicht den Bericht von der Untersuchung gelesen?",
+                T0003: "Die Gesteinsschicht, in die der neue Stollen gesprengt werden soll, ist nicht zu 100% sicher.",
+                T0004: "Ja, aber du kennst die Verwaltung, es geht am Ende immer ums Geld und in der Gesteinsschicht soll sich sehr viel Eisen befinden.",
+                T0005: "Hoffen wir es mal..."
+            },
+            Andrea: {
+                T0001: "Warum den?, es wird schon nichts passieren.",
+                T0002: "Nein, warum was steht den so schlimmes drin?",
+                T0003: "Ich dachte, die Verwaltung lässt uns nur arbeiten, wenn es zu 100% sicher ist?",
+                T0004: "Toll, und dafür müssen wir uns der Gefahr aussetzen. Am Ende bleibt halt immer alles an uns hängen, naja es wird schon nichts passieren."
+            }
+        };
+        await myNovel.ƒS.Sound.play(myNovel.sound.sunday, 0, true);
+        await myNovel.ƒS.Sound.play(myNovel.sound.cave, 0.1, true);
+        await myNovel.ƒS.Location.show(myNovel.locations.mineShaftTwo);
+        await myNovel.ƒS.update(myNovel.transition.leftFade.duration, myNovel.transition.leftFade.alpha, myNovel.transition.leftFade.edge);
+        await myNovel.ƒS.Character.show(myNovel.characters.valentin, myNovel.characters.valentin.pose.normal, myNovel.newPositions.bottomright);
+        await myNovel.ƒS.update(1);
+        await myNovel.ƒS.Speech.tell(myNovel.characters.valentin, text.valentin.T0001);
+        await myNovel.ƒS.Character.show(myNovel.characters.andrea, myNovel.characters.andrea.pose.normal, myNovel.newPositions.bottomleft);
+        await myNovel.ƒS.update(1);
+        await myNovel.ƒS.Speech.tell(myNovel.characters.andrea, text.Andrea.T0001);
+        await myNovel.ƒS.Speech.tell(myNovel.characters.valentin, text.valentin.T0002);
+        await myNovel.ƒS.Speech.tell(myNovel.characters.andrea, text.Andrea.T0002);
+        await myNovel.ƒS.Speech.tell(myNovel.characters.valentin, text.valentin.T0003);
+        await myNovel.ƒS.Speech.tell(myNovel.characters.andrea, text.Andrea.T0003);
+        await myNovel.ƒS.Speech.tell(myNovel.characters.valentin, text.valentin.T0004);
+        await myNovel.ƒS.Speech.tell(myNovel.characters.andrea, text.Andrea.T0004);
+        await myNovel.ƒS.Speech.tell(myNovel.characters.valentin, text.valentin.T0005);
+    }
+    myNovel.thirdScene = thirdScene;
 })(myNovel || (myNovel = {}));
 //# sourceMappingURL=Template.js.map

@@ -10,7 +10,7 @@ namespace myNovel {
     },
     leftFade: {
       duration: 1,
-      alpha: "./Assets/Transition/leftFade.png",
+      alpha: "./Assets/Transition/leftFade.jpg",
       edge: 1
     }
   };
@@ -191,8 +191,9 @@ namespace myNovel {
   window.addEventListener("load", start);
   function start(_event: Event): void {
     let scenes: ƒS.Scenes = [
-      { scene: firstScene, name: "First scene"},
-      { scene: secondScene, name: "First scene"}
+      //{ scene: firstScene, name: "First scene"},
+      //{ scene: secondScene, name: "Second scene"},
+      { scene: thirdScene, name: "Thrid scene"}
     ];
 
 
