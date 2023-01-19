@@ -3,9 +3,14 @@ namespace myNovel {
   export import ƒS = FudgeStory;
    
   export let transition = {
-    puzzle: {
+    fade: {
       duration: 1,
-      alpha: "",
+      alpha: "./Assets/Transition/fade.png",
+      edge: 1
+    },
+    leftFade: {
+      duration: 1,
+      alpha: "./Assets/Transition/leftFade.png",
       edge: 1
     }
   };
@@ -186,7 +191,7 @@ namespace myNovel {
   window.addEventListener("load", start);
   function start(_event: Event): void {
     let scenes: ƒS.Scenes = [
-      //{ scene: firstScene, name: "First scene"},
+      { scene: firstScene, name: "First scene"},
       { scene: secondScene, name: "First scene"}
     ];
 

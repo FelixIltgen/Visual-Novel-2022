@@ -14,7 +14,7 @@ namespace myNovel {
         };
         
         await ƒS.Location.show(locations.mineEntrance);
-        await ƒS.update();
+        await ƒS.update(transition.fade.duration, transition.fade.alpha, transition.fade.edge);
         await ƒS.Character.show(characters.valentin, characters.valentin.pose.normal, newPositions.bottomright);
         await ƒS.update(1);
         await ƒS.Speech.tell(characters.valentin, text.valentin.T0001);
@@ -23,5 +23,6 @@ namespace myNovel {
         await ƒS.Speech.tell(characters.andrea, text.Andrea.T0001);
         await ƒS.Speech.tell(characters.valentin, text.valentin.T0002);
         await ƒS.Speech.tell(characters.andrea, text.Andrea.T0002);
+        await ƒS.Character.hideAll();
       }
 }

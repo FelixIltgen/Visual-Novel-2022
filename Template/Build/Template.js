@@ -4,9 +4,14 @@ var myNovel;
     myNovel.ƒ = FudgeCore;
     myNovel.ƒS = FudgeStory;
     myNovel.transition = {
-        puzzle: {
+        fade: {
             duration: 1,
-            alpha: "",
+            alpha: "./Assets/Transition/fade.png",
+            edge: 1
+        },
+        leftFade: {
+            duration: 1,
+            alpha: "./Assets/Transition/leftFade.png",
             edge: 1
         }
     };
@@ -181,7 +186,7 @@ var myNovel;
     window.addEventListener("load", start);
     function start(_event) {
         let scenes = [
-            //{ scene: firstScene, name: "First scene"},
+            { scene: myNovel.firstScene, name: "First scene" },
             { scene: myNovel.secondScene, name: "First scene" }
         ];
         let uiElement = document.querySelector("[type=interface]");
@@ -240,6 +245,7 @@ var myNovel;
         await myNovel.ƒS.Speech.tell(myNovel.characters.valentin, text.valentin.T0003);
         await myNovel.ƒS.Speech.tell(myNovel.characters.ben, text.ben.T0001);
         await myNovel.ƒS.Speech.tell(myNovel.characters.narrator, text.narrator.T0001);
+        await myNovel.ƒS.Character.hideAll();
     }
     myNovel.firstScene = firstScene;
 })(myNovel || (myNovel = {}));
@@ -258,7 +264,7 @@ var myNovel;
             }
         };
         await myNovel.ƒS.Location.show(myNovel.locations.mineEntrance);
-        await myNovel.ƒS.update();
+        await myNovel.ƒS.update(myNovel.transition.fade.duration, myNovel.transition.fade.alpha, myNovel.transition.fade.edge);
         await myNovel.ƒS.Character.show(myNovel.characters.valentin, myNovel.characters.valentin.pose.normal, myNovel.newPositions.bottomright);
         await myNovel.ƒS.update(1);
         await myNovel.ƒS.Speech.tell(myNovel.characters.valentin, text.valentin.T0001);
