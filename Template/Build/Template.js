@@ -143,10 +143,9 @@ var myNovel;
             pose: {
                 angry: "Images/Characters/Maria/Maria_angry.png",
                 neutral: "Images/Characters/Maria/Maria_neutral.png",
-                neutralEyesClosed: "Images/Characters/Maria/Maria_neutralEyesClosed.png",
-                pleased: "Images/Characters/Maria/Test.png",
-                sad: "Images/Characters/Maria/Maria_sad.png",
-                shock: "Images/Characters/Maria/Maria_shock.png"
+                happy: "Images/Characters/Maria/Maria_happy.png",
+                pleased: "Images/Characters/Maria/pleased.png",
+                sad: "Images/Characters/Maria/Maria_sad.png"
             }
         },
         valentin: {
@@ -186,9 +185,7 @@ var myNovel;
     window.addEventListener("load", start);
     function start(_event) {
         let scenes = [
-            //{ scene: firstScene, name: "First scene"},
-            //{ scene: secondScene, name: "Second scene"},
-            { scene: myNovel.thirdScene, name: "Thrid scene" }
+            { scene: myNovel.firstScene, name: "First scene" },
         ];
         let uiElement = document.querySelector("[type=interface]");
         myNovel.dataForSave = myNovel.ƒS.Progress.setData(myNovel.dataForSave, uiElement);
@@ -230,7 +227,7 @@ var myNovel;
         await myNovel.ƒS.Character.show(myNovel.characters.valentin, myNovel.characters.valentin.pose.smile, myNovel.newPositions.bottomright);
         await myNovel.ƒS.update(1);
         await myNovel.ƒS.Speech.tell(myNovel.characters.valentin, text.valentin.T0001);
-        await myNovel.ƒS.Character.show(myNovel.characters.maria, myNovel.characters.maria.pose.pleased, myNovel.newPositions.bottomleftMaria);
+        await myNovel.ƒS.Character.show(myNovel.characters.maria, myNovel.characters.maria.pose.sad, myNovel.newPositions.bottomleftMaria);
         await myNovel.ƒS.update(1);
         await myNovel.ƒS.Speech.tell(myNovel.characters.maria, text.maria.T0001);
         await myNovel.ƒS.Speech.tell(myNovel.characters.valentin, text.valentin.T0002);
@@ -240,6 +237,48 @@ var myNovel;
         await myNovel.ƒS.Character.hideAll();
     }
     myNovel.firstScene = firstScene;
+})(myNovel || (myNovel = {}));
+var myNovel;
+(function (myNovel) {
+    async function fourthScene() {
+        console.log("Start scene One & Chapter one");
+        let text = {
+            valentin: {
+                T0001: "Wir müssen erst den restlichen Schutt von gestern beiseite räumen, sonst ist es hier viel zu eng, die andere Schicht hat auch schon fast alle Sprengladungen platziert wir müssen nur die letzte anbringen.",
+                T0002: "Okay, klingt gut.",
+                T0003: "Okay, ich habe das Dynamit vorbereitet, hast du so weit alles vorbereitet?",
+                T0004: "Alles klar...",
+                T0005: "...",
+                T0006: "Okay, das Dynamit ist platziert, lass uns in Deckung gehen.",
+                T0007: "Bist du bereit?",
+                T0008: "",
+                T0009: "",
+                T00010: "",
+                T00011: ""
+            },
+            Andrea: {
+                T0001: "Okay, lass uns loslegen.",
+                T0002: "Lass mich das Geröll wegräumen, dann kannst du dich um die letzte Sprengladung kümmern und das Dynamit holen.",
+                T0003: "Ja, von meiner Seite ist alles bereit, du kannst das Dynamit platzieren.",
+                T0004: "Ja, ich bin bereit ... lass es knallen!!",
+                T0005: "",
+                T0006: "",
+                T0007: "",
+                T0008: ""
+            },
+            Narrator: {
+                T0001: "Valentin geht zum Lager und holt die letzte Stange Dynamit.",
+                T0002: "",
+                T0003: "",
+                T0004: "",
+                T0005: "",
+                T0006: ""
+            }
+        };
+        await myNovel.ƒS.Location.show(myNovel.locations.mineShaftTwo);
+        await myNovel.ƒS.update(myNovel.transition.leftFade.duration, myNovel.transition.leftFade.alpha, myNovel.transition.leftFade.edge);
+    }
+    myNovel.fourthScene = fourthScene;
 })(myNovel || (myNovel = {}));
 var myNovel;
 (function (myNovel) {

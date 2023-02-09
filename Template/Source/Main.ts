@@ -145,10 +145,9 @@ namespace myNovel {
       pose: {
         angry: "Images/Characters/Maria/Maria_angry.png",
         neutral: "Images/Characters/Maria/Maria_neutral.png",
-        neutralEyesClosed: "Images/Characters/Maria/Maria_neutralEyesClosed.png",
-        pleased: "Images/Characters/Maria/Test.png",
-        sad: "Images/Characters/Maria/Maria_sad.png",
-        shock: "Images/Characters/Maria/Maria_shock.png"
+        happy: "Images/Characters/Maria/Maria_happy.png",
+        pleased: "Images/Characters/Maria/pleased.png",
+        sad: "Images/Characters/Maria/Maria_sad.png"
       }
     },
     valentin: {
@@ -191,9 +190,9 @@ namespace myNovel {
   window.addEventListener("load", start);
   function start(_event: Event): void {
     let scenes: ƒS.Scenes = [
-      //{ scene: firstScene, name: "First scene"},
+      { scene: firstScene, name: "First scene"},
       //{ scene: secondScene, name: "Second scene"},
-      { scene: thirdScene, name: "Thrid scene"}
+      //{ scene: thirdScene, name: "Thrid scene"}
     ];
 
 

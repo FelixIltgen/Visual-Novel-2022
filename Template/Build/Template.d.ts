@@ -132,10 +132,9 @@ declare namespace myNovel {
             pose: {
                 angry: string;
                 neutral: string;
-                neutralEyesClosed: string;
+                happy: string;
                 pleased: string;
                 sad: string;
-                shock: string;
             };
         };
         valentin: {
@@ -175,6 +174,9 @@ declare namespace myNovel {
 }
 declare namespace myNovel {
     function firstScene(): ƒS.SceneReturn;
+}
+declare namespace myNovel {
+    function fourthScene(): ƒS.SceneReturn;
 }
 declare namespace myNovel {
     function secondScene(): ƒS.SceneReturn;
