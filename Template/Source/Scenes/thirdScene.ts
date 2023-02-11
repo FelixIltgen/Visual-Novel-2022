@@ -1,6 +1,6 @@
 namespace myNovel {
     export async function thirdScene(): ƒS.SceneReturn {
-        console.log("Start scene One & Chapter one");
+        console.log("");
         
         let text = {
             valentin: {

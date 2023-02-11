@@ -1,7 +1,7 @@
 
 namespace myNovel {
     export async function firstScene(): ƒS.SceneReturn {
-        console.log("Start scene One & Chapter one");
+        console.log("Start Prolog");
         
         let text = {
             narrator: {
