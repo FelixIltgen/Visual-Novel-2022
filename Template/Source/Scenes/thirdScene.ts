@@ -11,7 +11,7 @@ namespace myNovel {
                 T0005: "Hoffen wir es mal..."
 
             },
-            Andrea: {
+            andrea: {
                 T0001: "Warum den?, es wird schon nichts passieren.",
                 T0002: "Nein, warum was steht den so schlimmes drin?",
                 T0003: "Ich dachte, die Verwaltung lässt uns nur arbeiten, wenn es zu 100% sicher ist?",
@@ -27,13 +27,14 @@ namespace myNovel {
         await ƒS.Speech.tell(characters.valentin, text.valentin.T0001);
         await ƒS.Character.show(characters.andrea, characters.andrea.pose.normal, newPositions.bottomleft);
         await ƒS.update(1);
-        await ƒS.Speech.tell(characters.andrea, text.Andrea.T0001);
+        await ƒS.Speech.tell(characters.andrea, text.andrea.T0001);
         await ƒS.Speech.tell(characters.valentin, text.valentin.T0002);
-        await ƒS.Speech.tell(characters.andrea, text.Andrea.T0002);
+        await ƒS.Speech.tell(characters.andrea, text.andrea.T0002);
         await ƒS.Speech.tell(characters.valentin, text.valentin.T0003);
-        await ƒS.Speech.tell(characters.andrea, text.Andrea.T0003);
+        await ƒS.Speech.tell(characters.andrea, text.andrea.T0003);
         await ƒS.Speech.tell(characters.valentin, text.valentin.T0004);
-        await ƒS.Speech.tell(characters.andrea, text.Andrea.T0004);
+        await ƒS.Speech.tell(characters.andrea, text.andrea.T0004);
         await ƒS.Speech.tell(characters.valentin, text.valentin.T0005);
+        await ƒS.Character.hideAll();
       }
 }

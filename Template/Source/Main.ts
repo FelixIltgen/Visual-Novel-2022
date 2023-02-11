@@ -190,9 +190,10 @@ namespace myNovel {
   window.addEventListener("load", start);
   function start(_event: Event): void {
     let scenes: ƒS.Scenes = [
-      { scene: firstScene, name: "First scene"},
+      //{ scene: firstScene, name: "First scene"},
       //{ scene: secondScene, name: "Second scene"},
-      //{ scene: thirdScene, name: "Thrid scene"}
+      //{ scene: thirdScene, name: "Thrid scene"},
+      { scene: fourthScene, name: "Fourth scene"}
     ];
 
 

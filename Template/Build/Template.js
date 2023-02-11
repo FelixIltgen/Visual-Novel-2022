@@ -185,7 +185,10 @@ var myNovel;
     window.addEventListener("load", start);
     function start(_event) {
         let scenes = [
-            { scene: myNovel.firstScene, name: "First scene" },
+            //{ scene: firstScene, name: "First scene"},
+            //{ scene: secondScene, name: "Second scene"},
+            //{ scene: thirdScene, name: "Thrid scene"},
+            { scene: myNovel.fourthScene, name: "Fourth scene" }
         ];
         let uiElement = document.querySelector("[type=interface]");
         myNovel.dataForSave = myNovel.ƒS.Progress.setData(myNovel.dataForSave, uiElement);
@@ -197,7 +200,7 @@ var myNovel;
 var myNovel;
 (function (myNovel) {
     async function firstScene() {
-        console.log("Start scene One & Chapter one");
+        console.log("Start Prolog");
         let text = {
             narrator: {
                 T0001: "Valentin macht sich auf den Weg zum Bergwerk."
@@ -241,7 +244,7 @@ var myNovel;
 var myNovel;
 (function (myNovel) {
     async function fourthScene() {
-        console.log("Start scene One & Chapter one");
+        console.log("");
         let text = {
             valentin: {
                 T0001: "Wir müssen erst den restlichen Schutt von gestern beiseite räumen, sonst ist es hier viel zu eng, die andere Schicht hat auch schon fast alle Sprengladungen platziert wir müssen nur die letzte anbringen.",
@@ -251,45 +254,152 @@ var myNovel;
                 T0005: "...",
                 T0006: "Okay, das Dynamit ist platziert, lass uns in Deckung gehen.",
                 T0007: "Bist du bereit?",
-                T0008: "",
-                T0009: "",
-                T00010: "",
-                T00011: ""
+                T0008: "Hey, bist du verrückt, geh wieder in Deckung, bis sich der Staub gelegt hat.",
+                T0009: "Wir warten jetzt, bis der Staub sich gelegt hat.",
+                T0010: "Sei vorsichtig, das ist alles noch nicht gesichert und kann einstürzen. ",
+                T0011: "Ich weiß nicht, ich bin mir doch unsicher ..."
             },
-            Andrea: {
+            andrea: {
                 T0001: "Okay, lass uns loslegen.",
                 T0002: "Lass mich das Geröll wegräumen, dann kannst du dich um die letzte Sprengladung kümmern und das Dynamit holen.",
                 T0003: "Ja, von meiner Seite ist alles bereit, du kannst das Dynamit platzieren.",
                 T0004: "Ja, ich bin bereit ... lass es knallen!!",
-                T0005: "",
-                T0006: "",
-                T0007: "",
-                T0008: ""
+                T0005: "WOOOW!!!!",
+                T0006: "Das war laut, ich kann durch den Staub gar nichts sehen.",
+                T0007: "Beruhige dich, ich bin ja schon wieder da.",
+                T0008: "Los, jetzt haben wir lange genug gewartet, ich will das Ergebnis von der Sprengung sehen.",
+                T0009: "Bin ich immer!!",
+                T0010: "Was ist los mit dir, alles okay?",
+                T0011: "Jetzt drück den Auslöser, da wird schon nichts passieren!",
+                T0012: "Boaahh, alles muss man selber machen, gib mir den Auslöser."
             },
-            Narrator: {
+            narrator: {
                 T0001: "Valentin geht zum Lager und holt die letzte Stange Dynamit.",
-                T0002: "",
-                T0003: "",
-                T0004: "",
-                T0005: "",
-                T0006: ""
+                T0002: "3...",
+                T0003: "2...",
+                T0004: "1...",
+                T0005: "Die Luft am Arbeitsplatz wird durch den Staub der Explosion gefüllt. Steine und Geröll fliegen durch die Luft und landen links und rechts von den beiden Arbeitern.",
+                T0006: "Die beiden Arbeiter harren aus, um nicht vom Geröll getroffen zu werden. Nach einigen Minuten legt sich auch der Staub und es ist möglich, wieder mehr zu sehen.",
+                T0007: "Andrea stürmt voraus zum neu gesprengten Stollen, Valentin hat Mühe, ihm schnell zu folgen.",
+                T0008: "Andrea nimmt den Auslöser und betätigt den Auslöser für die Sprengung."
             }
         };
         await myNovel.ƒS.Location.show(myNovel.locations.mineShaftTwo);
         await myNovel.ƒS.update(myNovel.transition.leftFade.duration, myNovel.transition.leftFade.alpha, myNovel.transition.leftFade.edge);
+        await myNovel.ƒS.Character.show(myNovel.characters.andrea, myNovel.characters.andrea.pose.normal, myNovel.newPositions.bottomleft);
+        await myNovel.ƒS.update(1);
+        await myNovel.ƒS.Speech.tell(myNovel.characters.andrea, text.andrea.T0001);
+        await myNovel.ƒS.Character.show(myNovel.characters.valentin, myNovel.characters.valentin.pose.normal, myNovel.newPositions.bottomright);
+        await myNovel.ƒS.update(1);
+        await myNovel.ƒS.Speech.tell(myNovel.characters.valentin, text.valentin.T0001);
+        await myNovel.ƒS.Speech.tell(myNovel.characters.andrea, text.andrea.T0002);
+        await myNovel.ƒS.Speech.tell(myNovel.characters.valentin, text.valentin.T0002);
+        await myNovel.ƒS.Character.hide(myNovel.characters.valentin);
+        await myNovel.ƒS.update(1);
+        await myNovel.ƒS.Speech.tell(myNovel.characters.narrator, text.narrator.T0001);
+        await myNovel.ƒS.Character.show(myNovel.characters.valentin, myNovel.characters.valentin.pose.solution, myNovel.newPositions.bottomright);
+        await myNovel.ƒS.update(1);
+        await myNovel.ƒS.Speech.tell(myNovel.characters.valentin, text.valentin.T0003);
+        await myNovel.ƒS.Speech.tell(myNovel.characters.andrea, text.andrea.T0003);
+        await myNovel.ƒS.Character.hide(myNovel.characters.valentin);
+        await myNovel.ƒS.update();
+        await myNovel.ƒS.Character.show(myNovel.characters.valentin, myNovel.characters.valentin.pose.normal, myNovel.newPositions.bottomright);
+        await myNovel.ƒS.update();
+        await myNovel.ƒS.Speech.tell(myNovel.characters.valentin, text.valentin.T0004);
+        await myNovel.ƒS.Speech.tell(myNovel.characters.valentin, text.valentin.T0005);
+        await myNovel.ƒS.Speech.tell(myNovel.characters.valentin, text.valentin.T0006);
+        await myNovel.ƒS.Speech.tell(myNovel.characters.valentin, text.valentin.T0007);
+        await myNovel.ƒS.Speech.tell(myNovel.characters.andrea, text.andrea.T0004);
+        let choices = {
+            pressButton: "Knopf drücken",
+            dontPress: "Zögern"
+        };
+        let dialogueElement = await myNovel.ƒS.Menu.getInput(choices, "choicesCSSClass");
+        switch (dialogueElement) {
+            case choices.pressButton:
+                console.log("Choice press button");
+                await myNovel.ƒS.Speech.tell(myNovel.characters.narrator, text.narrator.T0002);
+                await myNovel.ƒS.Speech.tell(myNovel.characters.narrator, text.narrator.T0003);
+                await myNovel.ƒS.Speech.tell(myNovel.characters.narrator, text.narrator.T0004);
+                //Explosions sound
+                await myNovel.ƒS.Speech.tell(myNovel.characters.narrator, text.narrator.T0005);
+                await myNovel.ƒS.Speech.tell(myNovel.characters.andrea, text.andrea.T0005);
+                await myNovel.ƒS.Speech.tell(myNovel.characters.andrea, text.andrea.T0006);
+                await myNovel.ƒS.Character.hide(myNovel.characters.valentin);
+                await myNovel.ƒS.update();
+                await myNovel.ƒS.Character.show(myNovel.characters.valentin, myNovel.characters.valentin.pose.mysterious, myNovel.newPositions.bottomright);
+                await myNovel.ƒS.update();
+                await myNovel.ƒS.Speech.tell(myNovel.characters.valentin, text.valentin.T0008);
+                await myNovel.ƒS.Speech.tell(myNovel.characters.andrea, text.andrea.T0007);
+                await myNovel.ƒS.Speech.tell(myNovel.characters.valentin, text.valentin.T0009);
+                await myNovel.ƒS.Character.hide(myNovel.characters.valentin);
+                await myNovel.ƒS.update();
+                await myNovel.ƒS.Character.show(myNovel.characters.valentin, myNovel.characters.valentin.pose.normal, myNovel.newPositions.bottomright);
+                await myNovel.ƒS.update();
+                await myNovel.ƒS.Speech.tell(myNovel.characters.narrator, text.narrator.T0006);
+                await myNovel.ƒS.Speech.tell(myNovel.characters.andrea, text.andrea.T0008);
+                await myNovel.ƒS.Speech.tell(myNovel.characters.valentin, text.valentin.T0010);
+                await myNovel.ƒS.Speech.tell(myNovel.characters.andrea, text.andrea.T0009);
+                await myNovel.ƒS.Character.hide(myNovel.characters.andrea);
+                await myNovel.ƒS.update(1);
+                await myNovel.ƒS.Speech.tell(myNovel.characters.narrator, text.narrator.T0008);
+                break;
+            case choices.dontPress:
+                console.log("Choice Dont press button");
+                await myNovel.ƒS.Character.hide(myNovel.characters.valentin);
+                await myNovel.ƒS.update();
+                await myNovel.ƒS.Character.show(myNovel.characters.valentin, myNovel.characters.valentin.pose.sad, myNovel.newPositions.bottomright);
+                await myNovel.ƒS.update();
+                await myNovel.ƒS.Speech.tell(myNovel.characters.andrea, text.andrea.T0010);
+                await myNovel.ƒS.Speech.tell(myNovel.characters.valentin, text.valentin.T0011);
+                await myNovel.ƒS.Speech.tell(myNovel.characters.andrea, text.andrea.T0011);
+                await myNovel.ƒS.Speech.tell(myNovel.characters.valentin, text.valentin.T0005);
+                await myNovel.ƒS.Character.hide(myNovel.characters.andrea);
+                await myNovel.ƒS.update();
+                await myNovel.ƒS.Character.show(myNovel.characters.andrea, myNovel.characters.andrea.pose.mad, myNovel.newPositions.bottomleft);
+                await myNovel.ƒS.update();
+                await myNovel.ƒS.Speech.tell(myNovel.characters.andrea, text.andrea.T0012);
+                await myNovel.ƒS.Speech.tell(myNovel.characters.narrator, text.narrator.T0008);
+                await myNovel.ƒS.Speech.tell(myNovel.characters.narrator, text.narrator.T0002);
+                await myNovel.ƒS.Speech.tell(myNovel.characters.narrator, text.narrator.T0003);
+                await myNovel.ƒS.Speech.tell(myNovel.characters.narrator, text.narrator.T0004);
+                await myNovel.ƒS.Character.hide(myNovel.characters.andrea);
+                await myNovel.ƒS.update();
+                await myNovel.ƒS.Character.show(myNovel.characters.andrea, myNovel.characters.andrea.pose.normal, myNovel.newPositions.bottomleft);
+                await myNovel.ƒS.update();
+                await myNovel.ƒS.Character.hide(myNovel.characters.valentin);
+                await myNovel.ƒS.update();
+                await myNovel.ƒS.Character.show(myNovel.characters.valentin, myNovel.characters.valentin.pose.normal, myNovel.newPositions.bottomright);
+                await myNovel.ƒS.update();
+                //Explosions sound
+                await myNovel.ƒS.Speech.tell(myNovel.characters.narrator, text.narrator.T0005);
+                await myNovel.ƒS.Speech.tell(myNovel.characters.andrea, text.andrea.T0005);
+                await myNovel.ƒS.Speech.tell(myNovel.characters.andrea, text.andrea.T0006);
+                await myNovel.ƒS.Speech.tell(myNovel.characters.valentin, text.valentin.T0008);
+                await myNovel.ƒS.Speech.tell(myNovel.characters.andrea, text.andrea.T0007);
+                await myNovel.ƒS.Speech.tell(myNovel.characters.valentin, text.valentin.T0009);
+                await myNovel.ƒS.Speech.tell(myNovel.characters.narrator, text.narrator.T0006);
+                await myNovel.ƒS.Speech.tell(myNovel.characters.andrea, text.andrea.T0008);
+                await myNovel.ƒS.Speech.tell(myNovel.characters.valentin, text.valentin.T0010);
+                await myNovel.ƒS.Speech.tell(myNovel.characters.andrea, text.andrea.T0009);
+                await myNovel.ƒS.Character.hide(myNovel.characters.andrea);
+                await myNovel.ƒS.update(1);
+                await myNovel.ƒS.Speech.tell(myNovel.characters.narrator, text.narrator.T0008);
+                break;
+        }
     }
     myNovel.fourthScene = fourthScene;
 })(myNovel || (myNovel = {}));
 var myNovel;
 (function (myNovel) {
     async function secondScene() {
-        console.log("Start scene One & Chapter one");
+        console.log("");
         let text = {
             valentin: {
                 T0001: "Guten Morgen Andrea, alles klar?",
                 T0002: "Wie immer eigentlich. Wollen wir loslegen?"
             },
-            Andrea: {
+            andrea: {
                 T0001: "Klar, wie jeden Morgen eigentlich. Und bei dir, wie siehts bei dir aus?",
                 T0002: "Perfekt, lass uns loslegen!"
             }
@@ -301,9 +411,9 @@ var myNovel;
         await myNovel.ƒS.Speech.tell(myNovel.characters.valentin, text.valentin.T0001);
         await myNovel.ƒS.Character.show(myNovel.characters.andrea, myNovel.characters.andrea.pose.normal, myNovel.newPositions.bottomleft);
         await myNovel.ƒS.update(1);
-        await myNovel.ƒS.Speech.tell(myNovel.characters.andrea, text.Andrea.T0001);
+        await myNovel.ƒS.Speech.tell(myNovel.characters.andrea, text.andrea.T0001);
         await myNovel.ƒS.Speech.tell(myNovel.characters.valentin, text.valentin.T0002);
-        await myNovel.ƒS.Speech.tell(myNovel.characters.andrea, text.Andrea.T0002);
+        await myNovel.ƒS.Speech.tell(myNovel.characters.andrea, text.andrea.T0002);
         await myNovel.ƒS.Character.hideAll();
     }
     myNovel.secondScene = secondScene;
@@ -311,7 +421,7 @@ var myNovel;
 var myNovel;
 (function (myNovel) {
     async function thirdScene() {
-        console.log("Start scene One & Chapter one");
+        console.log("");
         let text = {
             valentin: {
                 T0001: "Ahhhh, ich bin schon etwas aufgeregt, wenn wir heute den neuen Stollen freisprengen sollen.",
@@ -320,7 +430,7 @@ var myNovel;
                 T0004: "Ja, aber du kennst die Verwaltung, es geht am Ende immer ums Geld und in der Gesteinsschicht soll sich sehr viel Eisen befinden.",
                 T0005: "Hoffen wir es mal..."
             },
-            Andrea: {
+            andrea: {
                 T0001: "Warum den?, es wird schon nichts passieren.",
                 T0002: "Nein, warum was steht den so schlimmes drin?",
                 T0003: "Ich dachte, die Verwaltung lässt uns nur arbeiten, wenn es zu 100% sicher ist?",
@@ -336,14 +446,15 @@ var myNovel;
         await myNovel.ƒS.Speech.tell(myNovel.characters.valentin, text.valentin.T0001);
         await myNovel.ƒS.Character.show(myNovel.characters.andrea, myNovel.characters.andrea.pose.normal, myNovel.newPositions.bottomleft);
         await myNovel.ƒS.update(1);
-        await myNovel.ƒS.Speech.tell(myNovel.characters.andrea, text.Andrea.T0001);
+        await myNovel.ƒS.Speech.tell(myNovel.characters.andrea, text.andrea.T0001);
         await myNovel.ƒS.Speech.tell(myNovel.characters.valentin, text.valentin.T0002);
-        await myNovel.ƒS.Speech.tell(myNovel.characters.andrea, text.Andrea.T0002);
+        await myNovel.ƒS.Speech.tell(myNovel.characters.andrea, text.andrea.T0002);
         await myNovel.ƒS.Speech.tell(myNovel.characters.valentin, text.valentin.T0003);
-        await myNovel.ƒS.Speech.tell(myNovel.characters.andrea, text.Andrea.T0003);
+        await myNovel.ƒS.Speech.tell(myNovel.characters.andrea, text.andrea.T0003);
         await myNovel.ƒS.Speech.tell(myNovel.characters.valentin, text.valentin.T0004);
-        await myNovel.ƒS.Speech.tell(myNovel.characters.andrea, text.Andrea.T0004);
+        await myNovel.ƒS.Speech.tell(myNovel.characters.andrea, text.andrea.T0004);
         await myNovel.ƒS.Speech.tell(myNovel.characters.valentin, text.valentin.T0005);
+        await myNovel.ƒS.Character.hideAll();
     }
     myNovel.thirdScene = thirdScene;
 })(myNovel || (myNovel = {}));
