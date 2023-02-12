@@ -73,6 +73,10 @@ declare namespace myNovel {
             name: string;
             background: string;
         };
+        supermarket: {
+            name: string;
+            background: string;
+        };
         begin: {
             name: string;
             background: string;
@@ -183,6 +187,9 @@ declare namespace myNovel {
 }
 declare namespace myNovel {
     function secondScene(): ƒS.SceneReturn;
+}
+declare namespace myNovel {
+    function sixthScene(): ƒS.SceneReturn;
 }
 declare namespace myNovel {
     function thirdScene(): ƒS.SceneReturn;

@@ -78,6 +78,10 @@ namespace myNovel {
       name: "Sinkhole inside",
       background: "./Images/Background/newShaft.png"
     },
+    supermarket: {
+      name: "Supermarkt",
+      background: "./Images/Background/supermarket.png"
+    },
      /*
     Sinkloch
     Im Loch
@@ -131,12 +135,12 @@ namespace myNovel {
       name: "Ben",
       origin: ƒS.ORIGIN.BOTTOMLEFT,
       pose: {
-        confident: "Images/Characters/Ben/Ben_confident",
-        moreConfident: "Images/Characters/Ben/Ben_more_confident",
-        normal: "Images/Characters/Ben/Ben_normal",
-        ohman: "Images/Characters/Ben/Ben_ohman",
-        sad: "Images/Characters/Ben/Ben_sad",
-        thinking: "Images/Characters/Ben/Ben_thinking"
+        confident: "Images/Characters/Ben/Ben_confident.png",
+        moreConfident: "Images/Characters/Ben/Ben_more_confident.png",
+        normal: "Images/Characters/Ben/Ben_normal.png",
+        ohman: "Images/Characters/Ben/Ben_ohman.png",
+        sad: "Images/Characters/Ben/Ben_sad.png",
+        thinking: "Images/Characters/Ben/Ben_thinking.png"
       }
     },
     maria: {
@@ -146,7 +150,7 @@ namespace myNovel {
         angry: "Images/Characters/Maria/Maria_angry.png",
         neutral: "Images/Characters/Maria/Maria_neutral.png",
         happy: "Images/Characters/Maria/Maria_happy.png",
-        pleased: "Images/Characters/Maria/pleased.png",
+        pleased: "Images/Characters/Maria/Maria_pleased.png",
         sad: "Images/Characters/Maria/Maria_sad.png"
       }
     },
@@ -194,7 +198,8 @@ namespace myNovel {
       //{ scene: secondScene, name: "Second scene"},
       //{ scene: thirdScene, name: "Thrid scene"},
       //{ scene: fourthScene, name: "Fourth scene"},
-      { scene: fifthScene, name: "Fifth scene"}
+      //{ scene: fifthScene, name: "Fifth scene"},
+      { scene: sixthScene, name: "Sixth scene"}
     ];
 
 
