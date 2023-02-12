@@ -124,6 +124,10 @@ namespace myNovel {
     intro: {
       name: "Intro",
       background: "Images/Background/Chapter/intro.png"
+    },
+    blanko: {
+      name: "Blanko",
+      background: "Images/Background/Chapter/blanko.png"
     }
   };
 
@@ -175,6 +179,15 @@ namespace myNovel {
         mad: "Images/Characters/Weitere/Andrea_mad.png",
         normal: "Images/Characters/Weitere/Andrea_normal.png",
         ugh: "Images/Characters/Weitere/Andrea_ugh.png"
+      }
+    },
+    polizistin: {
+      name: "Polizeibeamtin",
+      origin: ƒS.ORIGIN.BOTTOMLEFT,
+      pose: {
+        eyes_closed: "Images/Characters/Weitere/polizistin_eyes_closed.png",
+        sorry: "Images/Characters/Weitere/polizistin_sorry.png",
+        normal: "Images/Characters/Weitere/polizistin_normal.png"
       }
     }
   };

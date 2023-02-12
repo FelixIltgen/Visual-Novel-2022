@@ -67,6 +67,7 @@ namespace myNovel {
         await ƒS.update();
         await ƒS.Speech.tell(characters.maria, text.maria.T0003);
         await ƒS.Speech.tell(characters.maria, text.maria.T0004);
-        await ƒS.Speech.tell(characters.narrator, text.narrator.T0005); 
+        await ƒS.Speech.tell(characters.narrator, text.narrator.T0005);
+        await ƒS.Character.hideAll(); 
       }
 }
