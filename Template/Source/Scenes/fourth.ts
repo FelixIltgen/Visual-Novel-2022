@@ -156,6 +156,6 @@ namespace myNovel {
 
                 break;
         }
-
+        await ƒS.Character.hideAll();
       }
 }
