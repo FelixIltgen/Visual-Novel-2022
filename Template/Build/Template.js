@@ -255,7 +255,7 @@ var myNovel;
                 T0012: "ANDREEAAA warte, ich werfe dir ein Seil runter...",
                 T0013: "Andrea?...ANDREAAA??",
                 T0014: "Ehhhh...",
-                T0015: "Jetzt mach mal halb lang und beruhige dich er...",
+                T0015: "Jetzt mach mal halb lang und beruhige dich wieder...",
                 T0016: "Wahrscheinlich nicht Gutes fasse es lieber nicht an, ich will gar nicht wissen, was da drin ist, weil gut kann es mit Sicherheit nicht sein.",
                 T0017: "HEYY LEBST DU NOCH??",
                 T0018: "ANDREA?? ANDREAAA???",
@@ -271,6 +271,80 @@ var myNovel;
         await myNovel.ƒS.Character.show(myNovel.characters.valentin, myNovel.characters.valentin.pose.normal, myNovel.newPositions.bottomright);
         await myNovel.ƒS.update(1);
         await myNovel.ƒS.Speech.tell(myNovel.characters.valentin, text.valentin.T0001);
+        await myNovel.ƒS.Speech.tell(myNovel.characters.narrator, text.narrator.T0001);
+        await myNovel.ƒS.Speech.tell(myNovel.characters.andrea, text.andrea.T0002);
+        await myNovel.ƒS.Speech.tell(myNovel.characters.narrator, text.narrator.T0002);
+        await myNovel.ƒS.Speech.tell(myNovel.characters.valentin, text.valentin.T0002);
+        await myNovel.ƒS.Speech.tell(myNovel.characters.valentin, text.valentin.T0003);
+        await myNovel.ƒS.Speech.tell(myNovel.characters.andrea, text.andrea.T0003);
+        await myNovel.ƒS.Speech.tell(myNovel.characters.valentin, text.valentin.T0004);
+        await myNovel.ƒS.Speech.tell(myNovel.characters.narrator, text.narrator.T0003);
+        await myNovel.ƒS.Speech.tell(myNovel.characters.valentin, text.valentin.T0005);
+        await myNovel.ƒS.Speech.tell(myNovel.characters.andrea, text.andrea.T0004);
+        await myNovel.ƒS.Character.hide(myNovel.characters.andrea);
+        await myNovel.ƒS.update(1);
+        await myNovel.ƒS.Character.hide(myNovel.characters.valentin);
+        await myNovel.ƒS.update();
+        await myNovel.ƒS.Character.show(myNovel.characters.valentin, myNovel.characters.valentin.pose.mysterious, myNovel.newPositions.bottomright);
+        await myNovel.ƒS.update();
+        await myNovel.ƒS.Speech.tell(myNovel.characters.valentin, text.valentin.T0006);
+        await myNovel.ƒS.Speech.tell(myNovel.characters.valentin, text.valentin.T0007);
+        await myNovel.ƒS.Speech.tell(myNovel.characters.andrea, text.andrea.T0005);
+        await myNovel.ƒS.Character.hide(myNovel.characters.valentin);
+        await myNovel.ƒS.update();
+        await myNovel.ƒS.Character.show(myNovel.characters.valentin, myNovel.characters.valentin.pose.normal, myNovel.newPositions.bottomright);
+        await myNovel.ƒS.update();
+        await myNovel.ƒS.Speech.tell(myNovel.characters.narrator, text.narrator.T0004);
+        await myNovel.ƒS.Speech.tell(myNovel.characters.valentin, text.valentin.T0008);
+        await myNovel.ƒS.Character.show(myNovel.characters.andrea, myNovel.characters.andrea.pose.normal, myNovel.newPositions.bottomleft);
+        await myNovel.ƒS.update(1);
+        await myNovel.ƒS.Speech.tell(myNovel.characters.andrea, text.andrea.T0006);
+        await myNovel.ƒS.Speech.tell(myNovel.characters.narrator, text.narrator.T0005);
+        await myNovel.ƒS.Speech.tell(myNovel.characters.andrea, text.andrea.T0007);
+        await myNovel.ƒS.Speech.tell(myNovel.characters.valentin, text.valentin.T0009);
+        await myNovel.ƒS.Character.hide(myNovel.characters.valentin);
+        await myNovel.ƒS.update();
+        await myNovel.ƒS.Character.show(myNovel.characters.valentin, myNovel.characters.valentin.pose.mysterious, myNovel.newPositions.bottomright);
+        await myNovel.ƒS.update();
+        await myNovel.ƒS.Speech.tell(myNovel.characters.valentin, text.valentin.T0010);
+        await myNovel.ƒS.Speech.tell(myNovel.characters.narrator, text.narrator.T0006);
+        //Sound brechender boden
+        await myNovel.ƒS.Character.hide(myNovel.characters.andrea);
+        await myNovel.ƒS.update();
+        await myNovel.ƒS.Character.show(myNovel.characters.andrea, myNovel.characters.andrea.pose.ugh, myNovel.newPositions.bottomleft);
+        await myNovel.ƒS.update(0);
+        await myNovel.ƒS.Speech.tell(myNovel.characters.andrea, text.andrea.T0008);
+        await myNovel.ƒS.Speech.tell(myNovel.characters.valentin, text.valentin.T0011);
+        await myNovel.ƒS.Speech.tell(myNovel.characters.valentin, text.valentin.T0012);
+        await myNovel.ƒS.Speech.tell(myNovel.characters.valentin, text.valentin.T0013);
+        await myNovel.ƒS.Speech.tell(myNovel.characters.narrator, text.narrator.T0007);
+        await myNovel.ƒS.Speech.tell(myNovel.characters.andrea, text.andrea.T0009);
+        await myNovel.ƒS.Speech.tell(myNovel.characters.andrea, text.andrea.T0010);
+        await myNovel.ƒS.Speech.tell(myNovel.characters.andrea, text.andrea.T0011);
+        await myNovel.ƒS.Speech.tell(myNovel.characters.valentin, text.valentin.T0014);
+        await myNovel.ƒS.Speech.tell(myNovel.characters.narrator, text.narrator.T0008);
+        await myNovel.ƒS.Speech.tell(myNovel.characters.andrea, text.andrea.T0012);
+        await myNovel.ƒS.Speech.tell(myNovel.characters.narrator, text.narrator.T0009);
+        await myNovel.ƒS.Speech.tell(myNovel.characters.andrea, text.andrea.T0013);
+        await myNovel.ƒS.Speech.tell(myNovel.characters.valentin, text.valentin.T0015);
+        await myNovel.ƒS.Speech.tell(myNovel.characters.andrea, text.andrea.T0014);
+        await myNovel.ƒS.Speech.tell(myNovel.characters.valentin, text.valentin.T0016);
+        await myNovel.ƒS.Speech.tell(myNovel.characters.andrea, text.andrea.T0015);
+        await myNovel.ƒS.Speech.tell(myNovel.characters.narrator, text.narrator.T0010);
+        await myNovel.ƒS.Speech.tell(myNovel.characters.valentin, text.valentin.T0017);
+        await myNovel.ƒS.Speech.tell(myNovel.characters.andrea, text.andrea.T0016);
+        await myNovel.ƒS.Speech.tell(myNovel.characters.andrea, text.andrea.T0017);
+        await myNovel.ƒS.Speech.tell(myNovel.characters.andrea, text.andrea.T0018);
+        await myNovel.ƒS.Speech.tell(myNovel.characters.valentin, text.valentin.T0018);
+        //Schrei Sound
+        await myNovel.ƒS.Speech.tell(myNovel.characters.narrator, text.narrator.T0011);
+        //gefährliche musik
+        await myNovel.ƒS.Speech.tell(myNovel.characters.valentin, text.valentin.T0018);
+        await myNovel.ƒS.Speech.tell(myNovel.characters.narrator, text.narrator.T0012);
+        await myNovel.ƒS.Speech.tell(myNovel.characters.narrator, text.narrator.T0013);
+        await myNovel.ƒS.Speech.tell(myNovel.characters.narrator, text.narrator.T0014);
+        await myNovel.ƒS.Speech.tell(myNovel.characters.narrator, text.narrator.T0014);
+        await myNovel.ƒS.Character.hideAll();
     }
     myNovel.fifthScene = fifthScene;
 })(myNovel || (myNovel = {}));
