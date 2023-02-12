@@ -23,7 +23,7 @@ namespace myNovel {
         
         await ƒS.Location.show(locations.chapterOne);
         await ƒS.update(2);
-        await ƒS.Location.show(locations.supermarket); //supermarket
+        await ƒS.Location.show(locations.supermarket);
         await ƒS.update(3);
 
         await ƒS.Character.show(characters.maria, characters.maria.pose.sad, newPositions.bottomleftMaria);

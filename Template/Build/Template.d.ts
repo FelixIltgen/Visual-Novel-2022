@@ -139,6 +139,7 @@ declare namespace myNovel {
                 happy: string;
                 pleased: string;
                 sad: string;
+                verySad: string;
             };
         };
         valentin: {
@@ -175,6 +176,9 @@ declare namespace myNovel {
     let dataForSave: {
         nameProtagonist: string;
     };
+}
+declare namespace myNovel {
+    function eighthScene(): ƒS.SceneReturn;
 }
 declare namespace myNovel {
     function fifthScene(): ƒS.SceneReturn;

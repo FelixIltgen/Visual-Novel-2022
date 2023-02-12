@@ -149,7 +149,8 @@ var myNovel;
                 neutral: "Images/Characters/Maria/Maria_neutral.png",
                 happy: "Images/Characters/Maria/Maria_happy.png",
                 pleased: "Images/Characters/Maria/Maria_pleased.png",
-                sad: "Images/Characters/Maria/Maria_sad.png"
+                sad: "Images/Characters/Maria/Maria_sad.png",
+                verySad: "Images/Characters/Maria/Maria_very_sad.png"
             }
         },
         valentin: {
@@ -195,7 +196,8 @@ var myNovel;
             //{ scene: fourthScene, name: "Fourth scene"},
             //{ scene: fifthScene, name: "Fifth scene"},
             //{ scene: sixthScene, name: "Sixth scene"},
-            { scene: myNovel.seventhScene, name: "Seventh scene" }
+            //{ scene: seventhScene, name: "Seventh scene"},
+            { scene: myNovel.eighthScene, name: "Eighth scene" }
         ];
         let uiElement = document.querySelector("[type=interface]");
         myNovel.dataForSave = myNovel.ƒS.Progress.setData(myNovel.dataForSave, uiElement);
@@ -203,6 +205,73 @@ var myNovel;
         myNovel.ƒS.Progress.go(scenes);
         myNovel.ƒS.Speech.hide();
     }
+})(myNovel || (myNovel = {}));
+var myNovel;
+(function (myNovel) {
+    async function eighthScene() {
+        console.log("Start Prolog");
+        let text = {
+            narrator: {
+                T0001: "Ben macht sich für die Schule fertig und geht ins Wohnzimmer, wo er seine sehr aufgebrachte Maria findet.",
+                T0002: "Maria zeigt aufgeregt auf den Fernseher.",
+                T0003: "Ben macht den Fernseher lauter und hört dem Kommentator zu....",
+                T0004: "Großes Loch im Berg von Herbolzheim vermutlich ist ein Stollen eingestürzt. Die Ermittler vermuten einen Stollen Einbruch. Derzeit ist es noch unklar, ob Arbeiter verschüttet worden sind. Die Polizei und die Bergbaufirmen abreiten eng zusammen, um den Umfang des Unglücks zu untersuchen. Derzeit besteht rund um das Loch hohe Einsturzgefahr, das Betreten des Geländes ist strengstens untersagt.",
+                T0005: "Maria fährt Ben zur Schule."
+            },
+            ben: {
+                T0001: "Wow, es ist schon fast viel zu spät, ich sollte mich für die Schule fertigmachen, mal schauen, ob Mama schon wach ist.",
+                T0002: "Was ist passiert...??",
+                T0003: "Was ist zusammengebrochen, was ist passiert?",
+                T0004: "Wie, Wo, Was... zeig her...",
+                T0005: "Ich muss los und schauen, ob es Papa gut geht!!!!"
+            },
+            maria: {
+                T0001: "Er ist zusammengebrochen...",
+                T0002: "Der Schacht... der Schacht, wo Papa...",
+                T0003: "NEIN... du gehst da nicht hin, das ist gefährlich … versprich mir, dass du da nicht hingehst.",
+                T0004: "Außerdem musst du zur Schule. Los, mach dich fertig, ich fahre dich ausnahmsweise hin und schaue danach, was da los ist."
+            }
+        };
+        //wecker sound
+        await myNovel.ƒS.Location.show(myNovel.locations.chapterTwo);
+        await myNovel.ƒS.update(2);
+        await myNovel.ƒS.Location.show(myNovel.locations.kidRoom);
+        await myNovel.ƒS.update(3);
+        //musik sound
+        await myNovel.ƒS.Character.show(myNovel.characters.ben, myNovel.characters.ben.pose.normal, myNovel.newPositions.bottomright);
+        await myNovel.ƒS.update(1);
+        await myNovel.ƒS.Speech.tell(myNovel.characters.ben, text.ben.T0001);
+        await myNovel.ƒS.Speech.tell(myNovel.characters.narrator, text.narrator.T0001);
+        await myNovel.ƒS.Character.hideAll();
+        await myNovel.ƒS.Speech.clear();
+        await myNovel.ƒS.Location.show(myNovel.locations.livingRoom);
+        await myNovel.ƒS.update(myNovel.transition.fade.duration, myNovel.transition.leftFade.alpha, myNovel.transition.leftFade.edge);
+        await myNovel.ƒS.Character.show(myNovel.characters.maria, myNovel.characters.maria.pose.verySad, myNovel.newPositions.bottomleftMaria);
+        await myNovel.ƒS.update();
+        await myNovel.ƒS.Character.show(myNovel.characters.ben, myNovel.characters.ben.pose.normal, myNovel.newPositions.bottomright);
+        await myNovel.ƒS.update(1);
+        await myNovel.ƒS.Speech.tell(myNovel.characters.ben, text.ben.T0002);
+        await myNovel.ƒS.Speech.tell(myNovel.characters.narrator, text.narrator.T0002);
+        await myNovel.ƒS.Speech.tell(myNovel.characters.maria, text.maria.T0001);
+        await myNovel.ƒS.Speech.tell(myNovel.characters.ben, text.ben.T0003);
+        await myNovel.ƒS.Speech.tell(myNovel.characters.maria, text.maria.T0002);
+        await myNovel.ƒS.Speech.tell(myNovel.characters.ben, text.ben.T0004);
+        await myNovel.ƒS.Speech.tell(myNovel.characters.narrator, text.narrator.T0003);
+        await myNovel.ƒS.Speech.tell(myNovel.characters.narrator, text.narrator.T0004);
+        await myNovel.ƒS.Character.hide(myNovel.characters.ben);
+        await myNovel.ƒS.update();
+        await myNovel.ƒS.Character.show(myNovel.characters.ben, myNovel.characters.ben.pose.thinking, myNovel.newPositions.bottomright);
+        await myNovel.ƒS.update();
+        await myNovel.ƒS.Speech.tell(myNovel.characters.ben, text.ben.T0005);
+        await myNovel.ƒS.Character.hide(myNovel.characters.maria);
+        await myNovel.ƒS.update();
+        await myNovel.ƒS.Character.show(myNovel.characters.maria, myNovel.characters.maria.pose.angry, myNovel.newPositions.bottomleftMaria);
+        await myNovel.ƒS.update();
+        await myNovel.ƒS.Speech.tell(myNovel.characters.maria, text.maria.T0003);
+        await myNovel.ƒS.Speech.tell(myNovel.characters.maria, text.maria.T0004);
+        await myNovel.ƒS.Speech.tell(myNovel.characters.narrator, text.narrator.T0005);
+    }
+    myNovel.eighthScene = eighthScene;
 })(myNovel || (myNovel = {}));
 var myNovel;
 (function (myNovel) {
@@ -756,7 +825,7 @@ var myNovel;
         };
         await myNovel.ƒS.Location.show(myNovel.locations.chapterOne);
         await myNovel.ƒS.update(2);
-        await myNovel.ƒS.Location.show(myNovel.locations.supermarket); //supermarket
+        await myNovel.ƒS.Location.show(myNovel.locations.supermarket);
         await myNovel.ƒS.update(3);
         await myNovel.ƒS.Character.show(myNovel.characters.maria, myNovel.characters.maria.pose.sad, myNovel.newPositions.bottomleftMaria);
         await myNovel.ƒS.update(1);

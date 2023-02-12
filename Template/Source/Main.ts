@@ -151,7 +151,8 @@ namespace myNovel {
         neutral: "Images/Characters/Maria/Maria_neutral.png",
         happy: "Images/Characters/Maria/Maria_happy.png",
         pleased: "Images/Characters/Maria/Maria_pleased.png",
-        sad: "Images/Characters/Maria/Maria_sad.png"
+        sad: "Images/Characters/Maria/Maria_sad.png",
+        verySad: "Images/Characters/Maria/Maria_very_sad.png"
       }
     },
     valentin: {
@@ -200,7 +201,8 @@ namespace myNovel {
       //{ scene: fourthScene, name: "Fourth scene"},
       //{ scene: fifthScene, name: "Fifth scene"},
       //{ scene: sixthScene, name: "Sixth scene"},
-      { scene: seventhScene, name: "Seventh scene"}
+      //{ scene: seventhScene, name: "Seventh scene"},
+      { scene: eighthScene, name: "Eighth scene"}
     ];
 
 
