@@ -69,21 +69,21 @@ namespace myNovel {
         await ƒS.Speech.tell(characters.polizistin, text.polizistin.T0002);
         await ƒS.Speech.tell(characters.maria, text.maria.T0003);
         await ƒS.Character.hide(characters.polizistin);
-        await ƒS.update();
+        await ƒS.update(0);
         await ƒS.Character.show(characters.polizistin, characters.polizistin.pose.sorry, newPositions.bottomcenter);
-        await ƒS.update();
+        await ƒS.update(0);
         await ƒS.Speech.tell(characters.polizistin, text.polizistin.T0003);
         await ƒS.Speech.tell(characters.polizistin, text.polizistin.T0004);
 
         await ƒS.Character.hide(characters.maria);
-        await ƒS.update();
+        await ƒS.update(0);
         await ƒS.Character.show(characters.maria, characters.maria.pose.sad, newPositions.bottomleftMaria);
-        await ƒS.update();
+        await ƒS.update(0);
         await ƒS.Speech.tell(characters.maria, text.maria.T0004);
         await ƒS.Character.hide(characters.polizistin);
-        await ƒS.update();
+        await ƒS.update(0);
         await ƒS.Character.show(characters.polizistin, characters.polizistin.pose.normal, newPositions.bottomcenter);
-        await ƒS.update();
+        await ƒS.update(0);
         await ƒS.Speech.tell(characters.polizistin, text.polizistin.T0005);
         await ƒS.Speech.tell(characters.maria, text.maria.T0005);
         await ƒS.Speech.tell(characters.narrator, text.narrator.T0002);
@@ -97,9 +97,9 @@ namespace myNovel {
         await ƒS.Speech.tell(characters.maria, text.maria.T0008);
         await ƒS.Speech.tell(characters.polizistin, text.polizistin.T0009);
         await ƒS.Character.hide(characters.maria);
-        await ƒS.update();
+        await ƒS.update(0);
         await ƒS.Character.show(characters.maria, characters.maria.pose.sad, newPositions.bottomleftMaria);
-        await ƒS.update();
+        await ƒS.update(0);
         await ƒS.Speech.tell(characters.maria, text.maria.T0009);
         await ƒS.Speech.tell(characters.polizistin, text.polizistin.T0010);
         await ƒS.Speech.tell(characters.maria, text.maria.T0010);
@@ -108,7 +108,7 @@ namespace myNovel {
         await ƒS.Speech.tell(characters.polizistin, text.polizistin.T0012);
 
         await ƒS.Character.hide(characters.ben);
-        await ƒS.update();
+        await ƒS.update(0);
         await ƒS.Character.show(characters.ben, characters.ben.pose.sad, newPositions.bottomright);
         await ƒS.update(0);
         await ƒS.Speech.tell(characters.ben, text.ben.T0003);
@@ -118,9 +118,9 @@ namespace myNovel {
         await ƒS.Speech.tell(characters.polizistin, text.polizistin.T0014);
 
         await ƒS.Character.hide(characters.maria);
-        await ƒS.update();
+        await ƒS.update(0);
         await ƒS.Character.show(characters.maria, characters.maria.pose.verySad, newPositions.bottomleftMaria);
-        await ƒS.update();
+        await ƒS.update(0);
         await ƒS.Speech.tell(characters.maria, text.maria.T0013);
         await ƒS.Speech.tell(characters.polizistin, text.polizistin.T0015);
         await ƒS.Character.hide(characters.polizistin);
@@ -130,17 +130,18 @@ namespace myNovel {
         await ƒS.Speech.tell(characters.ben, text.ben.T0006);
 
         await ƒS.Character.hide(characters.maria);
-        await ƒS.update();
+        await ƒS.update(0);
         await ƒS.Character.show(characters.maria, characters.maria.pose.angry, newPositions.bottomleftMaria);
-        await ƒS.update();
+        await ƒS.update(0);
         await ƒS.Speech.tell(characters.maria, text.maria.T0015);
         await ƒS.Character.hide(characters.ben);
-        await ƒS.update();
+        await ƒS.update(0);
         await ƒS.Character.show(characters.ben, characters.ben.pose.sad, newPositions.bottomright);
         await ƒS.update(0);
         await ƒS.Speech.tell(characters.ben, text.ben.T0007);
         await ƒS.Character.hide(characters.ben);
         await ƒS.update(1);
         await ƒS.Speech.tell(characters.narrator, text.narrator.T0003);
+        await ƒS.Character.hideAll(); 
       }
 }

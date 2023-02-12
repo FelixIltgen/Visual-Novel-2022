@@ -215,5 +215,8 @@ declare namespace myNovel {
     function sixthScene(): ƒS.SceneReturn;
 }
 declare namespace myNovel {
+    function tenthScene(): ƒS.SceneReturn;
+}
+declare namespace myNovel {
     function thirdScene(): ƒS.SceneReturn;
 }
