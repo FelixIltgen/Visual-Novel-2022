@@ -73,5 +73,10 @@ namespace myNovel {
         await ƒS.Character.show(characters.valentin, characters.valentin.pose.normal, newPositions.bottomright);
         await ƒS.update(1);
         await ƒS.Speech.tell(characters.valentin, text.valentin.T0001);
+        await ƒS.Speech.tell(characters.narrator, text.narrator.T0001);
+        await ƒS.Speech.tell(characters.andrea, text.andrea.T0002);
+        await ƒS.Speech.tell(characters.narrator, text.narrator.T0002);
+        await ƒS.Speech.tell(characters.valentin, text.valentin.T0002);
+        await ƒS.Speech.tell(characters.valentin, text.valentin.T0003);
       }
 }
