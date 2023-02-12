@@ -193,7 +193,8 @@ namespace myNovel {
       //{ scene: firstScene, name: "First scene"},
       //{ scene: secondScene, name: "Second scene"},
       //{ scene: thirdScene, name: "Thrid scene"},
-      { scene: fourthScene, name: "Fourth scene"}
+      //{ scene: fourthScene, name: "Fourth scene"},
+      { scene: fifthScene, name: "Fifth scene"}
     ];
 
 

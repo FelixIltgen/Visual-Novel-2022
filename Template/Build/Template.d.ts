@@ -173,6 +173,9 @@ declare namespace myNovel {
     };
 }
 declare namespace myNovel {
+    function fifthScene(): ƒS.SceneReturn;
+}
+declare namespace myNovel {
     function firstScene(): ƒS.SceneReturn;
 }
 declare namespace myNovel {

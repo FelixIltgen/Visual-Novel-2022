@@ -64,6 +64,14 @@ namespace myNovel {
                 T0020: "Was auch immer da war, ich muss es abgehängt haben."
             }
         };
-     
+        
+        await ƒS.Location.show(locations.newShaft);
+        await ƒS.update(transition.fade.duration, transition.fade.alpha, transition.fade.edge);
+        await ƒS.Character.show(characters.andrea, characters.andrea.pose.normal, newPositions.bottomleft);
+        await ƒS.update(1);
+        await ƒS.Speech.tell(characters.andrea, text.andrea.T0001);
+        await ƒS.Character.show(characters.valentin, characters.valentin.pose.normal, newPositions.bottomright);
+        await ƒS.update(1);
+        await ƒS.Speech.tell(characters.valentin, text.valentin.T0001);
       }
 }
