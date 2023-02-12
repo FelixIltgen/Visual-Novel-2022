@@ -195,7 +195,7 @@ namespace myNovel {
     bottomleftMaria: new FudgeStory.Position(950, -540),
     bottomleft: new FudgeStory.Position(350, -540),
     bottomright: new FudgeStory.Position(-900, -550),
-    bottomcenter: new FudgeStory.Position(0, -540),
+    bottomcenter: new FudgeStory.Position(-50, -540),
     rightout: new FudgeStory.Position(2470, -540),
     leftout: new FudgeStory.Position(-2470, -540)
   };
@@ -215,7 +215,8 @@ namespace myNovel {
       //{ scene: fifthScene, name: "Fifth scene"},
       //{ scene: sixthScene, name: "Sixth scene"},
       //{ scene: seventhScene, name: "Seventh scene"},
-      { scene: eighthScene, name: "Eighth scene"}
+      //{ scene: eighthScene, name: "Eighth scene"},
+      { scene: ninthScene, name: "Ninth scene"}
     ];
 
 

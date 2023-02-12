@@ -7,6 +7,7 @@
       "../Source/Scenes/fifthScene.ts",
       "../Source/Scenes/firstScene.ts",
       "../Source/Scenes/fourth.ts",
+      "../Source/Scenes/ninthScene.ts",
       "../Source/Scenes/secondScene.ts",
       "../Source/Scenes/seventhScene.ts",
       "../Source/Scenes/sixthScene.ts",
@@ -22,7 +23,7 @@
         },
         {
           "pos": 15,
-          "end": 58882,
+          "end": 70813,
           "kind": "text"
         }
       ],
@@ -50,7 +51,7 @@
       "sections": [
         {
           "pos": 0,
-          "end": 4950,
+          "end": 5352,
           "kind": "text"
         }
       ]

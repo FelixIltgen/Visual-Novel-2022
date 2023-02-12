@@ -7,19 +7,16 @@ namespace myNovel {
             narrator: {
                 T0001: "Ben geht ins Wohnzimmer. Dort sitzt seine Mutter mit einer Frau vom Untersuchungsausschuss der Polizei.",
                 T0002: "Die Frau holt ein Buch aus ihrer Tasche",
-                T0003: "Dass wissen sie nicht, vielleicht lebt er doch noch?",
-                T0004: "Mama, was machen wir jetzt?",
-                T0005: "Ben rennt traurig in sein Zimmer",
-                T0006: "",
-                T0007: ""
+                T0003: "Ben rennt traurig in sein Zimmer"
             },
             ben: {
                 T0001: "Bin wieder daaaa, halloooo???",
                 T0002: "Ich weiß es … ich kenne das Buch … Es ist das Tagebuch von Papa, er hat es dir nie erzählt Mama.",
                 T0003: "NEINN... wir müssen weiter suchen, wenn er immer noch da unten ist, dürfen wir nicht aufgeben.",
                 T0004: "Dass wissen sie nicht, vielleicht lebt er doch noch?",
-                T0005: "Doch wir müssen Papa such…",
-                T0006: "Das glaubst auch nur du!!"
+                T0005: "Mama, was machen wir jetzt?",
+                T0006: "Doch wir müssen Papa such…",
+                T0007: "Das glaubst auch nur du!!"
             },
             maria: {
                 T0001: "Hallo, worüber müssen sie mit mir sprechen.",
@@ -42,7 +39,7 @@ namespace myNovel {
                 T0001: "Ja, Frau Meier, wie sie bestimmt schon erfahren haben, ereignete sich ein Zwischenfall in der Mine.",
                 T0002: "Das Loch wurde in der Zwischenzeit untersucht und wir haben die Befürchtung, dass …",
                 T0003: "Dass …...",
-                T0004: "Wir vermuten, dass ihr Mann verschüttet worden ist.Wir vermuten, dass ihr Mann verschüttet worden ist.",
+                T0004: "Wir vermuten, dass ihr Mann verschüttet worden ist.",
                 T0005: "Während den Untersuchungen haben die Kollegen etwas gefunden, was in Verbindung mit ihrem Mann steht.",
                 T0006: "Dieses Buch wurde am Grunde des Lochs gefunden, erkennen sie dieses Buch Frau Meier, wissen Sie, was das ist?",
                 T0007: "Sind sie sicher, sie haben dieses Buch noch nie gesehen?",
@@ -53,11 +50,97 @@ namespace myNovel {
                 T0012: "Ja, wir haben aber bisher keinerlei Lebenszeichen gefunden und die Suche wird immer schwieriger und gefährlicher. Möglichweiße müssen wir die Suche bald einstellen.",
                 T0013: "Tut mir leid junger Mann, mittlerweile ist dein Vater mit großer Wahrscheinlichkeit nicht mehr am Leben.",
                 T0014: "Frau Meier, ihr Mann ist vermutlich dort unten psychisch zusammen gebrochen im Buch haben wir Aufschriebe von einer Art Monster oder so ähnlichem gefunden, dass ihren Mann wohl verfolgt haben soll. Wir gehen davon aus, dass ihr Mann aufgrund von Nahrungs- und Sauerstoffmangels halluziniert hat und schlussendlich gestorben ist.",
-                T0015: "Gerne, wir überlassen ihnen natürlich das Tagebuch, wir hoffen, wir konnten ihnen mehr Licht in den Unfall von ihrem Mann geben, noch einen schönen Tag.",
-                T0016: "",
-                T0017: "",
+                T0015: "Gerne, wir überlassen ihnen natürlich das Tagebuch, wir hoffen, wir konnten ihnen mehr Licht in den Unfall von ihrem Mann geben, noch einen schönen Tag."
             }
         };
-     
+        await ƒS.Location.show(locations.livingRoom);
+        await ƒS.update(transition.fade.duration, transition.leftFade.alpha, transition.leftFade.edge);
+        await ƒS.Character.show(characters.ben, characters.ben.pose.normal, newPositions.bottomright);
+        await ƒS.update(1);
+        await ƒS.Speech.tell(characters.ben, text.ben.T0001);
+        await ƒS.Speech.tell(characters.narrator, text.narrator.T0001);
+
+        await ƒS.Character.show(characters.maria, characters.maria.pose.neutral, newPositions.bottomleftMaria);
+        await ƒS.Character.show(characters.polizistin, characters.polizistin.pose.normal, newPositions.bottomcenter);
+        await ƒS.update(1);
+        await ƒS.Speech.tell(characters.maria, text.maria.T0001);
+        await ƒS.Speech.tell(characters.polizistin, text.polizistin.T0001);
+        await ƒS.Speech.tell(characters.maria, text.maria.T0002);
+        await ƒS.Speech.tell(characters.polizistin, text.polizistin.T0002);
+        await ƒS.Speech.tell(characters.maria, text.maria.T0003);
+        await ƒS.Character.hide(characters.polizistin);
+        await ƒS.update();
+        await ƒS.Character.show(characters.polizistin, characters.polizistin.pose.sorry, newPositions.bottomcenter);
+        await ƒS.update();
+        await ƒS.Speech.tell(characters.polizistin, text.polizistin.T0003);
+        await ƒS.Speech.tell(characters.polizistin, text.polizistin.T0004);
+
+        await ƒS.Character.hide(characters.maria);
+        await ƒS.update();
+        await ƒS.Character.show(characters.maria, characters.maria.pose.sad, newPositions.bottomleftMaria);
+        await ƒS.update();
+        await ƒS.Speech.tell(characters.maria, text.maria.T0004);
+        await ƒS.Character.hide(characters.polizistin);
+        await ƒS.update();
+        await ƒS.Character.show(characters.polizistin, characters.polizistin.pose.normal, newPositions.bottomcenter);
+        await ƒS.update();
+        await ƒS.Speech.tell(characters.polizistin, text.polizistin.T0005);
+        await ƒS.Speech.tell(characters.maria, text.maria.T0005);
+        await ƒS.Speech.tell(characters.narrator, text.narrator.T0002);
+        await ƒS.Speech.tell(characters.polizistin, text.polizistin.T0006);
+        await ƒS.Speech.tell(characters.maria, text.maria.T0006);
+        await ƒS.Speech.tell(characters.polizistin, text.polizistin.T0007);
+        await ƒS.Speech.tell(characters.maria, text.maria.T0007);
+        await ƒS.Speech.tell(characters.ben, text.ben.T0002);
+        await ƒS.Speech.tell(characters.polizistin, text.polizistin.T0008);
+
+        await ƒS.Speech.tell(characters.maria, text.maria.T0008);
+        await ƒS.Speech.tell(characters.polizistin, text.polizistin.T0009);
+        await ƒS.Character.hide(characters.maria);
+        await ƒS.update();
+        await ƒS.Character.show(characters.maria, characters.maria.pose.sad, newPositions.bottomleftMaria);
+        await ƒS.update();
+        await ƒS.Speech.tell(characters.maria, text.maria.T0009);
+        await ƒS.Speech.tell(characters.polizistin, text.polizistin.T0010);
+        await ƒS.Speech.tell(characters.maria, text.maria.T0010);
+        await ƒS.Speech.tell(characters.polizistin, text.polizistin.T0011);
+        await ƒS.Speech.tell(characters.maria, text.maria.T0011);
+        await ƒS.Speech.tell(characters.polizistin, text.polizistin.T0012);
+
+        await ƒS.Character.hide(characters.ben);
+        await ƒS.update();
+        await ƒS.Character.show(characters.ben, characters.ben.pose.sad, newPositions.bottomright);
+        await ƒS.update(0);
+        await ƒS.Speech.tell(characters.ben, text.ben.T0003);
+        await ƒS.Speech.tell(characters.polizistin, text.polizistin.T0013);
+        await ƒS.Speech.tell(characters.ben, text.ben.T0004);
+        await ƒS.Speech.tell(characters.maria, text.maria.T0012);
+        await ƒS.Speech.tell(characters.polizistin, text.polizistin.T0014);
+
+        await ƒS.Character.hide(characters.maria);
+        await ƒS.update();
+        await ƒS.Character.show(characters.maria, characters.maria.pose.verySad, newPositions.bottomleftMaria);
+        await ƒS.update();
+        await ƒS.Speech.tell(characters.maria, text.maria.T0013);
+        await ƒS.Speech.tell(characters.polizistin, text.polizistin.T0015);
+        await ƒS.Character.hide(characters.polizistin);
+        await ƒS.update(1);
+        await ƒS.Speech.tell(characters.ben, text.ben.T0005);
+        await ƒS.Speech.tell(characters.maria, text.maria.T0014);
+        await ƒS.Speech.tell(characters.ben, text.ben.T0006);
+
+        await ƒS.Character.hide(characters.maria);
+        await ƒS.update();
+        await ƒS.Character.show(characters.maria, characters.maria.pose.angry, newPositions.bottomleftMaria);
+        await ƒS.update();
+        await ƒS.Speech.tell(characters.maria, text.maria.T0015);
+        await ƒS.Character.hide(characters.ben);
+        await ƒS.update();
+        await ƒS.Character.show(characters.ben, characters.ben.pose.sad, newPositions.bottomright);
+        await ƒS.update(0);
+        await ƒS.Speech.tell(characters.ben, text.ben.T0007);
+        await ƒS.Character.hide(characters.ben);
+        await ƒS.update(1);
+        await ƒS.Speech.tell(characters.narrator, text.narrator.T0003);
       }
 }

@@ -113,6 +113,10 @@ declare namespace myNovel {
             name: string;
             background: string;
         };
+        blanko: {
+            name: string;
+            background: string;
+        };
     };
     let characters: {
         narrator: {
@@ -164,6 +168,15 @@ declare namespace myNovel {
                 ugh: string;
             };
         };
+        polizistin: {
+            name: string;
+            origin: ƒ.ORIGIN2D;
+            pose: {
+                eyes_closed: string;
+                sorry: string;
+                normal: string;
+            };
+        };
     };
     let newPositions: {
         bottomleftMaria: ƒ.Vector2;
@@ -188,6 +201,9 @@ declare namespace myNovel {
 }
 declare namespace myNovel {
     function fourthScene(): ƒS.SceneReturn;
+}
+declare namespace myNovel {
+    function ninthScene(): ƒS.SceneReturn;
 }
 declare namespace myNovel {
     function secondScene(): ƒS.SceneReturn;
