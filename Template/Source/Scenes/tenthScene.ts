@@ -109,6 +109,7 @@ namespace myNovel {
                 await ƒS.Speech.tell(characters.ben, text.ben.T0012);
                 await ƒS.Speech.tell(characters.ben, text.ben.T0013);
                 break;
+                
         }
         await ƒS.Character.hideAll(); 
       }
