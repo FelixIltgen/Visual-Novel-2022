@@ -41,11 +41,11 @@ namespace myNovel {
             case choices.noWrite:
                 console.log("Choice dont write");
                 await ƒS.Character.hide(characters.ben);
-                await ƒS.update(0);
                 await ƒS.Character.show(characters.ben, characters.ben.pose.confident, newPositions.bottomright);
                 await ƒS.update(0);
                 await ƒS.Speech.tell(characters.ben, "Ach, wieso sollte ich einen Brief schreiben, ich bin doch maximal ein paar Stunden oder maximal ein Tag weg, was soll den schon passieren.");
                 await ƒS.Speech.tell(characters.narrator, "Ben macht sich auf den Weg zur Mine.");
+                await ƒS.Character.hideAll(); 
                 return "chapterThree";
             
             case choices.write:
@@ -78,6 +78,7 @@ namespace myNovel {
                         console.log("Choice jump");
                         await ƒS.Speech.tell(characters.ben, "Schnell das Fenster, das ist meine einzige Chance, damit Mama mich nicht sieht.");
                         await ƒS.Speech.tell(characters.narrator, "Ben klettert aus dem Fenster und kommt so aus dem Haus, ohne von seiner Mutter entdeckt zu werden.");
+                        await ƒS.Character.hideAll(); 
                         return "chapterThree";        
                 }
                 break;   

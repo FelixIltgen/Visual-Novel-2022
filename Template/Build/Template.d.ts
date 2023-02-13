@@ -185,6 +185,15 @@ declare namespace myNovel {
                 normal: string;
             };
         };
+        paula: {
+            name: string;
+            origin: ƒ.ORIGIN2D;
+            pose: {
+                eyes_closed: string;
+                sorry: string;
+                normal: string;
+            };
+        };
     };
     let items: {
         feuerzeug: {
@@ -246,6 +255,9 @@ declare namespace myNovel {
     function afterItemSelection(): ƒS.SceneReturn;
 }
 declare namespace myNovel {
+    function chapterThreeGood(): ƒS.SceneReturn;
+}
+declare namespace myNovel {
     function eighthScene(): ƒS.SceneReturn;
 }
 declare namespace myNovel {
@@ -274,6 +286,9 @@ declare namespace myNovel {
 }
 declare namespace myNovel {
     function sixthScene(): ƒS.SceneReturn;
+}
+declare namespace myNovel {
+    function startChapterThree(): ƒS.SceneReturn;
 }
 declare namespace myNovel {
     function tenthScene(): ƒS.SceneReturn;

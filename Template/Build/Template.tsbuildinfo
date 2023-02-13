@@ -4,6 +4,7 @@
     "sourceFiles": [
       "../Source/Main.ts",
       "../Source/Scenes/afterItemSelection.ts",
+      "../Source/Scenes/chapterThreeGood.ts",
       "../Source/Scenes/eighthScene.ts",
       "../Source/Scenes/fifthScene.ts",
       "../Source/Scenes/firstScene.ts",
@@ -14,6 +15,7 @@
       "../Source/Scenes/secondScene.ts",
       "../Source/Scenes/seventhScene.ts",
       "../Source/Scenes/sixthScene.ts",
+      "../Source/Scenes/startChapterThree.ts",
       "../Source/Scenes/tenthScene.ts",
       "../Source/Scenes/thirdScene.ts"
     ],
@@ -27,7 +29,7 @@
         },
         {
           "pos": 15,
-          "end": 103595,
+          "end": 116956,
           "kind": "text"
         }
       ],
@@ -55,7 +57,7 @@
       "sections": [
         {
           "pos": 0,
-          "end": 7023,
+          "end": 7418,
           "kind": "text"
         }
       ]

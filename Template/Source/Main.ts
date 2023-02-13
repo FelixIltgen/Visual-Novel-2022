@@ -192,6 +192,15 @@ namespace myNovel {
         sorry: "Images/Characters/Weitere/polizistin_sorry.png",
         normal: "Images/Characters/Weitere/polizistin_normal.png"
       }
+    },
+    paula: {
+      name: "Paula",
+      origin: ƒS.ORIGIN.BOTTOMLEFT,
+      pose: {
+        eyes_closed: "Images/Characters/Weitere/paula_eyes_closed.png",
+        sorry: "Images/Characters/Weitere/paula_sorry.png",
+        normal: "Images/Characters/Weitere/paula_normal.png"
+      }
     }
   };
 
@@ -267,18 +276,21 @@ namespace myNovel {
       //{ scene: seventhScene, name: "Seventh scene"},
       //{ scene: eighthScene, name: "Eighth scene"},
       //{ scene: ninthScene, name: "Ninth scene"},
-      //{ scene: tenthScene, name: "Tenth scene"},
+      { scene: tenthScene, name: "Tenth scene"},
 
       //Selcet Items
-      //{ id: "withDairy", scene: itemSelcetionDairy, name: "Item selcetion with Dairy option"},
-      //{ id: "noDairy", scene: itemSelcetionNoDairy, name: "Item selcetion without Dairy option"},
+      { id: "withDairy", scene: itemSelcetionDairy, name: "Item selcetion with Dairy option"},
+      { id: "noDairy", scene: itemSelcetionNoDairy, name: "Item selcetion without Dairy option"},
 
       //Normal Path
       { id: "afterItemSelection", scene: afterItemSelection, name: "first scene after Item selection"},
 
-      { id: "ChapterThree", scene: startChapterThree, name: "Start Chapter three"}
-    
-    
+      { id: "chapterThree", scene: startChapterThree, name: "Start Chapter three"},
+
+      { id: "ChapterThreeGood", scene: chapterThreeGood, name: "Chapter three good path"}
+      //{ id: "ChapterThreeMid", scene: chapterMid, name: "Chapter three mid path"},
+      //{ id: "ChapterThreeBad", scene: startChapterBad, name: "Chapter three bad path"}
+
       //Bad Ending
     ];
 
