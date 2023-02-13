@@ -69,24 +69,26 @@ var myNovel;
             name: "New Shaft",
             background: "./Images/Background/newShaft.png"
         },
-        sinkhole: {
-            name: "Sinkhole",
-            background: "./Images/Background/newShaft.png"
-        },
-        sinkholeInside: {
-            name: "Sinkhole inside",
-            background: "./Images/Background/newShaft.png"
-        },
         supermarket: {
             name: "Supermarkt",
             background: "./Images/Background/supermarket.png"
         },
-        /*
-       Sinkloch
-       Im Loch
-       Labyrinth
-       Schiff
-       */
+        insideSinkhole: {
+            name: "Inside of the sinkhole",
+            background: "./Images/Background/insideSinkhole.png"
+        },
+        maze: {
+            name: "Maze",
+            background: "./Images/Background/maze.png"
+        },
+        spaceship: {
+            name: "Spaceship",
+            background: "./Images/Background/spaceship.png"
+        },
+        sinkhole: {
+            name: "Spaceship",
+            background: "./Images/Background/spaceship.png"
+        },
         // Chapter Backgrounds
         begin: {
             name: "Begin",
@@ -1090,7 +1092,7 @@ var myNovel;
                 await myNovel.ƒS.Speech.tell(myNovel.characters.ben, text.ben.T0005);
                 await myNovel.ƒS.Speech.tell(myNovel.characters.narrator, text.narrator.T0001);
                 await myNovel.ƒS.Character.hide(myNovel.characters.maria);
-                await myNovel.ƒS.update(0);
+                await myNovel.ƒS.update(1);
                 break;
             case choices.noRead:
                 console.log("Choice dont read book");
@@ -1100,7 +1102,7 @@ var myNovel;
                 await myNovel.ƒS.Speech.tell(myNovel.characters.maria, text.maria.T0009);
                 await myNovel.ƒS.Speech.tell(myNovel.characters.narrator, text.narrator.T0001);
                 await myNovel.ƒS.Character.hide(myNovel.characters.maria);
-                await myNovel.ƒS.update(0);
+                await myNovel.ƒS.update(1);
                 await myNovel.ƒS.Speech.tell(myNovel.characters.narrator, text.narrator.T0006);
                 await myNovel.ƒS.Character.hide(myNovel.characters.ben);
                 await myNovel.ƒS.update(0);

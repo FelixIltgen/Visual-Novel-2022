@@ -65,15 +65,23 @@ declare namespace myNovel {
             name: string;
             background: string;
         };
-        sinkhole: {
-            name: string;
-            background: string;
-        };
-        sinkholeInside: {
-            name: string;
-            background: string;
-        };
         supermarket: {
+            name: string;
+            background: string;
+        };
+        insideSinkhole: {
+            name: string;
+            background: string;
+        };
+        maze: {
+            name: string;
+            background: string;
+        };
+        spaceship: {
+            name: string;
+            background: string;
+        };
+        sinkhole: {
             name: string;
             background: string;
         };
