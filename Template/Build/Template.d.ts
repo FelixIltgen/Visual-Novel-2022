@@ -186,6 +186,50 @@ declare namespace myNovel {
             };
         };
     };
+    let items: {
+        feuerzeug: {
+            name: string;
+            description: string;
+            image: string;
+            inInventory: boolean;
+            static: boolean;
+        };
+        seil: {
+            name: string;
+            description: string;
+            image: string;
+            inInventory: boolean;
+            static: boolean;
+        };
+        tagebuch: {
+            name: string;
+            description: string;
+            image: string;
+            inInventory: boolean;
+            static: boolean;
+        };
+        taschenlampe: {
+            name: string;
+            description: string;
+            image: string;
+            inInventory: boolean;
+            static: boolean;
+        };
+        wanderschuhe: {
+            name: string;
+            description: string;
+            image: string;
+            inInventory: boolean;
+            static: boolean;
+        };
+        wasserflasche: {
+            name: string;
+            description: string;
+            image: string;
+            inInventory: boolean;
+            static: boolean;
+        };
+    };
     let newPositions: {
         bottomleftMaria: ƒ.Vector2;
         bottomleft: ƒ.Vector2;

@@ -194,6 +194,52 @@ namespace myNovel {
       }
     }
   };
+
+  export let items = {
+    feuerzeug: {
+      name: "Feuerzeug",
+      description: "Gut um etwas an zu zünden.",
+      image: "Images/Items/feuerzeug.png",
+      inInventory: false,
+      static: true
+    },
+    seil: {
+      name: "Seil",
+      description: "Perfekt um runter oder hoch zu klettern",
+      image: "Images/Items/seil.png",
+      inInventory: false,
+      static: false
+    },
+    tagebuch: {
+      name: "Tagebuch",
+      description: "Perfekt für wichtige Infos",
+      image: "Images/Items/tagebuch.png",
+      inInventory: false,
+      static: true
+    },
+    taschenlampe: {
+      name: "Taschenlampe",
+      description: "Sorgt für Licht, wenn es mal dunkel wird.",
+      image: "Images/Items/taschenlampe.png",
+      inInventory: false,
+      static: true
+    },
+    wanderschuhe: {
+      name: "Wanderschuhe",
+      description: "Perfekt für ein spannendes Abenteuer",
+      image: "Images/Items/wanderSchuh.png",
+      inInventory: false,
+      static: true
+    },
+    wasserflasche: {
+      name: "Wasserflasche",
+      description: "Gut für den Durst zwischend durch",
+      image: "Images/Items/wanderSchuh.png",
+      inInventory: false,
+      static: true
+    }
+  };
+
   export let newPositions = {
     bottomleftMaria: new FudgeStory.Position(950, -540),
     bottomleft: new FudgeStory.Position(350, -540),
@@ -221,11 +267,11 @@ namespace myNovel {
       //{ scene: seventhScene, name: "Seventh scene"},
       //{ scene: eighthScene, name: "Eighth scene"},
       //{ scene: ninthScene, name: "Ninth scene"},
-      { scene: tenthScene, name: "Tenth scene"},
+      //{ scene: tenthScene, name: "Tenth scene"},
 
       //Selcet Items
-      { id: "withDairy", scene: itemSelcetionDairy, name: "Item selcetion with Dairy option"},
-      { id: "noDairy", scene: itemSelcetionNoDairy, name: "Item selcetion without Dairy option"}
+      { id: "withDairy", scene: itemSelcetionDairy, name: "Item selcetion with Dairy option"}
+      //{ id: "noDairy", scene: itemSelcetionNoDairy, name: "Item selcetion without Dairy option"}
     ];
 
 
@@ -238,5 +284,12 @@ namespace myNovel {
 
     //Credits
     //<a href="https://lovepik.com/images/png-book.html">Book Png vectors by Lovepik.com</a>
+    //<a href="https://www.flaticon.com/de/kostenlose-icons/wasser" title="wasser Icons">Wasser Icons erstellt von Freepik - Flaticon</a>
+    //<a href="https://www.flaticon.com/de/kostenlose-icons/seil" title="seil Icons">Seil Icons erstellt von Freepik - Flaticon</a>
+    //<a href="https://www.flaticon.com/de/kostenlose-icons/feuerzeug" title="feuerzeug Icons">Feuerzeug Icons erstellt von Freepik - Flaticon</a>
+    //<a href="https://www.flaticon.com/de/kostenlose-icons/licht" title="licht Icons">Licht Icons erstellt von Freepik - Flaticon</a>
+    //<a href="https://www.flaticon.com/de/kostenlose-icons/buch" title="buch Icons">Buch Icons erstellt von Freepik - Flaticon</a>
+    //<a href="https://www.flaticon.com/de/kostenlose-icons/wandern" title="wandern Icons">Wandern Icons erstellt von Freepik - Flaticon</a>
+
   }
 }

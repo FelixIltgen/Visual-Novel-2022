@@ -191,6 +191,50 @@ var myNovel;
             }
         }
     };
+    myNovel.items = {
+        feuerzeug: {
+            name: "Feuerzeug",
+            description: "Gut um etwas an zu zünden.",
+            image: "Images/Items/feuerzeug.png",
+            inInventory: false,
+            static: true
+        },
+        seil: {
+            name: "Seil",
+            description: "Perfekt um runter oder hoch zu klettern",
+            image: "Images/Items/seil.png",
+            inInventory: false,
+            static: false
+        },
+        tagebuch: {
+            name: "Tagebuch",
+            description: "Perfekt für wichtige Infos",
+            image: "Images/Items/tagebuch.png",
+            inInventory: false,
+            static: true
+        },
+        taschenlampe: {
+            name: "Taschenlampe",
+            description: "Sorgt für Licht, wenn es mal dunkel wird.",
+            image: "Images/Items/taschenlampe.png",
+            inInventory: false,
+            static: true
+        },
+        wanderschuhe: {
+            name: "Wanderschuhe",
+            description: "Perfekt für ein spannendes Abenteuer",
+            image: "Images/Items/wanderSchuh.png",
+            inInventory: false,
+            static: true
+        },
+        wasserflasche: {
+            name: "Wasserflasche",
+            description: "Gut für den Durst zwischend durch",
+            image: "Images/Items/wanderSchuh.png",
+            inInventory: false,
+            static: true
+        }
+    };
     myNovel.newPositions = {
         bottomleftMaria: new FudgeStory.Position(950, -540),
         bottomleft: new FudgeStory.Position(350, -540),
@@ -214,10 +258,10 @@ var myNovel;
             //{ scene: seventhScene, name: "Seventh scene"},
             //{ scene: eighthScene, name: "Eighth scene"},
             //{ scene: ninthScene, name: "Ninth scene"},
-            { scene: myNovel.tenthScene, name: "Tenth scene" },
+            //{ scene: tenthScene, name: "Tenth scene"},
             //Selcet Items
-            { id: "withDairy", scene: myNovel.itemSelcetionDairy, name: "Item selcetion with Dairy option" },
-            { id: "noDairy", scene: myNovel.itemSelcetionNoDairy, name: "Item selcetion without Dairy option" }
+            { id: "withDairy", scene: myNovel.itemSelcetionDairy, name: "Item selcetion with Dairy option" }
+            //{ id: "noDairy", scene: itemSelcetionNoDairy, name: "Item selcetion without Dairy option"}
         ];
         let uiElement = document.querySelector("[type=interface]");
         myNovel.dataForSave = myNovel.ƒS.Progress.setData(myNovel.dataForSave, uiElement);
@@ -226,6 +270,12 @@ var myNovel;
         myNovel.ƒS.Speech.hide();
         //Credits
         //<a href="https://lovepik.com/images/png-book.html">Book Png vectors by Lovepik.com</a>
+        //<a href="https://www.flaticon.com/de/kostenlose-icons/wasser" title="wasser Icons">Wasser Icons erstellt von Freepik - Flaticon</a>
+        //<a href="https://www.flaticon.com/de/kostenlose-icons/seil" title="seil Icons">Seil Icons erstellt von Freepik - Flaticon</a>
+        //<a href="https://www.flaticon.com/de/kostenlose-icons/feuerzeug" title="feuerzeug Icons">Feuerzeug Icons erstellt von Freepik - Flaticon</a>
+        //<a href="https://www.flaticon.com/de/kostenlose-icons/licht" title="licht Icons">Licht Icons erstellt von Freepik - Flaticon</a>
+        //<a href="https://www.flaticon.com/de/kostenlose-icons/buch" title="buch Icons">Buch Icons erstellt von Freepik - Flaticon</a>
+        //<a href="https://www.flaticon.com/de/kostenlose-icons/wandern" title="wandern Icons">Wandern Icons erstellt von Freepik - Flaticon</a>
     }
 })(myNovel || (myNovel = {}));
 var myNovel;
@@ -661,19 +711,94 @@ var myNovel;
                 T0001: ""
             },
             ben: {
-                T0001: ""
-            },
-            maria: {
-                T0001: ""
-            },
-            valentin: {
-                T0001: "",
-                T0002: "",
-                T0003: ""
+                T0001: "So wo sind den meine Wandersachen und mein Rucksack?",
+                T0002: "GENAU!! Jetzt fällt es mir wieder ein...",
+                T0003: "...hier hinten müssten noch die alten Sachen von Papa sein",
+                T0004: "Hier sind sie wow richtig verstaubt, aber sie sollte eigentlich immer noch gut funktionieren.",
+                T0005: "Aber was soll ich mitnehmen, ich kann definitiv nicht alles mitnehmen. Ich muss mich entscheiden.",
+                T0006: "Ich habe Platz für 5 Gegenstände!"
             }
         };
         await myNovel.ƒS.Location.show(myNovel.locations.garage);
         await myNovel.ƒS.update(myNovel.transition.fade.duration, myNovel.transition.fade.alpha, myNovel.transition.fade.edge);
+        await myNovel.ƒS.Character.show(myNovel.characters.ben, myNovel.characters.ben.pose.normal, myNovel.newPositions.bottomright);
+        await myNovel.ƒS.update(0);
+        await myNovel.ƒS.Speech.tell(myNovel.characters.ben, text.ben.T0001);
+        await myNovel.ƒS.Speech.tell(myNovel.characters.ben, text.ben.T0002);
+        await myNovel.ƒS.Speech.tell(myNovel.characters.ben, text.ben.T0003);
+        await myNovel.ƒS.Speech.tell(myNovel.characters.ben, text.ben.T0004);
+        await myNovel.ƒS.Character.hide(myNovel.characters.ben);
+        await myNovel.ƒS.update(0);
+        await myNovel.ƒS.Character.show(myNovel.characters.ben, myNovel.characters.ben.pose.thinking, myNovel.newPositions.bottomright);
+        await myNovel.ƒS.update(0);
+        await myNovel.ƒS.Speech.tell(myNovel.characters.ben, text.ben.T0005);
+        let itemInInventory = 1;
+        let choices = {
+            feuerzeug: "Feuerzeug",
+            seil: "Seil",
+            tagebuch: "Tagebuch",
+            taschenlampe: "Taschenlampe",
+            wanderschuhe: "Wanderschuhe",
+            wasserflasche: "Wasserflasche"
+        };
+        while (itemInInventory <= 5) {
+            let dialogueElement = await myNovel.ƒS.Menu.getInput(choices, "choicesCSSClass");
+            switch (dialogueElement) {
+                case choices.feuerzeug:
+                    console.log("Choice Fuerzeug");
+                    myNovel.ƒS.Inventory.add(myNovel.items.feuerzeug);
+                    await myNovel.ƒS.Speech.tell(myNovel.characters.ben, "Ein Feuerzeug könnte hilfreich sein, wenn ich irgendetwas anzünden muss.");
+                    await myNovel.ƒS.Speech.tell(myNovel.characters.ben, "Okay, kann ich noch etwas mitnehmen?");
+                    itemInInventory++;
+                    delete choices.feuerzeug;
+                    break;
+                case choices.seil:
+                    console.log("Choice Seil");
+                    myNovel.ƒS.Inventory.add(myNovel.items.seil);
+                    await myNovel.ƒS.Speech.tell(myNovel.characters.ben, "Ein Seil könnte auch hilfreich sein, falls ich irgendwo herunter klettern muss.");
+                    await myNovel.ƒS.Speech.tell(myNovel.characters.ben, "Okay, was könnte ich noch gebrauchen. ");
+                    itemInInventory++;
+                    delete choices.seil;
+                    break;
+                case choices.tagebuch:
+                    console.log("Choice Tagebuch");
+                    myNovel.ƒS.Inventory.add(myNovel.items.tagebuch);
+                    await myNovel.ƒS.Speech.tell(myNovel.characters.ben, "Ja, das Tagebuch ist sehr wichtig, das sollte ich auf jeden Fall mitnehmen.");
+                    await myNovel.ƒS.Speech.tell(myNovel.characters.ben, "Dann kann ich noch mal etwas nachlesen, falls ich unterwegs etwas vergessen habe.");
+                    itemInInventory++;
+                    delete choices.tagebuch;
+                    break;
+                case choices.taschenlampe:
+                    console.log("Choice Taschenlampe");
+                    myNovel.ƒS.Inventory.add(myNovel.items.taschenlampe);
+                    await myNovel.ƒS.Speech.tell(myNovel.characters.ben, "Boah... eine Taschenlampe ist sehr wichtig, ohne werde ich mit Sicherheit nichts sehen.");
+                    await myNovel.ƒS.Speech.tell(myNovel.characters.ben, "Okay, was könnte ich noch gebrauchen? ");
+                    itemInInventory++;
+                    delete choices.taschenlampe;
+                    break;
+                case choices.wanderschuhe:
+                    console.log("Choice Wanderschuhe");
+                    delete (choices.wanderschuhe);
+                    myNovel.ƒS.Inventory.add(myNovel.items.wanderschuhe);
+                    await myNovel.ƒS.Speech.tell(myNovel.characters.ben, "Vielleicht sollte ich nicht mit Sportschuhen in die Mine gehen, am Ende rutsche ich ab.");
+                    await myNovel.ƒS.Speech.tell(myNovel.characters.ben, "Mit Wanderschuhen passiert mir das nicht.");
+                    await myNovel.ƒS.Speech.tell(myNovel.characters.ben, "Okay, was kann ich noch mitnehmen.");
+                    itemInInventory++;
+                    delete choices.wanderschuhe;
+                    break;
+                case choices.wasserflasche:
+                    delete (choices.wasserflasche);
+                    console.log("Choice Wasserflasche");
+                    myNovel.ƒS.Inventory.add(myNovel.items.wasserflasche);
+                    await myNovel.ƒS.Speech.tell(myNovel.characters.ben, "Okay, was kann ich noch mitnehmen.");
+                    await myNovel.ƒS.Speech.tell(myNovel.characters.ben, "Falls ich länger in der Mine bin, brauche ich auf jeden Fall etwas zu trinken. Mit der Flasche könnte ich Wasser mitnehmen und möglicherweise auffüllen.  ");
+                    delete (choices.wasserflasche);
+                    itemInInventory++;
+                    break;
+            }
+        }
+        myNovel.ƒS.Inventory.open();
+        await myNovel.ƒS.Character.hideAll();
     }
     myNovel.itemSelcetionDairy = itemSelcetionDairy;
 })(myNovel || (myNovel = {}));
