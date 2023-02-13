@@ -67,7 +67,7 @@ namespace myNovel {
                   };
                   
                 let dialogueElement = await ƒS.Menu.getInput(choicesRun, "choicesCSSClass");
-                
+
                 switch (dialogueElement) {
 
                     case choicesRun.hide:
@@ -80,8 +80,7 @@ namespace myNovel {
                         await ƒS.Speech.tell(characters.narrator, "Ben klettert aus dem Fenster und kommt so aus dem Haus, ohne von seiner Mutter entdeckt zu werden.");
                         return "chapterThree";        
                 }
-                break;
-                
+                break;   
         }
       }
 }
