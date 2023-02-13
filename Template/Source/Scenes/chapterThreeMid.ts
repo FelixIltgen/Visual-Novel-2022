@@ -15,7 +15,6 @@ namespace myNovel {
         await ƒS.update(2);
         await ƒS.Location.show(locations.street);
         await ƒS.update(3);
-        await ƒS.update(transition.fade.duration, transition.leftFade.alpha, transition.leftFade.edge);
         await ƒS.Speech.tell(characters.narrator, text.narrator.T0001);
         await ƒS.Character.show(characters.ben, characters.ben.pose.thinking, newPositions.bottomright);
         await ƒS.update(1);

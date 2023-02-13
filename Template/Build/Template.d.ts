@@ -258,6 +258,9 @@ declare namespace myNovel {
     function afterItemSelection(): ƒS.SceneReturn;
 }
 declare namespace myNovel {
+    function chapterFourGood(): ƒS.SceneReturn;
+}
+declare namespace myNovel {
     function chapterThreeGood(): ƒS.SceneReturn;
 }
 declare namespace myNovel {
