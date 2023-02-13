@@ -211,6 +211,12 @@ declare namespace myNovel {
     function fourthScene(): ƒS.SceneReturn;
 }
 declare namespace myNovel {
+    function itemSelcetionDairy(): ƒS.SceneReturn;
+}
+declare namespace myNovel {
+    function itemSelcetionNoDairy(): ƒS.SceneReturn;
+}
+declare namespace myNovel {
     function ninthScene(): ƒS.SceneReturn;
 }
 declare namespace myNovel {

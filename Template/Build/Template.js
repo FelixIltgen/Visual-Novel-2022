@@ -214,13 +214,18 @@ var myNovel;
             //{ scene: seventhScene, name: "Seventh scene"},
             //{ scene: eighthScene, name: "Eighth scene"},
             //{ scene: ninthScene, name: "Ninth scene"},
-            { scene: myNovel.tenthScene, name: "Tenth scene" }
+            { scene: myNovel.tenthScene, name: "Tenth scene" },
+            //Selcet Items
+            { id: "withDairy", scene: myNovel.itemSelcetionDairy, name: "Item selcetion with Dairy option" },
+            { id: "noDairy", scene: myNovel.itemSelcetionNoDairy, name: "Item selcetion without Dairy option" }
         ];
         let uiElement = document.querySelector("[type=interface]");
         myNovel.dataForSave = myNovel.ƒS.Progress.setData(myNovel.dataForSave, uiElement);
         // start the sequence
         myNovel.ƒS.Progress.go(scenes);
         myNovel.ƒS.Speech.hide();
+        //Credits
+        //<a href="https://lovepik.com/images/png-book.html">Book Png vectors by Lovepik.com</a>
     }
 })(myNovel || (myNovel = {}));
 var myNovel;
@@ -649,6 +654,54 @@ var myNovel;
 })(myNovel || (myNovel = {}));
 var myNovel;
 (function (myNovel) {
+    async function itemSelcetionDairy() {
+        console.log("Start Item Selection with Dairy");
+        let text = {
+            narrator: {
+                T0001: ""
+            },
+            ben: {
+                T0001: ""
+            },
+            maria: {
+                T0001: ""
+            },
+            valentin: {
+                T0001: "",
+                T0002: "",
+                T0003: ""
+            }
+        };
+        await myNovel.ƒS.Location.show(myNovel.locations.garage);
+        await myNovel.ƒS.update(myNovel.transition.fade.duration, myNovel.transition.fade.alpha, myNovel.transition.fade.edge);
+    }
+    myNovel.itemSelcetionDairy = itemSelcetionDairy;
+})(myNovel || (myNovel = {}));
+var myNovel;
+(function (myNovel) {
+    async function itemSelcetionNoDairy() {
+        console.log("Start Item Selection without Dairy");
+        let text = {
+            narrator: {
+                T0001: ""
+            },
+            ben: {
+                T0001: ""
+            },
+            maria: {
+                T0001: ""
+            },
+            valentin: {
+                T0001: "",
+                T0002: "",
+                T0003: ""
+            }
+        };
+    }
+    myNovel.itemSelcetionNoDairy = itemSelcetionNoDairy;
+})(myNovel || (myNovel = {}));
+var myNovel;
+(function (myNovel) {
     async function ninthScene() {
         console.log("Start Prolog");
         let text = {
@@ -1023,7 +1076,7 @@ var myNovel;
         let text = {
             narrator: {
                 T0001: "Maria verlässt das Zimmer",
-                T0002: "Ben bleibt noch einen Augenblick in seinem Bett liegen und über die Geschehnisse des Tages nach.",
+                T0002: "Ben bleibt noch einen Augenblick in seinem Bett liegen und denkt über die Geschehnisse des Tages nach.",
                 T0003: "Ben öffnet das Tagebuch",
                 T0004: "Ben schließt das Tagebuch wieder",
                 T0005: "Ben überlegt kurz.",
@@ -1042,7 +1095,7 @@ var myNovel;
                 T0010: "Nein, ich kann einfach nicht hier rumsitzen und nichts tun. Ich bin mir sicher Papa ist immer noch da unten und wenn das alles stimmt, was in diesem Buch steht, braucht Papa auf jeden Fall meine Hilfe.",
                 T0011: "Alle haben Papa aufgegeben... ich nicht... ich werde ihn finden!",
                 T0012: "Aber bevor ich in die Mine gehe, brauche ich noch etwas Ausrüstung, die wird mir bestimmt helfen.",
-                T0013: "In der Garage sollte ich eigentlich alles finden, um gut vorbereitet sein.",
+                T0013: "In der Garage sollte ich eigentlich alles finden, um gut vorbereitet zu sein.",
                 T0014: "Nein, ich möchte nicht mit, kannst du mich jetzt alleine lassen.",
                 T0015: "Nein, ich kann es einfach nicht wahrhaben, Papa hat nie aufgegeben... niemals.",
                 T0016: "Wenn jemand so etwas überleben kann, dann Papa.",
@@ -1093,6 +1146,43 @@ var myNovel;
                 await myNovel.ƒS.Speech.tell(myNovel.characters.narrator, text.narrator.T0001);
                 await myNovel.ƒS.Character.hide(myNovel.characters.maria);
                 await myNovel.ƒS.update(1);
+                await myNovel.ƒS.Speech.tell(myNovel.characters.narrator, text.narrator.T0002);
+                await myNovel.ƒS.Speech.tell(myNovel.characters.ben, text.ben.T0006);
+                myNovel.ƒS.Speech.hide();
+                //Novel Page
+                myNovel.ƒS.Text.addClass("novelPageDiary");
+                await myNovel.ƒS.Text.print("<div class=novelPageContent> <div class=leftPage><b>Erster Eintrag:</b> <br> <br> Heute müssen ich und Andrea den neuen Stollen sprengen ich bin mir sehr unsicher ob es eine Gute Idee ist.<br> \
+                                <br> <b>Zweiter Eintrag: </b> <br> <br> Habe noch mal Rücksprache mit der Minenleitung gehalten. Die wollen echt, dass ich diesen Tunnel sprenge... <br> \
+                                <br> <b>Dritter Eintrag:</b> <br> <br> Ich fahre jetzt mit Andrea an die Stelle für die Sprengung und bereite alles vor.</div>  \
+                                <div class=rightPage> <b>Vierter Eintrag:</b> <br> <br> Die Sprengung hat gut funktioniert, hoffentlich passiert nichts.  </div> </div>");
+                await myNovel.ƒS.Text.print("<div class=novelPageContent> <div class=leftPage><b>Fünfter Eintrag:</b> <br> <br> Ich habe den Einsturz überlebt, wie durch ein Wunder bin ich nicht \
+                                verletzt. Was auch immer mich verfolgt hat es ist weg, vielleicht auch tot? <br> \
+                                <br> <b>Sechster Eintrag: </b><br><br> Ich hatte Glück, habe eine alte Taschenlampe gefunden, die noch funktioniert, nun kann ich etwas \
+                                 besser sehen, wo ich entlang gehe. Das sind definitiv keine Stollen, es muss eine Höhle oder etwas Ähnlicheres sein. <br> \
+                                <br> <b>Siebter Eintrag:</b> <br> <br> Ich habe einen Rucksack mit Konserven gefunden, wie kam der nur hier her? Das kann kein Zufall sein. Egal, Hauptsache, ich habe etwas zu essen.</div>  \
+                                <div class=rightPage> <b>Achter Eintrag:</b> <br> <br> Ich habe die Suche nach Andrea aufgegeben, ich kann ihn nirgendwo finden, wahrscheinlich hat sie es nicht geschafft. Was ist das nur gewesen?<br> \
+                                <br><b>Neunter Eintrag:</b><br><br> Ich habe in einem Haufen aus Schutt Batterien gefunden, damit hält meine Taschenlampe etwas länger, wie sind die Batterien hier gelandet?<br> \
+                                <br><b>Zehnter Eintrag:</b><br><br> Diese Gänge sind etwas irreführend, kommt mir vor wie in einem Labyrinth, wenn ich hier durch komme, sollte ich mir den richtigen Weg aufschreiben. </div></div>");
+                await myNovel.ƒS.Text.print("<div class=novelPageContent> <div class=leftPage><b>WICHTIG UNBEDINGT MERKEN</b> <br><br> <br>⇽ 🠕 ⇾ 🠕 = ✧ <br><br><br> 5536 </div>  \
+                                <div class=rightPage></div></div>");
+                myNovel.ƒS.Speech.show();
+                await myNovel.ƒS.Character.hide(myNovel.characters.ben);
+                await myNovel.ƒS.update(0);
+                await myNovel.ƒS.Character.show(myNovel.characters.ben, myNovel.characters.ben.pose.thinking, myNovel.newPositions.bottomright);
+                await myNovel.ƒS.update(0);
+                await myNovel.ƒS.Speech.tell(myNovel.characters.ben, text.ben.T0007);
+                await myNovel.ƒS.Speech.tell(myNovel.characters.ben, text.ben.T0008);
+                await myNovel.ƒS.Speech.tell(myNovel.characters.ben, text.ben.T0009);
+                await myNovel.ƒS.Speech.tell(myNovel.characters.ben, text.ben.T0010);
+                await myNovel.ƒS.Character.hide(myNovel.characters.ben);
+                await myNovel.ƒS.update(0);
+                await myNovel.ƒS.Character.show(myNovel.characters.ben, myNovel.characters.ben.pose.confident, myNovel.newPositions.bottomright);
+                await myNovel.ƒS.update(0);
+                await myNovel.ƒS.Speech.tell(myNovel.characters.ben, text.ben.T0011);
+                await myNovel.ƒS.Speech.tell(myNovel.characters.ben, text.ben.T0012);
+                await myNovel.ƒS.Speech.tell(myNovel.characters.ben, text.ben.T0013);
+                await myNovel.ƒS.Character.hideAll();
+                return "withDairy";
                 break;
             case choices.noRead:
                 console.log("Choice dont read book");
@@ -1112,12 +1202,17 @@ var myNovel;
                 await myNovel.ƒS.Speech.tell(myNovel.characters.ben, text.ben.T0016);
                 await myNovel.ƒS.Speech.tell(myNovel.characters.ben, text.ben.T0017);
                 await myNovel.ƒS.Speech.tell(myNovel.characters.ben, text.ben.T0018);
+                await myNovel.ƒS.Character.hide(myNovel.characters.ben);
+                await myNovel.ƒS.update(0);
+                await myNovel.ƒS.Character.show(myNovel.characters.ben, myNovel.characters.ben.pose.confident, myNovel.newPositions.bottomright);
+                await myNovel.ƒS.update(0);
                 await myNovel.ƒS.Speech.tell(myNovel.characters.ben, text.ben.T0011);
                 await myNovel.ƒS.Speech.tell(myNovel.characters.ben, text.ben.T0012);
                 await myNovel.ƒS.Speech.tell(myNovel.characters.ben, text.ben.T0013);
+                await myNovel.ƒS.Character.hideAll();
+                return "noDairy";
                 break;
         }
-        await myNovel.ƒS.Character.hideAll();
     }
     myNovel.tenthScene = tenthScene;
 })(myNovel || (myNovel = {}));

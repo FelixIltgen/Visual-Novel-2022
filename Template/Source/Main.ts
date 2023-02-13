@@ -204,6 +204,7 @@ namespace myNovel {
   };
 
 
+
   export let dataForSave = {
     nameProtagonist: ""
   };
@@ -220,7 +221,11 @@ namespace myNovel {
       //{ scene: seventhScene, name: "Seventh scene"},
       //{ scene: eighthScene, name: "Eighth scene"},
       //{ scene: ninthScene, name: "Ninth scene"},
-      { scene: tenthScene, name: "Tenth scene"}
+      { scene: tenthScene, name: "Tenth scene"},
+
+      //Selcet Items
+      { id: "withDairy", scene: itemSelcetionDairy, name: "Item selcetion with Dairy option"},
+      { id: "noDairy", scene: itemSelcetionNoDairy, name: "Item selcetion without Dairy option"}
     ];
 
 
@@ -230,5 +235,8 @@ namespace myNovel {
     // start the sequence
     ƒS.Progress.go(scenes);
     ƒS.Speech.hide();
+
+    //Credits
+    //<a href="https://lovepik.com/images/png-book.html">Book Png vectors by Lovepik.com</a>
   }
 }

@@ -7,6 +7,8 @@
       "../Source/Scenes/fifthScene.ts",
       "../Source/Scenes/firstScene.ts",
       "../Source/Scenes/fourth.ts",
+      "../Source/Scenes/itemSelcetionDairy.ts",
+      "../Source/Scenes/itemSelcetionnNoDairy.ts",
       "../Source/Scenes/ninthScene.ts",
       "../Source/Scenes/secondScene.ts",
       "../Source/Scenes/seventhScene.ts",
@@ -24,7 +26,7 @@
         },
         {
           "pos": 15,
-          "end": 78944,
+          "end": 85297,
           "kind": "text"
         }
       ],
@@ -52,7 +54,7 @@
       "sections": [
         {
           "pos": 0,
-          "end": 5611,
+          "end": 5781,
           "kind": "text"
         }
       ]

@@ -91,3 +91,28 @@ name {
   margin-bottom: 10px;
 }
 
+/*Novel Page Style*/
+
+.novelPageDiary{
+  background-image: url("Images/Background/open_Book.png");
+  width: 1000px;
+  height: 700px;
+  border: none;
+  background-color: transparent;
+  padding: 0px;
+}
+.novelPageContent{
+  height: 100%;
+  display: flex;
+}
+.leftPage{
+  width: 50%;
+  padding: 34px 0px 33px 56px;
+  font-size: 18px;
+}
+.rightPage{
+  width: 50%;
+  padding: 34px 48px 34px 40px;
+  font-size: 18px;
+}
+
