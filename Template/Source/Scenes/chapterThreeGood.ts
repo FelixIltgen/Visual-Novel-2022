@@ -13,12 +13,12 @@ namespace myNovel {
             },
             ben: {
                 T0001: "Eigentlich hätte ich auch mein Fahrrad nehmen können, dann wäre ich viel schneller.",
-                T0002: "Egal, es ist eh viel zu ausfällig gewesen, wenn ich das Fahrrad genommen hätte.",
+                T0002: "Egal, es ist eh viel zu auffällig gewesen, wenn ich das Fahrrad genommen hätte.",
                 T0003: "Ah... Hi Paula, wie geht's?",
                 T0004: "Ja, den Umständen entsprechend...",
                 T0005: "Ah, nichts besonderes bin auf dem Weg zum einkaufen.",
                 T0006: "Nein, meine Mutter ist nur schnell ein paar Lebensmittel einkaufen.",
-                T0007: "Ich will mir nur kurz in Media Markt.",
+                T0007: "Ich will nur kurz in den Media Markt.",
                 T0008: "Genau.",
                 T0009: "Alles klar, man sieht sich.",
                 T0010: "Ja okay, hast mich erwischt. Eigentlich habe ich was anderes vor.",
@@ -35,7 +35,7 @@ namespace myNovel {
                 T0001: "Ben....!!!!",
                 T0002: "Danke gut uns selbst? Habe mit bekommen, was in der Mine passiert ist.",
                 T0003: "Cool, cool, was machst du gerade, wohin geht's?",
-                T0004: "Ähhh, ich habe gerade eben deine Maria beim einkaufen gesehen geht ihr getrennt Einkaufen oder wie?",
+                T0004: "Ähhh, ich habe gerade eben deine Mutter beim einkaufen gesehen geht ihr getrennt Einkaufen oder wie?",
                 T0005: "Achsooo, neu Technik besorgen?",
                 T0006: "Ja gut, dann will ich dich nicht weiter aufhalten.",
                 T0007: "Jouu, bis dann.",
@@ -49,8 +49,10 @@ namespace myNovel {
                 T0015: "Alles klar."
             }
         };
+        await ƒS.Location.show(locations.chapterThree);
+        await ƒS.update(2);
         await ƒS.Location.show(locations.street);
-        await ƒS.update(transition.fade.duration, transition.leftFade.alpha, transition.leftFade.edge);
+        await ƒS.update(3);
         await ƒS.Speech.tell(characters.narrator, text.narrator.T0001);
         await ƒS.Character.show(characters.ben, characters.ben.pose.normal, newPositions.bottomright);
         await ƒS.update(1);
@@ -105,12 +107,12 @@ namespace myNovel {
                 await ƒS.Speech.tell(characters.ben, text.ben.T0017);
                 await ƒS.Speech.tell(characters.paula, text.paula.T0015);
                 await ƒS.Character.hideAll(); 
-                return "chapterFour";
+                break;
 
             case choices.dontSay:
                 console.log("Choice dontSay");
                 await ƒS.Speech.tell(characters.ben, text.ben.T0005);
-                await ƒS.Speech.tell(characters.paula, text.paula.T0003);
+                await ƒS.Speech.tell(characters.paula, text.paula.T0004);
 
                 let choicesLie = {
                     lie:  "Lügen",
@@ -125,13 +127,13 @@ namespace myNovel {
 
                         await ƒS.Speech.tell(characters.ben, text.ben.T0006);
                         await ƒS.Speech.tell(characters.ben, text.ben.T0007);
-                        await ƒS.Speech.tell(characters.paula, text.paula.T0004);
-                        await ƒS.Speech.tell(characters.ben, text.ben.T0008);
                         await ƒS.Speech.tell(characters.paula, text.paula.T0005);
-                        await ƒS.Speech.tell(characters.ben, text.ben.T0009);
+                        await ƒS.Speech.tell(characters.ben, text.ben.T0008);
                         await ƒS.Speech.tell(characters.paula, text.paula.T0006);
+                        await ƒS.Speech.tell(characters.ben, text.ben.T0009);
+                        await ƒS.Speech.tell(characters.paula, text.paula.T0007);
                         await ƒS.Character.hideAll(); 
-                        return "chapterFour";
+                        break;
 
                     case choicesLie.dontLie:
                         console.log("Choice dontLie");
@@ -169,9 +171,8 @@ namespace myNovel {
                         await ƒS.Speech.tell(characters.ben, text.ben.T0017);
                         await ƒS.Speech.tell(characters.paula, text.paula.T0015);
                         await ƒS.Character.hideAll(); 
-                        return "chapterFour";  
-                }
-                break;   
+                        break;  
+                }  
         }
       }
 }

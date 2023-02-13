@@ -239,7 +239,7 @@ var myNovel;
         wasserflasche: {
             name: "Wasserflasche",
             description: "Gut für den Durst zwischend durch",
-            image: "Images/Items/wanderSchuh.png",
+            image: "Images/Items/wasserflasche.png",
             inInventory: false,
             static: true
         }
@@ -271,13 +271,16 @@ var myNovel;
             //Selcet Items
             { id: "withDairy", scene: myNovel.itemSelcetionDairy, name: "Item selcetion with Dairy option" },
             { id: "noDairy", scene: myNovel.itemSelcetionNoDairy, name: "Item selcetion without Dairy option" },
-            //Normal Path
+            //Cotinue normal path
             { id: "afterItemSelection", scene: myNovel.afterItemSelection, name: "first scene after Item selection" },
+            //Start chapter three
             { id: "chapterThree", scene: myNovel.startChapterThree, name: "Start Chapter three" },
-            { id: "ChapterThreeGood", scene: myNovel.chapterThreeGood, name: "Chapter three good path" }
-            //{ id: "ChapterThreeMid", scene: chapterMid, name: "Chapter three mid path"},
-            //{ id: "ChapterThreeBad", scene: startChapterBad, name: "Chapter three bad path"}
-            //Bad Ending
+            { id: "chapterThreeGood", scene: myNovel.chapterThreeGood, name: "Chapter three good path", next: "chapterFour" },
+            { id: "chapterThreeMid", scene: myNovel.chapterThreeMid, name: "Chapter three mid path" },
+            //Start chapter four
+            { id: "chapterFour", scene: myNovel.startChapterFour, name: "Start Chapter four" },
+            //Bad Endings
+            { id: "chapterThreeBad", scene: myNovel.ChapterThreeBad, name: "Chapter three bad path" }
         ];
         let uiElement = document.querySelector("[type=interface]");
         myNovel.dataForSave = myNovel.ƒS.Progress.setData(myNovel.dataForSave, uiElement);
@@ -293,6 +296,26 @@ var myNovel;
         //<a href="https://www.flaticon.com/de/kostenlose-icons/buch" title="buch Icons">Buch Icons erstellt von Freepik - Flaticon</a>
         //<a href="https://www.flaticon.com/de/kostenlose-icons/wandern" title="wandern Icons">Wandern Icons erstellt von Freepik - Flaticon</a>
     }
+})(myNovel || (myNovel = {}));
+var myNovel;
+(function (myNovel) {
+    async function ChapterThreeBad() {
+        console.log("Start Prolog");
+        await myNovel.ƒS.Speech.tell(myNovel.characters.ben, "Okay, los geht's dann kann ich ein bisschen Zeit sparen.");
+        await myNovel.ƒS.Speech.tell(myNovel.characters.narrator, "Ben klettert über die Mauer. ");
+        await myNovel.ƒS.Speech.tell(myNovel.characters.ben, "Wooow ganz schön hoch. Warum habe ich meine Wanderschuhe nicht mitgenommen, hoffentlich rutsche ich nicht ab, hier ist es ziemlich rutschig.");
+        await myNovel.ƒS.Speech.tell(myNovel.characters.ben, "Ja gleich geschafft nur noch ein kurzes Stückchen, dann bin ich oben.");
+        await myNovel.ƒS.Speech.tell(myNovel.characters.ben, "Ben versucht sich an einem losen Stein festzuhalten");
+        await myNovel.ƒS.Character.hide(myNovel.characters.ben);
+        await myNovel.ƒS.Character.show(myNovel.characters.ben, myNovel.characters.ben.pose.ohman, myNovel.newPositions.bottomright);
+        await myNovel.ƒS.update();
+        await myNovel.ƒS.Speech.tell(myNovel.characters.ben, "Ohh Nein der ist ja locker, ahhhhhh ich rutsche ab.");
+        await myNovel.ƒS.Speech.tell(myNovel.characters.ben, "NEiinnnnn.....");
+        await myNovel.ƒS.Speech.tell(myNovel.characters.ben, "Scheiße, ich hab mir, glaube ich, den Fuß gebrochen.");
+        await myNovel.ƒS.Location.show(myNovel.locations.blanko);
+        await myNovel.ƒS.update(2);
+    }
+    myNovel.ChapterThreeBad = ChapterThreeBad;
 })(myNovel || (myNovel = {}));
 var myNovel;
 (function (myNovel) {
@@ -383,12 +406,12 @@ var myNovel;
             },
             ben: {
                 T0001: "Eigentlich hätte ich auch mein Fahrrad nehmen können, dann wäre ich viel schneller.",
-                T0002: "Egal, es ist eh viel zu ausfällig gewesen, wenn ich das Fahrrad genommen hätte.",
+                T0002: "Egal, es ist eh viel zu auffällig gewesen, wenn ich das Fahrrad genommen hätte.",
                 T0003: "Ah... Hi Paula, wie geht's?",
                 T0004: "Ja, den Umständen entsprechend...",
                 T0005: "Ah, nichts besonderes bin auf dem Weg zum einkaufen.",
                 T0006: "Nein, meine Mutter ist nur schnell ein paar Lebensmittel einkaufen.",
-                T0007: "Ich will mir nur kurz in Media Markt.",
+                T0007: "Ich will nur kurz in den Media Markt.",
                 T0008: "Genau.",
                 T0009: "Alles klar, man sieht sich.",
                 T0010: "Ja okay, hast mich erwischt. Eigentlich habe ich was anderes vor.",
@@ -404,7 +427,7 @@ var myNovel;
                 T0001: "Ben....!!!!",
                 T0002: "Danke gut uns selbst? Habe mit bekommen, was in der Mine passiert ist.",
                 T0003: "Cool, cool, was machst du gerade, wohin geht's?",
-                T0004: "Ähhh, ich habe gerade eben deine Maria beim einkaufen gesehen geht ihr getrennt Einkaufen oder wie?",
+                T0004: "Ähhh, ich habe gerade eben deine Mutter beim einkaufen gesehen geht ihr getrennt Einkaufen oder wie?",
                 T0005: "Achsooo, neu Technik besorgen?",
                 T0006: "Ja gut, dann will ich dich nicht weiter aufhalten.",
                 T0007: "Jouu, bis dann.",
@@ -421,9 +444,9 @@ var myNovel;
         await myNovel.ƒS.Location.show(myNovel.locations.street);
         await myNovel.ƒS.update(myNovel.transition.fade.duration, myNovel.transition.leftFade.alpha, myNovel.transition.leftFade.edge);
         await myNovel.ƒS.Speech.tell(myNovel.characters.narrator, text.narrator.T0001);
-        await myNovel.ƒS.Speech.tell(myNovel.characters.ben, text.ben.T0001);
         await myNovel.ƒS.Character.show(myNovel.characters.ben, myNovel.characters.ben.pose.normal, myNovel.newPositions.bottomright);
         await myNovel.ƒS.update(1);
+        await myNovel.ƒS.Speech.tell(myNovel.characters.ben, text.ben.T0001);
         await myNovel.ƒS.Speech.tell(myNovel.characters.ben, text.ben.T0002);
         await myNovel.ƒS.Speech.tell(myNovel.characters.narrator, text.narrator.T0002);
         await myNovel.ƒS.Speech.tell(myNovel.characters.paula, text.paula.T0001);
@@ -469,11 +492,12 @@ var myNovel;
                 await myNovel.ƒS.update(0);
                 await myNovel.ƒS.Speech.tell(myNovel.characters.ben, text.ben.T0017);
                 await myNovel.ƒS.Speech.tell(myNovel.characters.paula, text.paula.T0015);
-                return "chapterFour";
+                await myNovel.ƒS.Character.hideAll();
+                break;
             case choices.dontSay:
                 console.log("Choice dontSay");
                 await myNovel.ƒS.Speech.tell(myNovel.characters.ben, text.ben.T0005);
-                await myNovel.ƒS.Speech.tell(myNovel.characters.paula, text.paula.T0003);
+                await myNovel.ƒS.Speech.tell(myNovel.characters.paula, text.paula.T0004);
                 let choicesLie = {
                     lie: "Lügen",
                     dontLie: "Wahrheit erzählen"
@@ -484,12 +508,13 @@ var myNovel;
                         console.log("Choice lie");
                         await myNovel.ƒS.Speech.tell(myNovel.characters.ben, text.ben.T0006);
                         await myNovel.ƒS.Speech.tell(myNovel.characters.ben, text.ben.T0007);
-                        await myNovel.ƒS.Speech.tell(myNovel.characters.paula, text.paula.T0004);
-                        await myNovel.ƒS.Speech.tell(myNovel.characters.ben, text.ben.T0008);
                         await myNovel.ƒS.Speech.tell(myNovel.characters.paula, text.paula.T0005);
-                        await myNovel.ƒS.Speech.tell(myNovel.characters.ben, text.ben.T0009);
+                        await myNovel.ƒS.Speech.tell(myNovel.characters.ben, text.ben.T0008);
                         await myNovel.ƒS.Speech.tell(myNovel.characters.paula, text.paula.T0006);
-                        return "chapterFour";
+                        await myNovel.ƒS.Speech.tell(myNovel.characters.ben, text.ben.T0009);
+                        await myNovel.ƒS.Speech.tell(myNovel.characters.paula, text.paula.T0007);
+                        await myNovel.ƒS.Character.hideAll();
+                        break;
                     case choicesLie.dontLie:
                         console.log("Choice dontLie");
                         await myNovel.ƒS.Character.hide(myNovel.characters.ben);
@@ -523,12 +548,114 @@ var myNovel;
                         await myNovel.ƒS.update(0);
                         await myNovel.ƒS.Speech.tell(myNovel.characters.ben, text.ben.T0017);
                         await myNovel.ƒS.Speech.tell(myNovel.characters.paula, text.paula.T0015);
-                        return "chapterFour";
+                        await myNovel.ƒS.Character.hideAll();
+                        break;
                 }
-                break;
         }
     }
     myNovel.chapterThreeGood = chapterThreeGood;
+})(myNovel || (myNovel = {}));
+var myNovel;
+(function (myNovel) {
+    async function chapterThreeMid() {
+        console.log("Start Prolog");
+        let text = {
+            narrator: {
+                T0001: "Ben ist auf dem Weg zur Mine und macht sich schon die ersten Gedanken, wie er vorgehen soll. Da fällt ihm auf einmal etwas ein."
+            },
+            ben: {
+                T0001: "Hmm...vielleicht sollte ich doch noch das Tagebuch mitnehmen, vielleicht steht etwas Hilfreiches drin."
+            }
+        };
+        await myNovel.ƒS.Location.show(myNovel.locations.street);
+        await myNovel.ƒS.update(myNovel.transition.fade.duration, myNovel.transition.leftFade.alpha, myNovel.transition.leftFade.edge);
+        await myNovel.ƒS.Speech.tell(myNovel.characters.narrator, text.narrator.T0001);
+        await myNovel.ƒS.Character.show(myNovel.characters.ben, myNovel.characters.ben.pose.thinking, myNovel.newPositions.bottomright);
+        await myNovel.ƒS.update(1);
+        await myNovel.ƒS.Speech.tell(myNovel.characters.ben, text.ben.T0001);
+        let choices = {
+            takeBook: "Buch vom Friedhof holen",
+            dontTakeBook: "Ohne Buch aufbrechen"
+        };
+        let dialogueElement = await myNovel.ƒS.Menu.getInput(choices, "choicesCSSClass");
+        switch (dialogueElement) {
+            case choices.takeBook:
+                console.log("Choice take book");
+                await myNovel.ƒS.Speech.tell(myNovel.characters.ben, "Ich glaube, es ist besser, wenn ich das Tagebuch mit nehme, Mama hat ja auch gesagt, dass es sehr interessant sein soll.");
+                await myNovel.ƒS.Speech.tell(myNovel.characters.ben, "Wenn Papa irgendwelche nützlichen Infos in das Tagebuch eingetragen hat, kann mir das sicher helfen.");
+                await myNovel.ƒS.Character.hide(myNovel.characters.ben);
+                await myNovel.ƒS.Character.show(myNovel.characters.ben, myNovel.characters.ben.pose.normal, myNovel.newPositions.bottomright);
+                await myNovel.ƒS.update(0);
+                await myNovel.ƒS.Speech.tell(myNovel.characters.narrator, "Ben macht sich auf den weg zum Friedhof ");
+                await myNovel.ƒS.Speech.tell(myNovel.characters.ben, "So, ich bin fast da, ich könnte die Abkürzung über die Mauer nehmen, dann bin ich schneller, wie wenn ich durch den normalen Eingang gehe.");
+                let choicesWall = {
+                    overWall: "Über die Mauer klettern",
+                    gate: "Durch das Eingangstor gehen"
+                };
+                let dialogueElement = await myNovel.ƒS.Menu.getInput(choicesWall, "choicesCSSClass");
+                switch (dialogueElement) {
+                    case choicesWall.gate:
+                        console.log("Choice take book");
+                        await myNovel.ƒS.Speech.tell(myNovel.characters.ben, "Ne, ich klettere lieber nicht über die Mauer, ich will kein Risiko eingehen. Nicht, dass ich mir etwas breche, weil ich von der Mauer falle.");
+                        await myNovel.ƒS.Speech.tell(myNovel.characters.ben, "Auf die zwei Minuten länger kommt es auch nicht drauf an.");
+                        await myNovel.ƒS.Speech.tell(myNovel.characters.narrator, "Ben geht in den Friedhof");
+                        await myNovel.ƒS.Speech.tell(myNovel.characters.ben, "Okay, auf zur Gedenkstätte. Da drüben ist sie ja schon.");
+                        await myNovel.ƒS.Speech.tell(myNovel.characters.ben, "So wo hat Mama das Tagebuch hingelegt, es sollte hier ja irgendwo liegen.");
+                        await myNovel.ƒS.Speech.tell(myNovel.characters.ben, "Ah, da ist es, Mama hat es sogar richtig schön dekoriert mit den Blumen.");
+                        await myNovel.ƒS.Speech.tell(myNovel.characters.narrator, "Ben nimmt das Buch. ");
+                        await myNovel.ƒS.Speech.tell(myNovel.characters.ben, "Ohh nein, ich hab nicht genügend Platz im Inventar. Ich muss irgendwas zurücklassen, ich kann es ja später auch einfach wieder mitnehmen, wenn ich zurückkomme.");
+                        await myNovel.ƒS.Speech.tell(myNovel.characters.ben, "Aber was lasse ich zurück? ");
+                        myNovel.ƒS.Inventory.open();
+                        await myNovel.ƒS.Speech.tell(myNovel.characters.ben, "Okay, das brauche ich wahrscheinlich sowieso nicht.");
+                        await myNovel.ƒS.Speech.tell(myNovel.characters.ben, "So, jetzt sollte ich alles Wichtige haben.");
+                        await myNovel.ƒS.Speech.tell(myNovel.characters.narrator, "Ben packt das Tagebuch in den Rucksack und macht sich auf den Weg. ");
+                        await myNovel.ƒS.Character.hideAll();
+                        return "chapterFour";
+                    case choicesWall.overWall:
+                        console.log("Choice dontTakeBook");
+                        if (myNovel.ƒS.Inventory.getAmount(myNovel.items.wanderschuhe) == 1) {
+                            await myNovel.ƒS.Speech.tell(myNovel.characters.ben, "Okay, los geht's dann kann ich ein bisschen Zeit sparen.");
+                            await myNovel.ƒS.Speech.tell(myNovel.characters.narrator, "Ben klettert über die Mauer.");
+                            await myNovel.ƒS.Character.hide(myNovel.characters.ben);
+                            await myNovel.ƒS.Character.show(myNovel.characters.ben, myNovel.characters.ben.pose.ohman, myNovel.newPositions.bottomright);
+                            await myNovel.ƒS.update(0);
+                            await myNovel.ƒS.Speech.tell(myNovel.characters.ben, "Wooow ganz schön hoch. Zum Glück habe ich meine Wanderschuhe mitgenommen, ohne wäre ich sicher abgerutscht.");
+                            await myNovel.ƒS.Character.hide(myNovel.characters.ben);
+                            await myNovel.ƒS.Character.show(myNovel.characters.ben, myNovel.characters.ben.pose.confident, myNovel.newPositions.bottomright);
+                            await myNovel.ƒS.update(0);
+                            await myNovel.ƒS.Speech.tell(myNovel.characters.ben, "Jetzt muss ich nur wieder runter klettern sollte kein Problem sein.");
+                            await myNovel.ƒS.Character.hide(myNovel.characters.ben);
+                            await myNovel.ƒS.Character.show(myNovel.characters.ben, myNovel.characters.ben.pose.normal, myNovel.newPositions.bottomright);
+                            await myNovel.ƒS.update(0);
+                            await myNovel.ƒS.Speech.tell(myNovel.characters.ben, "Okay, auf zur Gedenkstätte. Da drüben ist sie ja schon.");
+                            await myNovel.ƒS.Speech.tell(myNovel.characters.ben, "So wo hat Mama das Tagebuch hingelegt, es sollte hier ja irgendwo liegen.");
+                            await myNovel.ƒS.Speech.tell(myNovel.characters.ben, "Ah, da ist es, Mama hat es sogar richtig schön dekoriert mit den Blumen.");
+                            await myNovel.ƒS.Speech.tell(myNovel.characters.narrator, "Ben nimmt das Buch. ");
+                            await myNovel.ƒS.Speech.tell(myNovel.characters.ben, "Ohh nein, ich hab nicht genügend Platz im Inventar. Ich muss irgendwas zurücklassen, ich kann es ja später auch einfach wieder mitnehmen, wenn ich zurückkomme.");
+                            await myNovel.ƒS.Speech.tell(myNovel.characters.ben, "Aber was lasse ich zurück? ");
+                            myNovel.ƒS.Inventory.open();
+                            await myNovel.ƒS.Speech.tell(myNovel.characters.ben, "Okay, das brauche ich wahrscheinlich sowieso nicht.");
+                            await myNovel.ƒS.Speech.tell(myNovel.characters.ben, "So, jetzt sollte ich alles Wichtige haben.");
+                            await myNovel.ƒS.Speech.tell(myNovel.characters.narrator, "Ben packt das Tagebuch in den Rucksack und macht sich auf den Weg. ");
+                            await myNovel.ƒS.Character.hideAll();
+                            return "chapterFour";
+                        }
+                        else {
+                            await myNovel.ƒS.Character.hideAll();
+                            return "chapterThreeBad";
+                        }
+                }
+            case choices.dontTakeBook:
+                console.log("Choice dontTakeBook");
+                await myNovel.ƒS.Character.hide(myNovel.characters.ben);
+                await myNovel.ƒS.Character.show(myNovel.characters.ben, myNovel.characters.ben.pose.moreConfident, myNovel.newPositions.bottomright);
+                await myNovel.ƒS.update(0);
+                await myNovel.ƒS.Speech.tell(myNovel.characters.ben, "Ahh was soll schon Wichtiges in dem Tagebuch stehen, ohne das Buch wird es schon funktionieren und außerdem liegt der Friedhof eh nicht auf dem Weg.");
+                await myNovel.ƒS.Character.hideAll();
+                return "chapterFour";
+        }
+    }
+    myNovel.chapterThreeMid = chapterThreeMid;
 })(myNovel || (myNovel = {}));
 var myNovel;
 (function (myNovel) {
@@ -1520,16 +1647,59 @@ var myNovel;
 })(myNovel || (myNovel = {}));
 var myNovel;
 (function (myNovel) {
+    async function startChapterFour() {
+        console.log("Start Prolog");
+        let text = {
+            narrator: {
+                T0001: "Valentin macht sich auf den Weg zum Bergwerk."
+            },
+            ben: {
+                T0001: "Tschüss Papa."
+            },
+            maria: {
+                T0001: "Alles klar, bis später pass auf dich auf, heute ist doch ein wichtiger Tag."
+            },
+            valentin: {
+                T0001: "Okay, ich mache mich fertig und mache mich auf den Weg.",
+                T0002: "Natürlich, ich passe immer auf mich auf, gerade bei so einem wichtigen Tag.",
+                T0003: "Tschüss, ihr beiden, habt einen schönen Tag."
+            }
+        };
+        //FX Sound (Tür)
+        await myNovel.ƒS.Sound.play(myNovel.sound.closingGate, 0.5, false);
+        await myNovel.ƒS.Location.show(myNovel.locations.begin);
+        await myNovel.ƒS.update(2);
+        await myNovel.ƒS.update(3);
+        await myNovel.ƒS.Sound.play(myNovel.sound.sunday, 0.5, true);
+        await myNovel.ƒS.Location.show(myNovel.locations.intro);
+        await myNovel.ƒS.update(1);
+        await myNovel.ƒS.Location.show(myNovel.locations.livingRoom);
+        await myNovel.ƒS.update(20);
+        await myNovel.ƒS.Character.show(myNovel.characters.valentin, myNovel.characters.valentin.pose.smile, myNovel.newPositions.bottomright);
+        await myNovel.ƒS.update(1);
+        await myNovel.ƒS.Speech.tell(myNovel.characters.valentin, text.valentin.T0001);
+        await myNovel.ƒS.Character.show(myNovel.characters.maria, myNovel.characters.maria.pose.sad, myNovel.newPositions.bottomleftMaria);
+        await myNovel.ƒS.update(1);
+        await myNovel.ƒS.Speech.tell(myNovel.characters.maria, text.maria.T0001);
+        await myNovel.ƒS.Speech.tell(myNovel.characters.valentin, text.valentin.T0002);
+        await myNovel.ƒS.Speech.tell(myNovel.characters.valentin, text.valentin.T0003);
+        await myNovel.ƒS.Speech.tell(myNovel.characters.ben, text.ben.T0001);
+        await myNovel.ƒS.Speech.tell(myNovel.characters.narrator, text.narrator.T0001);
+        await myNovel.ƒS.Character.hideAll();
+    }
+    myNovel.startChapterFour = startChapterFour;
+})(myNovel || (myNovel = {}));
+var myNovel;
+(function (myNovel) {
     async function startChapterThree() {
         console.log("Desicion Chapter three");
         if (myNovel.ƒS.Inventory.getAmount(myNovel.items.tagebuch) == 1) {
-            console.log("TEST");
             await myNovel.ƒS.Location.show(myNovel.locations.street);
             await myNovel.ƒS.update(myNovel.transition.fade.duration, myNovel.transition.leftFade.alpha, myNovel.transition.leftFade.edge);
-            return "ChapterThreeGood";
+            return "chapterThreeGood";
         }
         else {
-            return "ChapterThreeMid";
+            return "chapterThreeMid";
         }
     }
     myNovel.startChapterThree = startChapterThree;
@@ -1590,7 +1760,7 @@ var myNovel;
         await myNovel.ƒS.Character.show(myNovel.characters.maria, myNovel.characters.maria.pose.neutral, myNovel.newPositions.bottomleftMaria);
         await myNovel.ƒS.update(1);
         await myNovel.ƒS.Speech.tell(myNovel.characters.ben, text.ben.T0003);
-        await myNovel.ƒS.Speech.tell(myNovel.characters.maria, text.maria.T0002);
+        await myNovel.ƒS.Speech.tell(myNovel.characters.maria, text.maria.T0003);
         let choices = {
             read: "Tagebuch lesen",
             noRead: "Tagebuch nicht lesen"

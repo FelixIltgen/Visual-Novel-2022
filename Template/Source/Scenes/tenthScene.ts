@@ -57,7 +57,7 @@ namespace myNovel {
         await ƒS.Character.show(characters.maria, characters.maria.pose.neutral, newPositions.bottomleftMaria);
         await ƒS.update(1);
         await ƒS.Speech.tell(characters.ben, text.ben.T0003);
-        await ƒS.Speech.tell(characters.maria, text.maria.T0002);
+        await ƒS.Speech.tell(characters.maria, text.maria.T0003);
 
         let choices = {
             read:  "Tagebuch lesen",

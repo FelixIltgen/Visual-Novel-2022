@@ -243,7 +243,7 @@ namespace myNovel {
     wasserflasche: {
       name: "Wasserflasche",
       description: "Gut für den Durst zwischend durch",
-      image: "Images/Items/wanderSchuh.png",
+      image: "Images/Items/wasserflasche.png",
       inInventory: false,
       static: true
     }
@@ -282,16 +282,24 @@ namespace myNovel {
       { id: "withDairy", scene: itemSelcetionDairy, name: "Item selcetion with Dairy option"},
       { id: "noDairy", scene: itemSelcetionNoDairy, name: "Item selcetion without Dairy option"},
 
-      //Normal Path
+      //Cotinue normal path
       { id: "afterItemSelection", scene: afterItemSelection, name: "first scene after Item selection"},
 
+      //Start chapter three
       { id: "chapterThree", scene: startChapterThree, name: "Start Chapter three"},
 
-      { id: "ChapterThreeGood", scene: chapterThreeGood, name: "Chapter three good path"}
-      //{ id: "ChapterThreeMid", scene: chapterMid, name: "Chapter three mid path"},
-      //{ id: "ChapterThreeBad", scene: startChapterBad, name: "Chapter three bad path"}
+      { id: "chapterThreeGood", scene: chapterThreeGood, name: "Chapter three good path", next: "chapterFour"},
+      { id: "chapterThreeMid", scene: chapterThreeMid, name: "Chapter three mid path"},
 
-      //Bad Ending
+      //Start chapter four
+      { id: "chapterFour", scene: startChapterFour, name: "Start Chapter four"},
+      { id: "chapterFourGood", scene: chapterFourGood, name: "Start Chapter four"},
+      { id: "chapterFourMid", scene: chapterFourMid, name: "Start Chapter four"},
+      
+
+
+      //Bad Endings
+      { id: "chapterThreeBad", scene: ChapterThreeBad, name: "Chapter three bad path"}
     ];
 
     let uiElement: HTMLElement = document.querySelector("[type=interface]");

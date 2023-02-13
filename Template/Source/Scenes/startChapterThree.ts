@@ -4,13 +4,11 @@ namespace myNovel {
         console.log("Desicion Chapter three");
         
         if (ƒS.Inventory.getAmount(items.tagebuch) == 1) {
-            console.log("TEST")
             await ƒS.Location.show(locations.street);
             await ƒS.update(transition.fade.duration, transition.leftFade.alpha, transition.leftFade.edge);
-            return "ChapterThreeGood";
+            return "chapterThreeGood";
         } else {
-            return "ChapterThreeMid";
-        }
-        
-      }
+            return "chapterThreeMid";
+        }  
+    }
 }
