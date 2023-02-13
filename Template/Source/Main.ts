@@ -295,11 +295,14 @@ namespace myNovel {
       { id: "chapterFour", scene: startChapterFour, name: "Start Chapter four"},
       { id: "chapterFourGood", scene: chapterFourGood, name: "Start Chapter four"},
       { id: "chapterFourMid", scene: chapterFourMid, name: "Start Chapter four"},
+      { id: "chapterFourMidTwo", scene: chapterFourMidTwo, name: "Start Chapter four part two"},
       
 
 
       //Bad Endings
-      { id: "chapterThreeBad", scene: ChapterThreeBad, name: "Chapter three bad path"}
+      { id: "chapterThreeBad", scene: ChapterThreeBad, name: "Chapter three bad path"},
+      { id: "chapterFourBad", scene: chapterFourBad, name: "Chapter three bad path"},
+      { id: "chapterFourBadTwo", scene: chapterFourBadTwo, name: "Chapter three bad path"}
     ];
 
     let uiElement: HTMLElement = document.querySelector("[type=interface]");

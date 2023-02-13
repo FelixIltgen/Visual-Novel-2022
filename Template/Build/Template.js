@@ -278,11 +278,14 @@ var myNovel;
             { id: "chapterThreeGood", scene: myNovel.chapterThreeGood, name: "Chapter three good path", next: "chapterFour" },
             { id: "chapterThreeMid", scene: myNovel.chapterThreeMid, name: "Chapter three mid path" },
             //Start chapter four
-            //{ id: "chapterFour", scene: startChapterFour, name: "Start Chapter four"},
-            //{ id: "chapterFourGood", scene: chapterFourGood, name: "Start Chapter four"},
-            //{ id: "chapterFourMid", scene: chapterFourMid, name: "Start Chapter four"},
+            { id: "chapterFour", scene: myNovel.startChapterFour, name: "Start Chapter four" },
+            { id: "chapterFourGood", scene: myNovel.chapterFourGood, name: "Start Chapter four" },
+            { id: "chapterFourMid", scene: myNovel.chapterFourMid, name: "Start Chapter four" },
+            { id: "chapterFourMidTwo", scene: myNovel.chapterFourMidTwo, name: "Start Chapter four part two" },
             //Bad Endings
-            { id: "chapterThreeBad", scene: myNovel.ChapterThreeBad, name: "Chapter three bad path" }
+            { id: "chapterThreeBad", scene: myNovel.ChapterThreeBad, name: "Chapter three bad path" },
+            { id: "chapterFourBad", scene: myNovel.chapterFourBad, name: "Chapter three bad path" },
+            { id: "chapterFourBadTwo", scene: myNovel.chapterFourBadTwo, name: "Chapter three bad path" }
         ];
         let uiElement = document.querySelector("[type=interface]");
         myNovel.dataForSave = myNovel.ƒS.Progress.setData(myNovel.dataForSave, uiElement);
@@ -397,26 +400,358 @@ var myNovel;
 })(myNovel || (myNovel = {}));
 var myNovel;
 (function (myNovel) {
-    async function chapterFourGood() {
+    async function chapterFourBad() {
         console.log("Start Prolog");
-        let text = {
-            narrator: {
-                T0001: "Valentin macht sich auf den Weg zum Bergwerk."
-            },
-            ben: {
-                T0001: "Tschüss Papa."
-            },
-            maria: {
-                T0001: "Alles klar, bis später pass auf dich auf, heute ist doch ein wichtiger Tag."
-            },
-            valentin: {
-                T0001: "",
-                T0002: "",
-                T0003: ""
-            }
-        };
+        await myNovel.ƒS.Location.show(myNovel.locations.sinkhole);
+        await myNovel.ƒS.update(0);
+        await myNovel.ƒS.Character.show(myNovel.characters.ben, myNovel.characters.ben.pose.thinking, myNovel.newPositions.bottomright);
+        await myNovel.ƒS.update(1);
+        await myNovel.ƒS.Speech.tell(myNovel.characters.ben, "Ich glaube, es ist besser, wenn ich warte und mich im Dunkeln an den Wachen vorbei schleiche.");
+        await myNovel.ƒS.Speech.tell(myNovel.characters.ben, "Die Wahrscheinlichkeit, eine Lücke zu finden, ist sicher gering, die Absperrung ist ja noch neu.");
+        await myNovel.ƒS.Speech.tell(myNovel.characters.narrator, "Ben wartet darauf, dass es dunkler wird ");
+        await myNovel.ƒS.Character.hide(myNovel.characters.ben);
+        await myNovel.ƒS.Character.show(myNovel.characters.ben, myNovel.characters.ben.pose.normal, myNovel.newPositions.bottomright);
+        await myNovel.ƒS.update();
+        await myNovel.ƒS.Speech.tell(myNovel.characters.narrator, "Mittlerweile ist es dunkel geworden Ben wartet immer noch auf einen guten Moment, sich an den Wachleuten vorbei zu schleichen.");
+        await myNovel.ƒS.Speech.tell(myNovel.characters.ben, "Jetzt kann ich es versuchen, es ist dunkel genug und die Wachleute sind nicht mehr so wachsam.");
+        await myNovel.ƒS.Speech.tell(myNovel.characters.ben, "Ben beginnt sich an den Wachen vorbei zu schleichen und durch den einzigen Eingang in der Absperrung zu gehen.");
+        await myNovel.ƒS.Speech.tell(myNovel.characters.ben, "Okay, läuft ja ganz gut, ich bin fast am Tor...");
+        await myNovel.ƒS.Speech.tell(myNovel.characters.narrator, "Ben kriecht weiter Richtung Tor, plötzlich kommt ein Wachmann auf ihn zu.");
+        await myNovel.ƒS.Character.hide(myNovel.characters.ben);
+        await myNovel.ƒS.Character.show(myNovel.characters.ben, myNovel.characters.ben.pose.ohman, myNovel.newPositions.bottomright);
+        await myNovel.ƒS.update();
+        await myNovel.ƒS.Speech.tell(myNovel.characters.ben, "Scheiße, ich muss mich verstecken....");
+        await myNovel.ƒS.Speech.tell(myNovel.characters.ben, "Ohh nein, hier kann ich mich nirgends verstecken, das war's er wird mich sehen...");
+        await myNovel.ƒS.Speech.tell(myNovel.characters.narrator, "Heyyy, was machst du den da?!!!");
+        await myNovel.ƒS.Location.show(myNovel.locations.blanko);
+        await myNovel.ƒS.update(2);
+    }
+    myNovel.chapterFourBad = chapterFourBad;
+})(myNovel || (myNovel = {}));
+var myNovel;
+(function (myNovel) {
+    async function chapterFourBadTwo() {
+        console.log("Start Prolog");
+        await myNovel.ƒS.Location.show(myNovel.locations.sinkhole);
+        await myNovel.ƒS.update(0);
+        await myNovel.ƒS.Character.show(myNovel.characters.ben, myNovel.characters.ben.pose.normal, myNovel.newPositions.bottomright);
+        await myNovel.ƒS.update(1);
+        await myNovel.ƒS.Speech.tell(myNovel.characters.ben, "Ich habe zwar nicht alles dabei was ich brauche aber ich versuche es einfach.");
+        await myNovel.ƒS.Speech.tell(myNovel.characters.narrator, "Ben beginnt ohne Ausrüstung das Loch hinunter zu klettern.");
+        await myNovel.ƒS.Speech.tell(myNovel.characters.ben, "Wow, ist das rutschig, aber nicht so schwierig, wie ich dachte, war wohl doch die bessere Idee wie der Aufzug.");
+        await myNovel.ƒS.Speech.tell(myNovel.characters.narrator, "Ben wird immer leichtsinniger und wird immer unvorsichtiger, er bemerkt nicht, dass er sich an einem lockeren Stein festhält.");
+        await myNovel.ƒS.Character.hide(myNovel.characters.ben);
+        await myNovel.ƒS.Character.show(myNovel.characters.ben, myNovel.characters.ben.pose.ohman, myNovel.newPositions.bottomright);
+        await myNovel.ƒS.update();
+        await myNovel.ƒS.Speech.tell(myNovel.characters.ben, "Ohh nein der ist ja locker.... oh NeEINnnn");
+        await myNovel.ƒS.Speech.tell(myNovel.characters.ben, "AHHHHhhshsahahhh............... ");
+        await myNovel.ƒS.Location.show(myNovel.locations.blanko);
+        await myNovel.ƒS.update(2);
+    }
+    myNovel.chapterFourBadTwo = chapterFourBadTwo;
+})(myNovel || (myNovel = {}));
+var myNovel;
+(function (myNovel) {
+    async function chapterFourGood() {
+        console.log("Chapter Four Good");
+        await myNovel.ƒS.Location.show(myNovel.locations.mineEntrance);
+        await myNovel.ƒS.update(myNovel.transition.fade.duration, myNovel.transition.leftFade.alpha, myNovel.transition.leftFade.edge);
+        await myNovel.ƒS.Character.show(myNovel.characters.ben, myNovel.characters.ben.pose.thinking, myNovel.newPositions.bottomright);
+        await myNovel.ƒS.update(1);
+        await myNovel.ƒS.Speech.tell(myNovel.characters.ben, "Da ist der Eingang, war doch noch ein ganzes Stück bis hier hin.");
+        await myNovel.ƒS.Speech.tell(myNovel.characters.ben, "So wie komme ich jetzt hier rein?");
+        await myNovel.ƒS.Speech.tell(myNovel.characters.narrator, "Ben sucht einen Weg, um in das Bergwerk zu kommen.");
+        await myNovel.ƒS.Speech.tell(myNovel.characters.ben, "Mal schauen, ob ich am Stolleneingang rein komme.");
+        await myNovel.ƒS.Speech.tell(myNovel.characters.ben, "Schade ist abgeschlossen. Wie komme ich hier rein.");
+        await myNovel.ƒS.Speech.tell(myNovel.characters.ben, "Moment im Taschenbuch von Papa stand doch eine Info.");
+        if (myNovel.ƒS.Inventory.getAmount(myNovel.items.tagebuch) == 1) {
+            await myNovel.ƒS.Speech.tell(myNovel.characters.ben, "Irgendwo hatte Papa einen Code ins Tagebuch eingetragen, vielleicht ist das der Code für das Schloss?");
+            await myNovel.ƒS.Speech.tell(myNovel.characters.ben, "Aber wie ging er noch mal?");
+            await myNovel.ƒS.Speech.tell(myNovel.characters.ben, "...ich schaue lieber nochmal nach.");
+            myNovel.ƒS.Speech.hide();
+            //Novel Page
+            myNovel.ƒS.Text.addClass("novelPageDiary");
+            await myNovel.ƒS.Text.print("<div class=novelPageContent> <div class=leftPage><b>Erster Eintrag:</b> <br> <br> Heute müssen ich und Andrea den neuen Stollen sprengen ich bin mir sehr unsicher ob es eine Gute Idee ist.<br> \
+                                <br> <b>Zweiter Eintrag: </b> <br> <br> Habe noch mal Rücksprache mit der Minenleitung gehalten. Die wollen echt, dass ich diesen Tunnel sprenge... <br> \
+                                <br> <b>Dritter Eintrag:</b> <br> <br> Ich fahre jetzt mit Andrea an die Stelle für die Sprengung und bereite alles vor.</div>  \
+                                <div class=rightPage> <b>Vierter Eintrag:</b> <br> <br> Die Sprengung hat gut funktioniert, hoffentlich passiert nichts.  </div> </div>");
+            await myNovel.ƒS.Text.print("<div class=novelPageContent> <div class=leftPage><b>Fünfter Eintrag:</b> <br> <br> Ich habe den Einsturz überlebt, wie durch ein Wunder bin ich nicht \
+                                verletzt. Was auch immer mich verfolgt hat es ist weg, vielleicht auch tot? <br> \
+                                <br> <b>Sechster Eintrag: </b><br><br> Ich hatte Glück, habe eine alte Taschenlampe gefunden, die noch funktioniert, nun kann ich etwas \
+                                 besser sehen, wo ich entlang gehe. Das sind definitiv keine Stollen, es muss eine Höhle oder etwas Ähnlicheres sein. <br> \
+                                <br> <b>Siebter Eintrag:</b> <br> <br> Ich habe einen Rucksack mit Konserven gefunden, wie kam der nur hier her? Das kann kein Zufall sein. Egal, Hauptsache, ich habe etwas zu essen.</div>  \
+                                <div class=rightPage> <b>Achter Eintrag:</b> <br> <br> Ich habe die Suche nach Andrea aufgegeben, ich kann ihn nirgendwo finden, wahrscheinlich hat sie es nicht geschafft. Was ist das nur gewesen?<br> \
+                                <br><b>Neunter Eintrag:</b><br><br> Ich habe in einem Haufen aus Schutt Batterien gefunden, damit hält meine Taschenlampe etwas länger, wie sind die Batterien hier gelandet?<br> \
+                                <br><b>Zehnter Eintrag:</b><br><br> Diese Gänge sind etwas irreführend, kommt mir vor wie in einem Labyrinth, wenn ich hier durch komme, sollte ich mir den richtigen Weg aufschreiben. </div></div>");
+            await myNovel.ƒS.Text.print("<div class=novelPageContent> <div class=leftPage><b>WICHTIG UNBEDINGT MERKEN</b> <br><br> <br>⇽ 🠕 ⇾ 🠕 = ✧ <br><br><br> 5536 </div>  \
+                                <div class=rightPage></div></div>");
+            myNovel.ƒS.Speech.show();
+            await myNovel.ƒS.Speech.tell(myNovel.characters.ben, "Okay, ich probiere mal den Code aus.");
+            //Iput feld eingabe
+            await myNovel.ƒS.Speech.tell(myNovel.characters.narrator, "Ben gibt den Code in das Schloss ein und die Türe öffnet sich.");
+            await myNovel.ƒS.Speech.tell(myNovel.characters.ben, "Perfekt zum Glück habe ich das Tagebuch dabei.");
+            await myNovel.ƒS.Speech.tell(myNovel.characters.ben, "Jetzt kann es Los gehen.");
+            await myNovel.ƒS.Speech.tell(myNovel.characters.narrator, "Ben geht in den dunklen Stollen.");
+            await myNovel.ƒS.Character.hideAll();
+        }
+        else {
+            await myNovel.ƒS.Speech.tell(myNovel.characters.ben, "Schade, ich habe das Tagebuch nicht mitgenommen, jetzt hätte ich noch mal nachschauen können.");
+            await myNovel.ƒS.Speech.tell(myNovel.characters.ben, "Komm Ben, denk nach, was stand noch mal im Buch...");
+            await myNovel.ƒS.Speech.tell(myNovel.characters.narrator, "Ben versucht sich an die Aufschriebe zu erinnern.");
+            await myNovel.ƒS.Speech.tell(myNovel.characters.ben, "Gut, ich kann es ja einfach versuchen und wenn nicht, muss ich eine andere Möglichkeit finden, hier rein zu kommen.");
+            //Input für Code
+        }
     }
     myNovel.chapterFourGood = chapterFourGood;
+})(myNovel || (myNovel = {}));
+var myNovel;
+(function (myNovel) {
+    async function chapterFourMid() {
+        console.log("Start Prolog");
+        await myNovel.ƒS.Location.show(myNovel.locations.sinkhole);
+        await myNovel.ƒS.update(myNovel.transition.fade.duration, myNovel.transition.leftFade.alpha, myNovel.transition.leftFade.edge);
+        await myNovel.ƒS.Speech.tell(myNovel.characters.narrator, "Ben ist am Loch angekommen, dieses ist weiträumig abgesperrt und wird von der Polizei überwacht.");
+        await myNovel.ƒS.Character.show(myNovel.characters.ben, myNovel.characters.ben.pose.thinking, myNovel.newPositions.bottomright);
+        await myNovel.ƒS.update(1);
+        await myNovel.ƒS.Speech.tell(myNovel.characters.ben, "So wie komme ich jetzt am besten zum Loch? ");
+        await myNovel.ƒS.Speech.tell(myNovel.characters.ben, "Ich muss irgendwie durch die Absperrung kommen und die Wachleute dürfen mich auch nicht sehen.");
+        await myNovel.ƒS.Speech.tell(myNovel.characters.ben, "Vielleicht finde ich in der Absperrung eine Lücke oder ich könnte warten, bis es dunkel ist und mich dann an den Wachen vorbei schleichen.");
+        let choices = {
+            search: "Eine lücke suchen",
+            wait: "Warten bis es dunkel ist"
+        };
+        let dialogueElement = await myNovel.ƒS.Menu.getInput(choices, "choicesCSSClass");
+        switch (dialogueElement) {
+            case choices.wait:
+                console.log("Choice wait");
+                return "chapterFourBad";
+            case choices.search:
+                console.log("Choice search");
+                await myNovel.ƒS.Character.hide(myNovel.characters.ben);
+                await myNovel.ƒS.Character.show(myNovel.characters.ben, myNovel.characters.ben.pose.normal, myNovel.newPositions.bottomright);
+                await myNovel.ƒS.update(1);
+                await myNovel.ƒS.Speech.tell(myNovel.characters.ben, "Ich suche lieber eine Lücke in der Absperrung, ich will nicht riskieren, von einer der Wachen erwischt zu werden.");
+                await myNovel.ƒS.Speech.tell(myNovel.characters.narrator, "Ben beginnt an der Absperrung entlang zu gehen und nach einer passenden Stelle zu suchen, um durch die Absperrung zu kommen.");
+                await myNovel.ƒS.Speech.tell(myNovel.characters.ben, "Der Baum hier... der eine Ast ragt direkt über die Absperrung, ich könnte versuchen, über den Ast zu klettern oder ich suche weiter?");
+                let choicesTree = {
+                    search: "Anderen Weg suchen",
+                    tree: "Über den Baum klettern"
+                };
+                let dialogueElement = await myNovel.ƒS.Menu.getInput(choicesTree, "choicesCSSClass");
+                switch (dialogueElement) {
+                    case choicesTree.tree:
+                        console.log("Choice wait");
+                        await myNovel.ƒS.Speech.tell(myNovel.characters.ben, "Sollte eigentlich funktionieren und einen besseren Ort werde ich wohl kaum finden. ");
+                        await myNovel.ƒS.Speech.tell(myNovel.characters.narrator, "Ben macht sich auf und beginnt den Baum hochzuklettern.");
+                        if (myNovel.ƒS.Inventory.getAmount(myNovel.items.seil) == 1) {
+                            await myNovel.ƒS.Speech.tell(myNovel.characters.ben, "Moment...ich habe doch ein Seil dabei, damit kann ich mich sichern, dann stürze ich nicht ab, wenn der Ast bricht.");
+                            await myNovel.ƒS.Speech.tell(myNovel.characters.narrator, "Ben sichert sich mit dem Seil ab und klettert weiter.");
+                            await myNovel.ƒS.Character.hide(myNovel.characters.ben);
+                            await myNovel.ƒS.Character.show(myNovel.characters.ben, myNovel.characters.ben.pose.ohman, myNovel.newPositions.bottomright);
+                            await myNovel.ƒS.update(1);
+                            await myNovel.ƒS.Speech.tell(myNovel.characters.ben, "Woooow zum Glück habe ich mich abgesichert, sonst währe ich jetzt abgestürzt.");
+                            await myNovel.ƒS.Speech.tell(myNovel.characters.narrator, "Ben seilt sich auf die andere Seite der Absperrung ab.");
+                            await myNovel.ƒS.Character.hide(myNovel.characters.ben);
+                            await myNovel.ƒS.Character.show(myNovel.characters.ben, myNovel.characters.ben.pose.sad, myNovel.newPositions.bottomright);
+                            await myNovel.ƒS.update(1);
+                            await myNovel.ƒS.Speech.tell(myNovel.characters.ben, "Schade, das Seil hätte ich gerne nochmal verwendet, aber ich kann es nicht vom Baum lösen.");
+                            //Seil entfernen
+                            await myNovel.ƒS.Character.hide(myNovel.characters.ben);
+                            await myNovel.ƒS.Character.show(myNovel.characters.ben, myNovel.characters.ben.pose.normal, myNovel.newPositions.bottomright);
+                            await myNovel.ƒS.update(1);
+                            await myNovel.ƒS.Speech.tell(myNovel.characters.ben, "Egal auf zum Loch");
+                            await myNovel.ƒS.Speech.tell(myNovel.characters.narrator, "Ben geht Richtung Loch.");
+                        }
+                        else {
+                            await myNovel.ƒS.Character.hide(myNovel.characters.ben);
+                            await myNovel.ƒS.Character.show(myNovel.characters.ben, myNovel.characters.ben.pose.sad, myNovel.newPositions.bottomright);
+                            await myNovel.ƒS.update(1);
+                            await myNovel.ƒS.Speech.tell(myNovel.characters.ben, "Schade hätte ich ein Seil mitgenommen, könnte ich mich jetzt absichern.");
+                            await myNovel.ƒS.Speech.tell(myNovel.characters.ben, "Jetzt muss ich halt etwas vorsichtiger sein.");
+                            await myNovel.ƒS.Character.hide(myNovel.characters.ben);
+                            await myNovel.ƒS.Character.show(myNovel.characters.ben, myNovel.characters.ben.pose.normal, myNovel.newPositions.bottomright);
+                            await myNovel.ƒS.update(1);
+                            await myNovel.ƒS.Speech.tell(myNovel.characters.narrator, "Ben klettert weiter und beginnt vorsichtig über den Ast, der über die Absperrung ragt, zu gehen.");
+                            //ast sound
+                            await myNovel.ƒS.Character.hide(myNovel.characters.ben);
+                            await myNovel.ƒS.Character.show(myNovel.characters.ben, myNovel.characters.ben.pose.ohman, myNovel.newPositions.bottomright);
+                            await myNovel.ƒS.update(1);
+                            await myNovel.ƒS.Speech.tell(myNovel.characters.ben, "Auuu... so eine Scheiße, jetzt ist der Ast durchgebrochen, zum Glück bin ich auf der anderen Seite der Absperrung gelandet.");
+                            await myNovel.ƒS.Speech.tell(myNovel.characters.ben, "Hoffentlich hat mich keiner gehört. Naja egal jetzt schnell zum Loch.");
+                            await myNovel.ƒS.Character.hide(myNovel.characters.ben);
+                            await myNovel.ƒS.Character.show(myNovel.characters.ben, myNovel.characters.ben.pose.normal, myNovel.newPositions.bottomright);
+                            await myNovel.ƒS.update(1);
+                            await myNovel.ƒS.Speech.tell(myNovel.characters.narrator, "Ben geht Richtung Loch. ");
+                        }
+                        await myNovel.ƒS.Character.hideAll();
+                        break; //weil direkt danach nächste scene  
+                    case choicesTree.search:
+                        console.log("Choice search");
+                        await myNovel.ƒS.Speech.tell(myNovel.characters.ben, "Ne ist mir zu gefährlich, ich will nicht vom Baum fallen, irgendwo wird es schon einen Durchgang geben.");
+                        await myNovel.ƒS.Speech.tell(myNovel.characters.narrator, "Ben sucht weiter nach einer Möglichkeit, die Absperrung zu überwinden.");
+                        await myNovel.ƒS.Speech.tell(myNovel.characters.ben, "Daaaa...da ist ein Loch im Zaun, ich wusste, irgendwo würde ich einfach durchkommen.");
+                        await myNovel.ƒS.Speech.tell(myNovel.characters.narrator, "Ben drückt sich durch das Loch der Absperrung");
+                        await myNovel.ƒS.Speech.tell(myNovel.characters.ben, "So jetzt auf zum Loch, ich habe schon genug Zeit verschwendet.");
+                        await myNovel.ƒS.Speech.tell(myNovel.characters.ben, "Ben geht Richtung Loch.");
+                        await myNovel.ƒS.Character.hide(myNovel.characters.ben);
+                        await myNovel.ƒS.update(1);
+                        await myNovel.ƒS.Character.hideAll();
+                        break; //weil direkt danach nächste scene            
+                }
+        }
+    }
+    myNovel.chapterFourMid = chapterFourMid;
+})(myNovel || (myNovel = {}));
+var myNovel;
+(function (myNovel) {
+    async function chapterFourMidTwo() {
+        console.log("Chapter four two");
+        await myNovel.ƒS.Location.show(myNovel.locations.sinkhole);
+        await myNovel.ƒS.update(myNovel.transition.fade.duration, myNovel.transition.leftFade.alpha, myNovel.transition.leftFade.edge);
+        await myNovel.ƒS.Speech.tell(myNovel.characters.narrator, "Ben ist am Rande des Lochs angekommen.");
+        await myNovel.ƒS.Character.show(myNovel.characters.ben, myNovel.characters.ben.pose.normal, myNovel.newPositions.bottomright);
+        await myNovel.ƒS.update(1);
+        await myNovel.ƒS.Speech.tell(myNovel.characters.ben, "Wow hätte nicht erwartet, dass es so Tief ist, wie komme ich jetzt am besten dort hinunter?");
+        await myNovel.ƒS.Speech.tell(myNovel.characters.ben, "Am besten ist, wenn ich runter klettere, aber nur wo?");
+        await myNovel.ƒS.Speech.tell(myNovel.characters.narrator, "Ben geht um das Loch herum, da entdeckt er auf einmal einen Artaufzug, mit dem die Ermittler in das Loch gekommen sind.");
+        await myNovel.ƒS.Speech.tell(myNovel.characters.ben, "Ich könnte natürlich auch das Ding da benutzen, dann hören mich zwar die Wachen, aber sie kommen ja dann nicht runter, wenn ich es benutze oder ich versuche runter zu klettern.");
+        let choice = {
+            elevator: "Den Aufzug benutzen",
+            climp: "Runter klettern"
+        };
+        let dialogueElement = await myNovel.ƒS.Menu.getInput(choice, "choicesCSSClass");
+        switch (dialogueElement) {
+            case choice.elevator:
+                console.log("Choice wait");
+                await myNovel.ƒS.Speech.tell(myNovel.characters.ben, "Ich kann ja mal schauen, ob der Aufzug funktioniert.");
+                await myNovel.ƒS.Character.hide(myNovel.characters.ben);
+                await myNovel.ƒS.Character.show(myNovel.characters.ben, myNovel.characters.ben.pose.confident, myNovel.newPositions.bottomright);
+                await myNovel.ƒS.update(1);
+                await myNovel.ƒS.Speech.tell(myNovel.characters.ben, "Ohh ich glaube, der ist noch an, die ganzen Kontrollleuchten sind noch an. Aber wo starte ich das Ding.");
+                await myNovel.ƒS.Speech.tell(myNovel.characters.narrator, "Ben beginnt einfach alle Knöpfe zu drücken, plötzlich fängt der Aufzug an sich zu bewegen.");
+                await myNovel.ƒS.Speech.tell(myNovel.characters.ben, "Ahhh der Knopf wird es wohl gewesen sein. Perfekt einfacher komme ich wohl nicht nach unten.");
+                await myNovel.ƒS.Speech.tell(myNovel.characters.narrator, "Heyyyy wer bist du den was machst du da das ist gefährlich Stop sofort den Aufzug!!");
+                await myNovel.ƒS.Speech.tell(myNovel.characters.ben, "Sorry, aber ich bin auf einer Mission");
+                await myNovel.ƒS.Speech.tell(myNovel.characters.narrator, "STOP, da unten ist es viel zu gefährlich!");
+                await myNovel.ƒS.Speech.tell(myNovel.characters.narrator, "Ben ignoriert die schreie der Wachen und fährt in das Loch.");
+                await myNovel.ƒS.Speech.tell(myNovel.characters.narrator, "Unten angekommen überlegt Ben was er nun tun soll ");
+                await myNovel.ƒS.Location.show(myNovel.locations.insideSinkhole);
+                await myNovel.ƒS.update(myNovel.transition.fade.duration, myNovel.transition.leftFade.alpha, myNovel.transition.leftFade.edge);
+                await myNovel.ƒS.Speech.tell(myNovel.characters.ben, "Okay, ich sollte mich mal umsehen, hier muss es doch mit Sicherheit etwas Interessantes geben.");
+                await myNovel.ƒS.Speech.tell(myNovel.characters.narrator, "Ben beginnt das komplette Loch abzusuchen.");
+                await myNovel.ƒS.Speech.tell(myNovel.characters.ben, "Hmm... die Untersuchungen von der Polizei hat bestimmt schon alles Offensichtliche gefunden, ich muss genauer suchen.");
+                await myNovel.ƒS.Speech.tell(myNovel.characters.narrator, "Ben sucht weiter, nach ein paar Minuten fällt ihm etwas auf.");
+                await myNovel.ƒS.Character.hide(myNovel.characters.ben);
+                await myNovel.ƒS.Character.show(myNovel.characters.ben, myNovel.characters.ben.pose.thinking, myNovel.newPositions.bottomright);
+                await myNovel.ƒS.update();
+                await myNovel.ƒS.Speech.tell(myNovel.characters.ben, "Hm... hier liegen auffällig viele Holzbalken, die könnten von einem Stollen sein.");
+                await myNovel.ƒS.Speech.tell(myNovel.characters.narrator, "Ben sucht weiter und versucht einen der Balken hochzuheben.");
+                await myNovel.ƒS.Speech.tell(myNovel.characters.ben, "Ufff ist der schwer, ja da ist doch ein Durchgang.");
+                await myNovel.ƒS.Speech.tell(myNovel.characters.narrator, "Ben entdeckt zwischen den Balken einen anderen Stollen.");
+                await myNovel.ƒS.Speech.tell(myNovel.characters.ben, "Okay ich muss da irgendwie rein kommen, ich versuch mal die Balken weg zu bekommen. Dann kann ich mich vielleicht durch Quetschen.");
+                await myNovel.ƒS.Speech.tell(myNovel.characters.ben, "Mit Mühe schafft es Ben, einige Balken so zu verschieben, dass er sich durchquetschen kann.");
+                await myNovel.ƒS.Speech.tell(myNovel.characters.ben, "Okay mal schauen, was ich hier drin finde.");
+                await myNovel.ƒS.Speech.tell(myNovel.characters.narrator, "Ben quetscht sich durch die Balken und geht in den Stollen.");
+                await myNovel.ƒS.Character.hideAll();
+                return "startChapterFive"; //chapter five  
+            case choice.climp:
+                console.log("Choice climp");
+                await myNovel.ƒS.Speech.tell(myNovel.characters.ben, "Ne, ich nehme lieber nicht den Aufzug, ich will so wenig wie möglich auffallen. Dann bleibt wohl nichts anderes übrig, wie klettern.");
+                await myNovel.ƒS.Speech.tell(myNovel.characters.narrator, "Ben sucht nach einer Möglichkeit, in das Loch zu klettern.");
+                await myNovel.ƒS.Speech.tell(myNovel.characters.ben, "Da drüben sollte es funktionieren. ");
+                await myNovel.ƒS.Speech.tell(myNovel.characters.ben, "Moment habe ich überhaupt Sachen dabei mit denen ich mich absichern kann und besser klettern kann?");
+                await myNovel.ƒS.Speech.tell(myNovel.characters.ben, "Ben überlegt, ob es wirklich eine gute Idee ist zu klettern.");
+                myNovel.ƒS.Inventory.open();
+                let choicesDiff = {
+                    searchDiff: "Anderen Weg suchen",
+                    climp: "Trotz allem klettern"
+                };
+                let dialogueElement = await myNovel.ƒS.Menu.getInput(choicesDiff, "choicesCSSClass");
+                switch (dialogueElement) {
+                    case choicesDiff.searchDiff:
+                        console.log("Choice wait");
+                        await myNovel.ƒS.Speech.tell(myNovel.characters.ben, "Okay was soll ich tun ich könnte doch den Aufzug nehmen. ");
+                        await myNovel.ƒS.Speech.tell(myNovel.characters.ben, "Die andere Möglichkeit ist, dass ich wieder zurückgehen und zum Eingang der Mine gehen.");
+                        await myNovel.ƒS.Character.hide(myNovel.characters.ben);
+                        await myNovel.ƒS.Character.show(myNovel.characters.ben, myNovel.characters.ben.pose.thinking, myNovel.newPositions.bottomright);
+                        await myNovel.ƒS.update();
+                        await myNovel.ƒS.Speech.tell(myNovel.characters.ben, "Hmm.... ");
+                        let choices = {
+                            elevator: "Den Aufzug benutzen",
+                            back: "Zurück zum Bergwerk gehen"
+                        };
+                        let dialogueElement = await myNovel.ƒS.Menu.getInput(choices, "choicesCSSClass");
+                        switch (dialogueElement) {
+                            case choices.back:
+                                console.log("Choice back");
+                                return "chapterFourGood"; //zurück zum Bergwerk
+                            case choices.elevator:
+                                console.log("Choice elevator");
+                                await myNovel.ƒS.Speech.tell(myNovel.characters.ben, "Ich kann ja mal schauen, ob der Aufzug funktioniert.");
+                                await myNovel.ƒS.Character.hide(myNovel.characters.ben);
+                                await myNovel.ƒS.Character.show(myNovel.characters.ben, myNovel.characters.ben.pose.confident, myNovel.newPositions.bottomright);
+                                await myNovel.ƒS.update(1);
+                                await myNovel.ƒS.Speech.tell(myNovel.characters.ben, "Ohh ich glaube, der ist noch an, die ganzen Kontrollleuchten sind noch an. Aber wo starte ich das Ding.");
+                                await myNovel.ƒS.Speech.tell(myNovel.characters.narrator, "Ben beginnt einfach alle Knöpfe zu drücken, plötzlich fängt der Aufzug an sich zu bewegen.");
+                                await myNovel.ƒS.Speech.tell(myNovel.characters.ben, "Ahhh der Knopf wird es wohl gewesen sein. Perfekt einfacher komme ich wohl nicht nach unten.");
+                                await myNovel.ƒS.Speech.tell(myNovel.characters.narrator, "Heyyyy wer bist du den was machst du da das ist gefährlich Stop sofort den Aufzug!!");
+                                await myNovel.ƒS.Speech.tell(myNovel.characters.ben, "Sorry, aber ich bin auf einer Mission");
+                                await myNovel.ƒS.Speech.tell(myNovel.characters.narrator, "STOP, da unten ist es viel zu gefährlich!");
+                                await myNovel.ƒS.Speech.tell(myNovel.characters.narrator, "Ben ignoriert die schreie der Wachen und fährt in das Loch.");
+                                await myNovel.ƒS.Speech.tell(myNovel.characters.narrator, "Unten angekommen überlegt Ben was er nun tun soll ");
+                                await myNovel.ƒS.Location.show(myNovel.locations.insideSinkhole);
+                                await myNovel.ƒS.update(myNovel.transition.fade.duration, myNovel.transition.leftFade.alpha, myNovel.transition.leftFade.edge);
+                                await myNovel.ƒS.Speech.tell(myNovel.characters.ben, "Okay, ich sollte mich mal umsehen, hier muss es doch mit Sicherheit etwas Interessantes geben.");
+                                await myNovel.ƒS.Speech.tell(myNovel.characters.narrator, "Ben beginnt das komplette Loch abzusuchen.");
+                                await myNovel.ƒS.Speech.tell(myNovel.characters.ben, "Hmm... die Untersuchungen von der Polizei hat bestimmt schon alles Offensichtliche gefunden, ich muss genauer suchen.");
+                                await myNovel.ƒS.Speech.tell(myNovel.characters.narrator, "Ben sucht weiter, nach ein paar Minuten fällt ihm etwas auf.");
+                                await myNovel.ƒS.Character.hide(myNovel.characters.ben);
+                                await myNovel.ƒS.Character.show(myNovel.characters.ben, myNovel.characters.ben.pose.thinking, myNovel.newPositions.bottomright);
+                                await myNovel.ƒS.update();
+                                await myNovel.ƒS.Speech.tell(myNovel.characters.ben, "Hm... hier liegen auffällig viele Holzbalken, die könnten von einem Stollen sein.");
+                                await myNovel.ƒS.Speech.tell(myNovel.characters.narrator, "Ben sucht weiter und versucht einen der Balken hochzuheben.");
+                                await myNovel.ƒS.Speech.tell(myNovel.characters.ben, "Ufff ist der schwer, ja da ist doch ein Durchgang.");
+                                await myNovel.ƒS.Speech.tell(myNovel.characters.narrator, "Ben entdeckt zwischen den Balken einen anderen Stollen.");
+                                await myNovel.ƒS.Speech.tell(myNovel.characters.ben, "Okay ich muss da irgendwie rein kommen, ich versuch mal die Balken weg zu bekommen. Dann kann ich mich vielleicht durch Quetschen.");
+                                await myNovel.ƒS.Speech.tell(myNovel.characters.ben, "Mit Mühe schafft es Ben, einige Balken so zu verschieben, dass er sich durchquetschen kann.");
+                                await myNovel.ƒS.Speech.tell(myNovel.characters.ben, "Okay mal schauen, was ich hier drin finde.");
+                                await myNovel.ƒS.Speech.tell(myNovel.characters.narrator, "Ben quetscht sich durch die Balken und geht in den Stollen.");
+                                await myNovel.ƒS.Character.hideAll();
+                                return "startChapterFive"; //Chapter five           
+                        }
+                    case choicesDiff.climp:
+                        console.log("Choice climp");
+                        if (myNovel.ƒS.Inventory.getAmount(myNovel.items.wanderschuhe) == 1 && myNovel.ƒS.Inventory.getAmount(myNovel.items.seil) == 1) {
+                            await myNovel.ƒS.Speech.tell(myNovel.characters.ben, "Okay, ich sollet eigentlich alles dabei haben, hier, ich habe ein Seil und meine Wanderschuhe, damit sollte es auf jeden Fall funktionieren.");
+                            await myNovel.ƒS.Speech.tell(myNovel.characters.narrator, "Ben sichert sich mit dem Seil ab und beginnt nach unten zu klettern.");
+                            await myNovel.ƒS.Speech.tell(myNovel.characters.narrator, "Unten angekommen überlegt Ben, was er nun tun soll");
+                            await myNovel.ƒS.Location.show(myNovel.locations.insideSinkhole);
+                            await myNovel.ƒS.update(myNovel.transition.fade.duration, myNovel.transition.leftFade.alpha, myNovel.transition.leftFade.edge);
+                            await myNovel.ƒS.Speech.tell(myNovel.characters.ben, "Okay, ich sollte mich mal umsehen, hier muss es doch mit Sicherheit etwas Interessantes geben.");
+                            await myNovel.ƒS.Speech.tell(myNovel.characters.narrator, "Ben beginnt das komplette Loch abzusuchen.");
+                            await myNovel.ƒS.Speech.tell(myNovel.characters.ben, "Hmm... die Untersuchungen von der Polizei hat bestimmt schon alles Offensichtliche gefunden, ich muss genauer suchen.");
+                            await myNovel.ƒS.Speech.tell(myNovel.characters.narrator, "Ben sucht weiter, nach ein paar Minuten fällt ihm etwas auf.");
+                            await myNovel.ƒS.Character.hide(myNovel.characters.ben);
+                            await myNovel.ƒS.Character.show(myNovel.characters.ben, myNovel.characters.ben.pose.thinking, myNovel.newPositions.bottomright);
+                            await myNovel.ƒS.update();
+                            await myNovel.ƒS.Speech.tell(myNovel.characters.ben, "Hm... hier liegen auffällig viele Holzbalken, die könnten von einem Stollen sein.");
+                            await myNovel.ƒS.Speech.tell(myNovel.characters.narrator, "Ben sucht weiter und versucht einen der Balken hochzuheben.");
+                            await myNovel.ƒS.Speech.tell(myNovel.characters.ben, "Ufff ist der schwer, ja da ist doch ein Durchgang.");
+                            await myNovel.ƒS.Speech.tell(myNovel.characters.narrator, "Ben entdeckt zwischen den Balken einen anderen Stollen.");
+                            await myNovel.ƒS.Speech.tell(myNovel.characters.ben, "Okay ich muss da irgendwie rein kommen, ich versuch mal die Balken weg zu bekommen. Dann kann ich mich vielleicht durch Quetschen.");
+                            await myNovel.ƒS.Speech.tell(myNovel.characters.ben, "Mit Mühe schafft es Ben, einige Balken so zu verschieben, dass er sich durchquetschen kann.");
+                            await myNovel.ƒS.Speech.tell(myNovel.characters.ben, "Okay mal schauen, was ich hier drin finde.");
+                            await myNovel.ƒS.Speech.tell(myNovel.characters.narrator, "Ben quetscht sich durch die Balken und geht in den Stollen.");
+                            await myNovel.ƒS.Character.hideAll();
+                            return "startChapterFive"; //Chapter five
+                        }
+                        else {
+                            return "chapterFourBadTwo";
+                        }
+                }
+        }
+    }
+    myNovel.chapterFourMidTwo = chapterFourMidTwo;
 })(myNovel || (myNovel = {}));
 var myNovel;
 (function (myNovel) {
@@ -598,7 +933,6 @@ var myNovel;
         await myNovel.ƒS.update(2);
         await myNovel.ƒS.Location.show(myNovel.locations.street);
         await myNovel.ƒS.update(3);
-        await myNovel.ƒS.update(myNovel.transition.fade.duration, myNovel.transition.leftFade.alpha, myNovel.transition.leftFade.edge);
         await myNovel.ƒS.Speech.tell(myNovel.characters.narrator, text.narrator.T0001);
         await myNovel.ƒS.Character.show(myNovel.characters.ben, myNovel.characters.ben.pose.thinking, myNovel.newPositions.bottomright);
         await myNovel.ƒS.update(1);
