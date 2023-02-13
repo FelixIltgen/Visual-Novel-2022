@@ -29,6 +29,7 @@ namespace myNovel {
         await ƒS.Character.show(characters.ben, characters.ben.pose.thinking, newPositions.bottomright);
         await ƒS.update(0);
         await ƒS.Speech.tell(characters.ben, text.ben.T0005);
+        await ƒS.Speech.tell(characters.ben, text.ben.T0006);
 
         
         let itemInInventory = 1;

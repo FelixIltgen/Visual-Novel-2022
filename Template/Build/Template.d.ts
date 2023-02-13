@@ -243,6 +243,9 @@ declare namespace myNovel {
     };
 }
 declare namespace myNovel {
+    function afterItemSelection(): ƒS.SceneReturn;
+}
+declare namespace myNovel {
     function eighthScene(): ƒS.SceneReturn;
 }
 declare namespace myNovel {

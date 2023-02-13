@@ -270,10 +270,17 @@ namespace myNovel {
       //{ scene: tenthScene, name: "Tenth scene"},
 
       //Selcet Items
-      { id: "withDairy", scene: itemSelcetionDairy, name: "Item selcetion with Dairy option"}
-      //{ id: "noDairy", scene: itemSelcetionNoDairy, name: "Item selcetion without Dairy option"}
-    ];
+      //{ id: "withDairy", scene: itemSelcetionDairy, name: "Item selcetion with Dairy option"},
+      //{ id: "noDairy", scene: itemSelcetionNoDairy, name: "Item selcetion without Dairy option"},
 
+      //Normal Path
+      { id: "afterItemSelection", scene: afterItemSelection, name: "first scene after Item selection"},
+
+      { id: "ChapterThree", scene: startChapterThree, name: "Start Chapter three"}
+    
+    
+      //Bad Ending
+    ];
 
     let uiElement: HTMLElement = document.querySelector("[type=interface]");
     dataForSave = ƒS.Progress.setData(dataForSave, uiElement);
