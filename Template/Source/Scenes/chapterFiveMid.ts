@@ -33,7 +33,7 @@ namespace myNovel {
 
         } else {
             await ƒS.Character.hideAll();
-            return ""; //Game over five
+            return "gameOverChapterFourOne"; //Game over five
         }
     }
 }

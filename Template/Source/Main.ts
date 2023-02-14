@@ -318,7 +318,7 @@ namespace myNovel {
       { id: "chapterFiveMidTwo", scene: chapterFiveMidTwo, name: "continue mid path"},
       { id: "chapterFiveMidThree", scene: chapterFiveMidThree, name: "continue mid path"},
       
-
+      { id: "chapterFiveBad", scene: ChapterThreeBad, name: "Chapter three bad path"},
       //Good Path
       { id: "GOODPATH", scene: goodPath, name: "Start good path"},
       { id: "GOODPATHTwo", scene: goodPathTwo, name: "continue good path"},
@@ -330,15 +330,17 @@ namespace myNovel {
       { scene: mazePartThree, name: "continue good path"},
       { scene: mazePartFour, name: "continue good path"},
       { scene: afterMazeGood, name: "continue good path"},
-      { scene: finalGood, name: "Last scene in good path"}
+      { scene: finalGood, name: "Last scene in good path"},
 
 
-      //Bad Endings
+      //bad endings & paths
       //{ id: "chapterThreeBad", scene: ChapterThreeBad, name: "Chapter three bad path"},
 
       //{ id: "gameOverChapterFourOne", scene: gameOverChapterFourOne, name: "Game over chapter four"},
       //{ id: "gameOverChapterFourTwo", scene: gameOverChapterFourTwo, name: "Chapter three bad path"},
       //{ id: "gameOverChapterFourThree", scene: gameOverChapterFourThree, name: "Chapter three bad path"},
+      
+      { id: "gameOverChapterFiveTwo", scene: gameOverChapterFiveTwo, name: "Game over chapter five"}
 
     ];
 

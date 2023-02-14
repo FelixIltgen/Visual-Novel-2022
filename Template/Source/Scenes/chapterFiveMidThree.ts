@@ -75,7 +75,7 @@ namespace myNovel {
                         await ƒS.Speech.tell(characters.ben, "Und wie komme ich hier wieder raus, ich werde nie einen Weg finden, heile hier raus zu kommen....");
                         //Lauter Schrei
                         await ƒS.Speech.tell(characters.ben, "Was war das??");
-                        return "BADChapter";
+                        return "chapterFiveBad";
                 }
                 
             case choices.foot:
