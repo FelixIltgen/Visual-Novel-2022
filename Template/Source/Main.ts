@@ -206,6 +206,13 @@ namespace myNovel {
         sorry: "Images/Characters/Weitere/paula_sorry.png",
         normal: "Images/Characters/Weitere/paula_normal.png"
       }
+    },
+    trabajo_escribo: {
+      name: "Trabajo Escribo",
+      origin: ƒS.ORIGIN.BOTTOMLEFT,
+      pose: {
+        normal: "Images/Characters/Weitere/trabajo_escribo_normal.png"
+      }
     }
   };
 
@@ -281,7 +288,6 @@ namespace myNovel {
       //{ scene: seventhScene, name: "Seventh scene"},
       //{ scene: eighthScene, name: "Eighth scene"},
       //{ scene: ninthScene, name: "Ninth scene"},
-      /*
       { scene: tenthScene, name: "Tenth scene"},
 
       //Selcet Items
@@ -300,30 +306,31 @@ namespace myNovel {
       //Start chapter four
       { id: "chapterFour", scene: startChapterFour, name: "Start Chapter four"},
       { id: "chapterFourGood", scene: chapterFourGood, name: "Start Chapter four"},
-      { id: "chapterFourGoodTwo", scene: chapterFourGoodTwo, name: "Start Chapter four", next: "chapterFiveGood"},
+      { id: "chapterFourGoodTwo", scene: chapterFourGoodTwo, name: "Start Chapter four", next: "chapterFiveGoodOne"},
       { id: "chapterFourMid", scene: chapterFourMid, name: "Start Chapter four"},
       { id: "chapterFourMidTwo", scene: chapterFourMidTwo, name: "Start Chapter four part two", next: "chapterFiveMid"},
       
       //Start chapter five
       { id: "chapterFiveGoodOne", scene: chapterFiveGoodOne, name: "Start chapter five good path"},
-      { id: "chapterFiveGoodTwo", scene: chapterFiveGoodTwo, name: "Next good path in chapter five "},
+      { id: "chapterFiveGoodTwo", scene: chapterFiveGoodTwo, name: "Next good path in chapter five ", next: "GOODPATH" },
 
       { id: "chapterFiveMid", scene: chapterFiveMid, name: "Start chapter five mid path"},
+      { id: "chapterFiveMidTwo", scene: chapterFiveMidTwo, name: "continue mid path"},
+      { id: "chapterFiveMidThree", scene: chapterFiveMidThree, name: "continue mid path"},
+      
 
       //Good Path
-      { id: "GOOD PATH", scene: goodPath, name: "Start good path"},
-      */
+      { id: "GOODPATH", scene: goodPath, name: "Start good path"},
       { id: "GOODPATHTwo", scene: goodPathTwo, name: "continue good path"},
 
       { id: "GOODMazeRight", scene: goodMazeRight, name: "continue good path"},
 
       { id: "GOODMazeLeft", scene: goodMazeLeft, name: "continue good path"},
-      { id: "mazePartTwo", scene: mazePartTwo, name: "continue good path"},
-      { id: "mazePartThree", scene: mazePartThree, name: "continue good path"},
-      { id: "mazePartFour", scene: mazePartFour, name: "continue good path"},
-
-      
-      
+      { scene: mazePartTwo, name: "continue good path"},
+      { scene: mazePartThree, name: "continue good path"},
+      { scene: mazePartFour, name: "continue good path"},
+      { scene: afterMazeGood, name: "continue good path"},
+      { scene: finalGood, name: "Last scene in good path"}
 
 
       //Bad Endings

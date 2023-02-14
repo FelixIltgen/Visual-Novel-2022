@@ -25,7 +25,7 @@ namespace myNovel {
                 console.log("Choice wait");
 
                 await ƒS.Speech.tell(characters.ben, "Ich kann ja mal schauen, ob der Aufzug funktioniert.");
-                await ƒS.Character.hide(characters.ben)
+                await ƒS.Character.hide(characters.ben);
                 await ƒS.Character.show(characters.ben, characters.ben.pose.confident, newPositions.bottomright);
                 await ƒS.update(1);
                 await ƒS.Speech.tell(characters.ben, "Ohh ich glaube, der ist noch an, die ganzen Kontrollleuchten sind noch an. Aber wo starte ich das Ding.");
@@ -43,7 +43,7 @@ namespace myNovel {
                 await ƒS.Speech.tell(characters.narrator, "Ben beginnt das komplette Loch abzusuchen.");
                 await ƒS.Speech.tell(characters.ben, "Hmm... die Untersuchungen von der Polizei hat bestimmt schon alles Offensichtliche gefunden, ich muss genauer suchen.");
                 await ƒS.Speech.tell(characters.narrator, "Ben sucht weiter, nach ein paar Minuten fällt ihm etwas auf.");
-                await ƒS.Character.hide(characters.ben)
+                await ƒS.Character.hide(characters.ben);
                 await ƒS.Character.show(characters.ben, characters.ben.pose.thinking, newPositions.bottomright);
                 await ƒS.update();
                 await ƒS.Speech.tell(characters.ben, "Hm... hier liegen auffällig viele Holzbalken, die könnten von einem Stollen sein.");
@@ -80,7 +80,7 @@ namespace myNovel {
 
                         await ƒS.Speech.tell(characters.ben, "Okay was soll ich tun ich könnte doch den Aufzug nehmen. ");
                         await ƒS.Speech.tell(characters.ben, "Die andere Möglichkeit ist, dass ich wieder zurückgehen und zum Eingang der Mine gehen.");
-                        await ƒS.Character.hide(characters.ben)
+                        await ƒS.Character.hide(characters.ben);
                         await ƒS.Character.show(characters.ben, characters.ben.pose.thinking, newPositions.bottomright);
                         await ƒS.update();
                         await ƒS.Speech.tell(characters.ben, "Hmm.... ");
@@ -101,7 +101,7 @@ namespace myNovel {
                                 console.log("Choice elevator");
 
                                 await ƒS.Speech.tell(characters.ben, "Ich kann ja mal schauen, ob der Aufzug funktioniert.");
-                                await ƒS.Character.hide(characters.ben)
+                                await ƒS.Character.hide(characters.ben);
                                 await ƒS.Character.show(characters.ben, characters.ben.pose.confident, newPositions.bottomright);
                                 await ƒS.update(1);
                                 await ƒS.Speech.tell(characters.ben, "Ohh ich glaube, der ist noch an, die ganzen Kontrollleuchten sind noch an. Aber wo starte ich das Ding.");
@@ -119,7 +119,7 @@ namespace myNovel {
                                 await ƒS.Speech.tell(characters.narrator, "Ben beginnt das komplette Loch abzusuchen.");
                                 await ƒS.Speech.tell(characters.ben, "Hmm... die Untersuchungen von der Polizei hat bestimmt schon alles Offensichtliche gefunden, ich muss genauer suchen.");
                                 await ƒS.Speech.tell(characters.narrator, "Ben sucht weiter, nach ein paar Minuten fällt ihm etwas auf.");
-                                await ƒS.Character.hide(characters.ben)
+                                await ƒS.Character.hide(characters.ben);
                                 await ƒS.Character.show(characters.ben, characters.ben.pose.thinking, newPositions.bottomright);
                                 await ƒS.update();
                                 await ƒS.Speech.tell(characters.ben, "Hm... hier liegen auffällig viele Holzbalken, die könnten von einem Stollen sein.");
@@ -149,7 +149,7 @@ namespace myNovel {
                             await ƒS.Speech.tell(characters.narrator, "Ben beginnt das komplette Loch abzusuchen.");
                             await ƒS.Speech.tell(characters.ben, "Hmm... die Untersuchungen von der Polizei hat bestimmt schon alles Offensichtliche gefunden, ich muss genauer suchen.");
                             await ƒS.Speech.tell(characters.narrator, "Ben sucht weiter, nach ein paar Minuten fällt ihm etwas auf.");
-                            await ƒS.Character.hide(characters.ben)
+                            await ƒS.Character.hide(characters.ben);
                             await ƒS.Character.show(characters.ben, characters.ben.pose.thinking, newPositions.bottomright);
                             await ƒS.update();
                             await ƒS.Speech.tell(characters.ben, "Hm... hier liegen auffällig viele Holzbalken, die könnten von einem Stollen sein.");

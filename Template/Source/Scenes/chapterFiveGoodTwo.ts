@@ -77,8 +77,7 @@ namespace myNovel {
                     await ƒS.Speech.tell(characters.ben, "Ich glaube, ich gehe nach links, wenn ich nicht weiterkomme, kann ich es immer noch links probieren.");
                     await ƒS.Speech.tell(characters.narrator, "Ben geht nach links weiter, plötzlich steht er vor einem Abgrund.");
                     await ƒS.Speech.tell(characters.ben, "Okay, hier komme ich nicht so einfach weiter, also entweder klettern oder zurück?");
-                    await ƒS.Speech.tell(characters.ben, "");
-                    await ƒS.Speech.tell(characters.ben, "");
+                    
 
                     let choice = {
                         back: "Zurück gehen",
@@ -160,12 +159,12 @@ namespace myNovel {
                 case choice.straight:
                     console.log("Choice straight");
                     await ƒS.Character.hideAll();
-                    return ""; //Mid path
+                    return "chapterFiveMidThree"; //Mid path
 
                 case choice.right:
                     console.log("Choice right");
                     await ƒS.Character.hideAll();
-                    return ""; //Bad Path          
+                    return "chapterFiveBad"; //Bad Path          
             }
         }
     }
