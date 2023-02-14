@@ -131,7 +131,12 @@ namespace myNovel {
     blanko: {
       name: "Blanko",
       background: "Images/Background/Chapter/blanko.png"
+    },
+    gameOver: {
+      name: "Game Over",
+      background: "Images/Background/Chapter/gameOver.png"
     }
+
   };
 
   export let characters = {

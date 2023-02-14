@@ -27,5 +27,8 @@ namespace myNovel {
         await ƒS.Speech.tell(characters.narrator, "Heyyy, was machst du den da?!!!");
         await ƒS.Location.show(locations.blanko);
         await ƒS.update(2);
+        await ƒS.Location.show(locations.gameOver);
+        await ƒS.update(2);
+        await ƒS.update(5);
       }
 }

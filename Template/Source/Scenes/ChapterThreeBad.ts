@@ -17,5 +17,8 @@ namespace myNovel {
 
         await ƒS.Location.show(locations.blanko);
         await ƒS.update(2);
+        await ƒS.Location.show(locations.gameOver);
+        await ƒS.update(2);
+        await ƒS.update(5);
       }
 }
