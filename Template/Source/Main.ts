@@ -207,11 +207,11 @@ namespace myNovel {
         normal: "Images/Characters/Weitere/paula_normal.png"
       }
     },
-    trabajo_escribo: {
+    trabajoEscribo: {
       name: "Trabajo Escribo",
       origin: ƒS.ORIGIN.BOTTOMLEFT,
       pose: {
-        normal: "Images/Characters/Weitere/trabajo_escribo_normal.png"
+        normal: "Images/Characters/Weitere/trabajoEscribo.png"
       }
     }
   };
@@ -288,6 +288,7 @@ namespace myNovel {
       //{ scene: seventhScene, name: "Seventh scene"},
       //{ scene: eighthScene, name: "Eighth scene"},
       //{ scene: ninthScene, name: "Ninth scene"},
+      /*
       { scene: tenthScene, name: "Tenth scene"},
 
       //Selcet Items
@@ -306,7 +307,7 @@ namespace myNovel {
       //Start chapter four
       { id: "chapterFour", scene: startChapterFour, name: "Start Chapter four"},
       { id: "chapterFourGood", scene: chapterFourGood, name: "Start Chapter four"},
-      { id: "chapterFourGoodTwo", scene: chapterFourGoodTwo, name: "Start Chapter four", next: "chapterFiveGoodOne"},
+      { id: "chapterFourGoodTwo", scene: chapterFourGoodTwo, name: "Start Chapter four"},
       { id: "chapterFourMid", scene: chapterFourMid, name: "Start Chapter four"},
       { id: "chapterFourMidTwo", scene: chapterFourMidTwo, name: "Start Chapter four part two", next: "chapterFiveMid"},
       
@@ -341,6 +342,7 @@ namespace myNovel {
       { scene: mazePartTwo, name: "continue good path"},
       { scene: mazePartThree, name: "continue good path"},
       { scene: mazePartFour, name: "continue good path"},
+      */
       { scene: afterMazeGood, name: "continue good path"},
       { scene: finalGood, name: "Last scene in good path", next: "Leere scene"},
 

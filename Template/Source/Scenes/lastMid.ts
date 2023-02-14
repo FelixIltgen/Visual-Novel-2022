@@ -13,7 +13,7 @@ namespace myNovel {
         await ƒS.Speech.tell(characters.ben, "Mama, ich bin irgendwo in der Mine oder in einer Höhle, aber ich finde den Weg nicht mehr aus der Höhle.");
         await ƒS.Speech.tell(characters.maria, "OMG was hast du nur gemacht ich rufe die Rettungskräfte wir holen dich da schon raus....");
         await ƒS.Speech.tell(characters.ben, "Okay ich warte hier....");
-        await ƒS.Character.hide(characters.maria)
+        await ƒS.Character.hide(characters.maria);
         await ƒS.Speech.tell(characters.ben, "Wie lang werden die wohl brauchen bis sie mich finden...");
         await ƒS.Speech.tell(characters.ben, "Bis sie mich gefunden haben wird es viel zu lange dauern bis dahin bin ich verdurstet oder sie geben die Suche auf wie bei Papa.");
         //Pressluft hammer

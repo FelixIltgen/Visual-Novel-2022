@@ -3,11 +3,16 @@
     "commonSourceDirectory": "..",
     "sourceFiles": [
       "../Source/Main.ts",
-      "../Source/goodPath.ts",
       "../Source/Scenes/ChapterThreeBad.ts",
       "../Source/Scenes/afterItemSelection.ts",
-      "../Source/Scenes/chapterFiveGood.ts",
+      "../Source/Scenes/afterMazeGood.ts",
+      "../Source/Scenes/badPath.ts",
+      "../Source/Scenes/chapterFiveBad.ts",
+      "../Source/Scenes/chapterFiveGoodOne.ts",
       "../Source/Scenes/chapterFiveGoodTwo.ts",
+      "../Source/Scenes/chapterFiveMid.ts",
+      "../Source/Scenes/chapterFiveMidThree.ts",
+      "../Source/Scenes/chapterFiveMidTwo.ts",
       "../Source/Scenes/chapterFourBad.ts",
       "../Source/Scenes/chapterFourBadTwo.ts",
       "../Source/Scenes/chapterFourGood.ts",
@@ -18,12 +23,26 @@
       "../Source/Scenes/chapterThreeMid.ts",
       "../Source/Scenes/eighthScene.ts",
       "../Source/Scenes/fifthScene.ts",
+      "../Source/Scenes/finalGood.ts",
       "../Source/Scenes/firstScene.ts",
       "../Source/Scenes/fourth.ts",
+      "../Source/Scenes/gameOverChapterFiveTwo.ts",
       "../Source/Scenes/gameOverChapterFourOne.ts",
+      "../Source/Scenes/goodMazeRight.ts",
+      "../Source/Scenes/goodMazeleft.ts",
+      "../Source/Scenes/goodPath.ts",
       "../Source/Scenes/goodPathTwo.ts",
       "../Source/Scenes/itemSelcetionDairy.ts",
       "../Source/Scenes/itemSelcetionnNoDairy.ts",
+      "../Source/Scenes/lastMid.ts",
+      "../Source/Scenes/mazePartFour.ts",
+      "../Source/Scenes/mazePartThree.ts",
+      "../Source/Scenes/mazePartTwo.ts",
+      "../Source/Scenes/mediumPathOne.ts",
+      "../Source/Scenes/midMazeLeft.ts",
+      "../Source/Scenes/midMazeLeftOne.ts",
+      "../Source/Scenes/midMazeRight.ts",
+      "../Source/Scenes/midMazeRightOne.ts",
       "../Source/Scenes/ninthScene.ts",
       "../Source/Scenes/secondScene.ts",
       "../Source/Scenes/seventhScene.ts",
@@ -43,7 +62,7 @@
         },
         {
           "pos": 15,
-          "end": 201055,
+          "end": 283528,
           "kind": "text"
         }
       ],
@@ -71,7 +90,7 @@
       "sections": [
         {
           "pos": 0,
-          "end": 8668,
+          "end": 10339,
           "kind": "text"
         }
       ]

@@ -198,6 +198,13 @@ declare namespace myNovel {
                 normal: string;
             };
         };
+        trabajoEscribo: {
+            name: string;
+            origin: ƒ.ORIGIN2D;
+            pose: {
+                normal: string;
+            };
+        };
     };
     let items: {
         feuerzeug: {
@@ -256,19 +263,34 @@ declare namespace myNovel {
     };
 }
 declare namespace myNovel {
-    function goodPath(): ƒS.SceneReturn;
-}
-declare namespace myNovel {
     function ChapterThreeBad(): ƒS.SceneReturn;
 }
 declare namespace myNovel {
     function afterItemSelection(): ƒS.SceneReturn;
 }
 declare namespace myNovel {
+    function afterMazeGood(): ƒS.SceneReturn;
+}
+declare namespace myNovel {
+    function badPath(): ƒS.SceneReturn;
+}
+declare namespace myNovel {
+    function chapterFiveBad(): ƒS.SceneReturn;
+}
+declare namespace myNovel {
     function chapterFiveGoodOne(): ƒS.SceneReturn;
 }
 declare namespace myNovel {
     function chapterFiveGoodTwo(): ƒS.SceneReturn;
+}
+declare namespace myNovel {
+    function chapterFiveMid(): ƒS.SceneReturn;
+}
+declare namespace myNovel {
+    function chapterFiveMidThree(): ƒS.SceneReturn;
+}
+declare namespace myNovel {
+    function chapterFiveMidTwo(): ƒS.SceneReturn;
 }
 declare namespace myNovel {
     function gameOverChapterFourTwo(): ƒS.SceneReturn;
@@ -301,13 +323,28 @@ declare namespace myNovel {
     function fifthScene(): ƒS.SceneReturn;
 }
 declare namespace myNovel {
+    function finalGood(): ƒS.SceneReturn;
+}
+declare namespace myNovel {
     function firstScene(): ƒS.SceneReturn;
 }
 declare namespace myNovel {
     function fourthScene(): ƒS.SceneReturn;
 }
 declare namespace myNovel {
+    function gameOverChapterFiveTwo(): ƒS.SceneReturn;
+}
+declare namespace myNovel {
     function gameOverChapterFourOne(): ƒS.SceneReturn;
+}
+declare namespace myNovel {
+    function goodMazeRight(): ƒS.SceneReturn;
+}
+declare namespace myNovel {
+    function goodMazeLeft(): ƒS.SceneReturn;
+}
+declare namespace myNovel {
+    function goodPath(): ƒS.SceneReturn;
 }
 declare namespace myNovel {
     function goodPathTwo(): ƒS.SceneReturn;
@@ -317,6 +354,33 @@ declare namespace myNovel {
 }
 declare namespace myNovel {
     function itemSelcetionNoDairy(): ƒS.SceneReturn;
+}
+declare namespace myNovel {
+    function lastMid(): ƒS.SceneReturn;
+}
+declare namespace myNovel {
+    function mazePartFour(): ƒS.SceneReturn;
+}
+declare namespace myNovel {
+    function mazePartThree(): ƒS.SceneReturn;
+}
+declare namespace myNovel {
+    function mazePartTwo(): ƒS.SceneReturn;
+}
+declare namespace myNovel {
+    function mediumPathOne(): ƒS.SceneReturn;
+}
+declare namespace myNovel {
+    function midMazeLeft(): ƒS.SceneReturn;
+}
+declare namespace myNovel {
+    function midMazeLeftOne(): ƒS.SceneReturn;
+}
+declare namespace myNovel {
+    function midMazeRight(): ƒS.SceneReturn;
+}
+declare namespace myNovel {
+    function midMazeRightOne(): ƒS.SceneReturn;
 }
 declare namespace myNovel {
     function ninthScene(): ƒS.SceneReturn;

@@ -57,7 +57,7 @@ namespace myNovel {
             await ƒS.Speech.tell(characters.ben, "Okay mal schauen, was ich hier drin finde.");
             await ƒS.Speech.tell(characters.narrator, "Ben quetscht sich durch die Balken und geht in den Stollen.");
             await ƒS.Character.hideAll();
-            return "startChapterFiveGood";
+            return "chapterFiveGoodOne";
 
         } else {
             return "gameOverChapterFourOne";
