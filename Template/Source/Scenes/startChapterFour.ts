@@ -15,11 +15,13 @@ namespace myNovel {
                 T0003: "Es ist wahrscheinlich besser wenn ich zuerst zum Loch gehe und nach etwas hilfreichem suche bevor ich zur Mine gehe."
             }
         };
-        
+        await ƒS.Speech.hide();
         await ƒS.Location.show(locations.chapterFour);
-        await ƒS.update(2);
+        await ƒS.update(3);
         await ƒS.Location.show(locations.street);
         await ƒS.update(3);
+        await ƒS.Speech.show();
+        await ƒS.update();
         await ƒS.Speech.tell(characters.narrator, text.narrator.T0001);
         await ƒS.Character.show(characters.ben, characters.ben.pose.thinking, newPositions.bottomright);
         await ƒS.update(1);

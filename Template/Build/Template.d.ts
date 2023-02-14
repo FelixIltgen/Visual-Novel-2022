@@ -125,6 +125,10 @@ declare namespace myNovel {
             name: string;
             background: string;
         };
+        gameOver: {
+            name: string;
+            background: string;
+        };
     };
     let characters: {
         narrator: {
@@ -252,19 +256,31 @@ declare namespace myNovel {
     };
 }
 declare namespace myNovel {
+    function goodPath(): ƒS.SceneReturn;
+}
+declare namespace myNovel {
     function ChapterThreeBad(): ƒS.SceneReturn;
 }
 declare namespace myNovel {
     function afterItemSelection(): ƒS.SceneReturn;
 }
 declare namespace myNovel {
-    function chapterFourBad(): ƒS.SceneReturn;
+    function chapterFiveGoodOne(): ƒS.SceneReturn;
 }
 declare namespace myNovel {
-    function chapterFourBadTwo(): ƒS.SceneReturn;
+    function chapterFiveGoodTwo(): ƒS.SceneReturn;
+}
+declare namespace myNovel {
+    function gameOverChapterFourTwo(): ƒS.SceneReturn;
+}
+declare namespace myNovel {
+    function gameOverChapterFourThree(): ƒS.SceneReturn;
 }
 declare namespace myNovel {
     function chapterFourGood(): ƒS.SceneReturn;
+}
+declare namespace myNovel {
+    function chapterFourGoodTwo(): ƒS.SceneReturn;
 }
 declare namespace myNovel {
     function chapterFourMid(): ƒS.SceneReturn;
@@ -289,6 +305,12 @@ declare namespace myNovel {
 }
 declare namespace myNovel {
     function fourthScene(): ƒS.SceneReturn;
+}
+declare namespace myNovel {
+    function gameOverChapterFourOne(): ƒS.SceneReturn;
+}
+declare namespace myNovel {
+    function goodPathTwo(): ƒS.SceneReturn;
 }
 declare namespace myNovel {
     function itemSelcetionDairy(): ƒS.SceneReturn;

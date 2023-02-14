@@ -3,11 +3,15 @@
     "commonSourceDirectory": "..",
     "sourceFiles": [
       "../Source/Main.ts",
+      "../Source/goodPath.ts",
       "../Source/Scenes/ChapterThreeBad.ts",
       "../Source/Scenes/afterItemSelection.ts",
+      "../Source/Scenes/chapterFiveGood.ts",
+      "../Source/Scenes/chapterFiveGoodTwo.ts",
       "../Source/Scenes/chapterFourBad.ts",
       "../Source/Scenes/chapterFourBadTwo.ts",
       "../Source/Scenes/chapterFourGood.ts",
+      "../Source/Scenes/chapterFourGoodTwo.ts",
       "../Source/Scenes/chapterFourMid.ts",
       "../Source/Scenes/chapterFourMidTwo.ts",
       "../Source/Scenes/chapterThreeGood.ts",
@@ -16,6 +20,8 @@
       "../Source/Scenes/fifthScene.ts",
       "../Source/Scenes/firstScene.ts",
       "../Source/Scenes/fourth.ts",
+      "../Source/Scenes/gameOverChapterFourOne.ts",
+      "../Source/Scenes/goodPathTwo.ts",
       "../Source/Scenes/itemSelcetionDairy.ts",
       "../Source/Scenes/itemSelcetionnNoDairy.ts",
       "../Source/Scenes/ninthScene.ts",
@@ -37,7 +43,7 @@
         },
         {
           "pos": 15,
-          "end": 166494,
+          "end": 201055,
           "kind": "text"
         }
       ],
@@ -65,7 +71,7 @@
       "sections": [
         {
           "pos": 0,
-          "end": 8069,
+          "end": 8668,
           "kind": "text"
         }
       ]
