@@ -316,9 +316,21 @@ namespace myNovel {
 
       { id: "chapterFiveMid", scene: chapterFiveMid, name: "Start chapter five mid path"},
       { id: "chapterFiveMidTwo", scene: chapterFiveMidTwo, name: "continue mid path"},
-      { id: "chapterFiveMidThree", scene: chapterFiveMidThree, name: "continue mid path"},
+      { id: "chapterFiveMidThree", scene: chapterFiveMidThree, name: "continue mid path", next: "mediumPathOne"},
       
-      { id: "chapterFiveBad", scene: ChapterThreeBad, name: "Chapter three bad path"},
+      { id: "chapterFiveBad", scene: chapterFiveBad, name: "Chapter three bad path", next: "badPath"},
+
+      //Medium Path
+      { id: "mediumPathOne", scene: mediumPathOne, name: "Start medium Path"},
+      { id: "midMazeRight", scene: midMazeRight, name: "maze right path "},
+      { scene: midMazeRightOne, name: "maze right path ", next: "lastMid"},
+
+      { id: "midMazeLeft", scene: midMazeLeft, name: "maze left path "},
+      { scene: midMazeLeftOne, name: "maze left path "},
+
+      { id: "lastMid", scene: lastMid, name: "Last part in Mid path ", next: "Leere scene"},
+
+
       //Good Path
       { id: "GOODPATH", scene: goodPath, name: "Start good path"},
       { id: "GOODPATHTwo", scene: goodPathTwo, name: "continue good path"},
@@ -330,18 +342,22 @@ namespace myNovel {
       { scene: mazePartThree, name: "continue good path"},
       { scene: mazePartFour, name: "continue good path"},
       { scene: afterMazeGood, name: "continue good path"},
-      { scene: finalGood, name: "Last scene in good path"},
+      { scene: finalGood, name: "Last scene in good path", next: "Leere scene"},
+
+      //Bad Path
+      { id: "badPath", scene: badPath, name: "Start bad Path", next: "Leere scene"},
 
 
       //bad endings & paths
-      //{ id: "chapterThreeBad", scene: ChapterThreeBad, name: "Chapter three bad path"},
+      { id: "chapterThreeBad", scene: ChapterThreeBad, name: "Chapter three bad path"},
 
-      //{ id: "gameOverChapterFourOne", scene: gameOverChapterFourOne, name: "Game over chapter four"},
-      //{ id: "gameOverChapterFourTwo", scene: gameOverChapterFourTwo, name: "Chapter three bad path"},
-      //{ id: "gameOverChapterFourThree", scene: gameOverChapterFourThree, name: "Chapter three bad path"},
+      { id: "gameOverChapterFourOne", scene: gameOverChapterFourOne, name: "Game over chapter four"},
+      { id: "gameOverChapterFourTwo", scene: gameOverChapterFourTwo, name: "Chapter three bad path"},
+      { id: "gameOverChapterFourThree", scene: gameOverChapterFourThree, name: "Chapter three bad path"},
       
       { id: "gameOverChapterFiveTwo", scene: gameOverChapterFiveTwo, name: "Game over chapter five"}
 
+      //Empty scene
     ];
 
     let uiElement: HTMLElement = document.querySelector("[type=interface]");
