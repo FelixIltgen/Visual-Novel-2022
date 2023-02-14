@@ -2,8 +2,8 @@
 namespace myNovel {
     export async function chapterFourGood(): ƒS.SceneReturn {
         console.log("Chapter Four Good");
-        
-        
+
+
         await ƒS.Location.show(locations.mineEntrance);
         await ƒS.update(transition.fade.duration, transition.leftFade.alpha, transition.leftFade.edge);
         await ƒS.Character.show(characters.ben, characters.ben.pose.thinking, newPositions.bottomright);
@@ -21,14 +21,14 @@ namespace myNovel {
             await ƒS.Speech.tell(characters.ben, "...ich schaue lieber nochmal nach.");
 
             ƒS.Speech.hide();
-    
-                //Novel Page
+
+            //Novel Page
             ƒS.Text.addClass("novelPageDiary");
             await ƒS.Text.print("<div class=novelPageContent> <div class=leftPage><b>Erster Eintrag:</b> <br> <br> Heute müssen ich und Andrea den neuen Stollen sprengen ich bin mir sehr unsicher ob es eine Gute Idee ist.<br> \
                                 <br> <b>Zweiter Eintrag: </b> <br> <br> Habe noch mal Rücksprache mit der Minenleitung gehalten. Die wollen echt, dass ich diesen Tunnel sprenge... <br> \
                                 <br> <b>Dritter Eintrag:</b> <br> <br> Ich fahre jetzt mit Andrea an die Stelle für die Sprengung und bereite alles vor.</div>  \
                                 <div class=rightPage> <b>Vierter Eintrag:</b> <br> <br> Die Sprengung hat gut funktioniert, hoffentlich passiert nichts.  </div> </div>");
-                
+
             await ƒS.Text.print("<div class=novelPageContent> <div class=leftPage><b>Fünfter Eintrag:</b> <br> <br> Ich habe den Einsturz überlebt, wie durch ein Wunder bin ich nicht \
                                 verletzt. Was auch immer mich verfolgt hat es ist weg, vielleicht auch tot? <br> \
                                 <br> <b>Sechster Eintrag: </b><br><br> Ich hatte Glück, habe eine alte Taschenlampe gefunden, die noch funktioniert, nun kann ich etwas \
@@ -42,23 +42,55 @@ namespace myNovel {
                                 <div class=rightPage></div></div>");
 
             ƒS.Speech.show();
-            
+
             await ƒS.Speech.tell(characters.ben, "Okay, ich probiere mal den Code aus.");
-            //Iput feld eingabe
-            await ƒS.Speech.tell(characters.narrator, "Ben gibt den Code in das Schloss ein und die Türe öffnet sich.");
-            await ƒS.Speech.tell(characters.ben, "Perfekt zum Glück habe ich das Tagebuch dabei.");
-            await ƒS.Speech.tell(characters.ben, "Jetzt kann es Los gehen.");
-            await ƒS.Speech.tell(characters.narrator, "Ben geht in den dunklen Stollen.");
-            await ƒS.Character.hideAll(); 
-            
+            ƒS.Text.addClass("speechInput");
+            let answer = await ƒS.Speech.getInput();
+            if ( answer == "5536") {
+                await ƒS.Speech.tell(characters.ben, "Perfekt zum Glück habe ich das Tagebuch dabei.");
+                await ƒS.Speech.tell(characters.ben, "Jetzt kann es Los gehen.");
+                await ƒS.Speech.tell(characters.narrator, "Ben geht in den dunklen Stollen.");
+                await ƒS.Character.hideAll();
+                return "chapterFourGoodTwo";
+            } else {
+                // Code false
+                await ƒS.Speech.tell(characters.ben, "Hmm... okay, das bringt wohl nichts, ich muss einen anderen Weg suchen, um in das Bergwerk zu kommen. Aber nur wie?");
+                await ƒS.Speech.tell(characters.narrator, "Ben beginnt um den Eingang herum nach einer Möglichkeit zu Suchen, um in das Bergwerk zu kommen.");
+                await ƒS.Speech.tell(characters.ben, "Da oben ist eine Art Lüftungsschacht, da kann ich es mal versuchen.");
+                await ƒS.Speech.tell(characters.ben, "Ja, die Gitter sind auch schon verrostet, die kann ich einfach weg drücken.");
+                await ƒS.Speech.tell(characters.ben, "Ben drückt sich durch die Gitter des Lüftungsschachts. Plötzlich verliert er das Gleichgewicht und rutscht in den Lüftungsschacht hinein, nach ein paar Metern landet er unsanft in einem dunklen Raum.");
+                return "chapterFourGoodTwo";
+                
+            }
+
+
         } else {
+
             await ƒS.Speech.tell(characters.ben, "Schade, ich habe das Tagebuch nicht mitgenommen, jetzt hätte ich noch mal nachschauen können.");
             await ƒS.Speech.tell(characters.ben, "Komm Ben, denk nach, was stand noch mal im Buch...");
             await ƒS.Speech.tell(characters.narrator, "Ben versucht sich an die Aufschriebe zu erinnern.");
             await ƒS.Speech.tell(characters.ben, "Gut, ich kann es ja einfach versuchen und wenn nicht, muss ich eine andere Möglichkeit finden, hier rein zu kommen.");
-            //Input für Code
+            ƒS.Text.addClass("speechInput");
+            let answer = await ƒS.Speech.getInput();
+            
+            if (answer == "5536") {
+                
+                await ƒS.Speech.tell(characters.ben, "Cool, da hatte ich wohl Glück.");
+                await ƒS.Speech.tell(characters.ben, "Jetzt kann es losgehen.");
+                await ƒS.Speech.tell(characters.ben, "Ben geht in den dunklen Stollen.");
+                return "chapterFourGoodTwo";
+
+            } else {
+                // Code false
+                await ƒS.Speech.tell(characters.ben, "Hmm... okay, das bringt wohl nichts, ich muss einen anderen Weg suchen, um in das Bergwerk zu kommen. Aber nur wie?");
+                await ƒS.Speech.tell(characters.narrator, "Ben beginnt um den Eingang herum nach einer Möglichkeit zu Suchen, um in das Bergwerk zu kommen.");
+                await ƒS.Speech.tell(characters.ben, "Da oben ist eine Art Lüftungsschacht, da kann ich es mal versuchen.");
+                await ƒS.Speech.tell(characters.ben, "Ja, die Gitter sind auch schon verrostet, die kann ich einfach weg drücken.");
+                await ƒS.Speech.tell(characters.ben, "Ben drückt sich durch die Gitter des Lüftungsschachts. Plötzlich verliert er das Gleichgewicht und rutscht in den Lüftungsschacht hinein, nach ein paar Metern landet er unsanft in einem dunklen Raum.");
+                return "chapterFourGoodTwo";
+            }
 
         }
 
-      }
+    }
 }

@@ -55,7 +55,7 @@ namespace myNovel {
                 await ƒS.Speech.tell(characters.ben, "Okay mal schauen, was ich hier drin finde.");
                 await ƒS.Speech.tell(characters.narrator, "Ben quetscht sich durch die Balken und geht in den Stollen.");
                 await ƒS.Character.hideAll();
-                return "startChapterFive"; //chapter five  
+                return "startChapterFiveMid"; //chapter five  
 
             case choice.climp:
                 console.log("Choice climp");
@@ -164,7 +164,7 @@ namespace myNovel {
                             return "startChapterFive"; //Chapter five
 
                         } else {
-                            return "chapterFourBadTwo";
+                            return "gameOverChapterFourThree";
                         }          
                 }           
             }

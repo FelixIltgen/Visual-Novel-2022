@@ -88,7 +88,7 @@ namespace myNovel {
     },
     sinkhole: {
       name: "Spaceship",
-      background: "./Images/Background/spaceship.png"
+      background: "./Images/Background/sinkhole.png"
     },
     
     // Chapter Backgrounds
@@ -299,15 +299,22 @@ namespace myNovel {
       //Start chapter four
       { id: "chapterFour", scene: startChapterFour, name: "Start Chapter four"},
       { id: "chapterFourGood", scene: chapterFourGood, name: "Start Chapter four"},
+      { id: "chapterFourGoodTwo", scene: chapterFourGoodTwo, name: "Start Chapter four"},
       { id: "chapterFourMid", scene: chapterFourMid, name: "Start Chapter four"},
       { id: "chapterFourMidTwo", scene: chapterFourMidTwo, name: "Start Chapter four part two"},
       
+      //Start chapter five
+
+      //Start chapter six
 
 
       //Bad Endings
       { id: "chapterThreeBad", scene: ChapterThreeBad, name: "Chapter three bad path"},
-      { id: "chapterFourBad", scene: chapterFourBad, name: "Chapter three bad path"},
-      { id: "chapterFourBadTwo", scene: chapterFourBadTwo, name: "Chapter three bad path"}
+
+      { id: "gameOverChapterFourOne", scene: gameOverChapterFourOne, name: "Game over chapter four"},
+      { id: "gameOverChapterFourTwo", scene: gameOverChapterFourTwo, name: "Chapter three bad path"},
+      { id: "gameOverChapterFourThree", scene: gameOverChapterFourThree, name: "Chapter three bad path"},
+
     ];
 
     let uiElement: HTMLElement = document.querySelector("[type=interface]");

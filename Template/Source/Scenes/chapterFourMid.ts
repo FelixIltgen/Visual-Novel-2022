@@ -22,7 +22,7 @@ namespace myNovel {
         switch (dialogueElement) {
             case choices.wait:
                 console.log("Choice wait");
-                return "chapterFourBad";
+                return "gameOverChapterFourTwo";
 
             case choices.search:
                 console.log("Choice search");

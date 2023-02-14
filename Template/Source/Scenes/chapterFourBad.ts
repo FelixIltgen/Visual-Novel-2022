@@ -1,6 +1,6 @@
 
 namespace myNovel {
-    export async function chapterFourBad(): ƒS.SceneReturn {
+    export async function gameOverChapterFourTwo(): ƒS.SceneReturn {
         console.log("Start Prolog");
         
         await ƒS.Location.show(locations.sinkhole);
