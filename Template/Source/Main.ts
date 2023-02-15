@@ -21,8 +21,23 @@ namespace myNovel {
     emptyCave: "./Assets/Music/emptyCave.mp3",
     run: "./Assets/Music/run.mp3",
     sunday: "./Assets/Music/sunday.mp3",
+    sundayNoMusic: "./Assets/Music/doorClosing.mp3",
     // SFX
-    closingGate: "./Assets/Sounds/doorClosing.mp3"
+    closingGate: "./Assets/Sounds/doorClosing.mp3",
+    breakingWood: "./Assets/Sounds/breakingWood.mp3",
+    creakingWood: "./Assets/Sounds/creakingWood.mp3",
+    demonicScream: "./Assets/Sounds/demonicScream.mp3",
+    droppingRocks: "./Assets/Sounds/droppingRocks.mp3",
+    fall: "./Assets/Sounds/fall.mp3",
+    fallingRocks: "./Assets/Sounds/fallingRocks.mp3",
+    impact: "./Assets/Sounds/impact.mp3",
+    jackhammer: "./Assets/Sounds/jackhammer.mp3",
+    monsterScream: "./Assets/Sounds/monsterScream.mp3",
+    monsterScream2: "./Assets/Sounds/monsterScream2.mp3",
+    pistolShot: "./Assets/Sounds/pistolShot.mp3",
+    splash: "./Assets/Sounds/splash.mp3",
+    vibration: "./Assets/Sounds/vibration.mp3",
+    alarm: "./Assets/Sounds/alarm.mp3"
   };
 
   export let locations = {
@@ -451,5 +466,6 @@ namespace myNovel {
     //<a href="https://www.flaticon.com/de/kostenlose-icons/wandern" title="wandern Icons">Wandern Icons erstellt von Freepik - Flaticon</a>
     //<a href="https://www.flaticon.com/de/kostenlose-icons/geld" title="geld Icons">Geld Icons erstellt von Smashicons - Flaticon</a>
     //<a href="https://www.flaticon.com/de/kostenlose-icons/munze" title="münze Icons">Münze Icons erstellt von Freepik - Flaticon</a>
+    //Sound Effect from <a href="https://pixabay.com/sound-effects/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=music&amp;utm_content=46195">Pixabay</a>
   }
 }
