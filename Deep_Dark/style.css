@@ -50,7 +50,7 @@ dialog[type="text"] {
   position: absolute;
   bottom: 0px;
   font-size: 20px;
-  color: rgb(91, 55, 19);
+  color: white;
 }
 
 dialog[type="splash"] p {
