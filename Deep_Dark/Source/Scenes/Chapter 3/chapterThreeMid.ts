@@ -51,8 +51,6 @@ namespace myNovel {
                         await ƒS.Speech.tell(characters.ben, "Ne, ich klettere lieber nicht über die Mauer, ich will kein Risiko eingehen. Nicht, dass ich mir etwas breche, weil ich von der Mauer falle.");
                         await ƒS.Speech.tell(characters.ben, "Auf die zwei Minuten länger kommt es auch nicht drauf an.");
                         await ƒS.Speech.tell(characters.narrator, "Ben geht in den Friedhof");
-
-
                         await ƒS.Speech.tell(characters.ben, "Okay, auf zur Gedenkstätte. Da drüben ist sie ja schon.");
                         await ƒS.Speech.tell(characters.ben, "So wo hat Mama das Tagebuch hingelegt, es sollte hier ja irgendwo liegen.");
                         await ƒS.Speech.tell(characters.ben, "Ah, da ist es, Mama hat es sogar richtig schön dekoriert mit den Blumen.");
@@ -88,7 +86,6 @@ namespace myNovel {
 
                         ƒS.Inventory.open();
 
-                        await ƒS.Speech.tell(characters.ben, "Okay, das brauche ich wahrscheinlich sowieso nicht.");
                         await ƒS.Speech.tell(characters.ben, "So, jetzt sollte ich alles Wichtige haben.");
                         await ƒS.Speech.tell(characters.narrator, "Ben packt das Tagebuch in den Rucksack und macht sich auf den Weg. ");
 
@@ -146,7 +143,6 @@ namespace myNovel {
                             ƒS.Inventory.add(items.tagebuch);
                             ƒS.Inventory.open();
 
-                            await ƒS.Speech.tell(characters.ben, "Okay, das brauche ich wahrscheinlich sowieso nicht.");
                             await ƒS.Speech.tell(characters.ben, "So, jetzt sollte ich alles Wichtige haben.");
                             await ƒS.Speech.tell(characters.narrator, "Ben packt das Tagebuch in den Rucksack und macht sich auf den Weg. ");
 
