@@ -303,7 +303,7 @@ namespace myNovel {
   export function rightFade(): ƒS.AnimationDefinition {
     return {
       start: { translation: ƒS.positions.bottomleft, color: ƒS.Color.CSS("", 1) },
-      end: { translation: ƒS.positions.bottomright, color: ƒS.Color.CSS("", 0)},
+      end: { translation: ƒS.positions.bottomright, color: ƒS.Color.CSS("", 0) },
       duration: 2,
       playmode: ƒS.ANIMATION_PLAYMODE.PLAYONCE
     };
@@ -318,8 +318,8 @@ namespace myNovel {
   }
   export function show(): ƒS.AnimationDefinition {
     return {
-      start: {  color: ƒS.Color.CSS("", 1) },
-      end: {  color: ƒS.Color.CSS("", 1) },
+      start: { color: ƒS.Color.CSS("", 1) },
+      end: { color: ƒS.Color.CSS("", 1) },
       duration: 0.5,
       playmode: ƒS.ANIMATION_PLAYMODE.PLAYONCE
     };
@@ -368,9 +368,9 @@ namespace myNovel {
     credits: "Credits"
   };
 
-  let gameMenu: ƒS.Menu; 
+  let gameMenu: ƒS.Menu;
   let menuIsOpen: boolean = false;
-  
+
   async function buttonFunctionalities(_option: string): Promise<void> {
     console.log(_option);
     switch (_option) {
@@ -388,7 +388,7 @@ namespace myNovel {
         credits();
     }
   }
-  
+
   document.addEventListener("keydown", hndKeyPress);
   async function hndKeyPress(_event: KeyboardEvent): Promise<void> {
     switch (_event.code) {
@@ -423,17 +423,17 @@ namespace myNovel {
     gameMenu = ƒS.Menu.create(inGameMenuButtons, buttonFunctionalities, "gameMenuCSS");
     buttonFunctionalities("Close");
     let scenes: ƒS.Scenes = [
-      
-      { scene: firstScene, name: "First scene"},
-      { scene: secondScene, name: "Second scene"},
-      { scene: thirdScene, name: "Thrid scene"},
-      { scene: fourthScene, name: "Fourth scene"},
-      { scene: fifthScene, name: "Fifth scene"},
-      { scene: sixthScene, name: "Sixth scene"},
-      { scene: seventhScene, name: "Seventh scene"},
-      { scene: eighthScene, name: "Eighth scene"},
-      { scene: ninthScene, name: "Ninth scene"},
-      { scene: tenthScene, name: "Tenth scene"},
+
+      { scene: firstScene, name: "First scene" },
+      { scene: secondScene, name: "Second scene" },
+      { scene: thirdScene, name: "Thrid scene" },
+      { scene: fourthScene, name: "Fourth scene" },
+      { scene: fifthScene, name: "Fifth scene" },
+      { scene: sixthScene, name: "Sixth scene" },
+      { scene: seventhScene, name: "Seventh scene" },
+      { scene: eighthScene, name: "Eighth scene" },
+      { scene: ninthScene, name: "Ninth scene" },
+      { scene: tenthScene, name: "Tenth scene" },
       
       //Selcet Items
       { id: "withDairy", scene: itemSelcetionDairy, name: "Item selcetion with Dairy option"},
@@ -505,7 +505,7 @@ namespace myNovel {
       { id: "gameOverChapterFourThree", scene: gameOverChapterFourThree, name: "Chapter three bad path", next: "empty" },
 
       { id: "gameOverChapterFiveTwo", scene: gameOverChapterFiveTwo, name: "Game over chapter five", next: "empty" },
-
+      
       //Empty scene
       { id: "empty", scene: empty, name: "The visual novel ends here" }
     ];

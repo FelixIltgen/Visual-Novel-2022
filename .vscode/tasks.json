@@ -3,12 +3,12 @@
 	"tasks": [
 		{
 			"type": "typescript",
-			"tsconfig": "Template/tsconfig.json",
+			"tsconfig": "Deep_Dark/tsconfig.json",
 			"problemMatcher": [
 				"$tsc"
 			],
 			"group": "build",
-			"label": "tsc: build - Template/tsconfig.json"
+			"label": "tsc: build - Deep_Dark/tsconfig.json"
 		}
 	]
 }
