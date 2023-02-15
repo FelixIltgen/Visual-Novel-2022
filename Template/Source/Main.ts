@@ -1,7 +1,7 @@
 namespace myNovel {
   export import ƒ = FudgeCore;
   export import ƒS = FudgeStory;
-   
+
   export let transition = {
     fade: {
       duration: 1,
@@ -90,7 +90,7 @@ namespace myNovel {
       name: "Spaceship",
       background: "./Images/Background/sinkhole.png"
     },
-    
+
     // Chapter Backgrounds
     begin: {
       name: "Begin",
@@ -273,11 +273,82 @@ namespace myNovel {
 
 
   export let dataForSave = {
-    nameProtagonist: ""
+    nameProtagonist: "",
+    coinScore: 0,
+    itemsOne: "",
+    itemsTwo: "",
+    itemsThree: "",
+    itemsFour: "",
+    itemsFive: ""
   };
+
+  //Menü
+
+  function credits(): void {
+    ƒS.Text.print("");
+  }
+
+  let inGameMenuButtons = {
+    save: "Save",
+    load: "Load",
+    close: "Close",
+    credits: "Credits"
+  };
+
+  let gameMenu: ƒS.Menu; 
+  let menuIsOpen: boolean = false;
+  
+  async function buttonFunctionalities(_option: string): Promise<void> {
+    console.log(_option);
+    switch (_option) {
+      case inGameMenuButtons.save:
+        await ƒS.Progress.save();
+        break;
+      case inGameMenuButtons.load:
+        await ƒS.Progress.load();
+        break;
+      case inGameMenuButtons.close:
+        gameMenu.close();
+        menuIsOpen = false;
+        break;
+      case inGameMenuButtons.credits:
+        credits();
+    }
+  }
+  
+  document.addEventListener("keydown", hndKeyPress);
+  async function hndKeyPress(_event: KeyboardEvent): Promise<void> {
+    switch (_event.code) {
+      case ƒ.KEYBOARD_CODE.F8:
+        console.log("Save");
+        await ƒS.Progress.save();
+        break;
+      case ƒ.KEYBOARD_CODE.F9:
+        console.log("Load");
+        await ƒS.Progress.load();
+        break;
+      case ƒ.KEYBOARD_CODE.M:
+        if (menuIsOpen) {
+          console.log("Close");
+          gameMenu.close();
+          menuIsOpen = false;
+        }
+        else {
+          console.log("Open");
+          gameMenu.open();
+          menuIsOpen = true;
+        }
+        break;
+      case ƒ.KEYBOARD_CODE.I:
+        await ƒS.Inventory.open();
+        break;
+    }
+  }
 
   window.addEventListener("load", start);
   function start(_event: Event): void {
+    gameMenu = ƒS.Menu.create(inGameMenuButtons, buttonFunctionalities, "gameMenuCSS");
+    buttonFunctionalities("Close");
     let scenes: ƒS.Scenes = [
       //{ scene: firstScene, name: "First scene"},
       //{ scene: secondScene, name: "Second scene"},
@@ -296,7 +367,7 @@ namespace myNovel {
       { id: "noDairy", scene: itemSelcetionNoDairy, name: "Item selcetion without Dairy option"},
 
       //Cotinue normal path
-      { id: "afterItemSelection", scene: afterItemSelection, name: "first scene after Item selection"},
+      { id: "afterItemSelection", scene: afterItemSelection, name: "First scene after Item selection"},
 
       //Start chapter three
       { id: "chapterThree", scene: startChapterThree, name: "Start Chapter three"},
@@ -329,7 +400,7 @@ namespace myNovel {
       { id: "midMazeLeft", scene: midMazeLeft, name: "maze left path "},
       { scene: midMazeLeftOne, name: "maze left path "},
 
-      { id: "lastMid", scene: lastMid, name: "Last part in Mid path ", next: "Leere scene"},
+      { id: "lastMid", scene: lastMid, name: "Last part in Mid path ", next: "empty"},
 
 
       //Good Path
@@ -343,23 +414,24 @@ namespace myNovel {
       { scene: mazePartThree, name: "continue good path"},
       { scene: mazePartFour, name: "continue good path"},
       */
-      { scene: afterMazeGood, name: "continue good path"},
-      { scene: finalGood, name: "Last scene in good path", next: "Leere scene"},
+      { scene: afterMazeGood, name: "continue good path" },
+      { scene: finalGood, name: "Last scene in good path", next: "empty" },
 
       //Bad Path
-      { id: "badPath", scene: badPath, name: "Start bad Path", next: "Leere scene"},
+      { id: "badPath", scene: badPath, name: "Start bad Path", next: "empty" },
 
 
       //bad endings & paths
-      { id: "chapterThreeBad", scene: ChapterThreeBad, name: "Chapter three bad path"},
+      { id: "chapterThreeBad", scene: ChapterThreeBad, name: "Chapter three bad path" },
 
-      { id: "gameOverChapterFourOne", scene: gameOverChapterFourOne, name: "Game over chapter four"},
-      { id: "gameOverChapterFourTwo", scene: gameOverChapterFourTwo, name: "Chapter three bad path"},
-      { id: "gameOverChapterFourThree", scene: gameOverChapterFourThree, name: "Chapter three bad path"},
-      
-      { id: "gameOverChapterFiveTwo", scene: gameOverChapterFiveTwo, name: "Game over chapter five"}
+      { id: "gameOverChapterFourOne", scene: gameOverChapterFourOne, name: "Game over chapter four", next: "empty" },
+      { id: "gameOverChapterFourTwo", scene: gameOverChapterFourTwo, name: "Chapter three bad path", next: "empty" },
+      { id: "gameOverChapterFourThree", scene: gameOverChapterFourThree, name: "Chapter three bad path", next: "empty" },
+
+      { id: "gameOverChapterFiveTwo", scene: gameOverChapterFiveTwo, name: "Game over chapter five", next: "empty" },
 
       //Empty scene
+      { id: "empty", scene: empty, name: "The visual novel ends here" }
     ];
 
     let uiElement: HTMLElement = document.querySelector("[type=interface]");
@@ -377,6 +449,7 @@ namespace myNovel {
     //<a href="https://www.flaticon.com/de/kostenlose-icons/licht" title="licht Icons">Licht Icons erstellt von Freepik - Flaticon</a>
     //<a href="https://www.flaticon.com/de/kostenlose-icons/buch" title="buch Icons">Buch Icons erstellt von Freepik - Flaticon</a>
     //<a href="https://www.flaticon.com/de/kostenlose-icons/wandern" title="wandern Icons">Wandern Icons erstellt von Freepik - Flaticon</a>
-
+    //<a href="https://www.flaticon.com/de/kostenlose-icons/geld" title="geld Icons">Geld Icons erstellt von Smashicons - Flaticon</a>
+    //<a href="https://www.flaticon.com/de/kostenlose-icons/munze" title="münze Icons">Münze Icons erstellt von Freepik - Flaticon</a>
   }
 }

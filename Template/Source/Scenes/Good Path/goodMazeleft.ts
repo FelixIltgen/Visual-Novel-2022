@@ -25,7 +25,7 @@ namespace myNovel {
             case choiceCoin.take:
                 console.log("Choice take");
                 await ƒS.Speech.tell(characters.ben, "Ja, warum den nicht, sieht toll aus.");
-                //Goldmünze hinzufügen
+                dataForSave.coinScore += 10;
                 break;
 
             case choiceCoin.dontTake:

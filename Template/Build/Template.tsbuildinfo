@@ -22,6 +22,7 @@
       "../Source/Scenes/chapterThreeGood.ts",
       "../Source/Scenes/chapterThreeMid.ts",
       "../Source/Scenes/eighthScene.ts",
+      "../Source/Scenes/empty.ts",
       "../Source/Scenes/fifthScene.ts",
       "../Source/Scenes/finalGood.ts",
       "../Source/Scenes/firstScene.ts",
@@ -62,7 +63,7 @@
         },
         {
           "pos": 15,
-          "end": 283528,
+          "end": 286381,
           "kind": "text"
         }
       ],
@@ -90,7 +91,7 @@
       "sections": [
         {
           "pos": 0,
-          "end": 10339,
+          "end": 10577,
           "kind": "text"
         }
       ]

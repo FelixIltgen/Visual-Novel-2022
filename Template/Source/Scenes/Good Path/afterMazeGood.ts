@@ -52,7 +52,7 @@ namespace myNovel {
         await ƒS.Speech.tell(characters.ben, "Eine menge Goldmünzen... wir haben sie schon gefunden aber noch nicht zum Schiff gebracht.");
         
 
-        if ("") {
+        if (dataForSave.coinScore == 30) {
             await ƒS.Speech.tell(characters.ben, "Moment ich habe in einem Labyrinth Goldmünzen gefunden.");
             await ƒS.Speech.tell(characters.narrator, "Ben holt die beiden Säcke mit den Goldmünzen heraus.");
             await ƒS.Speech.tell(characters.trabajoEscribo, "WOW das ist das gesammelte Gold von uns ");
@@ -61,7 +61,7 @@ namespace myNovel {
             await ƒS.Speech.tell(characters.ben, "Perfekt.");
            
         
-        } else if ("") {
+        } else if (dataForSave.coinScore == 10) {
             await ƒS.Speech.tell(characters.ben, "Hier, ich habe diesen Beutel mit Goldmünzen gefunden gehört er euch.");
             await ƒS.Speech.tell(characters.trabajoEscribo, "Ja genau der ist von uns... aber wir haben noch einen den wir brauchen, ohne den können wir nicht los.");
             await ƒS.Speech.tell(characters.ben, "Wenn ihr wollt kann ich die letzten Goldmünzen für euch holen dann können wir schneller los.");

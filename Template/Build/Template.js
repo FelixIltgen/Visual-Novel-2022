@@ -264,10 +264,75 @@ var myNovel;
         leftout: new FudgeStory.Position(-2470, -540)
     };
     myNovel.dataForSave = {
-        nameProtagonist: ""
+        nameProtagonist: "",
+        coinScore: 0,
+        itemsOne: "",
+        itemsTwo: "",
+        itemsThree: "",
+        itemsFour: "",
+        itemsFive: ""
     };
+    //Menü
+    function credits() {
+        myNovel.ƒS.Text.print("");
+    }
+    let inGameMenuButtons = {
+        save: "Save",
+        load: "Load",
+        close: "Close",
+        credits: "Credits"
+    };
+    let gameMenu;
+    let menuIsOpen = false;
+    async function buttonFunctionalities(_option) {
+        console.log(_option);
+        switch (_option) {
+            case inGameMenuButtons.save:
+                await myNovel.ƒS.Progress.save();
+                break;
+            case inGameMenuButtons.load:
+                await myNovel.ƒS.Progress.load();
+                break;
+            case inGameMenuButtons.close:
+                gameMenu.close();
+                menuIsOpen = false;
+                break;
+            case inGameMenuButtons.credits:
+                credits();
+        }
+    }
+    document.addEventListener("keydown", hndKeyPress);
+    async function hndKeyPress(_event) {
+        switch (_event.code) {
+            case myNovel.ƒ.KEYBOARD_CODE.F8:
+                console.log("Save");
+                await myNovel.ƒS.Progress.save();
+                break;
+            case myNovel.ƒ.KEYBOARD_CODE.F9:
+                console.log("Load");
+                await myNovel.ƒS.Progress.load();
+                break;
+            case myNovel.ƒ.KEYBOARD_CODE.M:
+                if (menuIsOpen) {
+                    console.log("Close");
+                    gameMenu.close();
+                    menuIsOpen = false;
+                }
+                else {
+                    console.log("Open");
+                    gameMenu.open();
+                    menuIsOpen = true;
+                }
+                break;
+            case myNovel.ƒ.KEYBOARD_CODE.I:
+                await myNovel.ƒS.Inventory.open();
+                break;
+        }
+    }
     window.addEventListener("load", start);
     function start(_event) {
+        gameMenu = myNovel.ƒS.Menu.create(inGameMenuButtons, buttonFunctionalities, "gameMenuCSS");
+        buttonFunctionalities("Close");
         let scenes = [
             //{ scene: firstScene, name: "First scene"},
             //{ scene: secondScene, name: "Second scene"},
@@ -286,7 +351,7 @@ var myNovel;
             { id: "noDairy", scene: itemSelcetionNoDairy, name: "Item selcetion without Dairy option"},
       
             //Cotinue normal path
-            { id: "afterItemSelection", scene: afterItemSelection, name: "first scene after Item selection"},
+            { id: "afterItemSelection", scene: afterItemSelection, name: "First scene after Item selection"},
       
             //Start chapter three
             { id: "chapterThree", scene: startChapterThree, name: "Start Chapter three"},
@@ -319,7 +384,7 @@ var myNovel;
             { id: "midMazeLeft", scene: midMazeLeft, name: "maze left path "},
             { scene: midMazeLeftOne, name: "maze left path "},
       
-            { id: "lastMid", scene: lastMid, name: "Last part in Mid path ", next: "Leere scene"},
+            { id: "lastMid", scene: lastMid, name: "Last part in Mid path ", next: "empty"},
       
       
             //Good Path
@@ -334,16 +399,17 @@ var myNovel;
             { scene: mazePartFour, name: "continue good path"},
             */
             { scene: myNovel.afterMazeGood, name: "continue good path" },
-            { scene: myNovel.finalGood, name: "Last scene in good path", next: "Leere scene" },
+            { scene: myNovel.finalGood, name: "Last scene in good path", next: "empty" },
             //Bad Path
-            { id: "badPath", scene: myNovel.badPath, name: "Start bad Path", next: "Leere scene" },
+            { id: "badPath", scene: myNovel.badPath, name: "Start bad Path", next: "empty" },
             //bad endings & paths
             { id: "chapterThreeBad", scene: myNovel.ChapterThreeBad, name: "Chapter three bad path" },
-            { id: "gameOverChapterFourOne", scene: myNovel.gameOverChapterFourOne, name: "Game over chapter four" },
-            { id: "gameOverChapterFourTwo", scene: myNovel.gameOverChapterFourTwo, name: "Chapter three bad path" },
-            { id: "gameOverChapterFourThree", scene: myNovel.gameOverChapterFourThree, name: "Chapter three bad path" },
-            { id: "gameOverChapterFiveTwo", scene: myNovel.gameOverChapterFiveTwo, name: "Game over chapter five" }
+            { id: "gameOverChapterFourOne", scene: myNovel.gameOverChapterFourOne, name: "Game over chapter four", next: "empty" },
+            { id: "gameOverChapterFourTwo", scene: myNovel.gameOverChapterFourTwo, name: "Chapter three bad path", next: "empty" },
+            { id: "gameOverChapterFourThree", scene: myNovel.gameOverChapterFourThree, name: "Chapter three bad path", next: "empty" },
+            { id: "gameOverChapterFiveTwo", scene: myNovel.gameOverChapterFiveTwo, name: "Game over chapter five", next: "empty" },
             //Empty scene
+            { id: "empty", scene: myNovel.empty, name: "The visual novel ends here" }
         ];
         let uiElement = document.querySelector("[type=interface]");
         myNovel.dataForSave = myNovel.ƒS.Progress.setData(myNovel.dataForSave, uiElement);
@@ -358,6 +424,8 @@ var myNovel;
         //<a href="https://www.flaticon.com/de/kostenlose-icons/licht" title="licht Icons">Licht Icons erstellt von Freepik - Flaticon</a>
         //<a href="https://www.flaticon.com/de/kostenlose-icons/buch" title="buch Icons">Buch Icons erstellt von Freepik - Flaticon</a>
         //<a href="https://www.flaticon.com/de/kostenlose-icons/wandern" title="wandern Icons">Wandern Icons erstellt von Freepik - Flaticon</a>
+        //<a href="https://www.flaticon.com/de/kostenlose-icons/geld" title="geld Icons">Geld Icons erstellt von Smashicons - Flaticon</a>
+        //<a href="https://www.flaticon.com/de/kostenlose-icons/munze" title="münze Icons">Münze Icons erstellt von Freepik - Flaticon</a>
     }
 })(myNovel || (myNovel = {}));
 var myNovel;
@@ -508,7 +576,7 @@ var myNovel;
         await myNovel.ƒS.Speech.tell(myNovel.characters.trabajoEscribo, "Aber wir müssen erst unseren Schatz wieder einsammeln den wir beim Absturz verloren haben.");
         await myNovel.ƒS.Speech.tell(myNovel.characters.ben, "Was habt ihr verloren? ");
         await myNovel.ƒS.Speech.tell(myNovel.characters.ben, "Eine menge Goldmünzen... wir haben sie schon gefunden aber noch nicht zum Schiff gebracht.");
-        if ("") {
+        if (myNovel.dataForSave.coinScore == 30) {
             await myNovel.ƒS.Speech.tell(myNovel.characters.ben, "Moment ich habe in einem Labyrinth Goldmünzen gefunden.");
             await myNovel.ƒS.Speech.tell(myNovel.characters.narrator, "Ben holt die beiden Säcke mit den Goldmünzen heraus.");
             await myNovel.ƒS.Speech.tell(myNovel.characters.trabajoEscribo, "WOW das ist das gesammelte Gold von uns ");
@@ -516,7 +584,7 @@ var myNovel;
             await myNovel.ƒS.Speech.tell(myNovel.characters.ben, "Dankeschön kleiner dann können wir aufbrechen... und euch zwei nehmen wir gleich mit.");
             await myNovel.ƒS.Speech.tell(myNovel.characters.ben, "Perfekt.");
         }
-        else if ("") {
+        else if (myNovel.dataForSave.coinScore == 10) {
             await myNovel.ƒS.Speech.tell(myNovel.characters.ben, "Hier, ich habe diesen Beutel mit Goldmünzen gefunden gehört er euch.");
             await myNovel.ƒS.Speech.tell(myNovel.characters.trabajoEscribo, "Ja genau der ist von uns... aber wir haben noch einen den wir brauchen, ohne den können wir nicht los.");
             await myNovel.ƒS.Speech.tell(myNovel.characters.ben, "Wenn ihr wollt kann ich die letzten Goldmünzen für euch holen dann können wir schneller los.");
@@ -1870,6 +1938,13 @@ var myNovel;
 })(myNovel || (myNovel = {}));
 var myNovel;
 (function (myNovel) {
+    async function empty() {
+        console.log("THE VISUAL NOVEL ENDS HERE");
+    }
+    myNovel.empty = empty;
+})(myNovel || (myNovel = {}));
+var myNovel;
+(function (myNovel) {
     async function fifthScene() {
         console.log("Start fifthScene");
         let text = {
@@ -2362,7 +2437,7 @@ var myNovel;
             case choiceCoin.take:
                 console.log("Choice take");
                 await myNovel.ƒS.Speech.tell(myNovel.characters.ben, "Ja, warum den nicht, sieht toll aus.");
-                //Goldmünze hinzufügen
+                myNovel.dataForSave.coinScore += 10;
                 break;
             case choiceCoin.dontTake:
                 console.log("Choice dont Take");
@@ -2868,6 +2943,7 @@ var myNovel;
                 await myNovel.ƒS.Speech.tell(myNovel.characters.ben, "Ich glaube, es war links. Ja, genau sollte doch richtig sein.");
                 await myNovel.ƒS.Speech.tell(myNovel.characters.ben, "Moment, ich sollte doch schon längst am Ende sein");
                 await myNovel.ƒS.Speech.tell(myNovel.characters.ben, "Oh nein, das ist eine Sackgasse... aber da liegt ja schon wieder ein Beutel mit Gold");
+                myNovel.dataForSave.coinScore += 20;
                 await myNovel.ƒS.Speech.tell(myNovel.characters.ben, "Okay, dann kann ich jetzt wieder alles zurücklaufen.");
                 //Gold in Inventaar
                 break;

@@ -260,6 +260,12 @@ declare namespace myNovel {
     };
     let dataForSave: {
         nameProtagonist: string;
+        coinScore: number;
+        itemsOne: string;
+        itemsTwo: string;
+        itemsThree: string;
+        itemsFour: string;
+        itemsFive: string;
     };
 }
 declare namespace myNovel {
@@ -318,6 +324,9 @@ declare namespace myNovel {
 }
 declare namespace myNovel {
     function eighthScene(): ƒS.SceneReturn;
+}
+declare namespace myNovel {
+    function empty(): ƒS.SceneReturn;
 }
 declare namespace myNovel {
     function fifthScene(): ƒS.SceneReturn;

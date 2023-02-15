@@ -26,6 +26,7 @@ namespace myNovel {
                 await ƒS.Speech.tell(characters.ben, "Ich glaube, es war links. Ja, genau sollte doch richtig sein.");
                 await ƒS.Speech.tell(characters.ben, "Moment, ich sollte doch schon längst am Ende sein");
                 await ƒS.Speech.tell(characters.ben, "Oh nein, das ist eine Sackgasse... aber da liegt ja schon wieder ein Beutel mit Gold");
+                dataForSave.coinScore += 20;
                 await ƒS.Speech.tell(characters.ben, "Okay, dann kann ich jetzt wieder alles zurücklaufen.");
                 //Gold in Inventaar
                 break;
