@@ -116,12 +116,14 @@ namespace myNovel {
         await ƒS.update();
         await ƒS.Speech.tell(characters.valentin, text.valentin.T0010);
         await ƒS.Speech.tell(characters.narrator, text.narrator.T0006);
-        //Sound brechender boden
+        await ƒS.Sound.play(sound.fallingRocks, 0.4);
         await ƒS.Character.hide(characters.andrea);
         await ƒS.update();
         await ƒS.Character.show(characters.andrea, characters.andrea.pose.ugh, newPositions.bottomleft);
         await ƒS.update(0);
         await ƒS.Speech.tell(characters.andrea, text.andrea.T0008);
+        await ƒS.Character.hide(characters.andrea);
+        await ƒS.update(1);
         await ƒS.Speech.tell(characters.valentin, text.valentin.T0011);
         await ƒS.Speech.tell(characters.valentin, text.valentin.T0012);
         await ƒS.Speech.tell(characters.valentin, text.valentin.T0013);
@@ -138,15 +140,16 @@ namespace myNovel {
         await ƒS.Speech.tell(characters.andrea, text.andrea.T0012);
         await ƒS.Speech.tell(characters.narrator, text.narrator.T0009);
         await ƒS.Character.hide(characters.andrea);
-        await ƒS.update();
         await ƒS.Character.show(characters.andrea, characters.andrea.pose.normal, newPositions.bottomleft);
-        await ƒS.update(0);
+        await ƒS.update(1);
         await ƒS.Speech.tell(characters.andrea, text.andrea.T0013);
         await ƒS.Speech.tell(characters.valentin, text.valentin.T0015);
         await ƒS.Speech.tell(characters.andrea, text.andrea.T0014);
         await ƒS.Speech.tell(characters.valentin, text.valentin.T0016);
         await ƒS.Speech.tell(characters.andrea, text.andrea.T0015);
         await ƒS.Speech.tell(characters.narrator, text.narrator.T0010);
+        await ƒS.Character.hide(characters.andrea);
+        await ƒS.update(1);
         await ƒS.Speech.tell(characters.valentin, text.valentin.T0017);
         await ƒS.Speech.tell(characters.andrea, text.andrea.T0016);
         await ƒS.Speech.tell(characters.andrea, text.andrea.T0017);
