@@ -19,7 +19,8 @@ namespace myNovel {
         await ƒS.Sound.play(sound.jackhammer, 0.4, false);
         await ƒS.Speech.tell(characters.ben, "Huh...? DA GRÄBT jemand.... HALLLOOO HIER ICH BIN HIERRRR.....HALLOOO.");
         await ƒS.Speech.tell(characters.narrator, "DA drüben ich höre etwas...ja schnell wir haben ihn...");
-        
+        await ƒS.Sound.fade(sound.emptyCave, 0, 1, true);
+
         await ƒS.Character.hideAll();
         await ƒS.Speech.hide();
         await ƒS.Location.show(locations.blanko);

@@ -18,8 +18,7 @@ namespace myNovel {
                 T0004: "Toll, und dafür müssen wir uns der Gefahr aussetzen. Am Ende bleibt halt immer alles an uns hängen, naja es wird schon nichts passieren."
             }
         };
-        await ƒS.Sound.play(sound.sunday, 0, true);
-        await ƒS.Sound.play(sound.cave, 0.1, true);
+        await ƒS.Sound.fade(sound.cave, 0.1, 0.4, true);
         await ƒS.Location.show(locations.mineShaftTwo);
         await ƒS.update(transition.leftFade.duration, transition.leftFade.alpha, transition.leftFade.edge);
         await ƒS.Character.show(characters.valentin, characters.valentin.pose.normal, newPositions.bottomright);

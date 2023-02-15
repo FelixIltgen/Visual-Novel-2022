@@ -152,8 +152,9 @@ namespace myNovel {
         await ƒS.Speech.tell(characters.andrea, text.andrea.T0017);
         await ƒS.Speech.tell(characters.andrea, text.andrea.T0018);
         await ƒS.Speech.tell(characters.valentin, text.valentin.T0018);
+        await ƒS.Sound.fade(sound.cave, 0, 0.5, true);
         await ƒS.Sound.play(sound.demonicScream, 0.5, false);
-        await ƒS.Sound.play(sound.run, 0.2, true);
+        await ƒS.Sound.fade(sound.run, 0.2, 1, true);
         await ƒS.Speech.tell(characters.narrator, text.narrator.T0011);
         await ƒS.Speech.tell(characters.valentin, text.valentin.T0019);
         await ƒS.Speech.tell(characters.narrator, text.narrator.T0012);
@@ -162,5 +163,6 @@ namespace myNovel {
         await ƒS.Speech.tell(characters.narrator, text.narrator.T0014);
 
         await ƒS.Character.hideAll();
+        
       }
 }

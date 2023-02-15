@@ -40,8 +40,9 @@ namespace myNovel {
             await ƒS.update();
             await ƒS.Speech.tell(characters.ben, "AHHhhhh was passiert den jetzt....der Boden");
             await ƒS.Character.hideAll();
-
+            await ƒS.Sound.fade(sound.sunday, 0, 1, true);
             await ƒS.Location.show(locations.cave);
+            await ƒS.Sound.fade(sound.emptyCave, 0.4, 1, true);
             await ƒS.update(transition.fade.duration, transition.fade.alpha, transition.fade.edge);
             await ƒS.Character.show(characters.ben, characters.ben.pose.ohman, newPositions.bottomright);
             await ƒS.update(1);

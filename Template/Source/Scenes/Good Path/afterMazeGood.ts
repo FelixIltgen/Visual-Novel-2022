@@ -11,6 +11,7 @@ namespace myNovel {
         await ƒS.update(3);
         await ƒS.Speech.show();
         await ƒS.update();
+        await ƒS.Sound.fade(sound.emptyCave, 0.4, 1, true);
         await ƒS.Character.show(characters.ben, characters.ben.pose.normal, newPositions.bottomright);
         await ƒS.update(1);
         await ƒS.Speech.tell(characters.ben, "Was zum.....????");

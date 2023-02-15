@@ -21,6 +21,7 @@ namespace myNovel {
         await ƒS.Speech.tell(characters.ben, "PAPA HALLOOO HÖRST DU MICH");
         await ƒS.Speech.tell(characters.ben, "HALLOOOOOO......");
         await ƒS.Sound.play(sound.demonicScream, 0.4, false);
+        await ƒS.Sound.fade(sound.run, 0.4, 1, true);
         await ƒS.Speech.tell(characters.ben, "Ohh nein.... nicht gut, es hat mich gehört oder?");
         await ƒS.Speech.tell(characters.ben, "Ahh es kommt immer näher. ");
         await ƒS.Speech.tell(characters.ben, "Ich höre es hinter mir....");
@@ -29,6 +30,7 @@ namespace myNovel {
         await ƒS.Speech.tell(characters.ben, "Scheiße Sackgasse, aber ich glaube ich habe es abgehängt. ");
         await ƒS.Sound.play(sound.monsterScream, 0.6, false);
         await ƒS.Speech.tell(characters.ben, "Ahhhhhhhhhhhhhh.........NEINNNNNNN");
+        await ƒS.Sound.fade(sound.run, 0, 0.5, true);
         await ƒS.Sound.play(sound.pistolShot, 0.4, false);
         await ƒS.Character.hideAll();
     }

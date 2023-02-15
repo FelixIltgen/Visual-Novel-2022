@@ -383,16 +383,15 @@ var myNovel;
             //{ scene: fourthScene, name: "Fourth scene"},
             //{ scene: fifthScene, name: "Fifth scene"},
             //{ scene: sixthScene, name: "Sixth scene"},
-            { scene: myNovel.seventhScene, name: "Seventh scene" },
-            //{ scene: eighthScene, name: "Eighth scene"},
-            //{ scene: ninthScene, name: "Ninth scene"},
+            // { scene: seventhScene, name: "Seventh scene"},
+            // { scene: eighthScene, name: "Eighth scene"},
+            // { scene: ninthScene, name: "Ninth scene"},
+            { scene: myNovel.tenthScene, name: "Tenth scene" },
             /*
-            { scene: tenthScene, name: "Tenth scene"},
-      
             //Selcet Items
             { id: "withDairy", scene: itemSelcetionDairy, name: "Item selcetion with Dairy option"},
             { id: "noDairy", scene: itemSelcetionNoDairy, name: "Item selcetion without Dairy option"},
-      
+            
             //Cotinue normal path
             { id: "afterItemSelection", scene: afterItemSelection, name: "First scene after Item selection"},
       
@@ -405,6 +404,7 @@ var myNovel;
             //Start chapter four
             { id: "chapterFour", scene: startChapterFour, name: "Start Chapter four"},
             { id: "chapterFourGood", scene: chapterFourGood, name: "Start Chapter four"},
+            
             { id: "chapterFourGoodTwo", scene: chapterFourGoodTwo, name: "Start Chapter four"},
             { id: "chapterFourMid", scene: chapterFourMid, name: "Start Chapter four"},
             { id: "chapterFourMidTwo", scene: chapterFourMidTwo, name: "Start Chapter four part two", next: "chapterFiveMid"},
@@ -499,6 +499,8 @@ var myNovel;
             await myNovel.ƒS.Sound.play(myNovel.sound.monsterScream, 0.4, false);
             await myNovel.ƒS.Speech.tell(myNovel.characters.ben, "Was war das schon wieder....");
             await myNovel.ƒS.Sound.play(myNovel.sound.monsterScream2, 0.4, false);
+            await myNovel.ƒS.Sound.fade(myNovel.sound.emptyCave, 0, 0.5, true);
+            await myNovel.ƒS.Sound.fade(myNovel.sound.run, 0.4, 0.5, true);
             await myNovel.ƒS.Speech.tell(myNovel.characters.ben, "Oh mein Gott Papa hatte einfach Recht ich wusste ihm kann man immer vertrauen. ");
             await myNovel.ƒS.Speech.tell(myNovel.characters.ben, "Ahh es kommt immer näher. ");
             await myNovel.ƒS.Speech.tell(myNovel.characters.ben, "Ich höre es hinter mir....");
@@ -514,6 +516,8 @@ var myNovel;
             await myNovel.ƒS.Sound.play(myNovel.sound.monsterScream, 0.4, false);
             await myNovel.ƒS.Speech.tell(myNovel.characters.ben, "Was war das schon wieder....");
             await myNovel.ƒS.Sound.play(myNovel.sound.monsterScream2, 0.4, false);
+            await myNovel.ƒS.Sound.fade(myNovel.sound.emptyCave, 0, 0.5, true);
+            await myNovel.ƒS.Sound.fade(myNovel.sound.run, 0.4, 0.5, true);
             await myNovel.ƒS.Speech.tell(myNovel.characters.ben, "Oh mein Gott, was ist das für ein Ding");
             await myNovel.ƒS.Speech.tell(myNovel.characters.ben, "Ahh es kommt immer näher. ");
             await myNovel.ƒS.Speech.tell(myNovel.characters.ben, "Ich höre es hinter mir...");
@@ -524,6 +528,7 @@ var myNovel;
             await myNovel.ƒS.Speech.tell(myNovel.characters.ben, "Ahhhhhhhhhhhhhh.........");
             await myNovel.ƒS.Character.hideAll();
             await myNovel.ƒS.Speech.hide();
+            await myNovel.ƒS.Sound.fade(myNovel.sound.run, 0, 1, true);
             await myNovel.ƒS.Location.show(myNovel.locations.blanko);
             await myNovel.ƒS.update(4);
             await myNovel.ƒS.Location.show(myNovel.locations.blanko);
@@ -945,6 +950,7 @@ var myNovel;
                 await myNovel.ƒS.Speech.tell(myNovel.characters.ben, "Jetzt kann es Los gehen.");
                 await myNovel.ƒS.Speech.tell(myNovel.characters.narrator, "Ben geht in den dunklen Stollen.");
                 await myNovel.ƒS.Character.hideAll();
+                await myNovel.ƒS.Sound.fade(myNovel.sound.sunday, 0, 1, true);
                 return "chapterFourGoodTwo";
             }
             else {
@@ -954,6 +960,7 @@ var myNovel;
                 await myNovel.ƒS.Speech.tell(myNovel.characters.ben, "Da oben ist eine Art Lüftungsschacht, da kann ich es mal versuchen.");
                 await myNovel.ƒS.Speech.tell(myNovel.characters.ben, "Ja, die Gitter sind auch schon verrostet, die kann ich einfach weg drücken.");
                 await myNovel.ƒS.Speech.tell(myNovel.characters.ben, "Ben drückt sich durch die Gitter des Lüftungsschachts. Plötzlich verliert er das Gleichgewicht und rutscht in den Lüftungsschacht hinein, nach ein paar Metern landet er unsanft in einem dunklen Raum.");
+                await myNovel.ƒS.Sound.fade(myNovel.sound.sunday, 0, 1, true);
                 return "chapterFourGoodTwo";
             }
         }
@@ -968,6 +975,7 @@ var myNovel;
                 await myNovel.ƒS.Speech.tell(myNovel.characters.ben, "Cool, da hatte ich wohl Glück.");
                 await myNovel.ƒS.Speech.tell(myNovel.characters.ben, "Jetzt kann es losgehen.");
                 await myNovel.ƒS.Speech.tell(myNovel.characters.ben, "Ben geht in den dunklen Stollen.");
+                await myNovel.ƒS.Sound.fade(myNovel.sound.sunday, 0, 1, true);
                 return "chapterFourGoodTwo";
             }
             else {
@@ -977,6 +985,7 @@ var myNovel;
                 await myNovel.ƒS.Speech.tell(myNovel.characters.ben, "Da oben ist eine Art Lüftungsschacht, da kann ich es mal versuchen.");
                 await myNovel.ƒS.Speech.tell(myNovel.characters.ben, "Ja, die Gitter sind auch schon verrostet, die kann ich einfach weg drücken.");
                 await myNovel.ƒS.Speech.tell(myNovel.characters.ben, "Ben drückt sich durch die Gitter des Lüftungsschachts. Plötzlich verliert er das Gleichgewicht und rutscht in den Lüftungsschacht hinein, nach ein paar Metern landet er unsanft in einem dunklen Raum.");
+                await myNovel.ƒS.Sound.fade(myNovel.sound.sunday, 0, 1, true);
                 return "chapterFourGoodTwo";
             }
         }
@@ -994,6 +1003,7 @@ var myNovel;
             await myNovel.ƒS.Speech.tell(myNovel.characters.ben, "Zum Glück habe ich meine Taschenlampe dabei. Ohne wäre es viel zu Dunkel.");
             await myNovel.ƒS.Speech.tell(myNovel.characters.narrator, "Ben holt seine Taschenlampe aus seinem Rucksack und macht sie an.");
             await myNovel.ƒS.Character.show(myNovel.characters.ben, myNovel.characters.ben.pose.normal, myNovel.newPositions.bottomright);
+            await myNovel.ƒS.Sound.fade(myNovel.sound.cave, 0.4, 1, true);
             await myNovel.ƒS.Location.show(myNovel.locations.mineShaft);
             await myNovel.ƒS.update(1);
             await myNovel.ƒS.Speech.tell(myNovel.characters.ben, "Okay, dann schauen wir mal, wo dieser Stollen hinführt.");
@@ -1539,7 +1549,9 @@ var myNovel;
             await myNovel.ƒS.update();
             await myNovel.ƒS.Speech.tell(myNovel.characters.ben, "AHHhhhh was passiert den jetzt....der Boden");
             await myNovel.ƒS.Character.hideAll();
+            await myNovel.ƒS.Sound.fade(myNovel.sound.sunday, 0, 1, true);
             await myNovel.ƒS.Location.show(myNovel.locations.cave);
+            await myNovel.ƒS.Sound.fade(myNovel.sound.emptyCave, 0.4, 1, true);
             await myNovel.ƒS.update(myNovel.transition.fade.duration, myNovel.transition.fade.alpha, myNovel.transition.fade.edge);
             await myNovel.ƒS.Character.show(myNovel.characters.ben, myNovel.characters.ben.pose.ohman, myNovel.newPositions.bottomright);
             await myNovel.ƒS.update(1);
@@ -1657,6 +1669,7 @@ var myNovel;
 (function (myNovel) {
     async function chapterFiveMid() {
         console.log("Chapter Five mid");
+        await myNovel.ƒS.Sound.fade(myNovel.sound.sunday, 0, 1, true);
         await myNovel.ƒS.Speech.hide();
         await myNovel.ƒS.Location.show(myNovel.locations.chapterfive);
         await myNovel.ƒS.update(4);
@@ -1668,6 +1681,7 @@ var myNovel;
             await myNovel.ƒS.Speech.tell(myNovel.characters.ben, "Zum Glück habe ich meine Taschenlampe dabei. Ohne wäre es viel zu Dunkel.");
             await myNovel.ƒS.Speech.tell(myNovel.characters.narrator, "Ben holt seine Taschenlampe aus seinem Rucksack und macht sie an.");
             await myNovel.ƒS.Location.show(myNovel.locations.mineShaftTwo);
+            await myNovel.ƒS.Sound.fade(myNovel.sound.cave, 0.4, 1, true);
             await myNovel.ƒS.update(1);
             await myNovel.ƒS.Speech.tell(myNovel.characters.ben, "Perfekt, dann kann es ja losgehen");
             await myNovel.ƒS.Speech.tell(myNovel.characters.narrator, "Ben macht sich auf den Weg und geht tiefer in den Stollen.");
@@ -1848,6 +1862,7 @@ var myNovel;
         await myNovel.ƒS.update(3);
         await myNovel.ƒS.Speech.show();
         await myNovel.ƒS.update();
+        await myNovel.ƒS.Sound.fade(myNovel.sound.emptyCave, 0.4, 1, true);
         await myNovel.ƒS.Character.show(myNovel.characters.ben, myNovel.characters.ben.pose.normal, myNovel.newPositions.bottomright);
         await myNovel.ƒS.update(1);
         await myNovel.ƒS.Speech.tell(myNovel.characters.ben, "Was zum.....????");
@@ -1965,6 +1980,7 @@ var myNovel;
         await myNovel.ƒS.Speech.tell(myNovel.characters.valentin, "Ben wenn wir wieder zuhause sind dürfen wir von den Sachen im Berg nichts erzählen sonst denken alle wir sind verrückt");
         await myNovel.ƒS.Speech.tell(myNovel.characters.ben, "Stimmt, es bleibt einfach unser großes Geheimnis.");
         await myNovel.ƒS.Speech.tell(myNovel.characters.valentin, "Genau so machen wir's. ");
+        await myNovel.ƒS.Sound.fade(myNovel.sound.emptyCave, 0, 1, true);
         await myNovel.ƒS.Character.hideAll();
         await myNovel.ƒS.Speech.hide();
         await myNovel.ƒS.Location.show(myNovel.locations.blanko);
@@ -2137,12 +2153,12 @@ var myNovel;
         await myNovel.ƒS.update();
         await myNovel.ƒS.Speech.tell(myNovel.characters.ben, "Wow hatte Papa echt recht mit dem Monster aus dem Tagebuch. Ich habe echt gedacht, dass er halluziniert, aber vielleicht liegt es auch an mir.");
         await myNovel.ƒS.Speech.tell(myNovel.characters.ben, "Ben folgt dem Flussverlauf.");
-        await myNovel.ƒS.Sound.play(myNovel.sound.sunday, 0.5, false);
+        await myNovel.ƒS.Sound.play(myNovel.sound.monsterScream, 0.5, false);
         await myNovel.ƒS.Speech.tell(myNovel.characters.ben, "Was war das schon wieder....");
-        await myNovel.ƒS.Sound.play(myNovel.sound.monsterScream, 0.2, false);
+        await myNovel.ƒS.Sound.play(myNovel.sound.monsterScream2, 0.2, false);
+        await myNovel.ƒS.Sound.fade(myNovel.sound.run, 0.4, 1, true);
         await myNovel.ƒS.Speech.tell(myNovel.characters.ben, "Oh mein Gott, Papa hatte einfach Recht. Ich wusste ihm kann man immer vertrauen.");
         await myNovel.ƒS.Speech.tell(myNovel.characters.ben, "Ben hört wie dumpfe Schritte auf ihn zu kommen. ");
-        await myNovel.ƒS.Sound.play(myNovel.sound.run, 0.1, false);
         await myNovel.ƒS.Speech.tell(myNovel.characters.ben, "Oh nein, das ist die gleiche Situation, wie Papa im Tagebuch beschrieben hat... was soll ich tun?");
         let choice = {
             hide: "Verstecken",
@@ -2162,6 +2178,8 @@ var myNovel;
                 await myNovel.ƒS.Speech.tell(myNovel.characters.narrator, "Das unbekannte Ding kommt näher Ben hält sich die Hände vor das Gesicht, damit sein Atem ihn nicht verrät.");
                 await myNovel.ƒS.Speech.tell(myNovel.characters.ben, "Bitte bitte nicht.....");
                 await myNovel.ƒS.Sound.play(myNovel.sound.monsterScream, 0.3, false);
+                await myNovel.ƒS.Sound.fade(myNovel.sound.run, 0, 1, true);
+                await myNovel.ƒS.Sound.fade(myNovel.sound.emptyCave, 0.4, 1, true);
                 await myNovel.ƒS.Speech.tell(myNovel.characters.ben, "Ich glaub es geht weg...");
                 await myNovel.ƒS.Speech.tell(myNovel.characters.ben, "Ja, die Schritte werden leiser... ein Glück... wo bin ich hier rein geraten. Ben klettert unter dem Boot hervor und steht auf okay es kann weiter gehen.");
                 await myNovel.ƒS.Speech.tell(myNovel.characters.narrator, "Ben folgt weiter dem Flussverlauf, plötzlich fällt ihm etwas auf.");
@@ -2219,6 +2237,8 @@ var myNovel;
                 await myNovel.ƒS.Speech.tell(myNovel.characters.narrator, "Das unbekannte Ding kommt näher Ben hält sich die Hände vor das Gesicht, damit sein Atem ihn nicht verrät.");
                 await myNovel.ƒS.Speech.tell(myNovel.characters.ben, "Bitt bitte nicht.....");
                 await myNovel.ƒS.Sound.play(myNovel.sound.monsterScream2, 0.3, false);
+                await myNovel.ƒS.Sound.fade(myNovel.sound.run, 0, 1, true);
+                await myNovel.ƒS.Sound.fade(myNovel.sound.emptyCave, 0.4, 1, true);
                 await myNovel.ƒS.Speech.tell(myNovel.characters.ben, "Ich glaube, es geht weg...");
                 await myNovel.ƒS.Speech.tell(myNovel.characters.ben, "Ja die Schritte werden leiser... ein Glück... wo bin ich hier rein geraten. ");
                 await myNovel.ƒS.Speech.tell(myNovel.characters.ben, "Ben rafft sich wieder auf und versucht sich zu orientieren.");
@@ -2288,6 +2308,7 @@ var myNovel;
         await myNovel.ƒS.Speech.tell(myNovel.characters.ben, "PAPA HALLOOO HÖRST DU MICH");
         await myNovel.ƒS.Speech.tell(myNovel.characters.ben, "HALLOOOOOO......");
         await myNovel.ƒS.Sound.play(myNovel.sound.demonicScream, 0.4, false);
+        await myNovel.ƒS.Sound.fade(myNovel.sound.run, 0.4, 1, true);
         await myNovel.ƒS.Speech.tell(myNovel.characters.ben, "Ohh nein.... nicht gut, es hat mich gehört oder?");
         await myNovel.ƒS.Speech.tell(myNovel.characters.ben, "Ahh es kommt immer näher. ");
         await myNovel.ƒS.Speech.tell(myNovel.characters.ben, "Ich höre es hinter mir....");
@@ -2296,6 +2317,7 @@ var myNovel;
         await myNovel.ƒS.Speech.tell(myNovel.characters.ben, "Scheiße Sackgasse, aber ich glaube ich habe es abgehängt. ");
         await myNovel.ƒS.Sound.play(myNovel.sound.monsterScream, 0.6, false);
         await myNovel.ƒS.Speech.tell(myNovel.characters.ben, "Ahhhhhhhhhhhhhh.........NEINNNNNNN");
+        await myNovel.ƒS.Sound.fade(myNovel.sound.run, 0, 0.5, true);
         await myNovel.ƒS.Sound.play(myNovel.sound.pistolShot, 0.4, false);
         await myNovel.ƒS.Character.hideAll();
     }
@@ -2653,6 +2675,7 @@ var myNovel;
         await myNovel.ƒS.Sound.play(myNovel.sound.jackhammer, 0.4, false);
         await myNovel.ƒS.Speech.tell(myNovel.characters.ben, "Huh...? DA GRÄBT jemand.... HALLLOOO HIER ICH BIN HIERRRR.....HALLOOO.");
         await myNovel.ƒS.Speech.tell(myNovel.characters.narrator, "DA drüben ich höre etwas...ja schnell wir haben ihn...");
+        await myNovel.ƒS.Sound.fade(myNovel.sound.emptyCave, 0, 1, true);
         await myNovel.ƒS.Character.hideAll();
         await myNovel.ƒS.Speech.hide();
         await myNovel.ƒS.Location.show(myNovel.locations.blanko);
@@ -2686,6 +2709,8 @@ var myNovel;
             await myNovel.ƒS.Sound.play(myNovel.sound.monsterScream, 0.4, false);
             await myNovel.ƒS.Speech.tell(myNovel.characters.ben, "Was war das schon wieder....");
             await myNovel.ƒS.Sound.play(myNovel.sound.monsterScream2, 0.4, false);
+            await myNovel.ƒS.Sound.fade(myNovel.sound.emptyCave, 0, 0.5, true);
+            await myNovel.ƒS.Sound.fade(myNovel.sound.run, 0.4, 0.5, true);
             await myNovel.ƒS.Speech.tell(myNovel.characters.ben, "Oh mein Gott Papa hatte einfach Recht ich wusste ihm kann man immer vertrauen. ");
             await myNovel.ƒS.Speech.tell(myNovel.characters.ben, "Ahh es kommt immer näher.");
             await myNovel.ƒS.Speech.tell(myNovel.characters.ben, "Ich höre es hinter mir....");
@@ -2698,6 +2723,8 @@ var myNovel;
             await myNovel.ƒS.Sound.play(myNovel.sound.monsterScream, 0.4, false);
             await myNovel.ƒS.Speech.tell(myNovel.characters.ben, "Was war das schon wieder....");
             await myNovel.ƒS.Sound.play(myNovel.sound.monsterScream2, 0.4, false);
+            await myNovel.ƒS.Sound.fade(myNovel.sound.emptyCave, 0, 0.5, true);
+            await myNovel.ƒS.Sound.fade(myNovel.sound.run, 0.4, 0.5, true);
             await myNovel.ƒS.Speech.tell(myNovel.characters.ben, "Oh mein Gott was ist das für ein Ding");
             await myNovel.ƒS.Speech.tell(myNovel.characters.ben, "Ahh es kommt immer näher.");
             await myNovel.ƒS.Speech.tell(myNovel.characters.ben, "Ich höre es hinter mir....");
@@ -2723,6 +2750,8 @@ var myNovel;
         await myNovel.ƒS.Speech.tell(myNovel.characters.ben, "Ohhh ich glaube es entfernt sich wieder... ein Glück.");
         await myNovel.ƒS.Speech.tell(myNovel.characters.narrator, "Ben wartet noch etwas bevor er wieder aus seinem Versteck heraus kommt.");
         await myNovel.ƒS.Speech.tell(myNovel.characters.ben, "Okay, jetzt ist es, glaube ich wieder sicher.");
+        await myNovel.ƒS.Sound.fade(myNovel.sound.run, 0, 1, true);
+        await myNovel.ƒS.Sound.fade(myNovel.sound.emptyCave, 0.4, 1, true);
         await myNovel.ƒS.Speech.tell(myNovel.characters.narrator, "Ben klettert aus der Felsspalte.");
         await myNovel.ƒS.Speech.tell(myNovel.characters.ben, "Okay, das reicht jetzt endgültig, ich will hier raus, ich werde Papa wahrscheinlich nicht wieder finden und von diesem Unbekannten etwas will ich auch nicht gefressen werden. Aber wie komme ich hier raus... ist wohl besser, wenn ich einfach mal weiter gehe...");
         await myNovel.ƒS.Speech.tell(myNovel.characters.narrator, "Ben folgt weiter dem Flussverlauf, plötzlich fällt ihm etwas auf.");
@@ -3077,8 +3106,9 @@ var myNovel;
         await myNovel.ƒS.Speech.tell(myNovel.characters.andrea, text.andrea.T0017);
         await myNovel.ƒS.Speech.tell(myNovel.characters.andrea, text.andrea.T0018);
         await myNovel.ƒS.Speech.tell(myNovel.characters.valentin, text.valentin.T0018);
+        await myNovel.ƒS.Sound.fade(myNovel.sound.cave, 0, 0.5, true);
         await myNovel.ƒS.Sound.play(myNovel.sound.demonicScream, 0.5, false);
-        await myNovel.ƒS.Sound.play(myNovel.sound.run, 0.2, true);
+        await myNovel.ƒS.Sound.fade(myNovel.sound.run, 0.2, 1, true);
         await myNovel.ƒS.Speech.tell(myNovel.characters.narrator, text.narrator.T0011);
         await myNovel.ƒS.Speech.tell(myNovel.characters.valentin, text.valentin.T0019);
         await myNovel.ƒS.Speech.tell(myNovel.characters.narrator, text.narrator.T0012);
@@ -3449,6 +3479,7 @@ var myNovel;
         await myNovel.ƒS.Speech.tell(myNovel.characters.valentin, text.valentin.T0002);
         await myNovel.ƒS.Speech.tell(myNovel.characters.andrea, text.andrea.T0002);
         await myNovel.ƒS.Character.hideAll();
+        await myNovel.ƒS.Sound.fade(myNovel.sound.sunday, 0, 1, false);
     }
     myNovel.secondScene = secondScene;
 })(myNovel || (myNovel = {}));
@@ -3624,9 +3655,11 @@ var myNovel;
                 T0005: "So, sind schon fertig. Ab nach Hause."
             }
         };
+        await myNovel.ƒS.Sound.fade(myNovel.sound.run, 0, 1, true);
         await myNovel.ƒS.Location.show(myNovel.locations.chapterOne);
         await myNovel.ƒS.update(2);
         await myNovel.ƒS.Location.show(myNovel.locations.supermarket);
+        await myNovel.ƒS.Sound.fade(myNovel.sound.sunday, 0.5, 1, true);
         await myNovel.ƒS.update(3);
         await myNovel.ƒS.Character.show(myNovel.characters.maria, myNovel.characters.maria.pose.sad, myNovel.newPositions.bottomleftMaria);
         await myNovel.ƒS.update(1);
@@ -3743,7 +3776,9 @@ var myNovel;
                 await myNovel.ƒS.Text.print("<div class=novelPageContent> <div class=leftPage><b>Erster Eintrag:</b> <br> <br> Heute müssen ich und Andrea den neuen Stollen sprengen ich bin mir sehr unsicher ob es eine Gute Idee ist.<br> \
                                 <br> <b>Zweiter Eintrag: </b> <br> <br> Habe noch mal Rücksprache mit der Minenleitung gehalten. Die wollen echt, dass ich diesen Tunnel sprenge... <br> \
                                 <br> <b>Dritter Eintrag:</b> <br> <br> Ich fahre jetzt mit Andrea an die Stelle für die Sprengung und bereite alles vor.</div>  \
-                                <div class=rightPage> <b>Vierter Eintrag:</b> <br> <br> Die Sprengung hat gut funktioniert, hoffentlich passiert nichts.  </div> </div>");
+                                <div class=rightPage> <b>Vierter Eintrag:</b> <br> <br> Die Sprengung hat gut funktioniert, hoffentlich passiert nichts.  \
+                                <br><br><br><b>Stützbalken</b> <br><br><br> Haben vor ein paar Wochen die Nummern an den Stützbalken erneuert. In B37 sind die Gänge voller Wasser, \
+                                ab jetzt sollte man unbedingt Stollen A38</div> </div>");
                 await myNovel.ƒS.Text.print("<div class=novelPageContent> <div class=leftPage><b>Fünfter Eintrag:</b> <br> <br> Ich habe den Einsturz überlebt, wie durch ein Wunder bin ich nicht \
                                 verletzt. Was auch immer mich verfolgt hat es ist weg, vielleicht auch tot? <br> \
                                 <br> <b>Sechster Eintrag: </b><br><br> Ich hatte Glück, habe eine alte Taschenlampe gefunden, die noch funktioniert, nun kann ich etwas \
@@ -3752,7 +3787,8 @@ var myNovel;
                                 <div class=rightPage> <b>Achter Eintrag:</b> <br> <br> Ich habe die Suche nach Andrea aufgegeben, ich kann ihn nirgendwo finden, wahrscheinlich hat sie es nicht geschafft. Was ist das nur gewesen?<br> \
                                 <br><b>Neunter Eintrag:</b><br><br> Ich habe in einem Haufen aus Schutt Batterien gefunden, damit hält meine Taschenlampe etwas länger, wie sind die Batterien hier gelandet?<br> \
                                 <br><b>Zehnter Eintrag:</b><br><br> Diese Gänge sind etwas irreführend, kommt mir vor wie in einem Labyrinth, wenn ich hier durch komme, sollte ich mir den richtigen Weg aufschreiben. </div></div>");
-                await myNovel.ƒS.Text.print("<div class=novelPageContent> <div class=leftPage><b>WICHTIG UNBEDINGT MERKEN</b> <br><br> <br>⇽ 🠕 ⇾ 🠕 = ✧ <br><br><br> 5536 </div>  \
+                await myNovel.ƒS.Text.print("<div class=novelPageContent> <div class=leftPage><b>WICHTIG UNBEDINGT MERKEN</b> <br><br> Habe eine Art Labyrinth gefunden. Habe ewigkeiten gebaraucht bis ich den richtigen Weg gefunden habe. <br>⇽ 🠕 ⇾ 🠕 = ✧ <br>Ist die Nummer für den Mineneingang \
+                ich kann sie mir einfach nicht merken.<br><br> 5536 </div>  \
                                 <div class=rightPage></div></div>");
                 myNovel.ƒS.Speech.show();
                 await myNovel.ƒS.Character.hide(myNovel.characters.ben);
@@ -3824,8 +3860,7 @@ var myNovel;
                 T0004: "Toll, und dafür müssen wir uns der Gefahr aussetzen. Am Ende bleibt halt immer alles an uns hängen, naja es wird schon nichts passieren."
             }
         };
-        await myNovel.ƒS.Sound.play(myNovel.sound.sunday, 0, true);
-        await myNovel.ƒS.Sound.play(myNovel.sound.cave, 0.1, true);
+        await myNovel.ƒS.Sound.fade(myNovel.sound.cave, 0.1, 0.4, true);
         await myNovel.ƒS.Location.show(myNovel.locations.mineShaftTwo);
         await myNovel.ƒS.update(myNovel.transition.leftFade.duration, myNovel.transition.leftFade.alpha, myNovel.transition.leftFade.edge);
         await myNovel.ƒS.Character.show(myNovel.characters.valentin, myNovel.characters.valentin.pose.normal, myNovel.newPositions.bottomright);

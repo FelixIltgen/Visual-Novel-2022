@@ -1,4 +1,5 @@
-html, body {
+html,
+body {
   width: 100vw;
   height: 100vh;
   margin: 0px;
@@ -18,6 +19,7 @@ scene {
   height: 1080px;
   position: absolute;
 }
+
 canvas {
   height: 100%;
   width: 100%;
@@ -31,6 +33,10 @@ dialog[type="splash"] {
   margin: 0px;
   padding: 0px;
 }
+dialog[type="text"] {
+  font-family:  'Gaegu';
+  }
+
 /*Fudgelogo design*/
 #FudgeStoryLogo {
   width: 25%;
@@ -38,31 +44,37 @@ dialog[type="splash"] {
   margin-left: 1%;
   border-radius: 20px;
 }
-.info{
-width: 100%;
-position: absolute;
-bottom: 0px;
-font-size: 20px;
-color: rgb(91, 55, 19);
+
+.info {
+  width: 100%;
+  position: absolute;
+  bottom: 0px;
+  font-size: 20px;
+  color: rgb(91, 55, 19);
 }
-dialog[type="splash"] p{
+
+dialog[type="splash"] p {
   text-align: center;
   width: 100%;
 }
-.startInfo{
+
+.startInfo {
   margin-top: 30%;
   font-size: 40px;
   color: rgb(240, 18, 103);
   animation: blink 1.7s infinite;
 }
-@keyframes blink{
-  50%{
+
+@keyframes blink {
+  50% {
     opacity: 0;
   }
-  80%{
+
+  80% {
     opacity: 1;
   }
 }
+
 speech {
   background: rgba(0, 0, 0, 0.6);
   position: absolute;
@@ -77,6 +89,9 @@ speech {
   margin-bottom: 50px;
   border-radius: 20px;
 }
+speech input{
+  margin-left: 20px;
+}
 
 speech content {
   color: rgb(254, 254, 254);
@@ -84,6 +99,7 @@ speech content {
   position: absolute;
   left: 160px;
 }
+
 name {
   font-size: 2vmin;
   display: block;
@@ -93,7 +109,7 @@ name {
 
 /*Novel Page Style*/
 
-.novelPageDiary{
+.novelPageDiary {
   background-image: url("Images/Background/open_Book.png");
   width: 1000px;
   height: 700px;
@@ -101,18 +117,105 @@ name {
   background-color: transparent;
   padding: 0px;
 }
-.novelPageContent{
+
+.novelPageContent {
   height: 100%;
   display: flex;
 }
-.leftPage{
+
+.leftPage {
   width: 50%;
   padding: 34px 0px 33px 56px;
-  font-size: 18px;
-}
-.rightPage{
-  width: 50%;
-  padding: 34px 48px 34px 40px;
-  font-size: 18px;
+  font-size: 20px;
 }
 
+.rightPage {
+  width: 50%;
+  padding: 34px 48px 34px 40px;
+  font-size: 20px;
+}
+
+/*MENÜ CSS*/
+.gameMenuCSS {
+  background: none;
+  border: none;
+}
+
+.gameMenuCSS button {
+  text-decoration: none;
+  background: none;
+  color: rgb(88, 50, 177);
+  font-size: 20px;
+  margin: 10px;
+  padding: 5px;
+  border: solid 2px;
+  border-radius: 5px;
+}
+
+.gameMenuCSS :hover {
+  color: rgb(218, 175, 19);
+  transition: 0.5s;
+}
+
+/*CSS entscheidunngen*/
+.choicesCSSClass {
+  border: none;
+  background: none;
+}
+
+.choicesCSSClass button {
+  text-decoration: none;
+  background: rgb(88, 50, 177);
+  color: rgb(218, 175, 19);
+  font-size: 20px;
+  margin: 10px;
+  padding: 5px;
+  border: solid 2px rgb(88, 50, 177);
+  border-radius: 5px;
+}
+
+/*CSS Inventar*/
+dialog[type="inventory"] {
+  background: rgba(88, 86, 81, 0.925);
+  border: solid 5px black;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+dialog[type="inventory"] img {
+  width: 10%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+dialog[type="inventory"] li {
+  border: solid 5px black;
+  border-radius: 15px;
+  margin: 10px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+dialog[type="inventory"] description {
+  font-size: 15px;
+}
+
+dialog[type="inventory"] amount {
+  font-size: 15px;
+}
+
+dialog[type="inventory"] button {
+  background: rgb(88, 50, 177);
+  color: rgb(218, 175, 19);
+  font-size: 20px;
+  padding: 5px;
+  border: solid 2px rgb(88, 50, 177);
+  border-radius: 5px;
+}
+dialog[type="inventory"] ul {
+  padding: 0px;
+}

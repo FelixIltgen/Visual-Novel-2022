@@ -16,7 +16,7 @@ namespace myNovel {
         await ƒS.Speech.tell(characters.valentin, "Ben wenn wir wieder zuhause sind dürfen wir von den Sachen im Berg nichts erzählen sonst denken alle wir sind verrückt");
         await ƒS.Speech.tell(characters.ben, "Stimmt, es bleibt einfach unser großes Geheimnis.");
         await ƒS.Speech.tell(characters.valentin, "Genau so machen wir's. ");
-
+        await ƒS.Sound.fade(sound.emptyCave, 0, 1, true);
         await ƒS.Character.hideAll();
         await ƒS.Speech.hide();
         await ƒS.Location.show(locations.blanko);

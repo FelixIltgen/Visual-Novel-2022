@@ -21,9 +21,11 @@ namespace myNovel {
             }
         };
         
+        await ƒS.Sound.fade(sound.run, 0, 1, true);
         await ƒS.Location.show(locations.chapterOne);
         await ƒS.update(2);
         await ƒS.Location.show(locations.supermarket);
+        await ƒS.Sound.fade(sound.sunday, 0.5, 1, true);
         await ƒS.update(3);
 
         await ƒS.Character.show(characters.maria, characters.maria.pose.sad, newPositions.bottomleftMaria);

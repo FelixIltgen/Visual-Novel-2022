@@ -19,6 +19,8 @@ namespace myNovel {
             await ƒS.Sound.play(sound.monsterScream, 0.4, false);
             await ƒS.Speech.tell(characters.ben, "Was war das schon wieder....");
             await ƒS.Sound.play(sound.monsterScream2, 0.4, false);
+            await ƒS.Sound.fade(sound.emptyCave, 0, 0.5, true);
+            await ƒS.Sound.fade(sound.run, 0.4, 0.5, true);
             await ƒS.Speech.tell(characters.ben, "Oh mein Gott Papa hatte einfach Recht ich wusste ihm kann man immer vertrauen. ");
             await ƒS.Speech.tell(characters.ben, "Ahh es kommt immer näher. ");
             await ƒS.Speech.tell(characters.ben, "Ich höre es hinter mir....");
@@ -34,6 +36,8 @@ namespace myNovel {
             await ƒS.Sound.play(sound.monsterScream, 0.4, false);
             await ƒS.Speech.tell(characters.ben, "Was war das schon wieder....");
             await ƒS.Sound.play(sound.monsterScream2, 0.4, false);
+            await ƒS.Sound.fade(sound.emptyCave, 0, 0.5, true);
+            await ƒS.Sound.fade(sound.run, 0.4, 0.5, true);
             await ƒS.Speech.tell(characters.ben, "Oh mein Gott, was ist das für ein Ding");
             await ƒS.Speech.tell(characters.ben, "Ahh es kommt immer näher. ");
             await ƒS.Speech.tell(characters.ben, "Ich höre es hinter mir...");
@@ -45,6 +49,7 @@ namespace myNovel {
 
             await ƒS.Character.hideAll();
             await ƒS.Speech.hide();
+            await ƒS.Sound.fade(sound.run, 0, 1, true);
             await ƒS.Location.show(locations.blanko);
             await ƒS.update(4);
             await ƒS.Location.show(locations.blanko);

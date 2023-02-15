@@ -24,5 +24,6 @@ namespace myNovel {
         await ƒS.Speech.tell(characters.valentin, text.valentin.T0002);
         await ƒS.Speech.tell(characters.andrea, text.andrea.T0002);
         await ƒS.Character.hideAll();
+        await ƒS.Sound.fade(sound.sunday, 0 , 1, false);
       }
 }

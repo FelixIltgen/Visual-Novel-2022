@@ -25,8 +25,9 @@ namespace myNovel {
                 console.log("Choice left");
                 await ƒS.Speech.tell(characters.ben, "Ich glaube, es war links. Ja, genau sollte doch richtig sein.");
                 await ƒS.Speech.tell(characters.ben, "Moment, ich sollte doch schon längst am Ende sein");
-                await ƒS.Speech.tell(characters.ben, "Oh nein, das ist eine Sackgasse... aber da liegt ja schon wieder ein Beutel mit Gold");
+                await ƒS.Speech.tell(characters.ben, "Oh nein, das ist eine Sackgasse... aber da liegt ja ein Beutel mit Gold, den nehme ich mit");
                 dataForSave.coinScore += 20;
+                ƒS.Inventory.add(items.geldSack);
                 await ƒS.Speech.tell(characters.ben, "Okay, dann kann ich jetzt wieder alles zurücklaufen.");
                 //Gold in Inventaar
                 break;

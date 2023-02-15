@@ -274,6 +274,20 @@ namespace myNovel {
       image: "Images/Items/wasserflasche.png",
       inInventory: false,
       static: true
+    },
+    muenzen: {
+      name: "Münzen",
+      description: "Gut für den Durst zwischend durch",
+      image: "Images/Items/muzen.png",
+      inInventory: false,
+      static: false
+    },
+    geldSack: {
+      name: "Sack voller Münnzen",
+      description: "Ist schon fast zu schwer, um zu tragen",
+      image: "Images/Items/geldsack.png",
+      inInventory: false,
+      static: false
     }
   };
 
@@ -398,16 +412,15 @@ namespace myNovel {
       //{ scene: fourthScene, name: "Fourth scene"},
       //{ scene: fifthScene, name: "Fifth scene"},
       //{ scene: sixthScene, name: "Sixth scene"},
-      { scene: seventhScene, name: "Seventh scene"},
-      //{ scene: eighthScene, name: "Eighth scene"},
-      //{ scene: ninthScene, name: "Ninth scene"},
-      /*
+     // { scene: seventhScene, name: "Seventh scene"},
+     // { scene: eighthScene, name: "Eighth scene"},
+     // { scene: ninthScene, name: "Ninth scene"},
       { scene: tenthScene, name: "Tenth scene"},
-
+      /*
       //Selcet Items
       { id: "withDairy", scene: itemSelcetionDairy, name: "Item selcetion with Dairy option"},
       { id: "noDairy", scene: itemSelcetionNoDairy, name: "Item selcetion without Dairy option"},
-
+      
       //Cotinue normal path
       { id: "afterItemSelection", scene: afterItemSelection, name: "First scene after Item selection"},
 
@@ -420,6 +433,7 @@ namespace myNovel {
       //Start chapter four
       { id: "chapterFour", scene: startChapterFour, name: "Start Chapter four"},
       { id: "chapterFourGood", scene: chapterFourGood, name: "Start Chapter four"},
+      
       { id: "chapterFourGoodTwo", scene: chapterFourGoodTwo, name: "Start Chapter four"},
       { id: "chapterFourMid", scene: chapterFourMid, name: "Start Chapter four"},
       { id: "chapterFourMidTwo", scene: chapterFourMidTwo, name: "Start Chapter four part two", next: "chapterFiveMid"},

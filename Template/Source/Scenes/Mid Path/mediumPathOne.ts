@@ -19,6 +19,8 @@ namespace myNovel {
             await ƒS.Sound.play(sound.monsterScream, 0.4, false);
             await ƒS.Speech.tell(characters.ben, "Was war das schon wieder....");
             await ƒS.Sound.play(sound.monsterScream2, 0.4, false);
+            await ƒS.Sound.fade(sound.emptyCave, 0, 0.5, true);
+            await ƒS.Sound.fade(sound.run, 0.4, 0.5, true);
             await ƒS.Speech.tell(characters.ben, "Oh mein Gott Papa hatte einfach Recht ich wusste ihm kann man immer vertrauen. ");
             await ƒS.Speech.tell(characters.ben, "Ahh es kommt immer näher.");
             await ƒS.Speech.tell(characters.ben, "Ich höre es hinter mir....");
@@ -31,6 +33,8 @@ namespace myNovel {
             await ƒS.Sound.play(sound.monsterScream, 0.4, false);
             await ƒS.Speech.tell(characters.ben, "Was war das schon wieder....");
             await ƒS.Sound.play(sound.monsterScream2, 0.4, false);
+            await ƒS.Sound.fade(sound.emptyCave, 0, 0.5, true);
+            await ƒS.Sound.fade(sound.run, 0.4, 0.5, true);
             await ƒS.Speech.tell(characters.ben, "Oh mein Gott was ist das für ein Ding");
             await ƒS.Speech.tell(characters.ben, "Ahh es kommt immer näher.");
             await ƒS.Speech.tell(characters.ben, "Ich höre es hinter mir....");
@@ -57,6 +61,8 @@ namespace myNovel {
         await ƒS.Speech.tell(characters.ben, "Ohhh ich glaube es entfernt sich wieder... ein Glück.");
         await ƒS.Speech.tell(characters.narrator, "Ben wartet noch etwas bevor er wieder aus seinem Versteck heraus kommt.");
         await ƒS.Speech.tell(characters.ben, "Okay, jetzt ist es, glaube ich wieder sicher.");
+        await ƒS.Sound.fade(sound.run, 0, 1, true);
+        await ƒS.Sound.fade(sound.emptyCave, 0.4, 1, true);
         await ƒS.Speech.tell(characters.narrator, "Ben klettert aus der Felsspalte.");
         await ƒS.Speech.tell(characters.ben, "Okay, das reicht jetzt endgültig, ich will hier raus, ich werde Papa wahrscheinlich nicht wieder finden und von diesem Unbekannten etwas will ich auch nicht gefressen werden. Aber wie komme ich hier raus... ist wohl besser, wenn ich einfach mal weiter gehe...");
         await ƒS.Speech.tell(characters.narrator, "Ben folgt weiter dem Flussverlauf, plötzlich fällt ihm etwas auf.");
