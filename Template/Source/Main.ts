@@ -341,7 +341,24 @@ namespace myNovel {
   //Menü
 
   function credits(): void {
-    ƒS.Text.print("");
+    ƒS.Text.print("<b>Story:</b> <br>\
+    Felix Iltgen <br><br>\
+    <b>Charaktere:</b> <br>\
+    Itch.io <br>\
+    <a href='https://duokhay.itch.io/green-haired-girl-free-character-sprite'>Maria</a> <br>\
+    <a href='https://nsaid.itch.io/blonde-guy'>Ben</a><br>\
+    <a href='https://nsaid.itch.io/glasses-guy'>Valentinn</a><br>\
+    <a href='https://nsaid.itch.io/office-lady-3'>Paula</a><br>\
+    <a href='https://xiael.itch.io/sprite-oswald'>Pirat</a><br><br>\
+    <b>Hintergründe:</b> <br>\
+    Felix Iltgen by <a href='https://www.midjourney.com/home/?callbackUrl=%2Fapp%2F'>midjourney</a> <br>\
+    <b>Musik & Sounds</b>\
+    By <a href='https://github.com/SamuelKasper'>Samuel Kasper</a> & <a href='https://pixabay.com/sound-effects/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=music&amp;utm_content=46195'>Pixabay</a><br><br>\
+    <b>Programmierung:</b><br>\
+    Felix Iltgen<br>\
+    <b>Weitere:</b><br>\
+    Items by <a href='https://www.flaticon.com/de/kostenlose-icons'> Freepik - Flaticon</a><br>\
+    Book Png vectors by  <a href='https://lovepik.com/images/png-book.html'>Lovepik.com</a>");
   }
 
   let inGameMenuButtons = {

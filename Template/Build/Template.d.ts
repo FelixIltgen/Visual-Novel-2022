@@ -265,6 +265,20 @@ declare namespace myNovel {
             inInventory: boolean;
             static: boolean;
         };
+        muenzen: {
+            name: string;
+            description: string;
+            image: string;
+            inInventory: boolean;
+            static: boolean;
+        };
+        geldSack: {
+            name: string;
+            description: string;
+            image: string;
+            inInventory: boolean;
+            static: boolean;
+        };
     };
     let newPositions: {
         bottomleftMaria: ƒ.Vector2;

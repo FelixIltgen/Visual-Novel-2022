@@ -269,6 +269,20 @@ var myNovel;
             image: "Images/Items/wasserflasche.png",
             inInventory: false,
             static: true
+        },
+        muenzen: {
+            name: "Münzen",
+            description: "Gut für den Durst zwischend durch",
+            image: "Images/Items/muzen.png",
+            inInventory: false,
+            static: false
+        },
+        geldSack: {
+            name: "Sack voller Münnzen",
+            description: "Ist schon fast zu schwer, um zu tragen",
+            image: "Images/Items/geldsack.png",
+            inInventory: false,
+            static: false
         }
     };
     myNovel.newPositions = {
@@ -317,7 +331,24 @@ var myNovel;
     };
     //Menü
     function credits() {
-        myNovel.ƒS.Text.print("");
+        myNovel.ƒS.Text.print("<b>Story:</b> <br>\
+    Felix Iltgen <br><br>\
+    <b>Charaktere:</b> <br>\
+    Itch.io <br>\
+    <a href='https://duokhay.itch.io/green-haired-girl-free-character-sprite'>Maria</a> <br>\
+    <a href='https://nsaid.itch.io/blonde-guy'>Ben</a><br>\
+    <a href='https://nsaid.itch.io/glasses-guy'>Valentinn</a><br>\
+    <a href='https://nsaid.itch.io/office-lady-3'>Paula</a><br>\
+    <a href='https://xiael.itch.io/sprite-oswald'>Pirat</a><br><br>\
+    <b>Hintergründe:</b> <br>\
+    Felix Iltgen by <a href='https://www.midjourney.com/home/?callbackUrl=%2Fapp%2F'>midjourney</a> <br>\
+    <b>Musik & Sounds</b>\
+    By <a href='https://github.com/SamuelKasper'>Samuel Kasper</a> & <a href='https://pixabay.com/sound-effects/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=music&amp;utm_content=46195'>Pixabay</a><br><br>\
+    <b>Programmierung:</b><br>\
+    Felix Iltgen<br>\
+    <b>Weitere:</b><br>\
+    Items by <a href='https://www.flaticon.com/de/kostenlose-icons'> Freepik - Flaticon</a><br>\
+    Book Png vectors by  <a href='https://lovepik.com/images/png-book.html'>Lovepik.com</a>");
     }
     let inGameMenuButtons = {
         save: "Save",
@@ -779,8 +810,29 @@ var myNovel;
                         await myNovel.ƒS.Speech.tell(myNovel.characters.ben, "So wo hat Mama das Tagebuch hingelegt, es sollte hier ja irgendwo liegen.");
                         await myNovel.ƒS.Speech.tell(myNovel.characters.ben, "Ah, da ist es, Mama hat es sogar richtig schön dekoriert mit den Blumen.");
                         await myNovel.ƒS.Speech.tell(myNovel.characters.narrator, "Ben nimmt das Buch. ");
-                        await myNovel.ƒS.Speech.tell(myNovel.characters.ben, "Ohh nein, ich hab nicht genügend Platz im Inventar. Ich muss irgendwas zurücklassen, ich kann es ja später auch einfach wieder mitnehmen, wenn ich zurückkomme.");
-                        await myNovel.ƒS.Speech.tell(myNovel.characters.ben, "Aber was lasse ich zurück? ");
+                        myNovel.ƒS.Speech.hide();
+                        //Novel Page
+                        myNovel.ƒS.Text.addClass("novelPageDiary");
+                        await myNovel.ƒS.Text.print("<div class=novelPageContent> <div class=leftPage><b>Erster Eintrag:</b> <br> <br> Heute müssen ich und Andrea den neuen Stollen sprengen ich bin mir sehr unsicher ob es eine Gute Idee ist.<br> \
+                            <br> <b>Zweiter Eintrag: </b> <br> <br> Habe noch mal Rücksprache mit der Minenleitung gehalten. Die wollen echt, dass ich diesen Tunnel sprenge... <br> \
+                            <br> <b>Dritter Eintrag:</b> <br> <br> Ich fahre jetzt mit Andrea an die Stelle für die Sprengung und bereite alles vor.</div>  \
+                            <div class=rightPage> <b>Vierter Eintrag:</b> <br> <br> Die Sprengung hat gut funktioniert, hoffentlich passiert nichts.  \
+                            <br><br><br><b>Stützbalken</b> <br><br><br> Haben vor ein paar Wochen die Nummern an den Stützbalken erneuert. In B37 sind die Gänge voller Wasser, \
+                            ab jetzt sollte man unbedingt Stollen A38</div> </div>");
+                        await myNovel.ƒS.Text.print("<div class=novelPageContent> <div class=leftPage><b>Fünfter Eintrag:</b> <br> <br> Ich habe den Einsturz überlebt, wie durch ein Wunder bin ich nicht \
+                            verletzt. Was auch immer mich verfolgt hat es ist weg, vielleicht auch tot? <br> \
+                            <br> <b>Sechster Eintrag: </b><br><br> Ich hatte Glück, habe eine alte Taschenlampe gefunden, die noch funktioniert, nun kann ich etwas \
+                             besser sehen, wo ich entlang gehe. Das sind definitiv keine Stollen, es muss eine Höhle oder etwas Ähnlicheres sein. <br> \
+                            <br> <b>Siebter Eintrag:</b> <br> <br> Ich habe einen Rucksack mit Konserven gefunden, wie kam der nur hier her? Das kann kein Zufall sein. Egal, Hauptsache, ich habe etwas zu essen.</div>  \
+                            <div class=rightPage> <b>Achter Eintrag:</b> <br> <br> Ich habe die Suche nach Andrea aufgegeben, ich kann ihn nirgendwo finden, wahrscheinlich hat sie es nicht geschafft. Was ist das nur gewesen?<br> \
+                            <br><b>Neunter Eintrag:</b><br><br> Ich habe in einem Haufen aus Schutt Batterien gefunden, damit hält meine Taschenlampe etwas länger, wie sind die Batterien hier gelandet?<br> \
+                            <br><b>Zehnter Eintrag:</b><br><br> Diese Gänge sind etwas irreführend, kommt mir vor wie in einem Labyrinth, wenn ich hier durch komme, sollte ich mir den richtigen Weg aufschreiben. </div></div>");
+                        await myNovel.ƒS.Text.print("<div class=novelPageContent> <div class=leftPage><b>WICHTIG UNBEDINGT MERKEN</b> <br><br> Habe eine Art Labyrinth gefunden.\
+            Habe ewigkeiten gebaraucht bis ich den richtigen Weg gefunden habe. Die Markierunngen werden auf jeden Fall helfen. <br>⇽ 🠕 ⇾ 🠕 = ✧ <br><br>Die Nummer für den Mineneingang \
+            ich kann sie mir einfach nicht merken. Jetzt werde ich sie bestimmt nicht vergessen.<br><br> 5536 </div>  \
+                            <div class=rightPage></div></div>");
+                        myNovel.ƒS.Speech.show();
+                        myNovel.ƒS.Inventory.add(myNovel.items.tagebuch);
                         myNovel.ƒS.Inventory.open();
                         await myNovel.ƒS.Speech.tell(myNovel.characters.ben, "Okay, das brauche ich wahrscheinlich sowieso nicht.");
                         await myNovel.ƒS.Speech.tell(myNovel.characters.ben, "So, jetzt sollte ich alles Wichtige haben.");
@@ -807,8 +859,29 @@ var myNovel;
                             await myNovel.ƒS.Speech.tell(myNovel.characters.ben, "So wo hat Mama das Tagebuch hingelegt, es sollte hier ja irgendwo liegen.");
                             await myNovel.ƒS.Speech.tell(myNovel.characters.ben, "Ah, da ist es, Mama hat es sogar richtig schön dekoriert mit den Blumen.");
                             await myNovel.ƒS.Speech.tell(myNovel.characters.narrator, "Ben nimmt das Buch. ");
-                            await myNovel.ƒS.Speech.tell(myNovel.characters.ben, "Ohh nein, ich hab nicht genügend Platz im Inventar. Ich muss irgendwas zurücklassen, ich kann es ja später auch einfach wieder mitnehmen, wenn ich zurückkomme.");
-                            await myNovel.ƒS.Speech.tell(myNovel.characters.ben, "Aber was lasse ich zurück? ");
+                            myNovel.ƒS.Speech.hide();
+                            //Novel Page
+                            myNovel.ƒS.Text.addClass("novelPageDiary");
+                            await myNovel.ƒS.Text.print("<div class=novelPageContent> <div class=leftPage><b>Erster Eintrag:</b> <br> <br> Heute müssen ich und Andrea den neuen Stollen sprengen ich bin mir sehr unsicher ob es eine Gute Idee ist.<br> \
+                            <br> <b>Zweiter Eintrag: </b> <br> <br> Habe noch mal Rücksprache mit der Minenleitung gehalten. Die wollen echt, dass ich diesen Tunnel sprenge... <br> \
+                            <br> <b>Dritter Eintrag:</b> <br> <br> Ich fahre jetzt mit Andrea an die Stelle für die Sprengung und bereite alles vor.</div>  \
+                            <div class=rightPage> <b>Vierter Eintrag:</b> <br> <br> Die Sprengung hat gut funktioniert, hoffentlich passiert nichts.  \
+                            <br><br><br><b>Stützbalken</b> <br><br><br> Haben vor ein paar Wochen die Nummern an den Stützbalken erneuert. In B37 sind die Gänge voller Wasser, \
+                            ab jetzt sollte man unbedingt Stollen A38</div> </div>");
+                            await myNovel.ƒS.Text.print("<div class=novelPageContent> <div class=leftPage><b>Fünfter Eintrag:</b> <br> <br> Ich habe den Einsturz überlebt, wie durch ein Wunder bin ich nicht \
+                            verletzt. Was auch immer mich verfolgt hat es ist weg, vielleicht auch tot? <br> \
+                            <br> <b>Sechster Eintrag: </b><br><br> Ich hatte Glück, habe eine alte Taschenlampe gefunden, die noch funktioniert, nun kann ich etwas \
+                             besser sehen, wo ich entlang gehe. Das sind definitiv keine Stollen, es muss eine Höhle oder etwas Ähnlicheres sein. <br> \
+                            <br> <b>Siebter Eintrag:</b> <br> <br> Ich habe einen Rucksack mit Konserven gefunden, wie kam der nur hier her? Das kann kein Zufall sein. Egal, Hauptsache, ich habe etwas zu essen.</div>  \
+                            <div class=rightPage> <b>Achter Eintrag:</b> <br> <br> Ich habe die Suche nach Andrea aufgegeben, ich kann ihn nirgendwo finden, wahrscheinlich hat sie es nicht geschafft. Was ist das nur gewesen?<br> \
+                            <br><b>Neunter Eintrag:</b><br><br> Ich habe in einem Haufen aus Schutt Batterien gefunden, damit hält meine Taschenlampe etwas länger, wie sind die Batterien hier gelandet?<br> \
+                            <br><b>Zehnter Eintrag:</b><br><br> Diese Gänge sind etwas irreführend, kommt mir vor wie in einem Labyrinth, wenn ich hier durch komme, sollte ich mir den richtigen Weg aufschreiben. </div></div>");
+                            await myNovel.ƒS.Text.print("<div class=novelPageContent> <div class=leftPage><b>WICHTIG UNBEDINGT MERKEN</b> <br><br> Habe eine Art Labyrinth gefunden.\
+            Habe ewigkeiten gebaraucht bis ich den richtigen Weg gefunden habe. Die Markierunngen werden auf jeden Fall helfen. <br>⇽ 🠕 ⇾ 🠕 = ✧ <br><br>Die Nummer für den Mineneingang \
+            ich kann sie mir einfach nicht merken. Jetzt werde ich sie bestimmt nicht vergessen.<br><br> 5536 </div>  \
+                            <div class=rightPage></div></div>");
+                            myNovel.ƒS.Speech.show();
+                            myNovel.ƒS.Inventory.add(myNovel.items.tagebuch);
                             myNovel.ƒS.Inventory.open();
                             await myNovel.ƒS.Speech.tell(myNovel.characters.ben, "Okay, das brauche ich wahrscheinlich sowieso nicht.");
                             await myNovel.ƒS.Speech.tell(myNovel.characters.ben, "So, jetzt sollte ich alles Wichtige haben.");
@@ -928,19 +1001,23 @@ var myNovel;
             //Novel Page
             myNovel.ƒS.Text.addClass("novelPageDiary");
             await myNovel.ƒS.Text.print("<div class=novelPageContent> <div class=leftPage><b>Erster Eintrag:</b> <br> <br> Heute müssen ich und Andrea den neuen Stollen sprengen ich bin mir sehr unsicher ob es eine Gute Idee ist.<br> \
-                                <br> <b>Zweiter Eintrag: </b> <br> <br> Habe noch mal Rücksprache mit der Minenleitung gehalten. Die wollen echt, dass ich diesen Tunnel sprenge... <br> \
-                                <br> <b>Dritter Eintrag:</b> <br> <br> Ich fahre jetzt mit Andrea an die Stelle für die Sprengung und bereite alles vor.</div>  \
-                                <div class=rightPage> <b>Vierter Eintrag:</b> <br> <br> Die Sprengung hat gut funktioniert, hoffentlich passiert nichts.  </div> </div>");
+                            <br> <b>Zweiter Eintrag: </b> <br> <br> Habe noch mal Rücksprache mit der Minenleitung gehalten. Die wollen echt, dass ich diesen Tunnel sprenge... <br> \
+                            <br> <b>Dritter Eintrag:</b> <br> <br> Ich fahre jetzt mit Andrea an die Stelle für die Sprengung und bereite alles vor.</div>  \
+                            <div class=rightPage> <b>Vierter Eintrag:</b> <br> <br> Die Sprengung hat gut funktioniert, hoffentlich passiert nichts.  \
+                            <br><br><br><b>Stützbalken</b> <br><br><br> Haben vor ein paar Wochen die Nummern an den Stützbalken erneuert. In B37 sind die Gänge voller Wasser, \
+                            ab jetzt sollte man unbedingt Stollen A38</div> </div>");
             await myNovel.ƒS.Text.print("<div class=novelPageContent> <div class=leftPage><b>Fünfter Eintrag:</b> <br> <br> Ich habe den Einsturz überlebt, wie durch ein Wunder bin ich nicht \
-                                verletzt. Was auch immer mich verfolgt hat es ist weg, vielleicht auch tot? <br> \
-                                <br> <b>Sechster Eintrag: </b><br><br> Ich hatte Glück, habe eine alte Taschenlampe gefunden, die noch funktioniert, nun kann ich etwas \
-                                 besser sehen, wo ich entlang gehe. Das sind definitiv keine Stollen, es muss eine Höhle oder etwas Ähnlicheres sein. <br> \
-                                <br> <b>Siebter Eintrag:</b> <br> <br> Ich habe einen Rucksack mit Konserven gefunden, wie kam der nur hier her? Das kann kein Zufall sein. Egal, Hauptsache, ich habe etwas zu essen.</div>  \
-                                <div class=rightPage> <b>Achter Eintrag:</b> <br> <br> Ich habe die Suche nach Andrea aufgegeben, ich kann ihn nirgendwo finden, wahrscheinlich hat sie es nicht geschafft. Was ist das nur gewesen?<br> \
-                                <br><b>Neunter Eintrag:</b><br><br> Ich habe in einem Haufen aus Schutt Batterien gefunden, damit hält meine Taschenlampe etwas länger, wie sind die Batterien hier gelandet?<br> \
-                                <br><b>Zehnter Eintrag:</b><br><br> Diese Gänge sind etwas irreführend, kommt mir vor wie in einem Labyrinth, wenn ich hier durch komme, sollte ich mir den richtigen Weg aufschreiben. </div></div>");
-            await myNovel.ƒS.Text.print("<div class=novelPageContent> <div class=leftPage><b>WICHTIG UNBEDINGT MERKEN</b> <br><br> <br>⇽ 🠕 ⇾ 🠕 = ✧ <br><br><br> 5536 </div>  \
-                                <div class=rightPage></div></div>");
+                            verletzt. Was auch immer mich verfolgt hat es ist weg, vielleicht auch tot? <br> \
+                            <br> <b>Sechster Eintrag: </b><br><br> Ich hatte Glück, habe eine alte Taschenlampe gefunden, die noch funktioniert, nun kann ich etwas \
+                             besser sehen, wo ich entlang gehe. Das sind definitiv keine Stollen, es muss eine Höhle oder etwas Ähnlicheres sein. <br> \
+                            <br> <b>Siebter Eintrag:</b> <br> <br> Ich habe einen Rucksack mit Konserven gefunden, wie kam der nur hier her? Das kann kein Zufall sein. Egal, Hauptsache, ich habe etwas zu essen.</div>  \
+                            <div class=rightPage> <b>Achter Eintrag:</b> <br> <br> Ich habe die Suche nach Andrea aufgegeben, ich kann ihn nirgendwo finden, wahrscheinlich hat sie es nicht geschafft. Was ist das nur gewesen?<br> \
+                            <br><b>Neunter Eintrag:</b><br><br> Ich habe in einem Haufen aus Schutt Batterien gefunden, damit hält meine Taschenlampe etwas länger, wie sind die Batterien hier gelandet?<br> \
+                            <br><b>Zehnter Eintrag:</b><br><br> Diese Gänge sind etwas irreführend, kommt mir vor wie in einem Labyrinth, wenn ich hier durch komme, sollte ich mir den richtigen Weg aufschreiben. </div></div>");
+            await myNovel.ƒS.Text.print("<div class=novelPageContent> <div class=leftPage><b>WICHTIG UNBEDINGT MERKEN</b> <br><br> Habe eine Art Labyrinth gefunden.\
+            Habe ewigkeiten gebaraucht bis ich den richtigen Weg gefunden habe. Die Markierunngen werden auf jeden Fall helfen. <br>⇽ 🠕 ⇾ 🠕 = ✧ <br><br>Die Nummer für den Mineneingang \
+            ich kann sie mir einfach nicht merken. Jetzt werde ich sie bestimmt nicht vergessen.<br><br> 5536 </div>  \
+                            <div class=rightPage></div></div>");
             myNovel.ƒS.Speech.show();
             await myNovel.ƒS.Speech.tell(myNovel.characters.ben, "Okay, ich probiere mal den Code aus.");
             myNovel.ƒS.Text.addClass("speechInput");
@@ -1483,19 +1560,23 @@ var myNovel;
             //Novel Page
             myNovel.ƒS.Text.addClass("novelPageDiary");
             await myNovel.ƒS.Text.print("<div class=novelPageContent> <div class=leftPage><b>Erster Eintrag:</b> <br> <br> Heute müssen ich und Andrea den neuen Stollen sprengen ich bin mir sehr unsicher ob es eine Gute Idee ist.<br> \
-                                <br> <b>Zweiter Eintrag: </b> <br> <br> Habe noch mal Rücksprache mit der Minenleitung gehalten. Die wollen echt, dass ich diesen Tunnel sprenge... <br> \
-                                <br> <b>Dritter Eintrag:</b> <br> <br> Ich fahre jetzt mit Andrea an die Stelle für die Sprengung und bereite alles vor.</div>  \
-                                <div class=rightPage> <b>Vierter Eintrag:</b> <br> <br> Die Sprengung hat gut funktioniert, hoffentlich passiert nichts.  </div> </div>");
+                            <br> <b>Zweiter Eintrag: </b> <br> <br> Habe noch mal Rücksprache mit der Minenleitung gehalten. Die wollen echt, dass ich diesen Tunnel sprenge... <br> \
+                            <br> <b>Dritter Eintrag:</b> <br> <br> Ich fahre jetzt mit Andrea an die Stelle für die Sprengung und bereite alles vor.</div>  \
+                            <div class=rightPage> <b>Vierter Eintrag:</b> <br> <br> Die Sprengung hat gut funktioniert, hoffentlich passiert nichts.  \
+                            <br><br><br><b>Stützbalken</b> <br><br><br> Haben vor ein paar Wochen die Nummern an den Stützbalken erneuert. In B37 sind die Gänge voller Wasser, \
+                            ab jetzt sollte man unbedingt Stollen A38</div> </div>");
             await myNovel.ƒS.Text.print("<div class=novelPageContent> <div class=leftPage><b>Fünfter Eintrag:</b> <br> <br> Ich habe den Einsturz überlebt, wie durch ein Wunder bin ich nicht \
-                                verletzt. Was auch immer mich verfolgt hat es ist weg, vielleicht auch tot? <br> \
-                                <br> <b>Sechster Eintrag: </b><br><br> Ich hatte Glück, habe eine alte Taschenlampe gefunden, die noch funktioniert, nun kann ich etwas \
-                                 besser sehen, wo ich entlang gehe. Das sind definitiv keine Stollen, es muss eine Höhle oder etwas Ähnlicheres sein. <br> \
-                                <br> <b>Siebter Eintrag:</b> <br> <br> Ich habe einen Rucksack mit Konserven gefunden, wie kam der nur hier her? Das kann kein Zufall sein. Egal, Hauptsache, ich habe etwas zu essen.</div>  \
-                                <div class=rightPage> <b>Achter Eintrag:</b> <br> <br> Ich habe die Suche nach Andrea aufgegeben, ich kann ihn nirgendwo finden, wahrscheinlich hat sie es nicht geschafft. Was ist das nur gewesen?<br> \
-                                <br><b>Neunter Eintrag:</b><br><br> Ich habe in einem Haufen aus Schutt Batterien gefunden, damit hält meine Taschenlampe etwas länger, wie sind die Batterien hier gelandet?<br> \
-                                <br><b>Zehnter Eintrag:</b><br><br> Diese Gänge sind etwas irreführend, kommt mir vor wie in einem Labyrinth, wenn ich hier durch komme, sollte ich mir den richtigen Weg aufschreiben. </div></div>");
-            await myNovel.ƒS.Text.print("<div class=novelPageContent> <div class=leftPage><b>WICHTIG UNBEDINGT MERKEN</b> <br><br> <br>⇽ 🠕 ⇾ 🠕 = ✧ <br><br><br> 5536 </div>  \
-                                <div class=rightPage></div></div>");
+                            verletzt. Was auch immer mich verfolgt hat es ist weg, vielleicht auch tot? <br> \
+                            <br> <b>Sechster Eintrag: </b><br><br> Ich hatte Glück, habe eine alte Taschenlampe gefunden, die noch funktioniert, nun kann ich etwas \
+                             besser sehen, wo ich entlang gehe. Das sind definitiv keine Stollen, es muss eine Höhle oder etwas Ähnlicheres sein. <br> \
+                            <br> <b>Siebter Eintrag:</b> <br> <br> Ich habe einen Rucksack mit Konserven gefunden, wie kam der nur hier her? Das kann kein Zufall sein. Egal, Hauptsache, ich habe etwas zu essen.</div>  \
+                            <div class=rightPage> <b>Achter Eintrag:</b> <br> <br> Ich habe die Suche nach Andrea aufgegeben, ich kann ihn nirgendwo finden, wahrscheinlich hat sie es nicht geschafft. Was ist das nur gewesen?<br> \
+                            <br><b>Neunter Eintrag:</b><br><br> Ich habe in einem Haufen aus Schutt Batterien gefunden, damit hält meine Taschenlampe etwas länger, wie sind die Batterien hier gelandet?<br> \
+                            <br><b>Zehnter Eintrag:</b><br><br> Diese Gänge sind etwas irreführend, kommt mir vor wie in einem Labyrinth, wenn ich hier durch komme, sollte ich mir den richtigen Weg aufschreiben. </div></div>");
+            await myNovel.ƒS.Text.print("<div class=novelPageContent> <div class=leftPage><b>WICHTIG UNBEDINGT MERKEN</b> <br><br> Habe eine Art Labyrinth gefunden.\
+            Habe ewigkeiten gebaraucht bis ich den richtigen Weg gefunden habe. Die Markierunngen werden auf jeden Fall helfen. <br>⇽ 🠕 ⇾ 🠕 = ✧ <br><br>Die Nummer für den Mineneingang \
+            ich kann sie mir einfach nicht merken. Jetzt werde ich sie bestimmt nicht vergessen.<br><br> 5536 </div>  \
+                            <div class=rightPage></div></div>");
             myNovel.ƒS.Speech.show();
             await myNovel.ƒS.Speech.tell(myNovel.characters.ben, "Genau da ist B37 also müsste ich, wenn ich es richtig sehe, demnächst bei Stollen A38 rein.");
             await myNovel.ƒS.Speech.tell(myNovel.characters.narrator, "Ben macht sich auf den Weg und sucht den Stollen mit den Markierungen, die sein Vater ins Tagebuch geschrieben hat.");
@@ -2064,6 +2145,7 @@ var myNovel;
                 console.log("Choice take");
                 await myNovel.ƒS.Speech.tell(myNovel.characters.ben, "Ja, warum den nicht, sieht toll aus.");
                 myNovel.dataForSave.coinScore += 10;
+                myNovel.ƒS.Inventory.add(myNovel.items.muenzen);
                 break;
             case choiceCoin.dontTake:
                 console.log("Choice dont Take");
@@ -2190,19 +2272,23 @@ var myNovel;
                 //Novel Page
                 myNovel.ƒS.Text.addClass("novelPageDiary");
                 await myNovel.ƒS.Text.print("<div class=novelPageContent> <div class=leftPage><b>Erster Eintrag:</b> <br> <br> Heute müssen ich und Andrea den neuen Stollen sprengen ich bin mir sehr unsicher ob es eine Gute Idee ist.<br> \
-                                    <br> <b>Zweiter Eintrag: </b> <br> <br> Habe noch mal Rücksprache mit der Minenleitung gehalten. Die wollen echt, dass ich diesen Tunnel sprenge... <br> \
-                                    <br> <b>Dritter Eintrag:</b> <br> <br> Ich fahre jetzt mit Andrea an die Stelle für die Sprengung und bereite alles vor.</div>  \
-                                    <div class=rightPage> <b>Vierter Eintrag:</b> <br> <br> Die Sprengung hat gut funktioniert, hoffentlich passiert nichts.  </div> </div>");
+                            <br> <b>Zweiter Eintrag: </b> <br> <br> Habe noch mal Rücksprache mit der Minenleitung gehalten. Die wollen echt, dass ich diesen Tunnel sprenge... <br> \
+                            <br> <b>Dritter Eintrag:</b> <br> <br> Ich fahre jetzt mit Andrea an die Stelle für die Sprengung und bereite alles vor.</div>  \
+                            <div class=rightPage> <b>Vierter Eintrag:</b> <br> <br> Die Sprengung hat gut funktioniert, hoffentlich passiert nichts.  \
+                            <br><br><br><b>Stützbalken</b> <br><br><br> Haben vor ein paar Wochen die Nummern an den Stützbalken erneuert. In B37 sind die Gänge voller Wasser, \
+                            ab jetzt sollte man unbedingt Stollen A38</div> </div>");
                 await myNovel.ƒS.Text.print("<div class=novelPageContent> <div class=leftPage><b>Fünfter Eintrag:</b> <br> <br> Ich habe den Einsturz überlebt, wie durch ein Wunder bin ich nicht \
-                                    verletzt. Was auch immer mich verfolgt hat es ist weg, vielleicht auch tot? <br> \
-                                    <br> <b>Sechster Eintrag: </b><br><br> Ich hatte Glück, habe eine alte Taschenlampe gefunden, die noch funktioniert, nun kann ich etwas \
-                                     besser sehen, wo ich entlang gehe. Das sind definitiv keine Stollen, es muss eine Höhle oder etwas Ähnlicheres sein. <br> \
-                                    <br> <b>Siebter Eintrag:</b> <br> <br> Ich habe einen Rucksack mit Konserven gefunden, wie kam der nur hier her? Das kann kein Zufall sein. Egal, Hauptsache, ich habe etwas zu essen.</div>  \
-                                    <div class=rightPage> <b>Achter Eintrag:</b> <br> <br> Ich habe die Suche nach Andrea aufgegeben, ich kann ihn nirgendwo finden, wahrscheinlich hat sie es nicht geschafft. Was ist das nur gewesen?<br> \
-                                    <br><b>Neunter Eintrag:</b><br><br> Ich habe in einem Haufen aus Schutt Batterien gefunden, damit hält meine Taschenlampe etwas länger, wie sind die Batterien hier gelandet?<br> \
-                                    <br><b>Zehnter Eintrag:</b><br><br> Diese Gänge sind etwas irreführend, kommt mir vor wie in einem Labyrinth, wenn ich hier durch komme, sollte ich mir den richtigen Weg aufschreiben. </div></div>");
-                await myNovel.ƒS.Text.print("<div class=novelPageContent> <div class=leftPage><b>WICHTIG UNBEDINGT MERKEN</b> <br><br> <br>⇽ 🠕 ⇾ 🠕 = ✧ <br><br><br> 5536 </div>  \
-                                    <div class=rightPage></div></div>");
+                            verletzt. Was auch immer mich verfolgt hat es ist weg, vielleicht auch tot? <br> \
+                            <br> <b>Sechster Eintrag: </b><br><br> Ich hatte Glück, habe eine alte Taschenlampe gefunden, die noch funktioniert, nun kann ich etwas \
+                             besser sehen, wo ich entlang gehe. Das sind definitiv keine Stollen, es muss eine Höhle oder etwas Ähnlicheres sein. <br> \
+                            <br> <b>Siebter Eintrag:</b> <br> <br> Ich habe einen Rucksack mit Konserven gefunden, wie kam der nur hier her? Das kann kein Zufall sein. Egal, Hauptsache, ich habe etwas zu essen.</div>  \
+                            <div class=rightPage> <b>Achter Eintrag:</b> <br> <br> Ich habe die Suche nach Andrea aufgegeben, ich kann ihn nirgendwo finden, wahrscheinlich hat sie es nicht geschafft. Was ist das nur gewesen?<br> \
+                            <br><b>Neunter Eintrag:</b><br><br> Ich habe in einem Haufen aus Schutt Batterien gefunden, damit hält meine Taschenlampe etwas länger, wie sind die Batterien hier gelandet?<br> \
+                            <br><b>Zehnter Eintrag:</b><br><br> Diese Gänge sind etwas irreführend, kommt mir vor wie in einem Labyrinth, wenn ich hier durch komme, sollte ich mir den richtigen Weg aufschreiben. </div></div>");
+                await myNovel.ƒS.Text.print("<div class=novelPageContent> <div class=leftPage><b>WICHTIG UNBEDINGT MERKEN</b> <br><br> Habe eine Art Labyrinth gefunden.\
+            Habe ewigkeiten gebaraucht bis ich den richtigen Weg gefunden habe. Die Markierunngen werden auf jeden Fall helfen. <br>⇽ 🠕 ⇾ 🠕 = ✧ <br><br>Die Nummer für den Mineneingang \
+            ich kann sie mir einfach nicht merken. Jetzt werde ich sie bestimmt nicht vergessen.<br><br> 5536 </div>  \
+                            <div class=rightPage></div></div>");
                 myNovel.ƒS.Speech.show();
                 await myNovel.ƒS.Speech.tell(myNovel.characters.ben, "Genau ich muss durch das Labyrinth und Papa hat den richtigen weg ins Tagebuch eingetragen. Okay dann legen wir mal los wo gehe ich entlang.");
                 let choicesTwo = {
@@ -2251,19 +2337,23 @@ var myNovel;
                 //Novel Page
                 myNovel.ƒS.Text.addClass("novelPageDiary");
                 await myNovel.ƒS.Text.print("<div class=novelPageContent> <div class=leftPage><b>Erster Eintrag:</b> <br> <br> Heute müssen ich und Andrea den neuen Stollen sprengen ich bin mir sehr unsicher ob es eine Gute Idee ist.<br> \
-                                    <br> <b>Zweiter Eintrag: </b> <br> <br> Habe noch mal Rücksprache mit der Minenleitung gehalten. Die wollen echt, dass ich diesen Tunnel sprenge... <br> \
-                                    <br> <b>Dritter Eintrag:</b> <br> <br> Ich fahre jetzt mit Andrea an die Stelle für die Sprengung und bereite alles vor.</div>  \
-                                    <div class=rightPage> <b>Vierter Eintrag:</b> <br> <br> Die Sprengung hat gut funktioniert, hoffentlich passiert nichts.  </div> </div>");
+                            <br> <b>Zweiter Eintrag: </b> <br> <br> Habe noch mal Rücksprache mit der Minenleitung gehalten. Die wollen echt, dass ich diesen Tunnel sprenge... <br> \
+                            <br> <b>Dritter Eintrag:</b> <br> <br> Ich fahre jetzt mit Andrea an die Stelle für die Sprengung und bereite alles vor.</div>  \
+                            <div class=rightPage> <b>Vierter Eintrag:</b> <br> <br> Die Sprengung hat gut funktioniert, hoffentlich passiert nichts.  \
+                            <br><br><br><b>Stützbalken</b> <br><br><br> Haben vor ein paar Wochen die Nummern an den Stützbalken erneuert. In B37 sind die Gänge voller Wasser, \
+                            ab jetzt sollte man unbedingt Stollen A38</div> </div>");
                 await myNovel.ƒS.Text.print("<div class=novelPageContent> <div class=leftPage><b>Fünfter Eintrag:</b> <br> <br> Ich habe den Einsturz überlebt, wie durch ein Wunder bin ich nicht \
-                                    verletzt. Was auch immer mich verfolgt hat es ist weg, vielleicht auch tot? <br> \
-                                    <br> <b>Sechster Eintrag: </b><br><br> Ich hatte Glück, habe eine alte Taschenlampe gefunden, die noch funktioniert, nun kann ich etwas \
-                                     besser sehen, wo ich entlang gehe. Das sind definitiv keine Stollen, es muss eine Höhle oder etwas Ähnlicheres sein. <br> \
-                                    <br> <b>Siebter Eintrag:</b> <br> <br> Ich habe einen Rucksack mit Konserven gefunden, wie kam der nur hier her? Das kann kein Zufall sein. Egal, Hauptsache, ich habe etwas zu essen.</div>  \
-                                    <div class=rightPage> <b>Achter Eintrag:</b> <br> <br> Ich habe die Suche nach Andrea aufgegeben, ich kann ihn nirgendwo finden, wahrscheinlich hat sie es nicht geschafft. Was ist das nur gewesen?<br> \
-                                    <br><b>Neunter Eintrag:</b><br><br> Ich habe in einem Haufen aus Schutt Batterien gefunden, damit hält meine Taschenlampe etwas länger, wie sind die Batterien hier gelandet?<br> \
-                                    <br><b>Zehnter Eintrag:</b><br><br> Diese Gänge sind etwas irreführend, kommt mir vor wie in einem Labyrinth, wenn ich hier durch komme, sollte ich mir den richtigen Weg aufschreiben. </div></div>");
-                await myNovel.ƒS.Text.print("<div class=novelPageContent> <div class=leftPage><b>WICHTIG UNBEDINGT MERKEN</b> <br><br> <br>⇽ 🠕 ⇾ 🠕 = ✧ <br><br><br> 5536 </div>  \
-                                    <div class=rightPage></div></div>");
+                            verletzt. Was auch immer mich verfolgt hat es ist weg, vielleicht auch tot? <br> \
+                            <br> <b>Sechster Eintrag: </b><br><br> Ich hatte Glück, habe eine alte Taschenlampe gefunden, die noch funktioniert, nun kann ich etwas \
+                             besser sehen, wo ich entlang gehe. Das sind definitiv keine Stollen, es muss eine Höhle oder etwas Ähnlicheres sein. <br> \
+                            <br> <b>Siebter Eintrag:</b> <br> <br> Ich habe einen Rucksack mit Konserven gefunden, wie kam der nur hier her? Das kann kein Zufall sein. Egal, Hauptsache, ich habe etwas zu essen.</div>  \
+                            <div class=rightPage> <b>Achter Eintrag:</b> <br> <br> Ich habe die Suche nach Andrea aufgegeben, ich kann ihn nirgendwo finden, wahrscheinlich hat sie es nicht geschafft. Was ist das nur gewesen?<br> \
+                            <br><b>Neunter Eintrag:</b><br><br> Ich habe in einem Haufen aus Schutt Batterien gefunden, damit hält meine Taschenlampe etwas länger, wie sind die Batterien hier gelandet?<br> \
+                            <br><b>Zehnter Eintrag:</b><br><br> Diese Gänge sind etwas irreführend, kommt mir vor wie in einem Labyrinth, wenn ich hier durch komme, sollte ich mir den richtigen Weg aufschreiben. </div></div>");
+                await myNovel.ƒS.Text.print("<div class=novelPageContent> <div class=leftPage><b>WICHTIG UNBEDINGT MERKEN</b> <br><br> Habe eine Art Labyrinth gefunden.\
+            Habe ewigkeiten gebaraucht bis ich den richtigen Weg gefunden habe. Die Markierunngen werden auf jeden Fall helfen. <br>⇽ 🠕 ⇾ 🠕 = ✧ <br><br>Die Nummer für den Mineneingang \
+            ich kann sie mir einfach nicht merken. Jetzt werde ich sie bestimmt nicht vergessen.<br><br> 5536 </div>  \
+                            <div class=rightPage></div></div>");
                 myNovel.ƒS.Speech.show();
                 await myNovel.ƒS.Speech.tell(myNovel.characters.ben, "Ja, genau, ich bin mitten in einem Labyrinth Papa hat den richtigen Weg im Tagebuch reingeschrieben. Aber ich bin ja schon mitten drin... ich muss wieder zum Anfang...");
                 await myNovel.ƒS.Speech.tell(myNovel.characters.narrator, "Ben geht das kleine Stück im Labyrinth zurück, was er in der Verfolgung unbewusst genommen hat.");
@@ -2345,8 +2435,9 @@ var myNovel;
                 console.log("Choice left");
                 await myNovel.ƒS.Speech.tell(myNovel.characters.ben, "Ich glaube, es war links. Ja, genau sollte doch richtig sein.");
                 await myNovel.ƒS.Speech.tell(myNovel.characters.ben, "Moment, ich sollte doch schon längst am Ende sein");
-                await myNovel.ƒS.Speech.tell(myNovel.characters.ben, "Oh nein, das ist eine Sackgasse... aber da liegt ja schon wieder ein Beutel mit Gold");
+                await myNovel.ƒS.Speech.tell(myNovel.characters.ben, "Oh nein, das ist eine Sackgasse... aber da liegt ja ein Beutel mit Gold, den nehme ich mit");
                 myNovel.dataForSave.coinScore += 20;
+                myNovel.ƒS.Inventory.add(myNovel.items.geldSack);
                 await myNovel.ƒS.Speech.tell(myNovel.characters.ben, "Okay, dann kann ich jetzt wieder alles zurücklaufen.");
                 //Gold in Inventaar
                 break;
@@ -3787,8 +3878,9 @@ var myNovel;
                                 <div class=rightPage> <b>Achter Eintrag:</b> <br> <br> Ich habe die Suche nach Andrea aufgegeben, ich kann ihn nirgendwo finden, wahrscheinlich hat sie es nicht geschafft. Was ist das nur gewesen?<br> \
                                 <br><b>Neunter Eintrag:</b><br><br> Ich habe in einem Haufen aus Schutt Batterien gefunden, damit hält meine Taschenlampe etwas länger, wie sind die Batterien hier gelandet?<br> \
                                 <br><b>Zehnter Eintrag:</b><br><br> Diese Gänge sind etwas irreführend, kommt mir vor wie in einem Labyrinth, wenn ich hier durch komme, sollte ich mir den richtigen Weg aufschreiben. </div></div>");
-                await myNovel.ƒS.Text.print("<div class=novelPageContent> <div class=leftPage><b>WICHTIG UNBEDINGT MERKEN</b> <br><br> Habe eine Art Labyrinth gefunden. Habe ewigkeiten gebaraucht bis ich den richtigen Weg gefunden habe. <br>⇽ 🠕 ⇾ 🠕 = ✧ <br>Ist die Nummer für den Mineneingang \
-                ich kann sie mir einfach nicht merken.<br><br> 5536 </div>  \
+                await myNovel.ƒS.Text.print("<div class=novelPageContent> <div class=leftPage><b>WICHTIG UNBEDINGT MERKEN</b> <br><br> Habe eine Art Labyrinth gefunden.\
+                Habe ewigkeiten gebaraucht bis ich den richtigen Weg gefunden habe. Die Markierunngen werden auf jeden Fall helfen. <br>⇽ 🠕 ⇾ 🠕 = ✧ <br><br>Die Nummer für den Mineneingang \
+                ich kann sie mir einfach nicht merken. Jetzt werde ich sie bestimmt nicht vergessen.<br><br> 5536 </div>  \
                                 <div class=rightPage></div></div>");
                 myNovel.ƒS.Speech.show();
                 await myNovel.ƒS.Character.hide(myNovel.characters.ben);
