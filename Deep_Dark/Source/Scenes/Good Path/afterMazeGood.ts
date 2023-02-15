@@ -5,7 +5,7 @@ namespace myNovel {
 
 
         await ƒS.Speech.hide();
-        await ƒS.Location.show(locations.chapterSix);
+        await ƒS.Location.show(locations.chapterSeven);
         await ƒS.update(3);
         await ƒS.Location.show(locations.caveTwo);
         await ƒS.update(3);

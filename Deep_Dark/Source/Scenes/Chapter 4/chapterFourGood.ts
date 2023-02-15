@@ -55,7 +55,7 @@ namespace myNovel {
                 await ƒS.Speech.tell(characters.ben, "Jetzt kann es Los gehen.");
                 await ƒS.Speech.tell(characters.narrator, "Ben geht in den dunklen Stollen.");
                 await ƒS.Character.hideAll();
-                await ƒS.Sound.fade(sound.sunday, 0, 1, true);
+                await ƒS.Sound.fade(sound.sunday, 0, 1, false);
                 return "chapterFourGoodTwo";
             } else {
                 // Code false
@@ -64,7 +64,7 @@ namespace myNovel {
                 await ƒS.Speech.tell(characters.ben, "Da oben ist eine Art Lüftungsschacht, da kann ich es mal versuchen.");
                 await ƒS.Speech.tell(characters.ben, "Ja, die Gitter sind auch schon verrostet, die kann ich einfach weg drücken.");
                 await ƒS.Speech.tell(characters.ben, "Ben drückt sich durch die Gitter des Lüftungsschachts. Plötzlich verliert er das Gleichgewicht und rutscht in den Lüftungsschacht hinein, nach ein paar Metern landet er unsanft in einem dunklen Raum.");
-                await ƒS.Sound.fade(sound.sunday, 0, 1, true);
+                await ƒS.Sound.fade(sound.sunday, 0, 1, false);
                 await ƒS.Character.hideAll();
                 return "chapterFourGoodTwo";
                 

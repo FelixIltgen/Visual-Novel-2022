@@ -11,6 +11,8 @@ namespace myNovel {
             await ƒS.Speech.tell(characters.ben, "Zum Glück habe ich meine Taschenlampe dabei. Ohne wäre es viel zu Dunkel.");
             await ƒS.Speech.tell(characters.narrator, "Ben holt seine Taschenlampe aus seinem Rucksack und macht sie an.");
             await ƒS.Character.show(characters.ben, characters.ben.pose.normal, newPositions.bottomright);
+            await ƒS.Sound.fade(sound.sunday, 0, 1, false);
+            await ƒS.Sound.play(sound.sunday, 0);
             await ƒS.Sound.fade(sound.cave, 0.4, 1, true);
             await ƒS.Location.show(locations.mineShaft);
             await ƒS.update(1);
@@ -59,8 +61,9 @@ namespace myNovel {
             await ƒS.Speech.tell(characters.narrator, "Ben quetscht sich durch die Balken und geht in den Stollen.");
             await ƒS.Character.hideAll();
             return "chapterFiveGoodOne";
-
+            
         } else {
+            await ƒS.Sound.fade(sound.sunday, 0, 1, false);
             return "gameOverChapterFourOne";
         }
     }

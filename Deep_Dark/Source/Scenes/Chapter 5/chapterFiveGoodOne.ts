@@ -21,8 +21,11 @@ namespace myNovel {
                 T0007: ""
             } 
         };
-        await ƒS.Location.show(locations.blanko);
-        await ƒS.update(transition.fade.duration, transition.leftFade.alpha, transition.leftFade.edge);
+        await ƒS.Speech.hide();
+        await ƒS.Location.show(locations.chapterfive);
+        await ƒS.update(3);
+        await ƒS.Speech.show();
+        await ƒS.update();
         await ƒS.Speech.tell(characters.ben, text.ben.T0001);
         await ƒS.Speech.tell(characters.narrator, text.narrator.T0001);
         await ƒS.Location.show(locations.mineShaftTwo);

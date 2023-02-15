@@ -13,6 +13,8 @@ namespace myNovel {
         await ƒS.Speech.tell(characters.ben, "Hä aber wie kommten wir aus dem Berg...??");
         await ƒS.Speech.tell(characters.trabajoEscribo, "HAHA das bleibt ein Geheimnis...");
         await ƒS.Speech.tell(characters.ben, "Schade...");
+        await ƒS.Character.show(characters.valentin, characters.valentin.pose.normal, newPositions.bottomcenter);
+        await ƒS.update(1);
         await ƒS.Speech.tell(characters.valentin, "Ben wenn wir wieder zuhause sind dürfen wir von den Sachen im Berg nichts erzählen sonst denken alle wir sind verrückt");
         await ƒS.Speech.tell(characters.ben, "Stimmt, es bleibt einfach unser großes Geheimnis.");
         await ƒS.Speech.tell(characters.valentin, "Genau so machen wir's. ");
