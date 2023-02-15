@@ -28,7 +28,7 @@ namespace myNovel {
         await ƒS.Speech.tell(characters.ben, text.ben.T0001);
 
         let choices = {
-            goMine:  "Zum Bergwerk gehe",
+            goMine:  "Zum Bergwerk gehen",
             goHole:   "Zum Loch gehen"
           };
 

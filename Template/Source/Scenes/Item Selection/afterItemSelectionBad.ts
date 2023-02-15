@@ -8,6 +8,8 @@ namespace myNovel {
         await ƒS.Speech.tell(characters.ben, "Schnell ich muss mich verstecken sonst findet sie mich.");
         await ƒS.Speech.tell(characters.maria, "Ben wo bist du ich habe dich doch gehört? Ich muss dir was wichtiges erzählen was mir passiert ist. ");
         await ƒS.Speech.tell(characters.ben, "Nein Hoffentlich sieht sich mich nicht.");
+        await ƒS.Character.show(characters.maria, characters.maria.pose.angry, newPositions.bottomleftMaria);
+        await ƒS.update();
         await ƒS.Speech.tell(characters.maria, "Heyy was machst du unterm Bett, komm raus...");
         await ƒS.Speech.tell(characters.narrator, "Ben krabbelt unter dem Bett hervor.");
         await ƒS.Speech.tell(characters.maria, "Was hast du da gemacht und wieso siehst du aus als würdest du auf eine Expedition aufbrechen? ");

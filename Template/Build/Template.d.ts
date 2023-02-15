@@ -395,6 +395,9 @@ declare namespace myNovel {
     function afterItemSelection(): ƒS.SceneReturn;
 }
 declare namespace myNovel {
+    function afterItemSelectionBad(): ƒS.SceneReturn;
+}
+declare namespace myNovel {
     function itemSelcetionDairy(): ƒS.SceneReturn;
 }
 declare namespace myNovel {

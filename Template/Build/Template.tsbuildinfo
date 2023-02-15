@@ -34,6 +34,7 @@
       "../Source/Scenes/Good Path/mazePartThree.ts",
       "../Source/Scenes/Good Path/mazePartTwo.ts",
       "../Source/Scenes/Item Selection/afterItemSelection.ts",
+      "../Source/Scenes/Item Selection/afterItemSelectionBad.ts",
       "../Source/Scenes/Item Selection/itemSelcetionDairy.ts",
       "../Source/Scenes/Item Selection/itemSelcetionnNoDairy.ts",
       "../Source/Scenes/Mid Path/lastMid.ts",
@@ -63,7 +64,7 @@
         },
         {
           "pos": 15,
-          "end": 302895,
+          "end": 306459,
           "kind": "text"
         }
       ],
@@ -91,7 +92,7 @@
       "sections": [
         {
           "pos": 0,
-          "end": 11562,
+          "end": 11649,
           "kind": "text"
         }
       ]

@@ -19,6 +19,7 @@ namespace myNovel {
         await ƒS.Sound.play(sound.monsterScream, 0.5, false);
         await ƒS.Speech.tell(characters.ben, "Was war das schon wieder....");
         await ƒS.Sound.play(sound.monsterScream2, 0.2, false);
+        await ƒS.Sound.fade(sound.emptyCave, 0, 1, true);
         await ƒS.Sound.fade(sound.run, 0.4, 1, true);
         await ƒS.Speech.tell(characters.ben, "Oh mein Gott, Papa hatte einfach Recht. Ich wusste ihm kann man immer vertrauen.");
         await ƒS.Speech.tell(characters.ben, "Ben hört wie dumpfe Schritte auf ihn zu kommen. ");

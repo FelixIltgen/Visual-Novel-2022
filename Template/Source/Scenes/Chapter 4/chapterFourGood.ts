@@ -65,6 +65,7 @@ namespace myNovel {
                 await ƒS.Speech.tell(characters.ben, "Ja, die Gitter sind auch schon verrostet, die kann ich einfach weg drücken.");
                 await ƒS.Speech.tell(characters.ben, "Ben drückt sich durch die Gitter des Lüftungsschachts. Plötzlich verliert er das Gleichgewicht und rutscht in den Lüftungsschacht hinein, nach ein paar Metern landet er unsanft in einem dunklen Raum.");
                 await ƒS.Sound.fade(sound.sunday, 0, 1, true);
+                await ƒS.Character.hideAll();
                 return "chapterFourGoodTwo";
                 
             }

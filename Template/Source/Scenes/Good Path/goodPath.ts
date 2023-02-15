@@ -39,7 +39,7 @@ namespace myNovel {
         await ƒS.update(transition.fade.duration, transition.leftFade.alpha, transition.leftFade.edge);
         await ƒS.Speech.tell(characters.ben, "Da drüben... das ist ja ein kleiner Fluss, perfekt.");
         await ƒS.Speech.tell(characters.ben, "Endliche habe ich wieder etwas zu trinken, ich bin fast verdurstet.");
-        await ƒS.Speech.tell(characters.narrator, "Ben trinkt aus dem.");
+        await ƒS.Speech.tell(characters.narrator, "Ben trinkt aus dem Fluss.");
         await ƒS.Speech.tell(characters.ben, "Perfekt, das habe ich jetzt echt gebraucht.");
         await ƒS.Sound.play(sound.demonicScream, 0.5, false);
         await ƒS.Speech.tell(characters.ben, "Was war das??");

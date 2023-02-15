@@ -28,7 +28,7 @@ namespace myNovel {
                 T0014: "Ne alles gut, ich gehe lieber alleine, am Ende passiert uns beiden noch etwas.",
                 T0015: "Mir passiert schon nichts, keine sorge.",
                 T0016: "Alles klar, bis dann. Wir sehen uns. ",
-                T0017: "Hey, und erzähl meiner Mutter nicht, wo ich bin, die macht sich sonst Sorgen.",
+                T0017: "Hey, und erzähl meiner Mutter nicht, wo ich bin, die macht sich sonst Sorgen."
 
             },
             paula: {
@@ -49,10 +49,16 @@ namespace myNovel {
                 T0015: "Alles klar."
             }
         };
+
+
+
+        await ƒS.Speech.hide();
         await ƒS.Location.show(locations.chapterThree);
-        await ƒS.update(2);
+        await ƒS.update(3);
         await ƒS.Location.show(locations.street);
         await ƒS.update(3);
+        await ƒS.Speech.show();
+        await ƒS.update();
         await ƒS.Speech.tell(characters.narrator, text.narrator.T0001);
         await ƒS.Character.show(characters.ben, characters.ben.pose.normal, newPositions.bottomright);
         await ƒS.update(1);

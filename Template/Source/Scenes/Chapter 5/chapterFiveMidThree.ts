@@ -91,6 +91,8 @@ namespace myNovel {
         await ƒS.Speech.tell(characters.ben, "Ist das Wasser?");
         await ƒS.Speech.tell(characters.narrator, "Ben folgt dem Geräusch. ");
         await ƒS.Location.show(locations.caveTwo);
+        await ƒS.Sound.fade(sound.cave, 0, 1, true);
+        await ƒS.Sound.fade(sound.emptyCave, 1, 0, true);
         await ƒS.update(transition.fade.duration, transition.fade.alpha, transition.fade.edge);
         await ƒS.Speech.tell(characters.ben, "Da ein Fluss, hier muss wohl so eine unterirdische Quelle sein.  ");
         await ƒS.Speech.tell(characters.narrator, "Ben trinkt aus dem Fluss.");

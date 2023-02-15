@@ -21,6 +21,7 @@ namespace myNovel {
         await ƒS.Speech.tell(characters.ben, "PAPA HALLOOO HÖRST DU MICH");
         await ƒS.Speech.tell(characters.ben, "HALLOOOOOO......");
         await ƒS.Sound.play(sound.demonicScream, 0.4, false);
+        await ƒS.Sound.fade(sound.emptyCave, 0, 1, true);
         await ƒS.Sound.fade(sound.run, 0.4, 1, true);
         await ƒS.Speech.tell(characters.ben, "Ohh nein.... nicht gut, es hat mich gehört oder?");
         await ƒS.Speech.tell(characters.ben, "Ahh es kommt immer näher. ");

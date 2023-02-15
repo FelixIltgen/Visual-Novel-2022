@@ -8,15 +8,17 @@ namespace myNovel {
         await ƒS.update(4);
         await ƒS.Speech.show();
         await ƒS.update();
+        await ƒS.Sound.fade(sound.sunday, 0, 1, true);
+        await ƒS.Location.show(locations.blanko);
+        await ƒS.update(1);
 
         if (ƒS.Inventory.getAmount(items.taschenlampe) == 1) {
-            await ƒS.Character.show(characters.ben, characters.ben.pose.normal, newPositions.bottomright);
-            await ƒS.update(1);
             await ƒS.Speech.tell(characters.ben, "Zum Glück habe ich meine Taschenlampe dabei. Ohne wäre es viel zu Dunkel.");
             await ƒS.Speech.tell(characters.narrator, "Ben holt seine Taschenlampe aus seinem Rucksack und macht sie an.");
             await ƒS.Location.show(locations.mineShaftTwo);
-            await ƒS.Sound.fade(sound.cave, 0.4, 1, true);
+            await ƒS.Character.show(characters.ben, characters.ben.pose.normal, newPositions.bottomright);
             await ƒS.update(1);
+            await ƒS.Sound.fade(sound.cave, 0.4, 1, true);
             await ƒS.Speech.tell(characters.ben, "Perfekt, dann kann es ja losgehen");
             await ƒS.Speech.tell(characters.narrator, "Ben macht sich auf den Weg und geht tiefer in den Stollen.");
             await ƒS.Speech.tell(characters.ben, "Wo bin ich eigentlich...? ich habe voll die Orientierung verloren...");

@@ -25,6 +25,7 @@ namespace myNovel {
         await ƒS.Speech.tell(characters.ben, "Scheiße, ich muss mich verstecken....");
         await ƒS.Speech.tell(characters.ben, "Ohh nein, hier kann ich mich nirgends verstecken, das war's er wird mich sehen...");
         await ƒS.Speech.tell(characters.narrator, "Heyyy, was machst du den da?!!!");
+        await ƒS.Character.hideAll();
         await ƒS.Location.show(locations.blanko);
         await ƒS.update(2);
         await ƒS.Location.show(locations.gameOver);

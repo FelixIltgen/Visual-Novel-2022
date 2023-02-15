@@ -20,7 +20,7 @@ namespace myNovel {
         await ƒS.Speech.tell(characters.trabajoEscribo, "JUNGSS wir haben das Ding, endlich haben wir es....");
         await ƒS.Speech.tell(characters.ben, "Was ist den hier los....");
         await ƒS.Speech.tell(characters.trabajoEscribo, "Uhhh wer bist du den kleiner...");
-        await ƒS.Speech.tell(characters.ben, "Ja wer seid du... was machst du hier. ");
+        await ƒS.Speech.tell(characters.ben, "Ja wer bist du... was machst du hier. ");
         await ƒS.Speech.tell(characters.trabajoEscribo, "Ich bin Kapitän Trabajo Escribo ich suche schon Ewigkeiten nach diesem Ding hier, es ist auf unserem Planeten ausgebrochen und hat es sich wohl hier auf diesem Planeten gemütlich gemacht.");
         await ƒS.Speech.tell(characters.ben, "Moment andere Planet was zum Teufel...?");
         await ƒS.Speech.tell(characters.trabajoEscribo, "JA, ich und meine Crew sind Weltraum Piraten...");
@@ -35,13 +35,13 @@ namespace myNovel {
         await ƒS.update(transition.fade.duration, transition.leftFade.alpha, transition.leftFade.edge);
         await ƒS.Character.show(characters.trabajoEscribo, characters.trabajoEscribo.pose.normal, newPositions.bottomleft);
         await ƒS.update(1);
-        await ƒS.Speech.tell(characters.trabajoEscribo, "Willkommen auf der HMV Absturz, das ist unser gutes Schiff, wir sind leider bei unserer Landung abgestürzt und hier unten gelandet...");
+        await ƒS.Character.show(characters.ben, characters.ben.pose.normal, newPositions.bottomright);
+        await ƒS.update(1);
+        await ƒS.Speech.tell(characters.trabajoEscribo, "Willkommen auf der HMS Absturz, das ist unser gutes Schiff, wir sind leider bei unserer Landung abgestürzt und hier unten gelandet...");
         await ƒS.Speech.tell(characters.ben, "Dann habe ich wohl doch nicht geträumt...");
         await ƒS.Character.show(characters.valentin, characters.valentin.pose.normal, newPositions.bottomcenter);
         await ƒS.update(1);
         await ƒS.Speech.tell(characters.valentin, "BEEENNN?!?!?!!");
-        await ƒS.Character.show(characters.ben, characters.ben.pose.normal, newPositions.bottomright);
-        await ƒS.update(1);
         await ƒS.Speech.tell(characters.ben, "PAPA????....Ohh mein Gottt du lebst noch.....");
         await ƒS.Speech.tell(characters.valentin, "Ja....ich habe Hilfe von den Piraten bekommen ohne sie hätte ich es nicht geschafft. Was machst du hier?");
         await ƒS.Speech.tell(characters.ben, "Ich habe angefangen dich zu suchen weil alle aufgegeben haben. ");

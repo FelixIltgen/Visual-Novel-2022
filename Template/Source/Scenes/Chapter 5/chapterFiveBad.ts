@@ -11,7 +11,7 @@ namespace myNovel {
         await ƒS.Speech.tell(characters.narrator, "Ben entscheidet sich für den weg nach rechts.");
         await ƒS.Speech.tell(characters.ben, "Okay mal schauen was ich hier so finde.");
         await ƒS.Speech.tell(characters.narrator, "Ben folgt dem langen geraden Stollen.");
-        //Stein geräusch
+        await ƒS.Sound.play(sound.fallingRocks, 0.4, false);
         await ƒS.Speech.tell(characters.ben, "Oh nein, der Stollen bricht ein. Schnell weg...");
         await ƒS.Speech.tell(characters.ben, "Hust.... hust....");
         await ƒS.Speech.tell(characters.ben, "Woah das war knapp...");
@@ -28,9 +28,9 @@ namespace myNovel {
             await ƒS.Speech.tell(characters.ben, "Ich kann mich zumindest mit dem Seil absichern, dann stürze ich nicht sofort ab.");
             await ƒS.Speech.tell(characters.narrator, "Ben macht eine Sicherung, damit er sicher über die Brücke gehen kann.");
             await ƒS.Speech.tell(characters.ben, "Woah das ist so wacklig und unsicher, hoffentlich halten die Holzbalken.");
-            //knackendes Holz geräusch
+            await ƒS.Sound.play(sound.creakingWood, 0.4, false);
             await ƒS.Speech.tell(characters.ben, "Ohhh das war keine so gute Idee....");
-            //Brechendes Holz
+            await ƒS.Sound.play(sound.breakingWood, 0.4, false);
             await ƒS.Speech.tell(characters.ben, "Woah scheiße, die Brücke bricht durch....");
             await ƒS.Speech.tell(characters.narrator, "Die Balken der Brücke haben das Gewicht von Ben nicht ausgehalten und sind durchgebrochen, aber die Sicherung von ihm hält und er stürzt nicht in die Tiefe.");
             await ƒS.Speech.tell(characters.ben, "Ja, zum Glück habe ich das Seil, sonst hätte ich jetzt ein Problem");
@@ -60,7 +60,7 @@ namespace myNovel {
         await ƒS.Speech.tell(characters.narrator, "Ben schaut sich um und findet etwas versteckt eine Luke.");
         await ƒS.Speech.tell(characters.ben, "Hmm... wo die wohl hinführt? Ich schau mal nach, alles ist besser wie wieder auf diese Brücke zu gehen.");
         await ƒS.Speech.tell(characters.ben, "Boah, die geht ja richtig schwer auf...");
-        //Tür geräusch
+        await ƒS.Sound.play(sound.creakingWood, 0.4, false);
         await ƒS.Speech.tell(characters.ben, "Hm... ein Schacht mit einer Leiter sieht eng aus...");
         await ƒS.Speech.tell(characters.ben, "Egal runter da..");
         await ƒS.Location.show(locations.caveTwo);
@@ -69,11 +69,8 @@ namespace myNovel {
         await ƒS.Speech.tell(characters.ben, "Wow okay das muss wohl das Rauschen gewesen sein wo ich die ganze Zeit gehört habe.");
         await ƒS.Speech.tell(characters.narrator, "Ben trinkt aus dem Fluss.");
         await ƒS.Speech.tell(characters.ben, "Perfekt, das habe ich jetzt echt gebraucht. ");
-        //Lauter Schrei
+        await ƒS.Sound.play(sound.demonicScream, 0.4, false);
         await ƒS.Speech.tell(characters.ben, "Was war das??");
-        await ƒS.Speech.tell(characters.ben, "");
-        
-
-
+       
     }
 }

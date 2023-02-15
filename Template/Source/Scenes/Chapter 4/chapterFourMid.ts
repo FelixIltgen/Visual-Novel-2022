@@ -55,39 +55,39 @@ namespace myNovel {
                             //sound ast
                             await ƒS.Character.hide(characters.ben);
                             await ƒS.Character.show(characters.ben, characters.ben.pose.ohman, newPositions.bottomright);
-                            await ƒS.update(1);
+                            await ƒS.update();
                             await ƒS.Speech.tell(characters.ben, "Woooow zum Glück habe ich mich abgesichert, sonst währe ich jetzt abgestürzt.");
                             await ƒS.Speech.tell(characters.narrator, "Ben seilt sich auf die andere Seite der Absperrung ab.");
                             await ƒS.Character.hide(characters.ben);
                             await ƒS.Character.show(characters.ben, characters.ben.pose.sad, newPositions.bottomright);
-                            await ƒS.update(1);
+                            await ƒS.update();
                             await ƒS.Speech.tell(characters.ben, "Schade, das Seil hätte ich gerne nochmal verwendet, aber ich kann es nicht vom Baum lösen.");
                             //Seil entfernen
                             await ƒS.Character.hide(characters.ben);
                             await ƒS.Character.show(characters.ben, characters.ben.pose.normal, newPositions.bottomright);
-                            await ƒS.update(1);
+                            await ƒS.update();
                             await ƒS.Speech.tell(characters.ben, "Egal auf zum Loch");
                             await ƒS.Speech.tell(characters.narrator, "Ben geht Richtung Loch.");
             
                         } else {
                             await ƒS.Character.hide(characters.ben);
                             await ƒS.Character.show(characters.ben, characters.ben.pose.sad, newPositions.bottomright);
-                            await ƒS.update(1);
+                            await ƒS.update();
                             await ƒS.Speech.tell(characters.ben, "Schade hätte ich ein Seil mitgenommen, könnte ich mich jetzt absichern.");
                             await ƒS.Speech.tell(characters.ben, "Jetzt muss ich halt etwas vorsichtiger sein.");
                             await ƒS.Character.hide(characters.ben);
                             await ƒS.Character.show(characters.ben, characters.ben.pose.normal, newPositions.bottomright);
-                            await ƒS.update(1);
+                            await ƒS.update();
                             await ƒS.Speech.tell(characters.narrator, "Ben klettert weiter und beginnt vorsichtig über den Ast, der über die Absperrung ragt, zu gehen.");
                             //ast sound
                             await ƒS.Character.hide(characters.ben);
                             await ƒS.Character.show(characters.ben, characters.ben.pose.ohman, newPositions.bottomright);
-                            await ƒS.update(1);
+                            await ƒS.update();
                             await ƒS.Speech.tell(characters.ben, "Auuu... so eine Scheiße, jetzt ist der Ast durchgebrochen, zum Glück bin ich auf der anderen Seite der Absperrung gelandet.");
                             await ƒS.Speech.tell(characters.ben, "Hoffentlich hat mich keiner gehört. Naja egal jetzt schnell zum Loch.");
                             await ƒS.Character.hide(characters.ben);
                             await ƒS.Character.show(characters.ben, characters.ben.pose.normal, newPositions.bottomright);
-                            await ƒS.update(1);
+                            await ƒS.update();
                             await ƒS.Speech.tell(characters.narrator, "Ben geht Richtung Loch. ");
                         }
                         

@@ -15,7 +15,7 @@ namespace myNovel {
 
         let choices = {
             left: "Nach links gehen",
-            straight: "Nach rechts gehen"
+            straight: "Gerade aus gehen"
         };
 
         let dialogueElementTwo = await ƒS.Menu.getInput(choices, "choicesCSSClass");

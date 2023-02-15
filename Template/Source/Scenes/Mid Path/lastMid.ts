@@ -10,6 +10,8 @@ namespace myNovel {
         await ƒS.Character.show(characters.maria, characters.maria.pose.neutral, newPositions.bottomleftMaria);
         await ƒS.update(1);
         await ƒS.Speech.tell(characters.maria, "BEEEN!!?!?! WO bist du...");
+        await ƒS.Character.show(characters.ben, characters.ben.pose.normal, newPositions.bottomright);
+        await ƒS.update(1);
         await ƒS.Speech.tell(characters.ben, "Mama, ich bin irgendwo in der Mine oder in einer Höhle, aber ich finde den Weg nicht mehr aus der Höhle.");
         await ƒS.Speech.tell(characters.maria, "OMG was hast du nur gemacht ich rufe die Rettungskräfte wir holen dich da schon raus....");
         await ƒS.Speech.tell(characters.ben, "Okay ich warte hier....");

@@ -11,7 +11,7 @@ namespace myNovel {
             ben: {
                 T0001: "Okay, jetzt sollte ich alles haben, dann kann es jetzt ja losgehen. Hoffentlich ist Mama noch nicht zurück.",
                 T0002: "Puuhh sie ist noch nicht Zuhause... perfekt.",
-                T0003: "Soll ich Mama doch noch eine kurze Nachricht schreiben?",
+                T0003: "Soll ich Mama doch noch eine kurze Nachricht schreiben?"
             }
         };
 
