@@ -16,15 +16,14 @@ namespace myNovel {
 
         await ƒS.Speech.tell(characters.ben, "Wow hatte Papa echt recht mit dem Monster aus dem Tagebuch. Ich habe echt gedacht, dass er halluziniert, aber vielleicht liegt es auch an mir.");
         await ƒS.Speech.tell(characters.ben, "Ben folgt dem Flussverlauf.");
-        //Monster geräusche
+        await ƒS.Sound.play(sound.sunday, 0.5, false);
         await ƒS.Speech.tell(characters.ben, "Was war das schon wieder....");
-        //Monnter schrei
+        await ƒS.Sound.play(sound.monsterScream, 0.2, false);
         await ƒS.Speech.tell(characters.ben, "Oh mein Gott, Papa hatte einfach Recht. Ich wusste ihm kann man immer vertrauen.");
         await ƒS.Speech.tell(characters.ben, "Ben hört wie dumpfe Schritte auf ihn zu kommen. ");
-        //spanende Musik
+        await ƒS.Sound.play(sound.run, 0.1, false);
         await ƒS.Speech.tell(characters.ben, "Oh nein, das ist die gleiche Situation, wie Papa im Tagebuch beschrieben hat... was soll ich tun?");
-        await ƒS.Speech.tell(characters.ben, "");
-
+        
         let choice = {
             hide: "Verstecken",
             run: "Weg rennen"
@@ -42,10 +41,10 @@ namespace myNovel {
                 await ƒS.Speech.tell(characters.narrator, "Ben folgt weiter dem Flussverlauf in der Hoffnung, einen guten Platz zu finden, wo er sich verstecken kann.");
                 await ƒS.Speech.tell(characters.ben, "Da ist ein Ruderboot, wenn ich es umdrehe, kann ich mich darunter verstecken.");
                 await ƒS.Speech.tell(characters.narrator, "Ben dreht leise das schwere Boot um und versteckt sich darunter. Er hört, wie die Fußstapfen direkt neben dem Boot stehen bleiben");
-                //Moster geräusche
+                await ƒS.Sound.play(sound.monsterScream2, 0.3, false);
                 await ƒS.Speech.tell(characters.narrator, "Das unbekannte Ding kommt näher Ben hält sich die Hände vor das Gesicht, damit sein Atem ihn nicht verrät.");
                 await ƒS.Speech.tell(characters.ben, "Bitte bitte nicht.....");
-                //Geräusche
+                await ƒS.Sound.play(sound.monsterScream, 0.3, false);
                 await ƒS.Speech.tell(characters.ben, "Ich glaub es geht weg...");
                 await ƒS.Speech.tell(characters.ben, "Ja, die Schritte werden leiser... ein Glück... wo bin ich hier rein geraten. Ben klettert unter dem Boot hervor und steht auf okay es kann weiter gehen.");
                 await ƒS.Speech.tell(characters.narrator, "Ben folgt weiter dem Flussverlauf, plötzlich fällt ihm etwas auf.");
@@ -101,7 +100,7 @@ namespace myNovel {
                 console.log("Choice run");
                 await ƒS.Speech.tell(characters.ben, "Bloß weg hier");
                 await ƒS.Speech.tell(characters.narrator, "Ben versucht dem Unbekannten etwas zu entkommen und rennt los.");
-                //Schrei
+                await ƒS.Sound.play(sound.demonicScream, 0.4, false);
                 await ƒS.Speech.tell(characters.ben, "Scheiße, es hat mich gehört...");
                 await ƒS.Speech.tell(characters.narrator, "Ben merkt, wie die dumpfen Schritte näher kommen und lauter werden.");
                 await ƒS.Speech.tell(characters.ben, "Nein, nein, es kommt näher, ich muss irgendwas machen....");
@@ -110,10 +109,10 @@ namespace myNovel {
                 await ƒS.Speech.tell(characters.ben, "Da vorne ist eine Abbiegung schnell, vielleicht komme ich so aus der Sichtweite.");
                 await ƒS.Speech.tell(characters.narrator, "Ben folgt der Abbiegung und danach direkt noch eine in einer dunklen Ecke findet er eine kleine Nische, wo er sich rein quetscht und versteckt.");
                 await ƒS.Speech.tell(characters.ben, "Hoffentlich findet mich das Ding hier nicht...");
-                //Geräusche
+                await ƒS.Sound.play(sound.monsterScream, 0.3, false);
                 await ƒS.Speech.tell(characters.narrator, "Das unbekannte Ding kommt näher Ben hält sich die Hände vor das Gesicht, damit sein Atem ihn nicht verrät.");
                 await ƒS.Speech.tell(characters.ben, "Bitt bitte nicht.....");
-                //Geräusche
+                await ƒS.Sound.play(sound.monsterScream2, 0.3, false);
                 await ƒS.Speech.tell(characters.ben, "Ich glaube, es geht weg...");
                 await ƒS.Speech.tell(characters.ben, "Ja die Schritte werden leiser... ein Glück... wo bin ich hier rein geraten. ");
                 await ƒS.Speech.tell(characters.ben, "Ben rafft sich wieder auf und versucht sich zu orientieren.");

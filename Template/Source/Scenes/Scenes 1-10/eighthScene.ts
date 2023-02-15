@@ -26,14 +26,18 @@ namespace myNovel {
             }
         };
         
-        //wecker sound
+        
         await ƒS.Location.show(locations.chapterTwo);
         await ƒS.update(2);
         await ƒS.Location.show(locations.kidRoom);
+        await ƒS.Sound.play(sound.alarm, 0.3, false);
         await ƒS.update(3);
-        //musik sound
-
+        
+        
+        
         await ƒS.Character.show(characters.ben, characters.ben.pose.normal, newPositions.bottomright);
+        await ƒS.Sound.play(sound.sunday, 0.5, false);
+        await ƒS.update(3);
         await ƒS.update(1);
         await ƒS.Speech.tell(characters.ben, text.ben.T0001);
         await ƒS.Speech.tell(characters.narrator, text.narrator.T0001);

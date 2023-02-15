@@ -52,6 +52,7 @@ namespace myNovel {
 
                             await ƒS.Speech.tell(characters.ben, "Moment...ich habe doch ein Seil dabei, damit kann ich mich sichern, dann stürze ich nicht ab, wenn der Ast bricht.");
                             await ƒS.Speech.tell(characters.narrator, "Ben sichert sich mit dem Seil ab und klettert weiter.");
+                            //sound ast
                             await ƒS.Character.hide(characters.ben);
                             await ƒS.Character.show(characters.ben, characters.ben.pose.ohman, newPositions.bottomright);
                             await ƒS.update(1);

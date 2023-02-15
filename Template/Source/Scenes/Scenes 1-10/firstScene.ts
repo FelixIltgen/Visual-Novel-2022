@@ -40,5 +40,6 @@ namespace myNovel {
         await ƒS.Speech.tell(characters.ben, text.ben.T0001);
         await ƒS.Speech.tell(characters.narrator, text.narrator.T0001);
         await ƒS.Character.hideAll();
+        await ƒS.Sound.fade(sound.sunday, 0, true);
       }
 }

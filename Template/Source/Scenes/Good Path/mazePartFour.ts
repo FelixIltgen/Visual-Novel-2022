@@ -20,16 +20,16 @@ namespace myNovel {
         await ƒS.Speech.tell(characters.ben, "Vielleicht hört er mich ja.");
         await ƒS.Speech.tell(characters.ben, "PAPA HALLOOO HÖRST DU MICH");
         await ƒS.Speech.tell(characters.ben, "HALLOOOOOO......");
-        //Schrei
+        await ƒS.Sound.play(sound.demonicScream, 0.4, false);
         await ƒS.Speech.tell(characters.ben, "Ohh nein.... nicht gut, es hat mich gehört oder?");
         await ƒS.Speech.tell(characters.ben, "Ahh es kommt immer näher. ");
         await ƒS.Speech.tell(characters.ben, "Ich höre es hinter mir....");
         await ƒS.Speech.tell(characters.ben, "Bloß weg hier ");
         await ƒS.Speech.tell(characters.narrator, "Ben versucht dem Unbekannten zu entkommen und rennt los.");
         await ƒS.Speech.tell(characters.ben, "Scheiße Sackgasse, aber ich glaube ich habe es abgehängt. ");
-        //Lauter Schrei
+        await ƒS.Sound.play(sound.monsterScream, 0.6, false);
         await ƒS.Speech.tell(characters.ben, "Ahhhhhhhhhhhhhh.........NEINNNNNNN");
-        //Schuss
+        await ƒS.Sound.play(sound.pistolShot, 0.4, false);
         await ƒS.Character.hideAll();
     }
 }

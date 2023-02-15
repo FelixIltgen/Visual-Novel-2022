@@ -59,22 +59,25 @@ namespace myNovel {
                 await ƒS.update();
                 await ƒS.Speech.tell(characters.maria, text.maria.T0002);
                 await ƒS.Speech.tell(characters.ben, text.ben.T0002);
+                await ƒS.Character.animate(characters.ben, characters.ben.pose.normal, rightFade());
                 await ƒS.Character.hide(characters.ben);
+                await ƒS.Character.animate(characters.ben, characters.ben.pose.normal, show());
                 await ƒS.update();
                 await ƒS.Character.hideAll();
                 await ƒS.Speech.clear();
 
                 await ƒS.Location.show(locations.kidRoom);
                 await ƒS.update(transition.fade.duration, transition.leftFade.alpha, transition.leftFade.edge);
-
                 await ƒS.Character.show(characters.ben, characters.ben.pose.normal, newPositions.bottomright);
                 await ƒS.update(1);
                 await ƒS.Character.show(characters.maria, characters.maria.pose.sad, newPositions.bottomleftMaria);
                 await ƒS.update(1);
                 await ƒS.Speech.tell(characters.maria, text.maria.T0003);
                 await ƒS.Speech.tell(characters.ben, text.ben.T0003);
+                await ƒS.Character.animate(characters.maria, characters.maria.pose.sad, leftFade());
+                await ƒS.Character.animate(characters.maria, characters.maria.pose.sad, show());
                 await ƒS.Character.hide(characters.maria);
-                await ƒS.update(1);
+                await ƒS.update(0);
                 await ƒS.Speech.tell(characters.ben, text.ben.T0004);
                 await ƒS.Speech.tell(characters.ben, text.ben.T0005);
                 await ƒS.Speech.tell(characters.narrator, text.narrator.T0002);
@@ -90,14 +93,14 @@ namespace myNovel {
                 await ƒS.update(0);
                 await ƒS.Speech.tell(characters.ben, text.ben.T0007);
                 await ƒS.Speech.tell(characters.ben, text.ben.T0008);
-                //Sound absturz
+                await ƒS.Sound.play(sound.fall, 0.5, false);
                 await ƒS.Character.hide(characters.ben);
                 await ƒS.update();
                 await ƒS.Character.show(characters.ben, characters.ben.pose.normal, newPositions.bottomright);
                 await ƒS.update(0);
                 await ƒS.Speech.tell(characters.narrator, text.narrator.T0004);
                 await ƒS.Speech.tell(characters.ben, text.ben.T0009);
-                //Sound einschlag
+                await ƒS.Sound.play(sound.impact, 0.1, false);
                 await ƒS.Speech.tell(characters.ben, text.ben.T0010);
                 await ƒS.Character.hide(characters.ben);
                 await ƒS.update();
@@ -112,7 +115,9 @@ namespace myNovel {
                 await ƒS.Character.show(characters.maria, characters.maria.pose.pleased, newPositions.bottomleftMaria);
                 await ƒS.update();
                 await ƒS.Speech.tell(characters.maria, text.maria.T0004);
-                await ƒS.Speech.tell(characters.ben, text.ben.T0003);
+                await ƒS.Speech.tell(characters.ben, text.ben.T0002);
+                await ƒS.Character.animate(characters.ben, characters.ben.pose.normal, rightFade());
+                await ƒS.Character.animate(characters.ben, characters.ben.pose.normal, show());
                 await ƒS.Character.hide(characters.ben);
                 await ƒS.update();
                 await ƒS.Character.hideAll();
@@ -135,14 +140,14 @@ namespace myNovel {
                 await ƒS.Character.show(characters.ben, characters.ben.pose.thinking, newPositions.bottomright);
                 await ƒS.update(0);
                 await ƒS.Speech.tell(characters.narrator, text.narrator.T0005);
-                //Sound absturz
+                await ƒS.Sound.play(sound.fall, 0.5, false);
                 await ƒS.Character.hide(characters.ben);
                 await ƒS.update();
                 await ƒS.Character.show(characters.ben, characters.ben.pose.normal, newPositions.bottomright);
                 await ƒS.update(0);
                 await ƒS.Speech.tell(characters.narrator, text.narrator.T0004);
                 await ƒS.Speech.tell(characters.ben, text.ben.T0009);
-                //Sound einschlag
+                await ƒS.Sound.play(sound.impact, 0.1, false);
                 await ƒS.Speech.tell(characters.ben, text.ben.T0010);
                 await ƒS.Character.hide(characters.ben);
                 await ƒS.update();

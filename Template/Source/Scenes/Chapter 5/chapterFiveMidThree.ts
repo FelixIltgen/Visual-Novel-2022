@@ -67,13 +67,13 @@ namespace myNovel {
                         await ƒS.Speech.tell(characters.ben, "Da da kommt doch so ein kleiner Fluss, das ist meine letzte Möglichkeit");
                         await ƒS.Speech.tell(characters.ben, "3,2,1...");
                         await ƒS.Speech.tell(characters.narrator, "Ben springt ab und versucht in dem nahegelegenen Fluss zu landen.");
-                        //Wassersound
+                        await ƒS.Sound.play(sound.splash, 0.4, false);
                         await ƒS.Speech.tell(characters.ben, "Boah, ist das kalt schnell raus hier...");
                         await ƒS.Speech.tell(characters.narrator, "Ben schwimmt zum Ufer und klettert zurück ins trockene.");
                         await ƒS.Speech.tell(characters.ben, "Ich muss irgendwie an trockene Sachen kommen, aber wie, hier unten werde ich im Leben nicht finden, was soll ich jetzt tun...");
                         await ƒS.Speech.tell(characters.ben, "Das war alles eine riesen Fehlaktion, wieso habe ich mich dazu entschlossen, das zu machen...");
                         await ƒS.Speech.tell(characters.ben, "Und wie komme ich hier wieder raus, ich werde nie einen Weg finden, heile hier raus zu kommen....");
-                        //Lauter Schrei
+                        await ƒS.Sound.play(sound.demonicScream, 0.6, false);
                         await ƒS.Speech.tell(characters.ben, "Was war das??");
                         return "chapterFiveBad";
                 }
@@ -95,6 +95,7 @@ namespace myNovel {
         await ƒS.Speech.tell(characters.ben, "Da ein Fluss, hier muss wohl so eine unterirdische Quelle sein.  ");
         await ƒS.Speech.tell(characters.narrator, "Ben trinkt aus dem Fluss.");
         await ƒS.Speech.tell(characters.ben, "Perfekt das habe ich jetzt echt gebraucht. ");
+        await ƒS.Sound.play(sound.demonicScream, 0.5, false);
         await ƒS.Speech.tell(characters.ben, "Was war das??");
         await ƒS.Character.hideAll();
     }

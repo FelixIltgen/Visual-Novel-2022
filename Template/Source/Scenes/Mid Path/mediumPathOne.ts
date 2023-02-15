@@ -16,9 +16,9 @@ namespace myNovel {
             await ƒS.update();
             await ƒS.Speech.tell(characters.ben, "Wow hatte Papa echt recht mit dem Monster aus dem Tagebuch. Ich habe echt gedacht, dass er halluziniert, aber vielleicht liegt es auch an mir.");
             await ƒS.Speech.tell(characters.narrator, "Ben folgt dem Fluss verlauf.");
-            //Monster geräusche
+            await ƒS.Sound.play(sound.monsterScream, 0.4, false);
             await ƒS.Speech.tell(characters.ben, "Was war das schon wieder....");
-            //Lauter schrei
+            await ƒS.Sound.play(sound.monsterScream2, 0.4, false);
             await ƒS.Speech.tell(characters.ben, "Oh mein Gott Papa hatte einfach Recht ich wusste ihm kann man immer vertrauen. ");
             await ƒS.Speech.tell(characters.ben, "Ahh es kommt immer näher.");
             await ƒS.Speech.tell(characters.ben, "Ich höre es hinter mir....");
@@ -28,9 +28,9 @@ namespace myNovel {
         } else {
             await ƒS.Speech.tell(characters.ben, "Als ob hier unten echt Tiere leben, die so laut sind. Hoffentlich ist es kein Bär oder so. Ich glaube, es ist besser, wenn ich jetzt etwas Leiser bin.");
             await ƒS.Speech.tell(characters.narrator, "Ben folgt dem Fluss verlauf. ");
-            //Lautes Geräusch
+            await ƒS.Sound.play(sound.monsterScream, 0.4, false);
             await ƒS.Speech.tell(characters.ben, "Was war das schon wieder....");
-            //Schrei
+            await ƒS.Sound.play(sound.monsterScream2, 0.4, false);
             await ƒS.Speech.tell(characters.ben, "Oh mein Gott was ist das für ein Ding");
             await ƒS.Speech.tell(characters.ben, "Ahh es kommt immer näher.");
             await ƒS.Speech.tell(characters.ben, "Ich höre es hinter mir....");
@@ -48,7 +48,7 @@ namespace myNovel {
         await ƒS.Speech.tell(characters.narrator, "Ja, es hat funktioniert, aber ich brauche immer noch ein Versteck, so lange wird der Rucksack das Ding nicht aufhalten.");
         await ƒS.Speech.tell(characters.ben, "Da könnte ich mich verstecken");
         await ƒS.Speech.tell(characters.narrator, "Ben quetscht sich in die Felsspalte und versucht so leise wie möglich zu sein. ");
-        //Schrei
+        await ƒS.Sound.play(sound.demonicScream, 0.1, false);
         await ƒS.Speech.tell(characters.ben, "Es ist relativ weit Weg....");
         await ƒS.Speech.tell(characters.ben, "Ohhh ne, es kommt doch in meine Richtung.");
         await ƒS.Speech.tell(characters.narrator, "Ben merkt, wie die dumpfen Schritte immer näher kommen.");

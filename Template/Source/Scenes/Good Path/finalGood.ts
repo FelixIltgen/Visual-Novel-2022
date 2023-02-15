@@ -22,6 +22,7 @@ namespace myNovel {
         await ƒS.Location.show(locations.blanko);
         await ƒS.update(4);
         await ƒS.Location.show(locations.blanko);
+        await ƒS.Sound.play(sound.sundayNoMusic, 0.5, false);
         await ƒS.update(4);
         await ƒS.Speech.show();
         await ƒS.update();

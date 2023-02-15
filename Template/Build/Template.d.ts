@@ -18,7 +18,23 @@ declare namespace myNovel {
         emptyCave: string;
         run: string;
         sunday: string;
+        sundayNoMusic: string;
         closingGate: string;
+        breakingWood: string;
+        creakingWood: string;
+        demonicScream: string;
+        droppingRocks: string;
+        fall: string;
+        fallingRocks: string;
+        impact: string;
+        jackhammer: string;
+        monsterScream: string;
+        monsterScream2: string;
+        pistolShot: string;
+        splash: string;
+        vibration: string;
+        alarm: string;
+        explosion: string;
     };
     let locations: {
         kidRoom: {
@@ -258,6 +274,9 @@ declare namespace myNovel {
         rightout: ƒ.Vector2;
         leftout: ƒ.Vector2;
     };
+    function rightFade(): ƒS.AnimationDefinition;
+    function leftFade(): ƒS.AnimationDefinition;
+    function show(): ƒS.AnimationDefinition;
     let dataForSave: {
         nameProtagonist: string;
         coinScore: number;

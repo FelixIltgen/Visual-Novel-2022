@@ -41,7 +41,7 @@ namespace myNovel {
         await ƒS.Speech.tell(characters.ben, "Endliche habe ich wieder etwas zu trinken, ich bin fast verdurstet.");
         await ƒS.Speech.tell(characters.narrator, "Ben trinkt aus dem.");
         await ƒS.Speech.tell(characters.ben, "Perfekt, das habe ich jetzt echt gebraucht.");
-        //scream audio
+        await ƒS.Sound.play(sound.demonicScream, 0.5, false);
         await ƒS.Speech.tell(characters.ben, "Was war das??");
         await ƒS.Character.hideAll();
     }

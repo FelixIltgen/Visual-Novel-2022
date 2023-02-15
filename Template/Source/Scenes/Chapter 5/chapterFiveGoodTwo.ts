@@ -33,7 +33,7 @@ namespace myNovel {
             await ƒS.Character.show(characters.ben, characters.ben.pose.thinking, newPositions.bottomright);
             await ƒS.update();
             await ƒS.Speech.tell(characters.ben, "Also irgendwie fühlt sich der Boden hier komisch an.");
-            //steine Geräusch
+            await ƒS.Sound.play(sound.fallingRocks, 0.3, false);
             await ƒS.Speech.tell(characters.narrator, "Unter Ben bricht plötzlich der Boden ein ");
             await ƒS.Character.hide(characters.ben);
             await ƒS.Character.show(characters.ben, characters.ben.pose.ohman, newPositions.bottomright);

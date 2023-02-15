@@ -21,7 +21,7 @@ namespace myNovel {
     emptyCave: "./Assets/Music/emptyCave.mp3",
     run: "./Assets/Music/run.mp3",
     sunday: "./Assets/Music/sunday.mp3",
-    sundayNoMusic: "./Assets/Music/doorClosing.mp3",
+    sundayNoMusic: "./Assets/Music/sundayNoMusic.mp3",
     // SFX
     closingGate: "./Assets/Sounds/doorClosing.mp3",
     breakingWood: "./Assets/Sounds/breakingWood.mp3",
@@ -37,7 +37,8 @@ namespace myNovel {
     pistolShot: "./Assets/Sounds/pistolShot.mp3",
     splash: "./Assets/Sounds/splash.mp3",
     vibration: "./Assets/Sounds/vibration.mp3",
-    alarm: "./Assets/Sounds/alarm.mp3"
+    alarm: "./Assets/Sounds/alarm.mp3",
+    explosion: "./Assets/Sounds/explosion.mp3"
   };
 
   export let locations = {
@@ -285,6 +286,30 @@ namespace myNovel {
     leftout: new FudgeStory.Position(-2470, -540)
   };
 
+  export function rightFade(): ƒS.AnimationDefinition {
+    return {
+      start: { translation: ƒS.positions.bottomleft, color: ƒS.Color.CSS("", 1) },
+      end: { translation: ƒS.positions.bottomright, color: ƒS.Color.CSS("", 0)},
+      duration: 2,
+      playmode: ƒS.ANIMATION_PLAYMODE.PLAYONCE
+    };
+  }
+  export function leftFade(): ƒS.AnimationDefinition {
+    return {
+      start: { translation: ƒS.positions.bottomright, color: ƒS.Color.CSS("", 1) },
+      end: { translation: ƒS.positions.bottomleft, color: ƒS.Color.CSS("", 0) },
+      duration: 2,
+      playmode: ƒS.ANIMATION_PLAYMODE.PLAYONCE
+    };
+  }
+  export function show(): ƒS.AnimationDefinition {
+    return {
+      start: {  color: ƒS.Color.CSS("", 1) },
+      end: {  color: ƒS.Color.CSS("", 1) },
+      duration: 0.5,
+      playmode: ƒS.ANIMATION_PLAYMODE.PLAYONCE
+    };
+  }
 
 
   export let dataForSave = {
@@ -296,6 +321,8 @@ namespace myNovel {
     itemsFour: "",
     itemsFive: ""
   };
+
+
 
   //Menü
 
@@ -371,7 +398,7 @@ namespace myNovel {
       //{ scene: fourthScene, name: "Fourth scene"},
       //{ scene: fifthScene, name: "Fifth scene"},
       //{ scene: sixthScene, name: "Sixth scene"},
-      //{ scene: seventhScene, name: "Seventh scene"},
+      { scene: seventhScene, name: "Seventh scene"},
       //{ scene: eighthScene, name: "Eighth scene"},
       //{ scene: ninthScene, name: "Ninth scene"},
       /*
@@ -428,10 +455,11 @@ namespace myNovel {
       { scene: mazePartTwo, name: "continue good path"},
       { scene: mazePartThree, name: "continue good path"},
       { scene: mazePartFour, name: "continue good path"},
-      */
+      
       { scene: afterMazeGood, name: "continue good path" },
+      
       { scene: finalGood, name: "Last scene in good path", next: "empty" },
-
+*/
       //Bad Path
       { id: "badPath", scene: badPath, name: "Start bad Path", next: "empty" },
 

@@ -152,10 +152,9 @@ namespace myNovel {
         await ƒS.Speech.tell(characters.andrea, text.andrea.T0017);
         await ƒS.Speech.tell(characters.andrea, text.andrea.T0018);
         await ƒS.Speech.tell(characters.valentin, text.valentin.T0018);
-        //Schrei Sound
-
+        await ƒS.Sound.play(sound.demonicScream, 0.5, false);
+        await ƒS.Sound.play(sound.run, 0.2, true);
         await ƒS.Speech.tell(characters.narrator, text.narrator.T0011);
-        //gefährliche musik
         await ƒS.Speech.tell(characters.valentin, text.valentin.T0019);
         await ƒS.Speech.tell(characters.narrator, text.narrator.T0012);
         await ƒS.Speech.tell(characters.narrator, text.narrator.T0013);
