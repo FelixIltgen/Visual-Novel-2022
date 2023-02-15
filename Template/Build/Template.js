@@ -408,74 +408,57 @@ var myNovel;
         gameMenu = myNovel.ƒS.Menu.create(inGameMenuButtons, buttonFunctionalities, "gameMenuCSS");
         buttonFunctionalities("Close");
         let scenes = [
-            //{ scene: firstScene, name: "First scene"},
-            //{ scene: secondScene, name: "Second scene"},
-            //{ scene: thirdScene, name: "Thrid scene"},
-            //{ scene: fourthScene, name: "Fourth scene"},
-            //{ scene: fifthScene, name: "Fifth scene"},
-            //{ scene: sixthScene, name: "Sixth scene"},
-            // { scene: seventhScene, name: "Seventh scene"},
-            // { scene: eighthScene, name: "Eighth scene"},
-            // { scene: ninthScene, name: "Ninth scene"},
-            { scene: myNovel.tenthScene, name: "Tenth scene" },
             /*
+            { scene: firstScene, name: "First scene"},
+            { scene: secondScene, name: "Second scene"},
+            { scene: thirdScene, name: "Thrid scene"},
+            { scene: fourthScene, name: "Fourth scene"},
+            { scene: fifthScene, name: "Fifth scene"},
+            { scene: sixthScene, name: "Sixth scene"},
+            { scene: seventhScene, name: "Seventh scene"},
+            { scene: eighthScene, name: "Eighth scene"},
+            { scene: ninthScene, name: "Ninth scene"},
+            { scene: tenthScene, name: "Tenth scene"},
+            */
             //Selcet Items
-            { id: "withDairy", scene: itemSelcetionDairy, name: "Item selcetion with Dairy option"},
-            { id: "noDairy", scene: itemSelcetionNoDairy, name: "Item selcetion without Dairy option"},
-            
+            { id: "withDairy", scene: myNovel.itemSelcetionDairy, name: "Item selcetion with Dairy option" },
+            { id: "noDairy", scene: myNovel.itemSelcetionNoDairy, name: "Item selcetion without Dairy option" },
             //Cotinue normal path
-            { id: "afterItemSelection", scene: afterItemSelection, name: "First scene after Item selection"},
-      
+            { id: "afterItemSelection", scene: myNovel.afterItemSelection, name: "First scene after Item selection" },
             //Start chapter three
-            { id: "chapterThree", scene: startChapterThree, name: "Start Chapter three"},
-      
-            { id: "chapterThreeGood", scene: chapterThreeGood, name: "Chapter three good path", next: "chapterFour"},
-            { id: "chapterThreeMid", scene: chapterThreeMid, name: "Chapter three mid path"},
-      
+            { id: "chapterThree", scene: myNovel.startChapterThree, name: "Start Chapter three" },
+            { id: "chapterThreeGood", scene: myNovel.chapterThreeGood, name: "Chapter three good path", next: "chapterFour" },
+            { id: "chapterThreeMid", scene: myNovel.chapterThreeMid, name: "Chapter three mid path" },
             //Start chapter four
-            { id: "chapterFour", scene: startChapterFour, name: "Start Chapter four"},
-            { id: "chapterFourGood", scene: chapterFourGood, name: "Start Chapter four"},
-            
-            { id: "chapterFourGoodTwo", scene: chapterFourGoodTwo, name: "Start Chapter four"},
-            { id: "chapterFourMid", scene: chapterFourMid, name: "Start Chapter four"},
-            { id: "chapterFourMidTwo", scene: chapterFourMidTwo, name: "Start Chapter four part two", next: "chapterFiveMid"},
-            
+            { id: "chapterFour", scene: myNovel.startChapterFour, name: "Start Chapter four" },
+            { id: "chapterFourGood", scene: myNovel.chapterFourGood, name: "Start Chapter four" },
+            { id: "chapterFourGoodTwo", scene: myNovel.chapterFourGoodTwo, name: "Start Chapter four" },
+            { id: "chapterFourMid", scene: myNovel.chapterFourMid, name: "Start Chapter four" },
+            { id: "chapterFourMidTwo", scene: myNovel.chapterFourMidTwo, name: "Start Chapter four part two", next: "chapterFiveMid" },
             //Start chapter five
-            { id: "chapterFiveGoodOne", scene: chapterFiveGoodOne, name: "Start chapter five good path"},
-            { id: "chapterFiveGoodTwo", scene: chapterFiveGoodTwo, name: "Next good path in chapter five ", next: "GOODPATH" },
-      
-            { id: "chapterFiveMid", scene: chapterFiveMid, name: "Start chapter five mid path"},
-            { id: "chapterFiveMidTwo", scene: chapterFiveMidTwo, name: "continue mid path"},
-            { id: "chapterFiveMidThree", scene: chapterFiveMidThree, name: "continue mid path", next: "mediumPathOne"},
-            
-            { id: "chapterFiveBad", scene: chapterFiveBad, name: "Chapter three bad path", next: "badPath"},
-      
+            { id: "chapterFiveGoodOne", scene: myNovel.chapterFiveGoodOne, name: "Start chapter five good path" },
+            { id: "chapterFiveGoodTwo", scene: myNovel.chapterFiveGoodTwo, name: "Next good path in chapter five ", next: "GOODPATH" },
+            { id: "chapterFiveMid", scene: myNovel.chapterFiveMid, name: "Start chapter five mid path" },
+            { id: "chapterFiveMidTwo", scene: myNovel.chapterFiveMidTwo, name: "continue mid path" },
+            { id: "chapterFiveMidThree", scene: myNovel.chapterFiveMidThree, name: "continue mid path", next: "mediumPathOne" },
+            { id: "chapterFiveBad", scene: myNovel.chapterFiveBad, name: "Chapter three bad path", next: "badPath" },
             //Medium Path
-            { id: "mediumPathOne", scene: mediumPathOne, name: "Start medium Path"},
-            { id: "midMazeRight", scene: midMazeRight, name: "maze right path "},
-            { scene: midMazeRightOne, name: "maze right path ", next: "lastMid"},
-      
-            { id: "midMazeLeft", scene: midMazeLeft, name: "maze left path "},
-            { scene: midMazeLeftOne, name: "maze left path "},
-      
-            { id: "lastMid", scene: lastMid, name: "Last part in Mid path ", next: "empty"},
-      
-      
+            { id: "mediumPathOne", scene: myNovel.mediumPathOne, name: "Start medium Path" },
+            { id: "midMazeRight", scene: myNovel.midMazeRight, name: "maze right path " },
+            { scene: myNovel.midMazeRightOne, name: "maze right path ", next: "lastMid" },
+            { id: "midMazeLeft", scene: myNovel.midMazeLeft, name: "maze left path " },
+            { scene: myNovel.midMazeLeftOne, name: "maze left path " },
+            { id: "lastMid", scene: myNovel.lastMid, name: "Last part in Mid path ", next: "empty" },
             //Good Path
-            { id: "GOODPATH", scene: goodPath, name: "Start good path"},
-            { id: "GOODPATHTwo", scene: goodPathTwo, name: "continue good path"},
-      
-            { id: "GOODMazeRight", scene: goodMazeRight, name: "continue good path"},
-      
-            { id: "GOODMazeLeft", scene: goodMazeLeft, name: "continue good path"},
-            { scene: mazePartTwo, name: "continue good path"},
-            { scene: mazePartThree, name: "continue good path"},
-            { scene: mazePartFour, name: "continue good path"},
-            
-            { scene: afterMazeGood, name: "continue good path" },
-            
-            { scene: finalGood, name: "Last scene in good path", next: "empty" },
-      */
+            { id: "GOODPATH", scene: myNovel.goodPath, name: "Start good path" },
+            { id: "GOODPATHTwo", scene: myNovel.goodPathTwo, name: "continue good path" },
+            { id: "GOODMazeRight", scene: myNovel.goodMazeRight, name: "continue good path" },
+            { id: "GOODMazeLeft", scene: myNovel.goodMazeLeft, name: "continue good path" },
+            { scene: myNovel.mazePartTwo, name: "continue good path" },
+            { scene: myNovel.mazePartThree, name: "continue good path" },
+            { scene: myNovel.mazePartFour, name: "continue good path" },
+            { scene: myNovel.afterMazeGood, name: "continue good path" },
+            { scene: myNovel.finalGood, name: "Last scene in good path", next: "empty" },
             //Bad Path
             { id: "badPath", scene: myNovel.badPath, name: "Start bad Path", next: "empty" },
             //bad endings & paths
@@ -492,17 +475,6 @@ var myNovel;
         // start the sequence
         myNovel.ƒS.Progress.go(scenes);
         myNovel.ƒS.Speech.hide();
-        //Credits
-        //<a href="https://lovepik.com/images/png-book.html">Book Png vectors by Lovepik.com</a>
-        //<a href="https://www.flaticon.com/de/kostenlose-icons/wasser" title="wasser Icons">Wasser Icons erstellt von Freepik - Flaticon</a>
-        //<a href="https://www.flaticon.com/de/kostenlose-icons/seil" title="seil Icons">Seil Icons erstellt von Freepik - Flaticon</a>
-        //<a href="https://www.flaticon.com/de/kostenlose-icons/feuerzeug" title="feuerzeug Icons">Feuerzeug Icons erstellt von Freepik - Flaticon</a>
-        //<a href="https://www.flaticon.com/de/kostenlose-icons/licht" title="licht Icons">Licht Icons erstellt von Freepik - Flaticon</a>
-        //<a href="https://www.flaticon.com/de/kostenlose-icons/buch" title="buch Icons">Buch Icons erstellt von Freepik - Flaticon</a>
-        //<a href="https://www.flaticon.com/de/kostenlose-icons/wandern" title="wandern Icons">Wandern Icons erstellt von Freepik - Flaticon</a>
-        //<a href="https://www.flaticon.com/de/kostenlose-icons/geld" title="geld Icons">Geld Icons erstellt von Smashicons - Flaticon</a>
-        //<a href="https://www.flaticon.com/de/kostenlose-icons/munze" title="münze Icons">Münze Icons erstellt von Freepik - Flaticon</a>
-        //Sound Effect from <a href="https://pixabay.com/sound-effects/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=music&amp;utm_content=46195">Pixabay</a>
     }
 })(myNovel || (myNovel = {}));
 var myNovel;
@@ -3384,7 +3356,7 @@ var myNovel;
                 await myNovel.ƒS.update();
                 await myNovel.ƒS.Character.show(myNovel.characters.valentin, myNovel.characters.valentin.pose.normal, myNovel.newPositions.bottomright);
                 await myNovel.ƒS.update();
-                //Explosions sound
+                await myNovel.ƒS.Sound.play(myNovel.sound.explosion, 0.5, false);
                 await myNovel.ƒS.Speech.tell(myNovel.characters.narrator, text.narrator.T0005);
                 await myNovel.ƒS.Speech.tell(myNovel.characters.andrea, text.andrea.T0005);
                 await myNovel.ƒS.Speech.tell(myNovel.characters.andrea, text.andrea.T0006);
@@ -3397,7 +3369,6 @@ var myNovel;
                 await myNovel.ƒS.Speech.tell(myNovel.characters.andrea, text.andrea.T0009);
                 await myNovel.ƒS.Character.hide(myNovel.characters.andrea);
                 await myNovel.ƒS.update(1);
-                await myNovel.ƒS.Speech.tell(myNovel.characters.narrator, text.narrator.T0008);
                 break;
         }
         await myNovel.ƒS.Character.hideAll();

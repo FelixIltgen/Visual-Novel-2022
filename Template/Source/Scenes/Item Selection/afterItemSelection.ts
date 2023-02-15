@@ -72,7 +72,7 @@ namespace myNovel {
 
                     case choicesRun.hide:
                         console.log(" Choice hide");
-                        return "badEnding";
+                        return "afterItemSelectionBad";
         
                     case choicesRun.jump:
                         console.log("Choice jump");

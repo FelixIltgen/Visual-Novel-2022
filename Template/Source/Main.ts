@@ -347,7 +347,7 @@ namespace myNovel {
     Itch.io <br>\
     <a href='https://duokhay.itch.io/green-haired-girl-free-character-sprite'>Maria</a> <br>\
     <a href='https://nsaid.itch.io/blonde-guy'>Ben</a><br>\
-    <a href='https://nsaid.itch.io/glasses-guy'>Valentinn</a><br>\
+    <a href='https://nsaid.itch.io/glasses-guy'>Valentin</a><br>\
     <a href='https://nsaid.itch.io/office-lady-3'>Paula</a><br>\
     <a href='https://xiael.itch.io/sprite-oswald'>Pirat</a><br><br>\
     <b>Hintergründe:</b> <br>\
@@ -423,17 +423,18 @@ namespace myNovel {
     gameMenu = ƒS.Menu.create(inGameMenuButtons, buttonFunctionalities, "gameMenuCSS");
     buttonFunctionalities("Close");
     let scenes: ƒS.Scenes = [
-      //{ scene: firstScene, name: "First scene"},
-      //{ scene: secondScene, name: "Second scene"},
-      //{ scene: thirdScene, name: "Thrid scene"},
-      //{ scene: fourthScene, name: "Fourth scene"},
-      //{ scene: fifthScene, name: "Fifth scene"},
-      //{ scene: sixthScene, name: "Sixth scene"},
-     // { scene: seventhScene, name: "Seventh scene"},
-     // { scene: eighthScene, name: "Eighth scene"},
-     // { scene: ninthScene, name: "Ninth scene"},
-      { scene: tenthScene, name: "Tenth scene"},
       /*
+      { scene: firstScene, name: "First scene"},
+      { scene: secondScene, name: "Second scene"},
+      { scene: thirdScene, name: "Thrid scene"},
+      { scene: fourthScene, name: "Fourth scene"},
+      { scene: fifthScene, name: "Fifth scene"},
+      { scene: sixthScene, name: "Sixth scene"},
+      { scene: seventhScene, name: "Seventh scene"},
+      { scene: eighthScene, name: "Eighth scene"},
+      { scene: ninthScene, name: "Ninth scene"},
+      { scene: tenthScene, name: "Tenth scene"},
+      */
       //Selcet Items
       { id: "withDairy", scene: itemSelcetionDairy, name: "Item selcetion with Dairy option"},
       { id: "noDairy", scene: itemSelcetionNoDairy, name: "Item selcetion without Dairy option"},
@@ -490,13 +491,14 @@ namespace myNovel {
       { scene: afterMazeGood, name: "continue good path" },
       
       { scene: finalGood, name: "Last scene in good path", next: "empty" },
-*/
+
       //Bad Path
       { id: "badPath", scene: badPath, name: "Start bad Path", next: "empty" },
 
 
       //bad endings & paths
       { id: "chapterThreeBad", scene: ChapterThreeBad, name: "Chapter three bad path" },
+      { id: "afterItemSelectionBad", scene: afterItemSelectionBad, name: "First scene after Item selection", next: "empty"},
 
       { id: "gameOverChapterFourOne", scene: gameOverChapterFourOne, name: "Game over chapter four", next: "empty" },
       { id: "gameOverChapterFourTwo", scene: gameOverChapterFourTwo, name: "Chapter three bad path", next: "empty" },
@@ -514,17 +516,5 @@ namespace myNovel {
     // start the sequence
     ƒS.Progress.go(scenes);
     ƒS.Speech.hide();
-
-    //Credits
-    //<a href="https://lovepik.com/images/png-book.html">Book Png vectors by Lovepik.com</a>
-    //<a href="https://www.flaticon.com/de/kostenlose-icons/wasser" title="wasser Icons">Wasser Icons erstellt von Freepik - Flaticon</a>
-    //<a href="https://www.flaticon.com/de/kostenlose-icons/seil" title="seil Icons">Seil Icons erstellt von Freepik - Flaticon</a>
-    //<a href="https://www.flaticon.com/de/kostenlose-icons/feuerzeug" title="feuerzeug Icons">Feuerzeug Icons erstellt von Freepik - Flaticon</a>
-    //<a href="https://www.flaticon.com/de/kostenlose-icons/licht" title="licht Icons">Licht Icons erstellt von Freepik - Flaticon</a>
-    //<a href="https://www.flaticon.com/de/kostenlose-icons/buch" title="buch Icons">Buch Icons erstellt von Freepik - Flaticon</a>
-    //<a href="https://www.flaticon.com/de/kostenlose-icons/wandern" title="wandern Icons">Wandern Icons erstellt von Freepik - Flaticon</a>
-    //<a href="https://www.flaticon.com/de/kostenlose-icons/geld" title="geld Icons">Geld Icons erstellt von Smashicons - Flaticon</a>
-    //<a href="https://www.flaticon.com/de/kostenlose-icons/munze" title="münze Icons">Münze Icons erstellt von Freepik - Flaticon</a>
-    //Sound Effect from <a href="https://pixabay.com/sound-effects/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=music&amp;utm_content=46195">Pixabay</a>
   }
 }

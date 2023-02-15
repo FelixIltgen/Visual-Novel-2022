@@ -139,7 +139,7 @@ namespace myNovel {
                 await ƒS.update();
                 await ƒS.Character.show(characters.valentin, characters.valentin.pose.normal, newPositions.bottomright);
                 await ƒS.update();
-                //Explosions sound
+                await ƒS.Sound.play(sound.explosion, 0.5, false);
                 await ƒS.Speech.tell(characters.narrator, text.narrator.T0005);
                 await ƒS.Speech.tell(characters.andrea, text.andrea.T0005);
                 await ƒS.Speech.tell(characters.andrea, text.andrea.T0006);
@@ -152,7 +152,6 @@ namespace myNovel {
                 await ƒS.Speech.tell(characters.andrea, text.andrea.T0009);
                 await ƒS.Character.hide(characters.andrea);
                 await ƒS.update(1);
-                await ƒS.Speech.tell(characters.narrator, text.narrator.T0008);
 
                 break;
         }

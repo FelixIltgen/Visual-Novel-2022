@@ -61,7 +61,7 @@ dialog[type="splash"] p {
 .startInfo {
   margin-top: 30%;
   font-size: 40px;
-  color: rgb(240, 18, 103);
+  color: white;
   animation: blink 1.7s infinite;
 }
 
