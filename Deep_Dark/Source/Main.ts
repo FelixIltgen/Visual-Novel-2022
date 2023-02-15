@@ -423,7 +423,7 @@ namespace myNovel {
     gameMenu = ƒS.Menu.create(inGameMenuButtons, buttonFunctionalities, "gameMenuCSS");
     buttonFunctionalities("Close");
     let scenes: ƒS.Scenes = [
-      /*
+      
       { scene: firstScene, name: "First scene"},
       { scene: secondScene, name: "Second scene"},
       { scene: thirdScene, name: "Thrid scene"},
@@ -434,7 +434,7 @@ namespace myNovel {
       { scene: eighthScene, name: "Eighth scene"},
       { scene: ninthScene, name: "Ninth scene"},
       { scene: tenthScene, name: "Tenth scene"},
-      */
+      
       //Selcet Items
       { id: "withDairy", scene: itemSelcetionDairy, name: "Item selcetion with Dairy option"},
       { id: "noDairy", scene: itemSelcetionNoDairy, name: "Item selcetion without Dairy option"},
