@@ -1,4 +1,8 @@
 #Visual Novel Deep Dark
+Diese Arbeit wurde als Abgabe im Fach Visual Novel abgegeben.
+Bei einer Visual Novel handelt es sich um ein interaktives, textbasiertes Videospiel. Uhrsprünglich stammt diese Art von Videospiel aus Japan.
+Sie erzählen Geschichten, welche durch statische oder auf Sprites basierten Bildern, meist im Stil von Manga, untermalt wird.
+Mit  dem folgenden Link kann diese gespielt werden.
 
 Link zur Visual Novel: https://felixiltgen.github.io/Visual-Novel-2022/Deep_Dark/index.html
 
