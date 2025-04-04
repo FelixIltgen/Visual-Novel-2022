@@ -1,6 +1,6 @@
 #Visual Novel Deep Dark
 
-This work was handed in as a submission in the subject Visual Novel.
+This work was handed in as a submission in the subject Visual Novel at Furtwangen University.
 A visual novel is an interactive, text-based video game. This type of video game originated in Japan.
 They tell stories that are accompanied by static or sprite-based images, usually in the style of manga.
 You can play it using the following [link](https://felixiltgen.github.io/Visual-Novel-2022/Deep_Dark/index.html).
